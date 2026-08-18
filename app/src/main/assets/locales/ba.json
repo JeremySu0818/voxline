@@ -34,7 +34,6 @@
   "cancel_download": "Отменить скачивание",
   "delete_model": "Юйырға {модель}",
   "local_translation": "туған телдәге тәржемә",
-  "translation_desc": "Сығанаҡ теле ML Kit-ҡа һәм шулай уҡ тәржемә өҫтөндә эшләгәндә Whisper-ҡа ҡулланыла.",
   "source": "Сығанаҡ",
   "target": "маҡсат",
   "translation_enabled_desc": "Сығанаҡты һәм тәржемә ителгән субтитрҙарҙы күрһәтеү",
@@ -85,5 +84,13 @@
   "color_theme": "Төҫ темаһы",
   "theme_system": "Системаға эйәреү",
   "theme_light": "Яҡты",
-  "theme_dark": "Ҡараңғы"
+  "theme_dark": "Ҡараңғы",
+  "nemotron_settings": "Немотрон параметрҙары",
+  "nemotron_model_desc": "Q8 моделе тәүге ҡулланыуҙа скачивает һәм был ҡоролма локаль эшләй.",
+  "nemotron_latency": "Ағым тотҡарлығы",
+  "status_loading_nemotron": "Немотронды тейәү",
+  "status_checking_nemotron": "Немотрон моделен тикшереү",
+  "nemotron_failed": "Немотрон транскрипцияһы уңышһыҙлыҡҡа осрай.",
+  "error_sha256_mismatch": "SHA-256 тап килмәүе: көтөлгән {expected}, ысынбарлыҡтағы {actual}",
+  "engine_nemotron_desc": "Ҡулланыу Nemotron 3.5 ASR Потоковый локаль, автоматик тел асыҡлау һәм биш латентлыҡ режимы менән."
 }

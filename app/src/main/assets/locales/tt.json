@@ -34,7 +34,6 @@
   "cancel_download": "Йөкләүдән баш тарту",
   "delete_model": "{Модельне бетерегез",
   "local_translation": "туган тәрҗемә",
-  "translation_desc": "Чыганак теле ML комплектына һәм тәрҗемә кушылганда пышылдауга кулланыла.",
   "source": "Чыганак",
   "target": "максат",
   "translation_enabled_desc": "Чыганакны һәм тәрҗемә ителгән субтитрларны күрсәт",
@@ -85,5 +84,13 @@
   "color_theme": "Төс темасы",
   "theme_system": "Система буенча",
   "theme_light": "Якты",
-  "theme_dark": "Караңгы"
+  "theme_dark": "Караңгы",
+  "nemotron_settings": "Немотрон көйләүләре",
+  "nemotron_model_desc": "Q8 моделе беренче куллануда йөкләнә һәм бу җайланмада җирле эшли.",
+  "nemotron_latency": "Агымдагы тоткарлык",
+  "status_loading_nemotron": "Немотронны йөкләү",
+  "status_checking_nemotron": "Nemotron моделен тикшерү",
+  "nemotron_failed": "Немотрон транскрипциясе уңышсыз.",
+  "error_sha256_mismatch": "SHA-256 туры килмәү: көтелгән {expected}, фактик {actual}",
+  "engine_nemotron_desc": "Nemotron 3.5 ASR куллана, телне автоматик ачыклау һәм биш тоткарлык режимы белән җирле агым."
 }

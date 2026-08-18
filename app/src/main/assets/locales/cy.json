@@ -34,7 +34,6 @@
   "cancel_download": "Canslo llwytho i lawr",
   "delete_model": "Dileu {model}",
   "local_translation": "cyfieithiad brodorol",
-  "translation_desc": "Cymhwysir yr iaith ffynhonnell i ML Kit a hefyd i Whisper pan fydd cyfieithu wedi'i alluogi.",
   "source": "Ffynhonnell",
   "target": "targed",
   "translation_enabled_desc": "Dangos isdeitlau ffynhonnell ac wedi'u cyfieithu",
@@ -85,5 +84,13 @@
   "color_theme": "Thema lliw",
   "theme_system": "Dilyn y system",
   "theme_light": "Golau",
-  "theme_dark": "Tywyll"
+  "theme_dark": "Tywyll",
+  "nemotron_settings": "Gosodiadau Nemotron",
+  "nemotron_model_desc": "Mae'r model Q8 yn llwytho i lawr ar y defnydd cyntaf ac yn rhedeg yn lleol ar y ddyfais hon.",
+  "nemotron_latency": "Cudd ffrydio",
+  "status_loading_nemotron": "Wrthi'n llwytho Nemotron",
+  "status_checking_nemotron": "Gwirio model Nemotron",
+  "nemotron_failed": "Methodd trawsgrifiad Nemotron.",
+  "error_sha256_mismatch": "Diffyg cyfatebiaeth SHA-256: disgwylir {expected}, {actual} gwirioneddol",
+  "engine_nemotron_desc": "Yn defnyddio Nemotron 3.5 ASR Streaming yn lleol, gyda chanfod iaith awtomatig a phum dull cuddni."
 }

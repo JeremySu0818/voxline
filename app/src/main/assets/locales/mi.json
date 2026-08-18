@@ -34,7 +34,6 @@
   "cancel_download": "Whakakore i te tikiake",
   "delete_model": "Mukua {tauira}",
   "local_translation": "whakamaoritanga maori",
-  "translation_desc": "Ka hoatu te reo puna ki te ML Kit me te Whisper ina whakahohea te whakamaoritanga.",
   "source": "Puna",
   "target": "whainga",
   "translation_enabled_desc": "Whakaatuhia te puna me nga kupu hauraro kua whakamaoritia",
@@ -85,5 +84,13 @@
   "color_theme": "Kaupapa tae",
   "theme_system": "Whāia te pūnaha",
   "theme_light": "Mārama",
-  "theme_dark": "Pōuri"
+  "theme_dark": "Pōuri",
+  "nemotron_settings": "Tautuhinga Nemotron",
+  "nemotron_model_desc": "Ka tango te tauira Q8 i te whakamahinga tuatahi ka rere ki runga i tenei taputapu.",
+  "nemotron_latency": "Rererenga torohūtanga",
+  "status_loading_nemotron": "Uta Nemotron",
+  "status_checking_nemotron": "Te tirotiro i te tauira Nemotron",
+  "nemotron_failed": "I rahua te tuhi Nemotron.",
+  "error_sha256_mismatch": "SHA-256 he riterite: e tumanakohia ana {expected}, tūturu {actual}",
+  "engine_nemotron_desc": "Ka whakamahi i te Nemotron 3.5 ASR Streaming i te rohe, me te rapu reo aunoa me nga aratau e rima."
 }

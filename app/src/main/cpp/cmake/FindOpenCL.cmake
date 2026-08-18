@@ -1,0 +1,11 @@
+if(ANDROID AND TARGET voxline_opencl_link_stub AND DEFINED VOXLINE_OPENCL_HEADERS_DIR)
+    set(OpenCL_FOUND TRUE)
+    set(OpenCL_INCLUDE_DIR "${VOXLINE_OPENCL_HEADERS_DIR}")
+    set(OpenCL_INCLUDE_DIRS "${VOXLINE_OPENCL_HEADERS_DIR}")
+    set(OpenCL_LIBRARY voxline_opencl_link_stub)
+    set(OpenCL_LIBRARIES voxline_opencl_link_stub)
+    set(OpenCL_VERSION_STRING "3.0")
+    return()
+endif()
+
+include("${CMAKE_ROOT}/Modules/FindOpenCL.cmake")

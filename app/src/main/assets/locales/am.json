@@ -34,7 +34,6 @@
   "cancel_download": "ማውረድ ሰርዝ",
   "delete_model": "ሰርዝ {ሞዴል}",
   "local_translation": "ቤተኛ ትርጉም",
-  "translation_desc": "የምንጭ ቋንቋው ለኤምኤል ኪት እና እንዲሁም ትርጉም ሲነቃ በሹክሹክታ ላይ ይተገበራል።",
   "source": "ምንጭ",
   "target": "ዒላማ",
   "translation_enabled_desc": "ምንጭ እና የተተረጎሙ የትርጉም ጽሑፎችን አሳይ",
@@ -85,5 +84,13 @@
   "color_theme": "የቀለም ገጽታ",
   "theme_system": "ስርዓቱን ተከተል",
   "theme_light": "ብርሃን",
-  "theme_dark": "ጨለማ"
+  "theme_dark": "ጨለማ",
+  "nemotron_settings": "የ Nemotron ቅንብሮች",
+  "nemotron_model_desc": "የQ8 ሞዴል በመጀመሪያ ጥቅም ላይ አውርዶ በዚህ መሳሪያ ላይ በአካባቢው ይሰራል።",
+  "nemotron_latency": "የዥረት መዘግየት",
+  "status_loading_nemotron": "Nemotron በመጫን ላይ",
+  "status_checking_nemotron": "የ Nemotron ሞዴልን በመፈተሽ ላይ",
+  "nemotron_failed": "የኒሞትሮን ቅጂ አልተሳካም።",
+  "error_sha256_mismatch": "የSHA-256 አለመዛመድ፡ የሚጠበቀው {expected}፣ ትክክለኛ {actual}",
+  "engine_nemotron_desc": "Nemotron 3.5 ASR ዥረትን በአገር ውስጥ ይጠቀማል፣ በራስ-ሰር ቋንቋ ማወቂያ እና በአምስት የመዘግየት ሁነታዎች።"
 }

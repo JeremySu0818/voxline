@@ -1,10 +1,13 @@
 package com.jeremysu0818.voxline.data
 
+import com.jeremysu0818.voxline.nemotron.NemotronLocaleCatalog
+
 data class VoxlineLanguage(
     val tag: String,
     val label: String,
     val mlKitTranslateTag: String? = null,
     val whisperTag: String? = null,
+    val nemotronLocale: String? = null,
     val mlKitBasicLocale: String? = null,
     val mlKitAdvancedLocale: String? = null,
     val isTranslationTarget: Boolean = tag == mlKitTranslateTag,
@@ -16,13 +19,16 @@ data class VoxlineLanguage(
     fun supportsSource(engine: SpeechEngineOption): Boolean =
         when (engine) {
             SpeechEngineOption.WHISPER -> whisperTag != null
+            SpeechEngineOption.NEMOTRON -> nemotronLocale != null
             SpeechEngineOption.MLKIT_BASIC -> mlKitBasicLocale != null
             SpeechEngineOption.MLKIT_ADVANCED -> mlKitAdvancedLocale != null
         }
 
     fun mlKitSpeechLocale(engine: SpeechEngineOption): String? =
         when (engine) {
-            SpeechEngineOption.WHISPER -> null
+            SpeechEngineOption.WHISPER,
+            SpeechEngineOption.NEMOTRON,
+            -> null
             SpeechEngineOption.MLKIT_BASIC -> mlKitBasicLocale
             SpeechEngineOption.MLKIT_ADVANCED -> mlKitAdvancedLocale
         }
@@ -33,7 +39,7 @@ object VoxlineLanguages {
         VoxlineLanguage(tag = "af", label = "Afrikaans", mlKitTranslateTag = "af", whisperTag = "af"),
         VoxlineLanguage(tag = "sq", label = "Albanian", mlKitTranslateTag = "sq", whisperTag = "sq"),
         VoxlineLanguage(tag = "am", label = "Amharic", whisperTag = "am"),
-        VoxlineLanguage(tag = "ar", label = "Arabic", mlKitTranslateTag = "ar", whisperTag = "ar", mlKitAdvancedLocale = "ar-SA"),
+        VoxlineLanguage(tag = "ar", label = "Arabic", mlKitTranslateTag = "ar", whisperTag = "ar", nemotronLocale = "ar-AR", mlKitAdvancedLocale = "ar-SA"),
         VoxlineLanguage(tag = "hy", label = "Armenian", whisperTag = "hy"),
         VoxlineLanguage(tag = "as", label = "Assamese", whisperTag = "as"),
         VoxlineLanguage(tag = "az", label = "Azerbaijani", whisperTag = "az"),
@@ -43,7 +49,7 @@ object VoxlineLanguages {
         VoxlineLanguage(tag = "bn", label = "Bengali", mlKitTranslateTag = "bn", whisperTag = "bn"),
         VoxlineLanguage(tag = "bs", label = "Bosnian", whisperTag = "bs"),
         VoxlineLanguage(tag = "br", label = "Breton", whisperTag = "br"),
-        VoxlineLanguage(tag = "bg", label = "Bulgarian", mlKitTranslateTag = "bg", whisperTag = "bg"),
+        VoxlineLanguage(tag = "bg", label = "Bulgarian", mlKitTranslateTag = "bg", whisperTag = "bg", nemotronLocale = "bg-BG"),
         VoxlineLanguage(tag = "my", label = "Burmese", whisperTag = "my"),
         VoxlineLanguage(tag = "ca", label = "Catalan", mlKitTranslateTag = "ca", whisperTag = "ca"),
         VoxlineLanguage(tag = "zh", label = "中文", mlKitTranslateTag = "zh", whisperTag = "zh", isTranslationTarget = false),
@@ -61,39 +67,42 @@ object VoxlineLanguages {
             mlKitTranslateTag = "zh",
             mlKitBasicLocale = "cmn-Hans-CN",
             mlKitAdvancedLocale = "cmn-Hans-CN",
+            nemotronLocale = "zh-CN",
             isTranslationTarget = true,
         ),
-        VoxlineLanguage(tag = "hr", label = "Croatian", mlKitTranslateTag = "hr", whisperTag = "hr"),
-        VoxlineLanguage(tag = "cs", label = "Czech", mlKitTranslateTag = "cs", whisperTag = "cs"),
-        VoxlineLanguage(tag = "da", label = "Danish", mlKitTranslateTag = "da", whisperTag = "da", mlKitAdvancedLocale = "da-DK"),
-        VoxlineLanguage(tag = "nl", label = "Dutch", mlKitTranslateTag = "nl", whisperTag = "nl", mlKitAdvancedLocale = "nl-NL"),
-        VoxlineLanguage(tag = "en", label = "English", mlKitTranslateTag = "en", whisperTag = "en", mlKitBasicLocale = "en-US", mlKitAdvancedLocale = "en-US"),
+        VoxlineLanguage(tag = "hr", label = "Croatian", mlKitTranslateTag = "hr", whisperTag = "hr", nemotronLocale = "hr-HR"),
+        VoxlineLanguage(tag = "cs", label = "Czech", mlKitTranslateTag = "cs", whisperTag = "cs", nemotronLocale = "cs-CZ"),
+        VoxlineLanguage(tag = "da", label = "Danish", mlKitTranslateTag = "da", whisperTag = "da", nemotronLocale = "da-DK", mlKitAdvancedLocale = "da-DK"),
+        VoxlineLanguage(tag = "nl", label = "Dutch", mlKitTranslateTag = "nl", whisperTag = "nl", nemotronLocale = "nl-NL", mlKitAdvancedLocale = "nl-NL"),
+        VoxlineLanguage(tag = "en", label = "English", mlKitTranslateTag = "en", whisperTag = "en", nemotronLocale = "en-US", mlKitBasicLocale = "en-US", mlKitAdvancedLocale = "en-US"),
+        VoxlineLanguage(tag = "en-GB", label = "English (United Kingdom)", mlKitTranslateTag = "en", nemotronLocale = "en-GB", isUiLanguage = false),
         VoxlineLanguage(tag = "eo", label = "Esperanto", mlKitTranslateTag = "eo"),
-        VoxlineLanguage(tag = "et", label = "Estonian", mlKitTranslateTag = "et", whisperTag = "et"),
+        VoxlineLanguage(tag = "et", label = "Estonian", mlKitTranslateTag = "et", whisperTag = "et", nemotronLocale = "et-EE"),
         VoxlineLanguage(tag = "fo", label = "Faroese", whisperTag = "fo"),
-        VoxlineLanguage(tag = "fi", label = "Finnish", mlKitTranslateTag = "fi", whisperTag = "fi"),
-        VoxlineLanguage(tag = "fr", label = "French", mlKitTranslateTag = "fr", whisperTag = "fr", mlKitBasicLocale = "fr-FR", mlKitAdvancedLocale = "fr-FR"),
+        VoxlineLanguage(tag = "fi", label = "Finnish", mlKitTranslateTag = "fi", whisperTag = "fi", nemotronLocale = "fi-FI"),
+        VoxlineLanguage(tag = "fr", label = "French", mlKitTranslateTag = "fr", whisperTag = "fr", nemotronLocale = "fr-FR", mlKitBasicLocale = "fr-FR", mlKitAdvancedLocale = "fr-FR"),
+        VoxlineLanguage(tag = "fr-CA", label = "French (Canada)", mlKitTranslateTag = "fr", nemotronLocale = "fr-CA", isUiLanguage = false),
         VoxlineLanguage(tag = "gl", label = "Galician", mlKitTranslateTag = "gl", whisperTag = "gl"),
         VoxlineLanguage(tag = "ka", label = "Georgian", mlKitTranslateTag = "ka", whisperTag = "ka"),
-        VoxlineLanguage(tag = "de", label = "German", mlKitTranslateTag = "de", whisperTag = "de", mlKitBasicLocale = "de-DE", mlKitAdvancedLocale = "de-DE"),
+        VoxlineLanguage(tag = "de", label = "German", mlKitTranslateTag = "de", whisperTag = "de", nemotronLocale = "de-DE", mlKitBasicLocale = "de-DE", mlKitAdvancedLocale = "de-DE"),
         VoxlineLanguage(tag = "el", label = "Greek", mlKitTranslateTag = "el", whisperTag = "el"),
         VoxlineLanguage(tag = "gu", label = "Gujarati", mlKitTranslateTag = "gu", whisperTag = "gu"),
         VoxlineLanguage(tag = "ht", label = "Haitian Creole", mlKitTranslateTag = "ht", whisperTag = "ht"),
         VoxlineLanguage(tag = "ha", label = "Hausa", whisperTag = "ha"),
         VoxlineLanguage(tag = "haw", label = "Hawaiian", whisperTag = "haw"),
         VoxlineLanguage(tag = "he", label = "Hebrew", mlKitTranslateTag = "he", whisperTag = "he"),
-        VoxlineLanguage(tag = "hi", label = "Hindi", mlKitTranslateTag = "hi", whisperTag = "hi", mlKitBasicLocale = "hi-IN", mlKitAdvancedLocale = "hi-IN"),
-        VoxlineLanguage(tag = "hu", label = "Hungarian", mlKitTranslateTag = "hu", whisperTag = "hu"),
+        VoxlineLanguage(tag = "hi", label = "Hindi", mlKitTranslateTag = "hi", whisperTag = "hi", nemotronLocale = "hi-IN", mlKitBasicLocale = "hi-IN", mlKitAdvancedLocale = "hi-IN"),
+        VoxlineLanguage(tag = "hu", label = "Hungarian", mlKitTranslateTag = "hu", whisperTag = "hu", nemotronLocale = "hu-HU"),
         VoxlineLanguage(tag = "is", label = "Icelandic", mlKitTranslateTag = "is", whisperTag = "is"),
         VoxlineLanguage(tag = "id", label = "Indonesian", mlKitTranslateTag = "id", whisperTag = "id", mlKitAdvancedLocale = "id-ID"),
         VoxlineLanguage(tag = "ga", label = "Irish", mlKitTranslateTag = "ga"),
-        VoxlineLanguage(tag = "it", label = "Italian", mlKitTranslateTag = "it", whisperTag = "it", mlKitBasicLocale = "it-IT", mlKitAdvancedLocale = "it-IT"),
-        VoxlineLanguage(tag = "ja", label = "Japanese", mlKitTranslateTag = "ja", whisperTag = "ja", mlKitBasicLocale = "ja-JP", mlKitAdvancedLocale = "ja-JP"),
+        VoxlineLanguage(tag = "it", label = "Italian", mlKitTranslateTag = "it", whisperTag = "it", nemotronLocale = "it-IT", mlKitBasicLocale = "it-IT", mlKitAdvancedLocale = "it-IT"),
+        VoxlineLanguage(tag = "ja", label = "Japanese", mlKitTranslateTag = "ja", whisperTag = "ja", nemotronLocale = "ja-JP", mlKitBasicLocale = "ja-JP", mlKitAdvancedLocale = "ja-JP"),
         VoxlineLanguage(tag = "jv", label = "Javanese", whisperTag = "jw"),
         VoxlineLanguage(tag = "kn", label = "Kannada", mlKitTranslateTag = "kn", whisperTag = "kn"),
         VoxlineLanguage(tag = "kk", label = "Kazakh", whisperTag = "kk"),
         VoxlineLanguage(tag = "km", label = "Khmer", whisperTag = "km"),
-        VoxlineLanguage(tag = "ko", label = "Korean", mlKitTranslateTag = "ko", whisperTag = "ko", mlKitBasicLocale = "ko-KR", mlKitAdvancedLocale = "ko-KR"),
+        VoxlineLanguage(tag = "ko", label = "Korean", mlKitTranslateTag = "ko", whisperTag = "ko", nemotronLocale = "ko-KR", mlKitBasicLocale = "ko-KR", mlKitAdvancedLocale = "ko-KR"),
         VoxlineLanguage(tag = "lo", label = "Lao", whisperTag = "lo"),
         VoxlineLanguage(tag = "la", label = "Latin", whisperTag = "la"),
         VoxlineLanguage(tag = "lv", label = "Latvian", mlKitTranslateTag = "lv", whisperTag = "lv"),
@@ -110,48 +119,85 @@ object VoxlineLanguages {
         VoxlineLanguage(tag = "mn", label = "Mongolian", whisperTag = "mn"),
         VoxlineLanguage(tag = "ne", label = "Nepali", whisperTag = "ne"),
         VoxlineLanguage(tag = "no", label = "Norwegian", mlKitTranslateTag = "no", whisperTag = "no"),
+        VoxlineLanguage(tag = "nb", label = "Norwegian Bokmål", mlKitTranslateTag = "no", nemotronLocale = "nb-NO", isUiLanguage = false),
         VoxlineLanguage(tag = "nn", label = "Nynorsk", whisperTag = "nn"),
         VoxlineLanguage(tag = "oc", label = "Occitan", whisperTag = "oc"),
         VoxlineLanguage(tag = "ps", label = "Pashto", whisperTag = "ps"),
         VoxlineLanguage(tag = "fa", label = "Persian", mlKitTranslateTag = "fa", whisperTag = "fa"),
-        VoxlineLanguage(tag = "pl", label = "Polish", mlKitTranslateTag = "pl", whisperTag = "pl", mlKitBasicLocale = "pl-PL", mlKitAdvancedLocale = "pl-PL"),
+        VoxlineLanguage(tag = "pl", label = "Polish", mlKitTranslateTag = "pl", whisperTag = "pl", nemotronLocale = "pl-PL", mlKitBasicLocale = "pl-PL", mlKitAdvancedLocale = "pl-PL"),
         VoxlineLanguage(tag = "pt", label = "Portuguese", mlKitTranslateTag = "pt", whisperTag = "pt"),
-        VoxlineLanguage(tag = "pt-BR", label = "Portuguese (Brazil)", mlKitTranslateTag = "pt", mlKitBasicLocale = "pt-BR", isUiLanguage = false),
-        VoxlineLanguage(tag = "pt-PT", label = "Portuguese (Portugal)", mlKitTranslateTag = "pt", mlKitAdvancedLocale = "pt-PT", isUiLanguage = false),
+        VoxlineLanguage(tag = "pt-BR", label = "Portuguese (Brazil)", mlKitTranslateTag = "pt", nemotronLocale = "pt-BR", mlKitBasicLocale = "pt-BR", isUiLanguage = false),
+        VoxlineLanguage(tag = "pt-PT", label = "Portuguese (Portugal)", mlKitTranslateTag = "pt", nemotronLocale = "pt-PT", mlKitAdvancedLocale = "pt-PT", isUiLanguage = false),
         VoxlineLanguage(tag = "pa", label = "Punjabi", whisperTag = "pa"),
-        VoxlineLanguage(tag = "ro", label = "Romanian", mlKitTranslateTag = "ro", whisperTag = "ro"),
-        VoxlineLanguage(tag = "ru", label = "Russian", mlKitTranslateTag = "ru", whisperTag = "ru", mlKitBasicLocale = "ru-RU", mlKitAdvancedLocale = "ru-RU"),
+        VoxlineLanguage(tag = "ro", label = "Romanian", mlKitTranslateTag = "ro", whisperTag = "ro", nemotronLocale = "ro-RO"),
+        VoxlineLanguage(tag = "ru", label = "Russian", mlKitTranslateTag = "ru", whisperTag = "ru", nemotronLocale = "ru-RU", mlKitBasicLocale = "ru-RU", mlKitAdvancedLocale = "ru-RU"),
         VoxlineLanguage(tag = "sa", label = "Sanskrit", whisperTag = "sa"),
         VoxlineLanguage(tag = "sr", label = "Serbian", whisperTag = "sr"),
         VoxlineLanguage(tag = "sn", label = "Shona", whisperTag = "sn"),
         VoxlineLanguage(tag = "sd", label = "Sindhi", whisperTag = "sd"),
         VoxlineLanguage(tag = "si", label = "Sinhala", whisperTag = "si"),
-        VoxlineLanguage(tag = "sk", label = "Slovak", mlKitTranslateTag = "sk", whisperTag = "sk"),
+        VoxlineLanguage(tag = "sk", label = "Slovak", mlKitTranslateTag = "sk", whisperTag = "sk", nemotronLocale = "sk-SK"),
         VoxlineLanguage(tag = "sl", label = "Slovenian", mlKitTranslateTag = "sl", whisperTag = "sl"),
         VoxlineLanguage(tag = "so", label = "Somali", whisperTag = "so"),
-        VoxlineLanguage(tag = "es", label = "Spanish", mlKitTranslateTag = "es", whisperTag = "es", mlKitBasicLocale = "es-ES", mlKitAdvancedLocale = "es-ES"),
+        VoxlineLanguage(tag = "es", label = "Spanish", mlKitTranslateTag = "es", whisperTag = "es", nemotronLocale = "es-ES", mlKitBasicLocale = "es-ES", mlKitAdvancedLocale = "es-ES"),
+        VoxlineLanguage(tag = "es-US", label = "Spanish (United States)", mlKitTranslateTag = "es", nemotronLocale = "es-US", isUiLanguage = false),
         VoxlineLanguage(tag = "su", label = "Sundanese", whisperTag = "su"),
         VoxlineLanguage(tag = "sw", label = "Swahili", mlKitTranslateTag = "sw", whisperTag = "sw"),
-        VoxlineLanguage(tag = "sv", label = "Swedish", mlKitTranslateTag = "sv", whisperTag = "sv", mlKitAdvancedLocale = "sv-SE"),
+        VoxlineLanguage(tag = "sv", label = "Swedish", mlKitTranslateTag = "sv", whisperTag = "sv", nemotronLocale = "sv-SE", mlKitAdvancedLocale = "sv-SE"),
         VoxlineLanguage(tag = "tl", label = "Tagalog", mlKitTranslateTag = "tl", whisperTag = "tl"),
         VoxlineLanguage(tag = "tg", label = "Tajik", whisperTag = "tg"),
         VoxlineLanguage(tag = "ta", label = "Tamil", mlKitTranslateTag = "ta", whisperTag = "ta"),
         VoxlineLanguage(tag = "tt", label = "Tatar", whisperTag = "tt"),
         VoxlineLanguage(tag = "te", label = "Telugu", mlKitTranslateTag = "te", whisperTag = "te"),
         VoxlineLanguage(tag = "th", label = "Thai", mlKitTranslateTag = "th", whisperTag = "th", mlKitAdvancedLocale = "th-TH"),
-        VoxlineLanguage(tag = "tr", label = "Turkish", mlKitTranslateTag = "tr", whisperTag = "tr", mlKitBasicLocale = "tr-TR", mlKitAdvancedLocale = "tr-TR"),
+        VoxlineLanguage(tag = "tr", label = "Turkish", mlKitTranslateTag = "tr", whisperTag = "tr", nemotronLocale = "tr-TR", mlKitBasicLocale = "tr-TR", mlKitAdvancedLocale = "tr-TR"),
         VoxlineLanguage(tag = "tk", label = "Turkmen", whisperTag = "tk"),
-        VoxlineLanguage(tag = "uk", label = "Ukrainian", mlKitTranslateTag = "uk", whisperTag = "uk"),
+        VoxlineLanguage(tag = "uk", label = "Ukrainian", mlKitTranslateTag = "uk", whisperTag = "uk", nemotronLocale = "uk-UA"),
         VoxlineLanguage(tag = "ur", label = "Urdu", mlKitTranslateTag = "ur", whisperTag = "ur"),
         VoxlineLanguage(tag = "uz", label = "Uzbek", whisperTag = "uz"),
-        VoxlineLanguage(tag = "vi", label = "Vietnamese", mlKitTranslateTag = "vi", whisperTag = "vi", mlKitBasicLocale = "vi-VN", mlKitAdvancedLocale = "vi-VN"),
+        VoxlineLanguage(tag = "vi", label = "Vietnamese", mlKitTranslateTag = "vi", whisperTag = "vi", nemotronLocale = "vi-VN", mlKitBasicLocale = "vi-VN", mlKitAdvancedLocale = "vi-VN"),
         VoxlineLanguage(tag = "cy", label = "Welsh", mlKitTranslateTag = "cy", whisperTag = "cy"),
         VoxlineLanguage(tag = "yi", label = "Yiddish", whisperTag = "yi"),
         VoxlineLanguage(tag = "yo", label = "Yoruba", whisperTag = "yo"),
         VoxlineLanguage(tag = "bo", label = "Tibetan", whisperTag = "bo"),
         VoxlineLanguage(tag = "yue", label = "Cantonese", whisperTag = "yue"),
-    ).map { language ->
+    ).let { baseLanguages ->
+        val enriched = baseLanguages.map { language ->
+            if (language.nemotronLocale != null) {
+                language
+            } else {
+                language.copy(
+                    nemotronLocale = NemotronLocaleCatalog.localeForTag(language.tag),
+                )
+            }
+        }
+        val representedLocales = enriched.mapNotNull(VoxlineLanguage::nemotronLocale).toSet()
+        val nemotronOnly = buildList {
+            add(
+                VoxlineLanguage(
+                    tag = NemotronLocaleCatalog.AUTO,
+                    label = "Automatic",
+                    nemotronLocale = NemotronLocaleCatalog.AUTO,
+                    isUiLanguage = false,
+                ),
+            )
+            NemotronLocaleCatalog.locales
+                .filterNot(representedLocales::contains)
+                .forEach { locale ->
+                    add(
+                        VoxlineLanguage(
+                            tag = locale,
+                            label = locale,
+                            nemotronLocale = locale,
+                            isUiLanguage = false,
+                        ),
+                    )
+                }
+        }
+        enriched + nemotronOnly
+    }.map { language ->
         val nativeLabel = when (language.tag) {
+            NemotronLocaleCatalog.AUTO -> "Automatic"
             "zh-TW" -> "繁體中文"
             "zh-CN" -> "简体中文"
             "zh" -> "中文"
@@ -211,6 +257,12 @@ object VoxlineLanguages {
         whisperLanguageTag(tag)
             ?: throw IllegalArgumentException("Whisper 不支援語言：$tag")
 
+    fun nemotronLocale(tag: String): String? = find(tag)?.nemotronLocale
+
+    fun requireNemotronLocale(tag: String): String =
+        nemotronLocale(tag)
+            ?: throw IllegalArgumentException("Nemotron 不支援語言：$tag")
+
     fun coerceSourceTag(
         tag: String,
         engine: SpeechEngineOption,
@@ -254,6 +306,11 @@ object VoxlineLanguages {
             SpeechEngineOption.WHISPER -> when (tag) {
                 "zh-TW", "zh-CN" -> add("zh")
                 "pt-BR", "pt-PT" -> add("pt")
+            }
+            SpeechEngineOption.NEMOTRON -> when (tag) {
+                "zh", "zh-TW" -> add("zh-CN")
+                "pt" -> add("pt-BR")
+                "no" -> add("nb")
             }
             SpeechEngineOption.MLKIT_BASIC -> when (tag) {
                 "zh" -> add("zh-TW")

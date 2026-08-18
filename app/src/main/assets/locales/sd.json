@@ -34,7 +34,6 @@
   "cancel_download": "ڊائون لوڊ منسوخ ڪريو",
   "delete_model": "حذف ڪريو {ماڊل}",
   "local_translation": "اصلي ترجمو",
-  "translation_desc": "ماخذ ٻولي ML Kit ۽ Whisper تي پڻ لاڳو ٿئي ٿي جڏھن ترجمو فعال ٿئي ٿو.",
   "source": "ذريعو",
   "target": "ٽارگيٽ",
   "translation_enabled_desc": "ڏيکاريو ذريعو ۽ ترجمو ڪيل ذيلي عنوان",
@@ -85,5 +84,13 @@
   "color_theme": "رنگ موضوع",
   "theme_system": "سسٽم جي پيروي ڪريو",
   "theme_light": "هلڪو",
-  "theme_dark": "اونداهو"
+  "theme_dark": "اونداهو",
+  "nemotron_settings": "Nemotron سيٽنگون",
+  "nemotron_model_desc": "Q8 ماڊل پهرين استعمال تي ڊائون لوڊ ڪري ٿو ۽ مقامي طور تي هن ڊوائيس تي هلندو آهي.",
+  "nemotron_latency": "اسٽريمنگ جي دير",
+  "status_loading_nemotron": "لوڊ ڪري رهيو آهي Nemotron",
+  "status_checking_nemotron": "Nemotron ماڊل چيڪ ڪرڻ",
+  "nemotron_failed": "Nemotron ٽرانسپشن ناڪام ٿي.",
+  "error_sha256_mismatch": "SHA-256 بي ميل: متوقع {expected}، حقيقي {actual}",
+  "engine_nemotron_desc": "استعمال ڪري ٿو Nemotron 3.5 ASR اسٽريمنگ مقامي طور تي، پاڻمرادو ٻولي ڳولڻ ۽ پنج ويڪرائي طريقن سان."
 }

@@ -1,0 +1,5 @@
+if(TARGET SPIRV-Headers::SPIRV-Headers)
+    set(SPIRV-Headers_FOUND TRUE)
+else()
+    set(SPIRV-Headers_FOUND FALSE)
+endif()

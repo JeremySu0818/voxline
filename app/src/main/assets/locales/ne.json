@@ -34,7 +34,6 @@
   "cancel_download": "डाउनलोड रद्द गर्नुहोस्",
   "delete_model": "मेट्नुहोस् {model}",
   "local_translation": "नेटिभ अनुवाद",
-  "translation_desc": "अनुवाद सक्षम हुँदा स्रोत भाषा ML Kit र Whisper मा पनि लागू हुन्छ।",
   "source": "स्रोत",
   "target": "लक्ष्य",
   "translation_enabled_desc": "स्रोत र अनुवादित उपशीर्षकहरू देखाउनुहोस्",
@@ -85,5 +84,13 @@
   "color_theme": "रङ्ग थिम",
   "theme_system": "प्रणालीअनुसार",
   "theme_light": "उज्यालो",
-  "theme_dark": "गाढा"
+  "theme_dark": "गाढा",
+  "nemotron_settings": "Nemotron सेटिङहरू",
+  "nemotron_model_desc": "Q8 मोडेल पहिलो प्रयोगमा डाउनलोड हुन्छ र यो यन्त्रमा स्थानीय रूपमा चल्छ।",
+  "nemotron_latency": "स्ट्रिमिङ विलम्बता",
+  "status_loading_nemotron": "Nemotron लोड गर्दै",
+  "status_checking_nemotron": "Nemotron मोडेल जाँच गर्दै",
+  "nemotron_failed": "Nemotron ट्रान्सक्रिप्शन असफल भयो।",
+  "error_sha256_mismatch": "SHA-256 बेमेल: अपेक्षित {expected}, वास्तविक {actual}",
+  "engine_nemotron_desc": "स्वचालित भाषा पत्ता लगाउने र पाँच विलम्बता मोडहरू सहित स्थानीय रूपमा Nemotron 3.5 ASR स्ट्रिमिङ प्रयोग गर्दछ।"
 }

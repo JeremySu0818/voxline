@@ -34,7 +34,6 @@
   "cancel_download": "Hætta við niðurhal",
   "delete_model": "Eyða {model}",
   "local_translation": "innfædd þýðing",
-  "translation_desc": "Upprunamálið er notað á ML Kit og einnig á Whisper þegar þýðing er virkjuð.",
   "source": "Heimild",
   "target": "skotmark",
   "translation_enabled_desc": "Sýna uppruna og þýddan texta",
@@ -85,5 +84,13 @@
   "color_theme": "Litaþema",
   "theme_system": "Fylgja kerfi",
   "theme_light": "Ljóst",
-  "theme_dark": "Dökkt"
+  "theme_dark": "Dökkt",
+  "nemotron_settings": "Nemotron stillingar",
+  "nemotron_model_desc": "Q8 gerðin hleður niður við fyrstu notkun og keyrir staðbundið á þessu tæki.",
+  "nemotron_latency": "Töf á streymi",
+  "status_loading_nemotron": "Hleður Nemotron",
+  "status_checking_nemotron": "Er að skoða Nemotron líkan",
+  "nemotron_failed": "Umritun nemótróna mistókst.",
+  "error_sha256_mismatch": "SHA-256 misræmi: búist við {expected}, raunverulegt {actual}",
+  "engine_nemotron_desc": "Notar Nemotron 3.5 ASR streymi á staðnum, með sjálfvirkri tungumálagreiningu og fimm leyndarstillingum."
 }

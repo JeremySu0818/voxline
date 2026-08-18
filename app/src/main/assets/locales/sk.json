@@ -34,7 +34,6 @@
   "cancel_download": "Zrušiť sťahovanie",
   "delete_model": "Odstrániť {model}",
   "local_translation": "natívny preklad",
-  "translation_desc": "Zdrojový jazyk sa použije na ML Kit a tiež na Whisper, keď je povolený preklad.",
   "source": "Zdroj",
   "target": "cieľ",
   "translation_enabled_desc": "Zobraziť zdroj a preložené titulky",
@@ -85,5 +84,13 @@
   "color_theme": "Farebný motív",
   "theme_system": "Podľa systému",
   "theme_light": "Svetlý",
-  "theme_dark": "Tmavý"
+  "theme_dark": "Tmavý",
+  "nemotron_settings": "Nastavenia Nemotronu",
+  "nemotron_model_desc": "Model Q8 sa stiahne pri prvom použití a spustí sa lokálne na tomto zariadení.",
+  "nemotron_latency": "Latencia streamovania",
+  "status_loading_nemotron": "Načítava sa Nemotron",
+  "status_checking_nemotron": "Kontrola modelu Nemotron",
+  "nemotron_failed": "Transkripcia nemotrónu zlyhala.",
+  "error_sha256_mismatch": "Nezhoda SHA-256: očakávaná {expected}, skutočná {actual}",
+  "engine_nemotron_desc": "Lokálne používa Nemotron 3.5 ASR Streaming s automatickou detekciou jazyka a piatimi režimami latencie."
 }

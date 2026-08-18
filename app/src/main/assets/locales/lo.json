@@ -34,7 +34,6 @@
   "cancel_download": "ຍົກເລີກການດາວໂຫຼດ",
   "delete_model": "ລຶບ {model}",
   "local_translation": "ການແປພາສາພື້ນເມືອງ",
-  "translation_desc": "ພາສາຕົ້ນສະບັບຖືກນໍາໃຊ້ກັບ ML Kit ແລະຍັງ Whisper ເມື່ອການແປພາສາຖືກເປີດໃຊ້.",
   "source": "ທີ່ມາ",
   "target": "ເປົ້າໝາຍ",
   "translation_enabled_desc": "ສະແດງແຫຼ່ງທີ່ມາ ແລະຄຳແປທີ່ແປແລ້ວ",
@@ -85,5 +84,13 @@
   "color_theme": "ຮູບແບບສີ",
   "theme_system": "ຕາມລະບົບ",
   "theme_light": "ສະຫວ່າງ",
-  "theme_dark": "ມືດ"
+  "theme_dark": "ມືດ",
+  "nemotron_settings": "ການຕັ້ງຄ່າ Nemotron",
+  "nemotron_model_desc": "ໂມເດວ Q8 ດາວໂຫຼດເມື່ອໃຊ້ຄັ້ງທຳອິດ ແລະ ແລ່ນຢູ່ໃນເຄື່ອງໃນເຄື່ອງນີ້.",
+  "nemotron_latency": "ການຕອບສະໜອງການຖ່າຍທອດ",
+  "status_loading_nemotron": "ກຳລັງໂຫຼດ Nemotron",
+  "status_checking_nemotron": "ການກວດສອບຕົວແບບ Nemotron",
+  "nemotron_failed": "ການຖອດຂໍ້ຄວາມ Nemotron ລົ້ມເຫລວ.",
+  "error_sha256_mismatch": "SHA-256 ບໍ່ກົງກັນ: ຄາດຫວັງ {expected}, ຕົວຈິງ {actual}",
+  "engine_nemotron_desc": "ໃຊ້ Nemotron 3.5 ASR Streaming ພາຍໃນເຄື່ອງ, ດ້ວຍການກວດຫາພາສາອັດຕະໂນມັດ ແລະ ຫ້າໂໝດການຕອບສະໜອງ."
 }

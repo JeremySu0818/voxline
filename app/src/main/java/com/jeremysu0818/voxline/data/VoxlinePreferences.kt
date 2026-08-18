@@ -17,6 +17,10 @@ class VoxlinePreferences(context: Context) {
         update { it.copy(model = model) }
     }
 
+    fun updateNemotronLatencyMode(mode: NemotronLatencyMode) {
+        update { it.copy(nemotronLatencyMode = mode) }
+    }
+
     fun updateSpeechEngine(engine: SpeechEngineOption) {
         update { it.copy(speechEngine = engine) }
     }
@@ -45,6 +49,7 @@ class VoxlinePreferences(context: Context) {
         val next = normalize(transform(_settings.value))
         prefs.edit {
             putString(KEY_MODEL, next.model.id)
+            putString(KEY_NEMOTRON_LATENCY_MODE, next.nemotronLatencyMode.id)
             putString(KEY_SPEECH_ENGINE, next.speechEngine.id)
             putBoolean(KEY_TRANSLATION_ENABLED, next.translationEnabled)
             putString(KEY_SOURCE_LANGUAGE, next.sourceLanguageTag)
@@ -61,6 +66,9 @@ class VoxlinePreferences(context: Context) {
             VoxlineSettings(
                 speechEngine = SpeechEngineOption.fromId(prefs.getString(KEY_SPEECH_ENGINE, null)),
                 model = WhisperModelOption.fromId(prefs.getString(KEY_MODEL, null)),
+                nemotronLatencyMode = NemotronLatencyMode.fromId(
+                    prefs.getString(KEY_NEMOTRON_LATENCY_MODE, null),
+                ),
                 translationEnabled = prefs.getBoolean(KEY_TRANSLATION_ENABLED, false),
                 sourceLanguageTag = prefs.getString(KEY_SOURCE_LANGUAGE, "en") ?: "en",
                 targetLanguageTag = prefs.getString(KEY_TARGET_LANGUAGE, "zh-TW") ?: "zh-TW",
@@ -81,6 +89,7 @@ class VoxlinePreferences(context: Context) {
 
     companion object {
         private const val KEY_MODEL = "model"
+        private const val KEY_NEMOTRON_LATENCY_MODE = "nemotron_latency_mode"
         private const val KEY_SPEECH_ENGINE = "speech_engine"
         private const val KEY_TRANSLATION_ENABLED = "translation_enabled"
         private const val KEY_SOURCE_LANGUAGE = "source_language"

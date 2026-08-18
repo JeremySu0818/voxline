@@ -34,7 +34,6 @@
   "cancel_download": "Annulla il download",
   "delete_model": "Elimina {modello}",
   "local_translation": "traduzione nativa",
-  "translation_desc": "La lingua di origine viene applicata a ML Kit e anche a Whisper quando la traduzione è abilitata.",
   "source": "Fonte",
   "target": "bersaglio",
   "translation_enabled_desc": "Mostra i sottotitoli sorgente e tradotti",
@@ -85,5 +84,13 @@
   "color_theme": "Tema colore",
   "theme_system": "Segui il sistema",
   "theme_light": "Chiaro",
-  "theme_dark": "Scuro"
+  "theme_dark": "Scuro",
+  "nemotron_settings": "Impostazioni del Nemotron",
+  "nemotron_model_desc": "Il modello Q8 viene scaricato al primo utilizzo e viene eseguito localmente su questo dispositivo.",
+  "nemotron_latency": "Latenza dello streaming",
+  "status_loading_nemotron": "Caricamento di Nemotron",
+  "status_checking_nemotron": "Controllo del modello del Nemotron",
+  "nemotron_failed": "La trascrizione del Nemotron è fallita.",
+  "error_sha256_mismatch": "Mancata corrispondenza SHA-256: prevista {expected}, effettiva {actual}",
+  "engine_nemotron_desc": "Utilizza Nemotron 3.5 ASR Streaming localmente, con rilevamento automatico della lingua e cinque modalità di latenza."
 }

@@ -34,7 +34,6 @@
   "cancel_download": "Annuler téléchargement",
   "delete_model": "Bolongola {modèle}",
   "local_translation": "libongoli ya mboka",
-  "translation_desc": "Monoko ya source esalelamaka na ML Kit mpe lisusu na Whisper tango bobongoli efungolami.",
   "source": "Liziba",
   "target": "cible",
   "translation_enabled_desc": "Lakisa source mpe ba sous-titres oyo ebongolami",
@@ -85,5 +84,13 @@
   "color_theme": "Motó ya langi",
   "theme_system": "Landa système",
   "theme_light": "Polele",
-  "theme_dark": "Molili"
+  "theme_dark": "Molili",
+  "nemotron_settings": "Ba paramètres ya némotron",
+  "nemotron_model_desc": "Modèle Q8 e télécharger na usage ya liboso mpe ezo tambola localement na appareil oyo.",
+  "nemotron_latency": "Latence ya streaming",
+  "status_loading_nemotron": "Kokɔtisa Nemotron",
+  "status_checking_nemotron": "Ko vérifier modèle ya Nemotron",
+  "nemotron_failed": "Transcription ya némotron elongaki te.",
+  "error_sha256_mismatch": "SHA-256 kozanga boyokani: ezelamaki {expected}, ya solo {actual}",
+  "engine_nemotron_desc": "Esalelaka Nemotron 3.5 ASR Streaming na esika, na détection automatique ya langue mpe ba modes ya latence mitano."
 }

@@ -34,7 +34,6 @@
   "cancel_download": "Anulați descărcarea",
   "delete_model": "Ștergeți {model}",
   "local_translation": "traducere nativă",
-  "translation_desc": "Limba sursă este aplicată la Kitul ML și, de asemenea, la Whisper atunci când traducerea este activată.",
   "source": "Sursa",
   "target": "tinta",
   "translation_enabled_desc": "Afișează sursa și subtitrările traduse",
@@ -85,5 +84,13 @@
   "color_theme": "Temă de culoare",
   "theme_system": "Urmează sistemul",
   "theme_light": "Luminos",
-  "theme_dark": "Întunecat"
+  "theme_dark": "Întunecat",
+  "nemotron_settings": "Setări Nemotron",
+  "nemotron_model_desc": "Modelul Q8 se descarcă la prima utilizare și rulează local pe acest dispozitiv.",
+  "nemotron_latency": "Latența de streaming",
+  "status_loading_nemotron": "Se încarcă Nemotron",
+  "status_checking_nemotron": "Verificarea modelului Nemotron",
+  "nemotron_failed": "Transcrierea Nemotronului a eșuat.",
+  "error_sha256_mismatch": "Nepotrivire SHA-256: așteptat {expected}, real {actual}",
+  "engine_nemotron_desc": "Utilizează Nemotron 3.5 ASR Streaming local, cu detectarea automată a limbii și cinci moduri de latență."
 }

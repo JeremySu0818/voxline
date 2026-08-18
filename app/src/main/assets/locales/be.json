@@ -34,7 +34,6 @@
   "cancel_download": "Адмяніць загрузку",
   "delete_model": "Выдаліць {model}",
   "local_translation": "родны пераклад",
-  "translation_desc": "Зыходная мова прымяняецца да ML Kit, а таксама да Whisper, калі ўключаны пераклад.",
   "source": "Крыніца",
   "target": "мішэнь",
   "translation_enabled_desc": "Паказаць зыходныя і перакладзеныя субтытры",
@@ -85,5 +84,13 @@
   "color_theme": "Каляровая тэма",
   "theme_system": "Як у сістэме",
   "theme_light": "Светлая",
-  "theme_dark": "Цёмная"
+  "theme_dark": "Цёмная",
+  "nemotron_settings": "Налады Nemotron",
+  "nemotron_model_desc": "Мадэль Q8 спампоўваецца пры першым выкарыстанні і працуе лакальна на гэтай прыладзе.",
+  "nemotron_latency": "Затрымка плыні",
+  "status_loading_nemotron": "Загрузка Nemotron",
+  "status_checking_nemotron": "Праверка мадэлі Nemotron",
+  "nemotron_failed": "Збой транскрыпцыі Nemotron.",
+  "error_sha256_mismatch": "Несупадзенне SHA-256: чаканае {expected}, фактычнае {actual}",
+  "engine_nemotron_desc": "Лакальна выкарыстоўвае Nemotron 3.5 ASR Streaming з аўтаматычным вызначэннем мовы і пяццю рэжымамі затрымкі."
 }

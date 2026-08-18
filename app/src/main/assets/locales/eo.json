@@ -34,7 +34,6 @@
   "cancel_download": "Nuligi elŝuton",
   "delete_model": "Forigi {modelo}",
   "local_translation": "denaska traduko",
-  "translation_desc": "La fontlingvo estas aplikata al ML Kit kaj ankaŭ al Whisper kiam tradukado estas ebligita.",
   "source": "Fonto",
   "target": "celo",
   "translation_enabled_desc": "Montru fonton kaj tradukitajn subtekstojn",
@@ -85,5 +84,13 @@
   "color_theme": "Kolora etoso",
   "theme_system": "Laŭ la sistemo",
   "theme_light": "Hela",
-  "theme_dark": "Malhela"
+  "theme_dark": "Malhela",
+  "nemotron_settings": "Nemotron-agordoj",
+  "nemotron_model_desc": "La modelo Q8 elŝutas je la unua uzo kaj funkcias loke sur ĉi tiu aparato.",
+  "nemotron_latency": "Streaming latenteco",
+  "status_loading_nemotron": "Ŝarĝante Nemotron",
+  "status_checking_nemotron": "Kontrolante modelon de Nemotron",
+  "nemotron_failed": "Nemotron-transskribo malsukcesis.",
+  "error_sha256_mismatch": "SHA-256 miskongruo: atendata {expected}, reala {actual}",
+  "engine_nemotron_desc": "Uzas Nemotron 3.5 ASR-Streaming loke, kun aŭtomata lingvo-detekto kaj kvin latentecaj reĝimoj."
 }

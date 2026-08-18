@@ -34,7 +34,6 @@
   "cancel_download": "डाउनलोड रद्द करा",
   "delete_model": "{मॉडेल} हटवा",
   "local_translation": "मूळ अनुवाद",
-  "translation_desc": "स्रोत भाषा ML Kit आणि Whisper वर देखील लागू केली जाते जेव्हा भाषांतर सक्षम केले जाते.",
   "source": "स्त्रोत",
   "target": "लक्ष्य",
   "translation_enabled_desc": "स्रोत आणि अनुवादित उपशीर्षके दर्शवा",
@@ -85,5 +84,13 @@
   "color_theme": "रंग थीम",
   "theme_system": "सिस्टमप्रमाणे",
   "theme_light": "फिकट",
-  "theme_dark": "गडद"
+  "theme_dark": "गडद",
+  "nemotron_settings": "निमोट्रॉन सेटिंग्ज",
+  "nemotron_model_desc": "Q8 मॉडेल पहिल्या वापरावर डाउनलोड होते आणि या डिव्हाइसवर स्थानिक पातळीवर चालते.",
+  "nemotron_latency": "स्ट्रीमिंग विलंब",
+  "status_loading_nemotron": "नेमोट्रॉन लोड करत आहे",
+  "status_checking_nemotron": "निमोट्रॉन मॉडेल तपासत आहे",
+  "nemotron_failed": "निमोट्रॉन ट्रान्सक्रिप्शन अयशस्वी.",
+  "error_sha256_mismatch": "SHA-256 जुळत नाही: अपेक्षित {expected}, वास्तविक {actual}",
+  "engine_nemotron_desc": "स्वयंचलित भाषा शोध आणि पाच लेटन्सी मोडसह स्थानिक पातळीवर निमोट्रॉन 3.5 ASR स्ट्रीमिंग वापरते."
 }

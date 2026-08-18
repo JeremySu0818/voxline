@@ -34,7 +34,6 @@
   "cancel_download": "Yuklashni bekor qilish",
   "delete_model": "{model}ni oʻchirish",
   "local_translation": "mahalliy tarjima",
-  "translation_desc": "Tarjima yoqilganda, manba tili ML Kit va Whisper uchun ham qo'llaniladi.",
   "source": "Manba",
   "target": "maqsad",
   "translation_enabled_desc": "Manba va tarjima qilingan subtitrlarni ko'rsatish",
@@ -85,5 +84,13 @@
   "color_theme": "Rang mavzusi",
   "theme_system": "Tizimga mos",
   "theme_light": "Yorugʻ",
-  "theme_dark": "Qorongʻi"
+  "theme_dark": "Qorongʻi",
+  "nemotron_settings": "Nemotron sozlamalari",
+  "nemotron_model_desc": "Q8 modeli birinchi foydalanishda yuklab olinadi va ushbu qurilmada mahalliy sifatida ishlaydi.",
+  "nemotron_latency": "Oqim kechikishi",
+  "status_loading_nemotron": "Nemotron yuklanmoqda",
+  "status_checking_nemotron": "Nemotron modelini tekshirish",
+  "nemotron_failed": "Nemotron transkripsiyasi amalga oshmadi.",
+  "error_sha256_mismatch": "SHA-256 nomuvofiqligi: kutilgan {expected}, haqiqiy {actual}",
+  "engine_nemotron_desc": "Nemotron 3.5 ASR Streaming-dan mahalliy sifatida foydalanadi, tilni avtomatik aniqlash va beshta kechikish rejimi."
 }

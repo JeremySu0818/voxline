@@ -5,6 +5,7 @@ enum class SpeechEngineOption(
     val label: String,
 ) {
     WHISPER("whisper", "Whisper"),
+    NEMOTRON("nemotron", "Nemotron 3.5"),
     MLKIT_BASIC("mlkit_basic", "ML Kit Basic"),
     MLKIT_ADVANCED("mlkit_advanced", "ML Kit Advanced");
 

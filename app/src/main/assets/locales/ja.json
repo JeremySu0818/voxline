@@ -34,7 +34,6 @@
   "cancel_download": "ダウンロードをキャンセルする",
   "delete_model": "{モデル}を削除",
   "local_translation": "ネイティブ翻訳",
-  "translation_desc": "ソース言語は ML Kit に適用され、翻訳が有効になっている場合は Whisper にも適用されます。",
   "source": "ソース",
   "target": "ターゲット",
   "translation_enabled_desc": "ソースと翻訳された字幕を表示する",
@@ -85,5 +84,13 @@
   "color_theme": "カラーテーマ",
   "theme_system": "システムに合わせる",
   "theme_light": "ライト",
-  "theme_dark": "ダーク"
+  "theme_dark": "ダーク",
+  "nemotron_settings": "ネモトロンの設定",
+  "nemotron_model_desc": "Q8 モデルは最初の使用時にダウンロードされ、このデバイス上でローカルに実行されます。",
+  "nemotron_latency": "ストリーミング遅延",
+  "status_loading_nemotron": "ネモトロンを読み込んでいます",
+  "status_checking_nemotron": "Nemotron モデルの確認",
+  "nemotron_failed": "Nemotron の転写に失敗しました。",
+  "error_sha256_mismatch": "SHA-256 の不一致: 期待値 {expected}、実際の {actual}",
+  "engine_nemotron_desc": "Nemotron 3.5 ASR Streaming をローカルで使用し、自動言語検出と 5 つの遅延モードを備えています。"
 }

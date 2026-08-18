@@ -34,7 +34,6 @@
   "cancel_download": "Peruuta lataus",
   "delete_model": "Poista {model}",
   "local_translation": "äidinkielinen käännös",
-  "translation_desc": "Lähdekieltä käytetään ML Kitissä ja myös Whisperissa, kun käännös on käytössä.",
   "source": "lähde",
   "target": "tavoite",
   "translation_enabled_desc": "Näytä lähde ja käännetyt tekstitykset",
@@ -85,5 +84,13 @@
   "color_theme": "Väriteema",
   "theme_system": "Järjestelmän mukaan",
   "theme_light": "Vaalea",
-  "theme_dark": "Tumma"
+  "theme_dark": "Tumma",
+  "nemotron_settings": "Nemotronin asetukset",
+  "nemotron_model_desc": "Q8-malli latautuu ensimmäisellä käyttökerralla ja toimii paikallisesti tässä laitteessa.",
+  "nemotron_latency": "Suoratoiston viive",
+  "status_loading_nemotron": "Ladataan Nemotronia",
+  "status_checking_nemotron": "Tarkistetaan Nemotron mallia",
+  "nemotron_failed": "Nemotronin transkriptio epäonnistui.",
+  "error_sha256_mismatch": "SHA-256-virhe: odotettu {expected}, todellinen {actual}",
+  "engine_nemotron_desc": "Käyttää Nemotron 3.5 ASR -suoratoistoa paikallisesti, automaattisella kielentunnistuksella ja viidellä viivetilalla."
 }

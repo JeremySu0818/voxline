@@ -34,7 +34,6 @@
   "cancel_download": "Откажете го преземањето",
   "delete_model": "Избриши {model}",
   "local_translation": "мајчин превод",
-  "translation_desc": "Изворниот јазик се применува на ML Kit, а исто така и на Whisper кога е овозможен преводот.",
   "source": "Извор",
   "target": "цел",
   "translation_enabled_desc": "Прикажи извор и преведени преводи",
@@ -85,5 +84,13 @@
   "color_theme": "Тема на бои",
   "theme_system": "Следи го системот",
   "theme_light": "Светла",
-  "theme_dark": "Темна"
+  "theme_dark": "Темна",
+  "nemotron_settings": "Поставки на Немотрон",
+  "nemotron_model_desc": "Моделот Q8 се презема при прва употреба и работи локално на овој уред.",
+  "nemotron_latency": "Латентност на стриминг",
+  "status_loading_nemotron": "Се вчитува Немотрон",
+  "status_checking_nemotron": "Проверка на моделот Немотрон",
+  "nemotron_failed": "Транскрипцијата на Немотрон не успеа.",
+  "error_sha256_mismatch": "SHA-256 несовпаѓање: очекувано {expected}, вистинско {actual}",
+  "engine_nemotron_desc": "Локално користи Nemotron 3.5 ASR Streaming, со автоматско откривање јазик и пет режими на латентност."
 }

@@ -34,7 +34,6 @@
   "cancel_download": "Չեղարկել ներբեռնումը",
   "delete_model": "Ջնջել {model}-ը",
   "local_translation": "մայրենի թարգմանություն",
-  "translation_desc": "Աղբյուրի լեզուն կիրառվում է ML Kit-ի և նաև Whisper-ի համար, երբ թարգմանությունը միացված է:",
   "source": "Աղբյուր",
   "target": "թիրախ",
   "translation_enabled_desc": "Ցույց տալ աղբյուրը և թարգմանված ենթագրերը",
@@ -85,5 +84,13 @@
   "color_theme": "Գունային թեմա",
   "theme_system": "Հետևել համակարգին",
   "theme_light": "Բաց",
-  "theme_dark": "Մուգ"
+  "theme_dark": "Մուգ",
+  "nemotron_settings": "Նեմոտրոնի կարգավորումներ",
+  "nemotron_model_desc": "Q8 մոդելը ներբեռնվում է առաջին օգտագործման ժամանակ և աշխատում է այս սարքի վրա տեղական մակարդակում:",
+  "nemotron_latency": "Հեռարձակման ուշացում",
+  "status_loading_nemotron": "Նեմոտրոնի բեռնում",
+  "status_checking_nemotron": "Nemotron մոդելի ստուգում",
+  "nemotron_failed": "Նեմոտրոնի տառադարձումը ձախողվեց:",
+  "error_sha256_mismatch": "SHA-256 անհամապատասխանություն՝ սպասվող {expected}, փաստացի {actual}",
+  "engine_nemotron_desc": "Օգտագործում է Nemotron 3.5 ASR Streaming-ը տեղական լեզվով, ավտոմատ լեզվի հայտնաբերմամբ և հինգ հետաձգման ռեժիմով:"
 }

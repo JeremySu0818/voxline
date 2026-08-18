@@ -34,7 +34,6 @@
   "cancel_download": "បោះបង់ការទាញយក",
   "delete_model": "លុប {model}",
   "local_translation": "ការបកប្រែដើម",
-  "translation_desc": "ភាសាប្រភពត្រូវបានអនុវត្តចំពោះ ML Kit និងសម្រាប់ Whisper នៅពេលដែលការបកប្រែត្រូវបានបើក។",
   "source": "ប្រភព",
   "target": "គោលដៅ",
   "translation_enabled_desc": "បង្ហាញប្រភព និងចំណងជើងរងដែលបានបកប្រែ",
@@ -85,5 +84,13 @@
   "color_theme": "រចនាប័ទ្មពណ៌",
   "theme_system": "ប្រើតាមប្រព័ន្ធ",
   "theme_light": "ភ្លឺ",
-  "theme_dark": "ងងឹត"
+  "theme_dark": "ងងឹត",
+  "nemotron_settings": "ការកំណត់ Nemotron",
+  "nemotron_model_desc": "ម៉ូដែល Q8 ទាញយកនៅពេលប្រើលើកដំបូង និងដំណើរការក្នុងមូលដ្ឋាននៅលើឧបករណ៍នេះ។",
+  "nemotron_latency": "ភាពយឺតនៃការផ្សាយ",
+  "status_loading_nemotron": "កំពុងផ្ទុក Nemotron",
+  "status_checking_nemotron": "ការពិនិត្យមើលគំរូ Nemotron",
+  "nemotron_failed": "ការចម្លង Nemotron បានបរាជ័យ។",
+  "error_sha256_mismatch": "SHA-256 មិនត្រូវគ្នា៖ រំពឹងទុក {expected}, ជាក់ស្តែង {actual}",
+  "engine_nemotron_desc": "ប្រើ Nemotron 3.5 ASR Streaming ក្នុងស្រុក ជាមួយនឹងការរកឃើញភាសាដោយស្វ័យប្រវត្តិ និងរបៀប latency ប្រាំ។"
 }

@@ -17,6 +17,18 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        externalNativeBuild {
+            cmake {
+                cppFlags += listOf("-O3")
+                arguments += listOf("-DANDROID_STL=c++_shared")
+                targets += "voxline_nemotron"
+            }
+        }
+
+        ndk {
+            abiFilters += listOf("arm64-v8a")
+        }
     }
 
     buildTypes {
@@ -32,6 +44,24 @@ android {
     }
     buildFeatures {
         compose = true
+    }
+    packaging {
+        jniLibs {
+            // ggml discovers backend modules from applicationInfo.nativeLibraryDir at runtime,
+            // so keep JNI libraries as extracted files instead of APK-zip-backed mappings.
+            useLegacyPackaging = true
+            // Whisper and the bundled Nemotron runtime both use the same Android C++ runtime.
+            pickFirsts += "lib/**/libc++_shared.so"
+            // Build-time ABI stub only. At runtime libggml-opencl resolves the device's
+            // public libOpenCL.so through the Android linker namespace.
+            excludes += "lib/**/libOpenCL.so"
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path = file("src/main/cpp/CMakeLists.txt")
+            version = "3.28.3"
+        }
     }
 }
 

@@ -5,6 +5,8 @@ import android.content.Context
 import com.jeremysu0818.voxline.data.VoxlinePreferences
 import com.jeremysu0818.voxline.data.VoxlineRuntimeStore
 import com.jeremysu0818.voxline.mlkit.MlKitSpeechTranscriber
+import com.jeremysu0818.voxline.nemotron.NemotronModelRepository
+import com.jeremysu0818.voxline.nemotron.NemotronTranscriber
 import com.jeremysu0818.voxline.translation.VoxlineTranslator
 import com.jeremysu0818.voxline.whisper.WhisperModelRepository
 import com.jeremysu0818.voxline.whisper.WhisperTranscriber
@@ -20,6 +22,12 @@ object VoxlineGraph {
         private set
 
     lateinit var transcriber: WhisperTranscriber
+        private set
+
+    lateinit var nemotronModelRepository: NemotronModelRepository
+        private set
+
+    lateinit var nemotronTranscriber: NemotronTranscriber
         private set
 
     lateinit var translator: VoxlineTranslator
@@ -40,6 +48,8 @@ object VoxlineGraph {
             com.jeremysu0818.voxline.data.I18n.init(appContext, preferences.settings.value.uiLanguageTag)
             modelRepository = WhisperModelRepository(appContext)
             transcriber = WhisperTranscriber(appContext)
+            nemotronModelRepository = NemotronModelRepository(appContext)
+            nemotronTranscriber = NemotronTranscriber()
             translator = VoxlineTranslator()
             mlKitSpeechTranscriber = MlKitSpeechTranscriber()
             initialized = true

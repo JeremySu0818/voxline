@@ -34,7 +34,6 @@
   "cancel_download": "בטל הורדה",
   "delete_model": "מחק את {דגם}",
   "local_translation": "תרגום שפת אם",
-  "translation_desc": "שפת המקור מוחלת על ML Kit וגם על Whisper כאשר התרגום מופעל.",
   "source": "מקור",
   "target": "מטרה",
   "translation_enabled_desc": "הצג מקור וכתוביות מתורגמות",
@@ -85,5 +84,13 @@
   "color_theme": "ערכת צבעים",
   "theme_system": "בהתאם למערכת",
   "theme_light": "בהיר",
-  "theme_dark": "כהה"
+  "theme_dark": "כהה",
+  "nemotron_settings": "הגדרות נמוטרון",
+  "nemotron_model_desc": "דגם ה-Q8 מוריד בשימוש ראשון ופועל באופן מקומי במכשיר זה.",
+  "nemotron_latency": "זמן אחזור של סטרימינג",
+  "status_loading_nemotron": "טוען נמוטרון",
+  "status_checking_nemotron": "בדיקת דגם נמוטרון",
+  "nemotron_failed": "תעתיק נמוטרון נכשל.",
+  "error_sha256_mismatch": "חוסר התאמה SHA-256: צפוי {expected}, {actual} בפועל",
+  "engine_nemotron_desc": "משתמש ב-Nemotron 3.5 ASR Streaming באופן מקומי, עם זיהוי שפה אוטומטי וחמישה מצבי חביון."
 }

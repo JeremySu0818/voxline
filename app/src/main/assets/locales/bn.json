@@ -34,7 +34,6 @@
   "cancel_download": "ডাউনলোড বাতিল করুন",
   "delete_model": "মুছুন {মডেল}",
   "local_translation": "স্থানীয় অনুবাদ",
-  "translation_desc": "উৎস ভাষা ML কিট এবং এছাড়াও Whisper এ প্রয়োগ করা হয় যখন অনুবাদ সক্ষম করা হয়।",
   "source": "উৎস",
   "target": "লক্ষ্য",
   "translation_enabled_desc": "উত্স এবং অনুবাদিত সাবটাইটেল দেখান৷",
@@ -85,5 +84,13 @@
   "color_theme": "রঙের থিম",
   "theme_system": "সিস্টেম অনুসরণ করুন",
   "theme_light": "হালকা",
-  "theme_dark": "গাঢ়"
+  "theme_dark": "গাঢ়",
+  "nemotron_settings": "নিমোট্রন সেটিংস",
+  "nemotron_model_desc": "Q8 মডেলটি প্রথম ব্যবহারে ডাউনলোড হয় এবং এই ডিভাইসে স্থানীয়ভাবে চলে।",
+  "nemotron_latency": "স্ট্রিমিং লেটেন্সি",
+  "status_loading_nemotron": "নেমোট্রন লোড হচ্ছে",
+  "status_checking_nemotron": "নিমোট্রন মডেল পরীক্ষা করা হচ্ছে",
+  "nemotron_failed": "নিমোট্রন ট্রান্সক্রিপশন ব্যর্থ হয়েছে৷",
+  "error_sha256_mismatch": "SHA-256 অমিল: প্রত্যাশিত {expected}, প্রকৃত {actual}",
+  "engine_nemotron_desc": "স্বয়ংক্রিয় ভাষা সনাক্তকরণ এবং পাঁচটি লেটেন্সি মোড সহ স্থানীয়ভাবে Nemotron 3.5 ASR স্ট্রিমিং ব্যবহার করে।"
 }

@@ -34,7 +34,6 @@
   "cancel_download": "Cancel download",
   "delete_model": "Delere {exemplum}",
   "local_translation": "patria translation",
-  "translation_desc": "Fons lingua ML Ornamentum adhibetur et etiam ad Susurri quando translatio datur.",
   "source": "Source",
   "target": "target",
   "translation_enabled_desc": "Ostende fontem et subtitles translati",
@@ -85,5 +84,13 @@
   "color_theme": "Thema colorum",
   "theme_system": "Systema sequi",
   "theme_light": "Clara",
-  "theme_dark": "Obscura"
+  "theme_dark": "Obscura",
+  "nemotron_settings": "Nemotron occasus",
+  "nemotron_model_desc": "Exemplar Q8 downloads in usu primo et localiter in hac arte decurrit.",
+  "nemotron_latency": "latency streaming",
+  "status_loading_nemotron": "Loading Nemotron",
+  "status_checking_nemotron": "Reprehendo Nemotron exemplar",
+  "nemotron_failed": "Nemotron transcriptio defecit.",
+  "error_sha256_mismatch": "SHA-256 mismatch: expectata {expected}, re {actual}",
+  "engine_nemotron_desc": "Nemotron 3.5 ASR localiter Streaming utitur, latis lingua detectionis et quinque modis latenciis."
 }

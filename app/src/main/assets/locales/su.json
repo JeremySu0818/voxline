@@ -34,7 +34,6 @@
   "cancel_download": "Ngabolaykeun download",
   "delete_model": "Hapus {model}",
   "local_translation": "tarjamah pituin",
-  "translation_desc": "Basa sumber diterapkeun ka ML Kit sareng ka Whisper nalika tarjamahan diaktipkeun.",
   "source": "Sumber",
   "target": "udagan",
   "translation_enabled_desc": "Témbongkeun sumber jeung terjemahan terjemahan",
@@ -85,5 +84,13 @@
   "color_theme": "Téma warna",
   "theme_system": "Turutan sistem",
   "theme_light": "Caang",
-  "theme_dark": "Poék"
+  "theme_dark": "Poék",
+  "nemotron_settings": "Setélan Nemotron",
+  "nemotron_model_desc": "Modél Q8 diunduh nalika dianggo munggaran sareng dijalankeun sacara lokal dina alat ieu.",
+  "nemotron_latency": "Latén streaming",
+  "status_loading_nemotron": "Ngamuat Nemotron",
+  "status_checking_nemotron": "Mariksa modél Nemotron",
+  "nemotron_failed": "Transkripsi Nemotron gagal.",
+  "error_sha256_mismatch": "SHA-256 mismatch: diperkirakeun {expected}, sabenerna {actual}",
+  "engine_nemotron_desc": "Anggo Nemotron 3.5 ASR Streaming sacara lokal, kalayan deteksi basa otomatis sareng lima modeu latency."
 }

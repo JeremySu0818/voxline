@@ -34,7 +34,6 @@
   "cancel_download": "Anulo shkarkimin",
   "delete_model": "Fshi {model}",
   "local_translation": "përkthim amtare",
-  "translation_desc": "Gjuha burimore zbatohet në ML Kit dhe gjithashtu në Whisper kur aktivizohet përkthimi.",
   "source": "Burimi",
   "target": "objektiv",
   "translation_enabled_desc": "Shfaq burimin dhe titrat e përkthyera",
@@ -85,5 +84,13 @@
   "color_theme": "Tema e ngjyrave",
   "theme_system": "Ndiq sistemin",
   "theme_light": "E çelët",
-  "theme_dark": "E errët"
+  "theme_dark": "E errët",
+  "nemotron_settings": "Cilësimet e Nemotronit",
+  "nemotron_model_desc": "Modeli Q8 shkarkohet në përdorimin e parë dhe funksionon në nivel lokal në këtë pajisje.",
+  "nemotron_latency": "Vonesa e transmetimit",
+  "status_loading_nemotron": "Po ngarkohet Nemotron",
+  "status_checking_nemotron": "Kontrollimi i modelit Nemotron",
+  "nemotron_failed": "Transkriptimi i Nemotronit dështoi.",
+  "error_sha256_mismatch": "Mospërputhja SHA-256: e pritshme {expected}, aktuale {actual}",
+  "engine_nemotron_desc": "Përdor Nemotron 3.5 ASR Streaming në nivel lokal, me zbulimin automatik të gjuhës dhe pesë mënyra latente."
 }

@@ -34,7 +34,6 @@
   "cancel_download": "Ακύρωση λήψης",
   "delete_model": "Διαγραφή {model}",
   "local_translation": "εγγενής μετάφραση",
-  "translation_desc": "Η γλώσσα πηγής εφαρμόζεται στο ML Kit και επίσης στο Whisper όταν είναι ενεργοποιημένη η μετάφραση.",
   "source": "Πηγή",
   "target": "στόχος",
   "translation_enabled_desc": "Εμφάνιση πηγής και μεταφρασμένων υπότιτλων",
@@ -85,5 +84,13 @@
   "color_theme": "Χρωματικό θέμα",
   "theme_system": "Ακολουθήστε το σύστημα",
   "theme_light": "Φωτεινό",
-  "theme_dark": "Σκούρο"
+  "theme_dark": "Σκούρο",
+  "nemotron_settings": "Ρυθμίσεις Nemotron",
+  "nemotron_model_desc": "Το μοντέλο Q8 πραγματοποιεί λήψη κατά την πρώτη χρήση και εκτελείται τοπικά σε αυτήν τη συσκευή.",
+  "nemotron_latency": "Καθυστέρηση ροής",
+  "status_loading_nemotron": "Φόρτωση Nemotron",
+  "status_checking_nemotron": "Έλεγχος του μοντέλου Nemotron",
+  "nemotron_failed": "Η μεταγραφή Nemotron απέτυχε.",
+  "error_sha256_mismatch": "Αναντιστοιχία SHA-256: αναμενόμενη {expected}, πραγματική {actual}",
+  "engine_nemotron_desc": "Χρησιμοποιεί τοπικά το Nemotron 3.5 ASR Streaming, με αυτόματη ανίχνευση γλώσσας και πέντε λειτουργίες καθυστέρησης."
 }

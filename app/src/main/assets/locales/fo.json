@@ -34,7 +34,6 @@
   "cancel_download": "Avlýs niðurtøku",
   "delete_model": "Strika {modell}",
   "local_translation": "innfødd týðing",
-  "translation_desc": "Keldumálið er brúkt til ML Kit og eisini til Whisper tá týðing er virkin.",
   "source": "Kelda",
   "target": "mark",
   "translation_enabled_desc": "Vís keldu- og týddar undirtekstir",
@@ -85,5 +84,13 @@
   "color_theme": "Littema",
   "theme_system": "Fylg skipanini",
   "theme_light": "Ljóst",
-  "theme_dark": "Myrkt"
+  "theme_dark": "Myrkt",
+  "nemotron_settings": "Nemotron innstillingar",
+  "nemotron_model_desc": "Q8 modellið heinta við fyrstu nýtslu og koyrir lokalt á hesum tólinum.",
+  "nemotron_latency": "Stroymingsdráttur",
+  "status_loading_nemotron": "Heinta Nemotron",
+  "status_checking_nemotron": "Kanna Nemotron-modellið",
+  "nemotron_failed": "Nemotron-umskrivingin miseydnaðist.",
+  "error_sha256_mismatch": "SHA-256 ósamsvar: væntað {expected}, veruligt {actual}",
+  "engine_nemotron_desc": "Brúkar Nemotron 3.5 ASR Stroyming lokalt, við sjálvvirkandi málavdúking og fimm seinkingarháttum."
 }

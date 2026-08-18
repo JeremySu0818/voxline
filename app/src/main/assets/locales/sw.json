@@ -34,7 +34,6 @@
   "cancel_download": "Ghairi upakuaji",
   "delete_model": "Futa {model}",
   "local_translation": "tafsiri ya asili",
-  "translation_desc": "Lugha chanzi inatumika kwa ML Kit na pia kwa Whisper wakati tafsiri imewashwa.",
   "source": "Chanzo",
   "target": "lengo",
   "translation_enabled_desc": "Onyesha chanzo na manukuu yaliyotafsiriwa",
@@ -85,5 +84,13 @@
   "color_theme": "Mandhari ya rangi",
   "theme_system": "Fuata mfumo",
   "theme_light": "Angavu",
-  "theme_dark": "Giza"
+  "theme_dark": "Giza",
+  "nemotron_settings": "Mipangilio ya Nemotron",
+  "nemotron_model_desc": "Muundo wa Q8 hupakuliwa unapotumiwa mara ya kwanza na hutumika kwenye kifaa hiki.",
+  "nemotron_latency": "Muda wa kusubiri wa kutiririsha",
+  "status_loading_nemotron": "Inapakia Nemotron",
+  "status_checking_nemotron": "Kuangalia mfano wa Nemotron",
+  "nemotron_failed": "Unukuzi wa Nemotron haukufaulu.",
+  "error_sha256_mismatch": "SHA-256 kutolingana: inatarajiwa {expected}, halisi {actual}",
+  "engine_nemotron_desc": "Hutumia Utiririshaji wa Nemotron 3.5 ASR ndani ya nchi, ikiwa na utambuzi wa lugha kiotomatiki na hali tano za kusubiri."
 }

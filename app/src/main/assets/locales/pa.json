@@ -34,7 +34,6 @@
   "cancel_download": "ਡਾਊਨਲੋਡ ਰੱਦ ਕਰੋ",
   "delete_model": "{ਮੋਡਲ} ਮਿਟਾਓ",
   "local_translation": "ਮੂਲ ਅਨੁਵਾਦ",
-  "translation_desc": "ਸਰੋਤ ਭਾਸ਼ਾ ML ਕਿੱਟ ਅਤੇ Whisper 'ਤੇ ਵੀ ਲਾਗੂ ਕੀਤੀ ਜਾਂਦੀ ਹੈ ਜਦੋਂ ਅਨੁਵਾਦ ਸਮਰੱਥ ਹੁੰਦਾ ਹੈ।",
   "source": "ਸਰੋਤ",
   "target": "ਟੀਚਾ",
   "translation_enabled_desc": "ਸਰੋਤ ਅਤੇ ਅਨੁਵਾਦ ਕੀਤੇ ਉਪਸਿਰਲੇਖ ਦਿਖਾਓ",
@@ -85,5 +84,13 @@
   "color_theme": "ਰੰਗ ਥੀਮ",
   "theme_system": "ਸਿਸਟਮ ਮੁਤਾਬਕ",
   "theme_light": "ਹਲਕਾ",
-  "theme_dark": "ਗੂੜ੍ਹਾ"
+  "theme_dark": "ਗੂੜ੍ਹਾ",
+  "nemotron_settings": "ਨਿਮੋਟ੍ਰੋਨ ਸੈਟਿੰਗਾਂ",
+  "nemotron_model_desc": "Q8 ਮਾਡਲ ਪਹਿਲੀ ਵਰਤੋਂ 'ਤੇ ਡਾਊਨਲੋਡ ਹੁੰਦਾ ਹੈ ਅਤੇ ਇਸ ਡਿਵਾਈਸ 'ਤੇ ਸਥਾਨਕ ਤੌਰ 'ਤੇ ਚੱਲਦਾ ਹੈ।",
+  "nemotron_latency": "ਸਟ੍ਰੀਮਿੰਗ ਲੇਟੈਂਸੀ",
+  "status_loading_nemotron": "ਨਿਮੋਟ੍ਰੋਨ ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ",
+  "status_checking_nemotron": "ਨੇਮੋਟ੍ਰੋਨ ਮਾਡਲ ਦੀ ਜਾਂਚ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ",
+  "nemotron_failed": "ਨਿਮੋਟ੍ਰੋਨ ਪ੍ਰਤੀਲਿਪੀ ਅਸਫਲ।",
+  "error_sha256_mismatch": "SHA-256 ਬੇਮੇਲ: ਸੰਭਾਵਿਤ {expected}, ਅਸਲ {actual}",
+  "engine_nemotron_desc": "ਆਟੋਮੈਟਿਕ ਭਾਸ਼ਾ ਖੋਜ ਅਤੇ ਪੰਜ ਲੇਟੈਂਸੀ ਮੋਡਾਂ ਦੇ ਨਾਲ, ਸਥਾਨਕ ਤੌਰ 'ਤੇ ਨੇਮੋਟ੍ਰੋਨ 3.5 ASR ਸਟ੍ਰੀਮਿੰਗ ਦੀ ਵਰਤੋਂ ਕਰਦਾ ਹੈ।"
 }

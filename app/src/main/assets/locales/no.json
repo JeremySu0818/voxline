@@ -34,7 +34,6 @@
   "cancel_download": "Avbryt nedlasting",
   "delete_model": "Slett {model}",
   "local_translation": "innfødt oversettelse",
-  "translation_desc": "Kildespråket brukes på ML Kit og også på Whisper når oversettelse er aktivert.",
   "source": "Kilde",
   "target": "mål",
   "translation_enabled_desc": "Vis kilde og oversatte undertekster",
@@ -85,5 +84,13 @@
   "color_theme": "Fargetema",
   "theme_system": "Følg systemet",
   "theme_light": "Lys",
-  "theme_dark": "Mørk"
+  "theme_dark": "Mørk",
+  "nemotron_settings": "Nemotron-innstillinger",
+  "nemotron_model_desc": "Q8-modellen lastes ned ved første gangs bruk og kjører lokalt på denne enheten.",
+  "nemotron_latency": "Strømmeforsinkelse",
+  "status_loading_nemotron": "Laster inn Nemotron",
+  "status_checking_nemotron": "Sjekker Nemotron-modellen",
+  "nemotron_failed": "Nemotron-transkripsjon mislyktes.",
+  "error_sha256_mismatch": "SHA-256 mismatch: forventet {expected}, faktisk {actual}",
+  "engine_nemotron_desc": "Bruker Nemotron 3.5 ASR Streaming lokalt, med automatisk språkdeteksjon og fem ventemoduser."
 }

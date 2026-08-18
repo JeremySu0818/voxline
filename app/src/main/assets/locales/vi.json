@@ -34,7 +34,6 @@
   "cancel_download": "Hủy tải xuống",
   "delete_model": "Xóa {mô hình}",
   "local_translation": "bản dịch bản xứ",
-  "translation_desc": "Ngôn ngữ nguồn được áp dụng cho ML Kit và cả Whisper khi bật tính năng dịch.",
   "source": "Nguồn",
   "target": "mục tiêu",
   "translation_enabled_desc": "Hiển thị nguồn và phụ đề đã dịch",
@@ -85,5 +84,13 @@
   "color_theme": "Chủ đề màu sắc",
   "theme_system": "Theo hệ thống",
   "theme_light": "Sáng",
-  "theme_dark": "Tối"
+  "theme_dark": "Tối",
+  "nemotron_settings": "Cài đặt Nemotron",
+  "nemotron_model_desc": "Mẫu Q8 tải xuống trong lần sử dụng đầu tiên và chạy cục bộ trên thiết bị này.",
+  "nemotron_latency": "Độ trễ phát trực tuyến",
+  "status_loading_nemotron": "Đang tải Nemotron",
+  "status_checking_nemotron": "Kiểm tra mô hình Nemotron",
+  "nemotron_failed": "Phiên mã Nemotron không thành công.",
+  "error_sha256_mismatch": "SHA-256 không khớp: dự kiến {expected}, thực tế {actual}",
+  "engine_nemotron_desc": "Sử dụng Nemotron 3.5 ASR Truyền phát cục bộ, với tính năng phát hiện ngôn ngữ tự động và năm chế độ độ trễ."
 }

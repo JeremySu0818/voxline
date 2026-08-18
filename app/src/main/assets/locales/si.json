@@ -34,7 +34,6 @@
   "cancel_download": "බාගැනීම අවලංගු කරන්න",
   "delete_model": "{model} මකන්න",
   "local_translation": "දේශීය පරිවර්තනය",
-  "translation_desc": "මූලාශ්‍ර භාෂාව ML Kit වෙත සහ පරිවර්තනය සක්‍රීය කළ විට Whisper වෙතද යෙදේ.",
   "source": "මූලාශ්රය",
   "target": "ඉලක්කය",
   "translation_enabled_desc": "මූලාශ්‍රය සහ පරිවර්තනය කළ උපසිරැසි පෙන්වන්න",
@@ -85,5 +84,13 @@
   "color_theme": "වර්ණ තේමාව",
   "theme_system": "පද්ධතිය අනුගමනය කරන්න",
   "theme_light": "ආලෝක",
-  "theme_dark": "අඳුරු"
+  "theme_dark": "අඳුරු",
+  "nemotron_settings": "Nemotron සැකසුම්",
+  "nemotron_model_desc": "Q8 මාදිලිය පළමු භාවිතයේදී බාගත කර මෙම උපාංගය මත දේශීයව ධාවනය වේ.",
+  "nemotron_latency": "ප්‍රවාහ ප්‍රමාදය",
+  "status_loading_nemotron": "Nemotron පූරණය කරමින්",
+  "status_checking_nemotron": "Nemotron ආකෘතිය පරීක්ෂා කිරීම",
+  "nemotron_failed": "Nemotron පිටපත් කිරීම අසාර්ථක විය.",
+  "error_sha256_mismatch": "SHA-256 නොගැලපීම: අපේක්ෂිත {expected}, සැබෑ {actual}",
+  "engine_nemotron_desc": "Nemotron 3.5 ASR ප්‍රවාහය දේශීයව, ස්වයංක්‍රීය භාෂා හඳුනාගැනීම සහ ප්‍රමාද ක්‍රම පහක් සමඟ භාවිතා කරයි."
 }

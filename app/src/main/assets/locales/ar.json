@@ -34,7 +34,6 @@
   "cancel_download": "إلغاء التنزيل",
   "delete_model": "حذف {نموذج}",
   "local_translation": "الترجمة الأصلية",
-  "translation_desc": "يتم تطبيق اللغة المصدر على ML Kit وأيضًا على Whisper عند تمكين الترجمة.",
   "source": "المصدر",
   "target": "الهدف",
   "translation_enabled_desc": "إظهار المصدر والترجمات المترجمة",
@@ -85,5 +84,13 @@
   "color_theme": "سمة الألوان",
   "theme_system": "اتّباع النظام",
   "theme_light": "فاتح",
-  "theme_dark": "داكن"
+  "theme_dark": "داكن",
+  "nemotron_settings": "إعدادات النيموترون",
+  "nemotron_model_desc": "يتم تنزيل طراز Q8 عند الاستخدام لأول مرة ويتم تشغيله محليًا على هذا الجهاز.",
+  "nemotron_latency": "تدفق الكمون",
+  "status_loading_nemotron": "تحميل نيموترون",
+  "status_checking_nemotron": "التحقق من نموذج النيموترون",
+  "nemotron_failed": "فشل نسخ النيموترون.",
+  "error_sha256_mismatch": "عدم تطابق SHA-256: المتوقع {expected}، الفعلي {actual}",
+  "engine_nemotron_desc": "يستخدم Nemotron 3.5 ASR Streaming محليًا، مع الكشف التلقائي عن اللغة وخمسة أوضاع لزمن الاستجابة."
 }

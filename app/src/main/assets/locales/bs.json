@@ -34,7 +34,6 @@
   "cancel_download": "Otkažite preuzimanje",
   "delete_model": "Izbriši {model}",
   "local_translation": "izvorni prevod",
-  "translation_desc": "Izvorni jezik se primjenjuje na ML Kit i također na Whisper kada je prijevod omogućen.",
   "source": "Izvor",
   "target": "cilj",
   "translation_enabled_desc": "Prikaži izvor i prevedene titlove",
@@ -85,5 +84,13 @@
   "color_theme": "Tema boja",
   "theme_system": "Prati sistem",
   "theme_light": "Svijetla",
-  "theme_dark": "Tamna"
+  "theme_dark": "Tamna",
+  "nemotron_settings": "Nemotron postavke",
+  "nemotron_model_desc": "Model Q8 preuzima se prilikom prve upotrebe i radi lokalno na ovom uređaju.",
+  "nemotron_latency": "Kašnjenje strujanja",
+  "status_loading_nemotron": "Loading Nemotron",
+  "status_checking_nemotron": "Provjera Nemotron modela",
+  "nemotron_failed": "Nemotron transkripcija nije uspjela.",
+  "error_sha256_mismatch": "SHA-256 nepodudaranje: očekivano {expected}, stvarno {actual}",
+  "engine_nemotron_desc": "Koristi Nemotron 3.5 ASR Streaming lokalno, s automatskim otkrivanjem jezika i pet načina kašnjenja."
 }

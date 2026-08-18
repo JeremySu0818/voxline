@@ -34,7 +34,6 @@
   "cancel_download": "Cealaigh íoslódáil",
   "delete_model": "Scrios {model}",
   "local_translation": "aistriúchán dúchais",
-  "translation_desc": "Cuirtear an teanga foinse i bhfeidhm ar ML Kit agus freisin ar Whisper nuair a bhíonn an t-aistriúchán cumasaithe.",
   "source": "Foinse",
   "target": "sprioc",
   "translation_enabled_desc": "Taispeáin foinse agus fotheidil aistrithe",
@@ -85,5 +84,13 @@
   "color_theme": "Téama datha",
   "theme_system": "Lean an córas",
   "theme_light": "Geal",
-  "theme_dark": "Dorcha"
+  "theme_dark": "Dorcha",
+  "nemotron_settings": "Socruithe Nemotron",
+  "nemotron_model_desc": "Íoslódálann samhail Q8 ar an gcéad úsáid agus ritheann sé go háitiúil ar an ngléas seo.",
+  "nemotron_latency": "latency sruthú",
+  "status_loading_nemotron": "Nemotron á lódáil",
+  "status_checking_nemotron": "Seiceáil múnla Nemotron",
+  "nemotron_failed": "Theip ar thrascríobh Nemotron.",
+  "error_sha256_mismatch": "Neamhréir SHA-256: ag súil le {expected}, {actual} iarbhír",
+  "engine_nemotron_desc": "Úsáideann Nemotron 3.5 ASR Streaming go háitiúil, le braite teanga uathoibríoch agus cúig mhodh latency."
 }

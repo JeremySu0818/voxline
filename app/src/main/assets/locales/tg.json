@@ -34,7 +34,6 @@
   "cancel_download": "Бекор кардани зеркашӣ",
   "delete_model": "{model}-ро нест кунед",
   "local_translation": "тарҷумаи модарӣ",
-  "translation_desc": "Забони манбаъ ба ML Kit ва инчунин ба Whisper ҳангоми фаъол кардани тарҷума истифода мешавад.",
   "source": "Манбаъ",
   "target": "ҳадаф",
   "translation_enabled_desc": "Сарчашма ва субтитрҳои тарҷумашударо нишон диҳед",
@@ -85,5 +84,13 @@
   "color_theme": "Мавзӯи ранг",
   "theme_system": "Аз рӯи система",
   "theme_light": "Равшан",
-  "theme_dark": "Торик"
+  "theme_dark": "Торик",
+  "nemotron_settings": "Танзимоти Nemotron",
+  "nemotron_model_desc": "Модели Q8 ҳангоми истифодаи аввал зеркашӣ карда мешавад ва дар ин дастгоҳ ба таври маҳаллӣ кор мекунад.",
+  "nemotron_latency": "Таъхири ҷараён",
+  "status_loading_nemotron": "Немотрон бор карда мешавад",
+  "status_checking_nemotron": "Санҷиши модели Nemotron",
+  "nemotron_failed": "Транскрипсияи немотрон ноком шуд.",
+  "error_sha256_mismatch": "Мутобиқати SHA-256: интизорӣ {expected}, воқеӣ {actual}",
+  "engine_nemotron_desc": "Nemotron 3.5 ASR Streaming-ро ба таври маҳаллӣ бо муайянкунии автоматии забон ва панҷ ҳолати таъхирнопазир истифода мебарад."
 }

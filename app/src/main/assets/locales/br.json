@@ -34,7 +34,6 @@
   "cancel_download": "Nullañ ar pellgargañ",
   "delete_model": "Dilemel {patrom}",
   "local_translation": "troidigezh orin",
-  "translation_desc": "Arveret e vez ar yezh orin evit ML Kit hag ivez evit Whisper pa vez gweredekaet an droidigezh.",
   "source": "Mammenn",
   "target": "tarzh",
   "translation_enabled_desc": "Diskouez an istitloù orin hag troet",
@@ -85,5 +84,13 @@
   "color_theme": "Neuz al livioù",
   "theme_system": "Heuliañ ar reizhiad",
   "theme_light": "Sklaer",
-  "theme_dark": "Teñval"
+  "theme_dark": "Teñval",
+  "nemotron_settings": "Arventennoù nemotron",
+  "nemotron_model_desc": "Ar patrom Q8 a vez pellgarget pa vez implijet evit ar wech kentañ hag a ya en-dro lec'hel war an dafariad-mañ.",
+  "nemotron_latency": "Daleoù skignañ",
+  "status_loading_nemotron": "O kargañ Nemotron",
+  "status_checking_nemotron": "Gwiriañ ar patrom Nemotron",
+  "nemotron_failed": "C'hwitet en deus an treuzskrivadur nemotron.",
+  "error_sha256_mismatch": "SHA-256 direizhder : {expected} gortozet, {actual} gwirion",
+  "engine_nemotron_desc": "Implijout a ra Nemotron 3.5 ASR Streaming lec'hel, gant detektadur yezh emgefre ha pemp mod dale."
 }

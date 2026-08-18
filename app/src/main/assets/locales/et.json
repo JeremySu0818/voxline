@@ -34,7 +34,6 @@
   "cancel_download": "Tühista allalaadimine",
   "delete_model": "Kustuta {model}",
   "local_translation": "emakeele tõlge",
-  "translation_desc": "Lähtekeelt rakendatakse ML Kitile ja ka Whisperile, kui tõlkimine on lubatud.",
   "source": "Allikas",
   "target": "sihtmärk",
   "translation_enabled_desc": "Kuva allikas ja tõlgitud subtiitrid",
@@ -85,5 +84,13 @@
   "color_theme": "Värviteema",
   "theme_system": "Järgi süsteemi",
   "theme_light": "Hele",
-  "theme_dark": "Tume"
+  "theme_dark": "Tume",
+  "nemotron_settings": "Nemotroni seaded",
+  "nemotron_model_desc": "Q8 mudel laaditakse alla esimesel kasutamisel ja töötab selles seadmes kohapeal.",
+  "nemotron_latency": "Voogesituse latentsus",
+  "status_loading_nemotron": "Nemotroni laadimine",
+  "status_checking_nemotron": "Nemotroni mudeli kontrollimine",
+  "nemotron_failed": "Nemotroni transkriptsioon ebaõnnestus.",
+  "error_sha256_mismatch": "SHA-256 mittevastavus: eeldatav {expected}, tegelik {actual}",
+  "engine_nemotron_desc": "Kasutab Nemotron 3.5 ASR Streaming kohapeal, automaatse keeletuvastuse ja viie latentsusrežiimiga."
 }

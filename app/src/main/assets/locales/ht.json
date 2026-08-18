@@ -34,7 +34,6 @@
   "cancel_download": "Anile download",
   "delete_model": "Efase {modèl}",
   "local_translation": "tradiksyon natif natal",
-  "translation_desc": "Lang sous la aplike nan ML Kit epi tou nan Whisper lè tradiksyon an pèmèt.",
   "source": "Sous",
   "target": "sib",
   "translation_enabled_desc": "Montre sous-titre yo ak tradui yo",
@@ -85,5 +84,13 @@
   "color_theme": "Tèm koulè",
   "theme_system": "Swiv sistèm nan",
   "theme_light": "Klè",
-  "theme_dark": "Fènwa"
+  "theme_dark": "Fènwa",
+  "nemotron_settings": "Anviwònman Nemotron",
+  "nemotron_model_desc": "Modèl Q8 telechaje sou premye itilizasyon epi kouri lokalman sou aparèy sa a.",
+  "nemotron_latency": "Latansi difizyon",
+  "status_loading_nemotron": "Chaje Nemotron",
+  "status_checking_nemotron": "Tcheke modèl Nemotron",
+  "nemotron_failed": "Transkripsyon Nemotron echwe.",
+  "error_sha256_mismatch": "SHA-256 dezakò: espere {expected}, aktyèl {actual}",
+  "engine_nemotron_desc": "Itilize Nemotron 3.5 ASR Streaming lokalman, ak deteksyon otomatik lang ak senk mòd latansi."
 }

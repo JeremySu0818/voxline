@@ -34,7 +34,6 @@
   "cancel_download": "Foana ny fampidinana",
   "delete_model": "Fafao {modely}",
   "local_translation": "fandikan-teny teratany",
-  "translation_desc": "Ny fiteny loharano dia ampiharina amin'ny ML Kit ary koa amin'ny Whisper rehefa alefa ny fandikana.",
   "source": "Loharano",
   "target": "tanjona",
   "translation_enabled_desc": "Asehoy ny loharano sy dikanteny nadika",
@@ -85,5 +84,13 @@
   "color_theme": "Lohahevitra loko",
   "theme_system": "Araho ny rafitra",
   "theme_light": "Mazava",
-  "theme_dark": "Maizina"
+  "theme_dark": "Maizina",
+  "nemotron_settings": "Fikirana Nemotron",
+  "nemotron_model_desc": "Ny modely Q8 dia misintona amin'ny fampiasana voalohany ary mandeha eo an-toerana amin'ity fitaovana ity.",
+  "nemotron_latency": "Fampitandremana streaming",
+  "status_loading_nemotron": "Loading Nemotron",
+  "status_checking_nemotron": "Fanamarinana ny modely Nemotron",
+  "nemotron_failed": "Tsy nahomby ny fandikana ny Nemotron.",
+  "error_sha256_mismatch": "SHA-256 tsy mifanentana: andrasana {expected}, tena {actual}",
+  "engine_nemotron_desc": "Mampiasa Nemotron 3.5 ASR Streaming eo an-toerana, miaraka amin'ny fitadiavana fiteny mandeha ho azy ary maodely dimy."
 }

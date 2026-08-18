@@ -34,7 +34,6 @@
   "cancel_download": "באָטל מאַכן אראפקאפיע",
   "delete_model": "ויסמעקן {מאָדעל}",
   "local_translation": "געבוירן איבערזעצונג",
-  "translation_desc": "די מקור שפּראַך איז געווענדט צו ML Kit און אויך ווהיספּער ווען איבערזעצונג איז ענייבאַלד.",
   "source": "מקור",
   "target": "ציל",
   "translation_enabled_desc": "ווייַזן מקור און איבערגעזעצט סאַבטייטאַלז",
@@ -85,5 +84,13 @@
   "color_theme": "קאָליר טעמע",
   "theme_system": "לויטן סיסטעם",
   "theme_light": "ליכט",
-  "theme_dark": "טונקל"
+  "theme_dark": "טונקל",
+  "nemotron_settings": "נעמאָטראָן סעטטינגס",
+  "nemotron_model_desc": "די Q8 מאָדעל דאַונלאָודז אויף דער ערשטער נוצן און לויפט לאָוקאַלי אויף דעם מיטל.",
+  "nemotron_latency": "סטרימינג לייטאַנסי",
+  "status_loading_nemotron": "לאָודינג נעמאָטראָן",
+  "status_checking_nemotron": "קאָנטראָלירן די נעמאָטראָן מאָדעל",
+  "nemotron_failed": "נעמאָטראָן טראַנסקריפּציע ניט אַנדערש.",
+  "error_sha256_mismatch": "SHA-256 מיסמאַטש: דערוואַרט {expected}, פאַקטיש {actual}",
+  "engine_nemotron_desc": "ניצט Nemotron 3.5 ASR סטרימינג לאָוקאַלי, מיט אָטאַמאַטיק שפּראַך דיטעקשאַן און פינף לייטאַנסי מאָדעס."
 }

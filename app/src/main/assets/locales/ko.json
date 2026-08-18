@@ -34,7 +34,6 @@
   "cancel_download": "다운로드 취소",
   "delete_model": "{모델} 삭제",
   "local_translation": "원어민 번역",
-  "translation_desc": "ML Kit에는 소스 언어가 적용되며, 번역이 활성화되면 Whisper에도 적용됩니다.",
   "source": "소스",
   "target": "목표",
   "translation_enabled_desc": "소스 및 번역된 자막 표시",
@@ -85,5 +84,13 @@
   "color_theme": "색상 테마",
   "theme_system": "시스템 설정",
   "theme_light": "라이트",
-  "theme_dark": "다크"
+  "theme_dark": "다크",
+  "nemotron_settings": "네모트론 설정",
+  "nemotron_model_desc": "Q8 모델은 처음 사용할 때 다운로드되어 이 장치에서 로컬로 실행됩니다.",
+  "nemotron_latency": "스트리밍 대기 시간",
+  "status_loading_nemotron": "네모트론 로딩",
+  "status_checking_nemotron": "네모트론 모델 확인",
+  "nemotron_failed": "Nemotron 전사에 실패했습니다.",
+  "error_sha256_mismatch": "SHA-256 불일치: 예상 {expected}, 실제 {actual}",
+  "engine_nemotron_desc": "자동 언어 감지 및 5가지 대기 모드를 갖춘 Nemotron 3.5 ASR 스트리밍을 로컬로 사용합니다."
 }

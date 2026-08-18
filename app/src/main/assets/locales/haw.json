@@ -34,7 +34,6 @@
   "cancel_download": "Hoʻopau i ka hoʻoiho ʻana",
   "delete_model": "Holoi {ke kumu hoʻohālike}",
   "local_translation": "unuhi maoli",
-  "translation_desc": "Hoʻohana ʻia ka ʻōlelo kumu iā ML Kit a me Whisper ke hiki ke hoʻohana ʻia ka unuhi.",
   "source": "Puna",
   "target": "pahu hopu",
   "translation_enabled_desc": "Hōʻike i ke kumu a me nā huaʻōlelo unuhi",
@@ -85,5 +84,13 @@
   "color_theme": "Kumuhana waihoʻoluʻu",
   "theme_system": "Hahai i ka ʻōnaehana",
   "theme_light": "Mālamalama",
-  "theme_dark": "Pōʻeleʻele"
+  "theme_dark": "Pōʻeleʻele",
+  "nemotron_settings": "Nā hoʻonohonoho Nemotron",
+  "nemotron_model_desc": "Hoʻoiho ʻia ke kumu hoʻohālike Q8 i ka hoʻohana mua ʻana a holo ma ka ʻāina ma kēia hāmeʻa.",
+  "nemotron_latency": "Ka hoʻoheheʻe ʻana",
+  "status_loading_nemotron": "Ke hoʻouka nei iā Nemotron",
+  "status_checking_nemotron": "Ke nānā nei i ka hoʻohālike Nemotron",
+  "nemotron_failed": "ʻAʻole hiki ke unuhi ʻia ʻo Nemotron.",
+  "error_sha256_mismatch": "Kūlike ʻole SHA-256: manaʻo ʻia {expected}, {actual} maoli",
+  "engine_nemotron_desc": "Hoʻohana i ka Nemotron 3.5 ASR Streaming ma ka ʻāina, me ka ʻike ʻana i ka ʻōlelo a me ʻelima mau ʻano latency."
 }

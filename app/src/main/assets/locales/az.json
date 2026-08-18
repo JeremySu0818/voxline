@@ -34,7 +34,6 @@
   "cancel_download": "Yükləməni ləğv edin",
   "delete_model": "{model} silin",
   "local_translation": "yerli tərcümə",
-  "translation_desc": "Tərcümə aktiv olduqda mənbə dil ML Kitinə və həmçinin Pıçıltıya tətbiq edilir.",
   "source": "Mənbə",
   "target": "hədəf",
   "translation_enabled_desc": "Mənbə və tərcümə edilmiş altyazıları göstərin",
@@ -85,5 +84,13 @@
   "color_theme": "Rəng mövzusu",
   "theme_system": "Sistemi izlə",
   "theme_light": "Açıq",
-  "theme_dark": "Tünd"
+  "theme_dark": "Tünd",
+  "nemotron_settings": "Nemotron parametrləri",
+  "nemotron_model_desc": "Q8 modeli ilk istifadədə yüklənir və bu cihazda yerli olaraq işləyir.",
+  "nemotron_latency": "Yayım gecikməsi",
+  "status_loading_nemotron": "Nemotron yüklənir",
+  "status_checking_nemotron": "Nemotron modelinin yoxlanılması",
+  "nemotron_failed": "Nemotron transkripsiyası uğursuz oldu.",
+  "error_sha256_mismatch": "SHA-256 uyğunsuzluğu: gözlənilən {expected}, faktiki {actual}",
+  "engine_nemotron_desc": "Avtomatik dil aşkarlanması və beş gecikmə rejimi ilə yerli Nemotron 3.5 ASR Streaming-dən istifadə edir."
 }

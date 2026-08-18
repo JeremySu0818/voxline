@@ -34,7 +34,6 @@
   "cancel_download": "डाउनलोड रद्द करें",
   "delete_model": "{मॉडल} हटाएं",
   "local_translation": "देशी अनुवाद",
-  "translation_desc": "अनुवाद सक्षम होने पर स्रोत भाषा एमएल किट और व्हिस्पर पर भी लागू होती है।",
   "source": "स्रोत",
   "target": "लक्ष्य",
   "translation_enabled_desc": "स्रोत और अनुवादित उपशीर्षक दिखाएँ",
@@ -85,5 +84,13 @@
   "color_theme": "रंग थीम",
   "theme_system": "सिस्टम के अनुसार",
   "theme_light": "हल्का",
-  "theme_dark": "गहरा"
+  "theme_dark": "गहरा",
+  "nemotron_settings": "नेमोट्रॉन सेटिंग्स",
+  "nemotron_model_desc": "Q8 मॉडल पहली बार उपयोग करने पर डाउनलोड होता है और इस डिवाइस पर स्थानीय रूप से चलता है।",
+  "nemotron_latency": "स्ट्रीमिंग विलंबता",
+  "status_loading_nemotron": "नेमोट्रॉन लोड हो रहा है",
+  "status_checking_nemotron": "नेमोट्रॉन मॉडल की जाँच हो रही है",
+  "nemotron_failed": "नेमोट्रॉन प्रतिलेखन विफल रहा.",
+  "error_sha256_mismatch": "SHA-256 बेमेल: अपेक्षित {expected}, वास्तविक {actual}",
+  "engine_nemotron_desc": "स्वचालित भाषा पहचान और पांच विलंबता मोड के साथ, स्थानीय रूप से नेमोट्रॉन 3.5 एएसआर स्ट्रीमिंग का उपयोग करता है।"
 }

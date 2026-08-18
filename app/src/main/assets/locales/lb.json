@@ -34,7 +34,6 @@
   "cancel_download": "Download eroflueden",
   "delete_model": "Läschen {Modell}",
   "local_translation": "gebierteg Iwwersetzung",
-  "translation_desc": "D'Quellsprooch gëtt op ML Kit applizéiert an och fir Whisper wann d'Iwwersetzung aktivéiert ass.",
   "source": "Quell",
   "target": "Ziel",
   "translation_enabled_desc": "Show Quell an iwwersat Ënnertitelen",
@@ -85,5 +84,13 @@
   "color_theme": "Faarfthema",
   "theme_system": "Systemastellung",
   "theme_light": "Hell",
-  "theme_dark": "Däischter"
+  "theme_dark": "Däischter",
+  "nemotron_settings": "Nemotron Astellunge",
+  "nemotron_model_desc": "De Q8 Modell gëtt op der éischter Benotzung erofgelueden a leeft lokal op dësem Apparat.",
+  "nemotron_latency": "Streaming latency",
+  "status_loading_nemotron": "Lueden Nemotron",
+  "status_checking_nemotron": "Iwwerpréift Nemotron Modell",
+  "nemotron_failed": "Nemotron Transkriptioun gescheitert.",
+  "error_sha256_mismatch": "SHA-256 Mësshandlung: erwaart {expected}, tatsächlech {actual}",
+  "engine_nemotron_desc": "Benotzt Nemotron 3.5 ASR Streaming lokal, mat automatescher Sproocherkennung a fënnef latency Modi."
 }

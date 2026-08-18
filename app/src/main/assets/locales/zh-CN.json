@@ -34,7 +34,6 @@
   "cancel_download": "取消下载",
   "delete_model": "删除 {model}",
   "local_translation": "本地翻译",
-  "translation_desc": "来源语言会套用到 ML Kit，也会在翻译开启时套用到 Whisper。",
   "source": "来源",
   "target": "目标",
   "translation_enabled_desc": "显示来源与翻译字幕",
@@ -85,5 +84,13 @@
   "color_theme": "色彩主题",
   "theme_system": "跟随系统",
   "theme_light": "浅色",
-  "theme_dark": "深色"
+  "theme_dark": "深色",
+  "nemotron_settings": "Nemotron 设置",
+  "nemotron_model_desc": "Q8 模型在首次使用时下载并在此设备上本地运行。",
+  "nemotron_latency": "流式延迟",
+  "status_loading_nemotron": "加载 Nemotron",
+  "status_checking_nemotron": "检查 Nemotron 模型",
+  "nemotron_failed": "Nemotron 转录失败。",
+  "error_sha256_mismatch": "SHA-256 不匹配：预期 {expected}，实际 {actual}",
+  "engine_nemotron_desc": "在本地使用 Nemotron 3.5 ASR Streaming，具有自动语言检测和五种延迟模式。"
 }

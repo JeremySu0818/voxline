@@ -34,7 +34,6 @@
   "cancel_download": "Cancel download",
   "delete_model": "Delete {model}",
   "local_translation": "shanduro yekuzvarwa",
-  "translation_desc": "Mutauro wemabviro unoshandiswa kuML Kit uyewo kuWhisper kana shanduro yaitwa.",
   "source": "Source",
   "target": "chinangwa",
   "translation_enabled_desc": "Ratidza kwaibva uye zvinyorwa zvidiki zvakashandurwa",
@@ -85,5 +84,13 @@
   "color_theme": "Dingindira reruvara",
   "theme_system": "Tevera sisitimu",
   "theme_light": "Chiedza",
-  "theme_dark": "Rima"
+  "theme_dark": "Rima",
+  "nemotron_settings": "Nemotron marongero",
+  "nemotron_model_desc": "Iyo Q8 modhi inodhawunirodha pakushandiswa kwekutanga uye inomhanya munharaunda pachigadzirwa ichi.",
+  "nemotron_latency": "Kutenderera latency",
+  "status_loading_nemotron": "Loading Nemotron",
+  "status_checking_nemotron": "Kutarisa Nemotron modhi",
+  "nemotron_failed": "Nemotron kunyora zvaramba.",
+  "error_sha256_mismatch": "SHA-256 kusawirirana: inotarisirwa {expected}, chaiyo {actual}",
+  "engine_nemotron_desc": "Inoshandisa Nemotron 3.5 ASR Kutenderera munharaunda, ine otomatiki kuona mutauro uye shanu latency modes."
 }

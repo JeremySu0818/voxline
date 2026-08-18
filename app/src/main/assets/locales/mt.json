@@ -34,7 +34,6 @@
   "cancel_download": "Ikkanċella t-tniżżil",
   "delete_model": "Ħassar {mudell}",
   "local_translation": "traduzzjoni nattiva",
-  "translation_desc": "Il-lingwa tas-sors hija applikata għal ML Kit u wkoll għal Whisper meta t-traduzzjoni tkun attivata.",
   "source": "Sors",
   "target": "mira",
   "translation_enabled_desc": "Uri s-sors u s-sottotitli tradotti",
@@ -85,5 +84,13 @@
   "color_theme": "Tema tal-kulur",
   "theme_system": "Segwi s-sistema",
   "theme_light": "Ċar",
-  "theme_dark": "Skur"
+  "theme_dark": "Skur",
+  "nemotron_settings": "settings ta' Nemotron",
+  "nemotron_model_desc": "Il-mudell Q8 jitniżżel mal-ewwel użu u jaħdem lokalment fuq dan l-apparat.",
+  "nemotron_latency": "Streaming latency",
+  "status_loading_nemotron": "Tagħbija Nemotron",
+  "status_checking_nemotron": "Iċċekkjar tal-mudell Nemotron",
+  "nemotron_failed": "Traskrizzjoni Nemotron falliet.",
+  "error_sha256_mismatch": "SHA-256 nuqqas ta' qbil: mistenni {expected}, attwali {actual}",
+  "engine_nemotron_desc": "Juża Nemotron 3.5 ASR Streaming lokalment, b'sejbien awtomatiku tal-lingwa u ħames modi ta 'latency."
 }

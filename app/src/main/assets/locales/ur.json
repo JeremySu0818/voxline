@@ -34,7 +34,6 @@
   "cancel_download": "ڈاؤن لوڈ منسوخ کریں۔",
   "delete_model": "حذف کریں {model}",
   "local_translation": "مقامی ترجمہ",
-  "translation_desc": "ماخذ کی زبان ML Kit اور Whisper پر بھی لاگو ہوتی ہے جب ترجمہ فعال ہوتا ہے۔",
   "source": "ماخذ",
   "target": "ہدف",
   "translation_enabled_desc": "ماخذ اور ترجمہ شدہ سب ٹائٹلز دکھائیں۔",
@@ -85,5 +84,13 @@
   "color_theme": "رنگ تھیم",
   "theme_system": "سسٹم کے مطابق",
   "theme_light": "روشن",
-  "theme_dark": "گہرا"
+  "theme_dark": "گہرا",
+  "nemotron_settings": "نیموٹرون کی ترتیبات",
+  "nemotron_model_desc": "Q8 ماڈل پہلے استعمال پر ڈاؤن لوڈ ہوتا ہے اور اس ڈیوائس پر مقامی طور پر چلتا ہے۔",
+  "nemotron_latency": "سلسلہ بندی میں تاخیر",
+  "status_loading_nemotron": "نموٹرون لوڈ ہو رہا ہے۔",
+  "status_checking_nemotron": "نیموٹرون ماڈل کی جانچ کر رہا ہے۔",
+  "nemotron_failed": "نموٹرون ٹرانسکرپشن ناکام ہو گیا۔",
+  "error_sha256_mismatch": "SHA-256 مماثل: متوقع {expected}، اصل {actual}",
+  "engine_nemotron_desc": "مقامی طور پر نیموٹرون 3.5 ASR سٹریمنگ کا استعمال کرتا ہے، خودکار زبان کی شناخت اور پانچ لیٹنسی موڈز کے ساتھ۔"
 }

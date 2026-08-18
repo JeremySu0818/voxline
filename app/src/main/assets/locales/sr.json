@@ -34,7 +34,6 @@
   "cancel_download": "Откажите преузимање",
   "delete_model": "Избриши {модел}",
   "local_translation": "матерњи превод",
-  "translation_desc": "Изворни језик се примењује на МЛ Кит и такође на Вхиспер када је превод омогућен.",
   "source": "Извор",
   "target": "циљ",
   "translation_enabled_desc": "Прикажи извор и преведене титлове",
@@ -85,5 +84,13 @@
   "color_theme": "Тема боја",
   "theme_system": "Прати систем",
   "theme_light": "Светла",
-  "theme_dark": "Тамна"
+  "theme_dark": "Тамна",
+  "nemotron_settings": "Немотрон подешавања",
+  "nemotron_model_desc": "Модел К8 се преузима приликом прве употребе и ради локално на овом уређају.",
+  "nemotron_latency": "Кашњење при стримингу",
+  "status_loading_nemotron": "Лоадинг Немотрон",
+  "status_checking_nemotron": "Проверавам Немотрон модел",
+  "nemotron_failed": "Немотрон транскрипција није успела.",
+  "error_sha256_mismatch": "СХА-256 неподударање: очекивано {expected}, стварно {actual}",
+  "engine_nemotron_desc": "Користи Немотрон 3.5 АСР стриминг локално, са аутоматским откривањем језика и пет режима кашњења."
 }

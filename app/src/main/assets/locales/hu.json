@@ -34,7 +34,6 @@
   "cancel_download": "Letöltés megszakítása",
   "delete_model": "{model} törlése",
   "local_translation": "anyanyelvi fordítás",
-  "translation_desc": "A forrásnyelvet az ML Kit és a Whisper is alkalmazza, ha a fordítás engedélyezve van.",
   "source": "Forrás",
   "target": "cél",
   "translation_enabled_desc": "Forrás és lefordított feliratok megjelenítése",
@@ -85,5 +84,13 @@
   "color_theme": "Színtéma",
   "theme_system": "Rendszerbeállítás",
   "theme_light": "Világos",
-  "theme_dark": "Sötét"
+  "theme_dark": "Sötét",
+  "nemotron_settings": "Nemotron beállítások",
+  "nemotron_model_desc": "A Q8 modell első használatkor letöltődik, és helyileg fut ezen az eszközön.",
+  "nemotron_latency": "Az adatfolyam késése",
+  "status_loading_nemotron": "Nemotron betöltése",
+  "status_checking_nemotron": "Nemotron modell ellenőrzése",
+  "nemotron_failed": "A Nemotron átírása nem sikerült.",
+  "error_sha256_mismatch": "SHA-256 eltérés: várt {expected}, tényleges {actual}",
+  "engine_nemotron_desc": "Nemotron 3.5 ASR Streaming helyileg, automatikus nyelvérzékeléssel és öt késleltetési móddal."
 }

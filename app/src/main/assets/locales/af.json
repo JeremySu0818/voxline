@@ -34,7 +34,6 @@
   "cancel_download": "Kanselleer aflaai",
   "delete_model": "Vee {model} uit",
   "local_translation": "inheemse vertaling",
-  "translation_desc": "Die brontaal word toegepas op ML Kit en ook op Whisper wanneer vertaling geaktiveer is.",
   "source": "Bron",
   "target": "teiken",
   "translation_enabled_desc": "Wys bron en vertaalde onderskrifte",
@@ -85,5 +84,13 @@
   "color_theme": "Kleurtema",
   "theme_system": "Volg stelsel",
   "theme_light": "Lig",
-  "theme_dark": "Donker"
+  "theme_dark": "Donker",
+  "nemotron_settings": "Nemotron instellings",
+  "nemotron_model_desc": "Die Q8-model laai af met die eerste gebruik en werk plaaslik op hierdie toestel.",
+  "nemotron_latency": "Stroomvertraging",
+  "status_loading_nemotron": "Laai Nemotron",
+  "status_checking_nemotron": "Kontroleer Nemotron-model",
+  "nemotron_failed": "Nemotron-transkripsie het misluk.",
+  "error_sha256_mismatch": "SHA-256 wanverhouding: verwagte {expected}, werklike {actual}",
+  "engine_nemotron_desc": "Gebruik Nemotron 3.5 ASR Streaming plaaslik, met outomatiese taalbespeuring en vyf latensiemodusse."
 }

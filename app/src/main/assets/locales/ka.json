@@ -34,7 +34,6 @@
   "cancel_download": "ჩამოტვირთვის გაუქმება",
   "delete_model": "წაშალე {model}",
   "local_translation": "მშობლიური თარგმანი",
-  "translation_desc": "საწყისი ენა გამოიყენება ML Kit-ზე და ასევე Whisper-ზე, როდესაც თარგმანი ჩართულია.",
   "source": "წყარო",
   "target": "სამიზნე",
   "translation_enabled_desc": "წყაროს და თარგმნილი სუბტიტრების ჩვენება",
@@ -85,5 +84,13 @@
   "color_theme": "ფერის თემა",
   "theme_system": "სისტემის მიხედვით",
   "theme_light": "ნათელი",
-  "theme_dark": "მუქი"
+  "theme_dark": "მუქი",
+  "nemotron_settings": "ნემოტრონის პარამეტრები",
+  "nemotron_model_desc": "Q8 მოდელი ჩამოტვირთულია პირველი გამოყენებისას და მუშაობს ადგილობრივად ამ მოწყობილობაზე.",
+  "nemotron_latency": "სტრიმინგის შეყოვნება",
+  "status_loading_nemotron": "იტვირთება ნემოტრონი",
+  "status_checking_nemotron": "ნემოტრონის მოდელის შემოწმება",
+  "nemotron_failed": "ნემოტრონის ტრანსკრიფცია ვერ მოხერხდა.",
+  "error_sha256_mismatch": "SHA-256 შეუსაბამობა: მოსალოდნელია {expected}, რეალური {actual}",
+  "engine_nemotron_desc": "იყენებს Nemotron 3.5 ASR სტრიმინგს ადგილობრივად, ენის ავტომატური ამოცნობით და ხუთი შეყოვნების რეჟიმით."
 }

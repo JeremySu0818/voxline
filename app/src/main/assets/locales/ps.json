@@ -34,7 +34,6 @@
   "cancel_download": "کښته کول لغوه کړئ",
   "delete_model": "ړنګول {موډل}",
   "local_translation": "اصلي ژباړه",
-  "translation_desc": "د سرچینې ژبه په ML Kit او همدارنګه Whisper باندې پلي کیږي کله چې ژباړه فعاله وي.",
   "source": "سرچینه",
   "target": "هدف",
   "translation_enabled_desc": "سرچینه او ژباړل شوي فرعي سرلیکونه وښایاست",
@@ -85,5 +84,13 @@
   "color_theme": "د رنګ بڼه",
   "theme_system": "سیسټم تعقیب کړئ",
   "theme_light": "روښانه",
-  "theme_dark": "تیاره"
+  "theme_dark": "تیاره",
+  "nemotron_settings": "د نیموټرون تنظیمات",
+  "nemotron_model_desc": "د Q8 ماډل په لومړي استعمال کې ډاونلوډ کیږي او په ځایی ډول پدې وسیله چلوي.",
+  "nemotron_latency": "د جریان ځنډ",
+  "status_loading_nemotron": "د نیموټرون بار کول",
+  "status_checking_nemotron": "د نیموټرون ماډل چک کول",
+  "nemotron_failed": "د نیموټرون لیږد ناکام شو.",
+  "error_sha256_mismatch": "SHA-256 بې مطابقت: تمه کیده {expected}، حقیقي {actual}",
+  "engine_nemotron_desc": "د نیموټرون 3.5 ASR سټریمینګ په ځایی توګه کاروي، د ژبې اتوماتیک کشف او پنځه ځنډ حالتونو سره."
 }

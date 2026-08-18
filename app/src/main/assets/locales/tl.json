@@ -34,7 +34,6 @@
   "cancel_download": "Kanselahin ang pag-download",
   "delete_model": "Tanggalin ang {model}",
   "local_translation": "katutubong pagsasalin",
-  "translation_desc": "Ang pinagmulang wika ay inilalapat sa ML Kit at gayundin sa Whisper kapag pinagana ang pagsasalin.",
   "source": "Pinagmulan",
   "target": "target",
   "translation_enabled_desc": "Ipakita ang pinagmulan at isinalin na mga subtitle",
@@ -85,5 +84,13 @@
   "color_theme": "Tema ng kulay",
   "theme_system": "Sundin ang system",
   "theme_light": "Maliwanag",
-  "theme_dark": "Madilim"
+  "theme_dark": "Madilim",
+  "nemotron_settings": "Mga setting ng Nemotron",
+  "nemotron_model_desc": "Nagda-download ang modelong Q8 sa unang paggamit at tumatakbo nang lokal sa device na ito.",
+  "nemotron_latency": "Pag-stream ng latency",
+  "status_loading_nemotron": "Nilo-load ang Nemotron",
+  "status_checking_nemotron": "Sinusuri ang modelo ng Nemotron",
+  "nemotron_failed": "Nabigo ang transkripsyon ng Nemotron.",
+  "error_sha256_mismatch": "SHA-256 mismatch: inaasahang {expected}, aktwal na {actual}",
+  "engine_nemotron_desc": "Gumagamit ng Nemotron 3.5 ASR Streaming nang lokal, na may awtomatikong pag-detect ng wika at limang latency mode."
 }

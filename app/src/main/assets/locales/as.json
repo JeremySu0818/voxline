@@ -34,7 +34,6 @@
   "cancel_download": "ডাউনলোড বাতিল কৰক",
   "delete_model": "{model} মচি পেলাওক",
   "local_translation": "স্থানীয় অনুবাদ",
-  "translation_desc": "উৎস ভাষাটো ML Kit ত আৰু অনুবাদ সামৰ্থবান হ'লে Whisper ত প্ৰয়োগ কৰা হয়।",
   "source": "উৎস",
   "target": "লক্ষ্য",
   "translation_enabled_desc": "উৎস আৰু অনুবাদ কৰা উপশিৰোনামা দেখুৱাওক",
@@ -85,5 +84,13 @@
   "color_theme": "ৰঙৰ থীম",
   "theme_system": "ছিষ্টেম অনুসৰণ কৰক",
   "theme_light": "পাতল",
-  "theme_dark": "গাঢ়"
+  "theme_dark": "গাঢ়",
+  "nemotron_settings": "নেমট্ৰন ছেটিংছ",
+  "nemotron_model_desc": "Q8 মডেল প্ৰথম ব্যৱহাৰত ডাউনলোড হয় আৰু এই ডিভাইচত স্থানীয়ভাৱে চলি থাকে।",
+  "nemotron_latency": "ষ্ট্ৰীমিং লেটেন্সি",
+  "status_loading_nemotron": "Nemotron লোড কৰা হৈছে",
+  "status_checking_nemotron": "নেমট্ৰন মডেল পৰীক্ষা কৰা",
+  "nemotron_failed": "নেম’ট্ৰন ট্ৰান্সক্ৰিপচন বিফল হ’ল।",
+  "error_sha256_mismatch": "SHA-256 মিছমেচ: প্ৰত্যাশিত {expected}, প্ৰকৃত {actual}",
+  "engine_nemotron_desc": "স্থানীয়ভাৱে Nemotron 3.5 ASR ষ্ট্ৰীমিং ব্যৱহাৰ কৰে, স্বয়ংক্ৰিয় ভাষা চিনাক্তকৰণ আৰু পাঁচটা বিলম্ব ধৰণৰ সৈতে।"
 }

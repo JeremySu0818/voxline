@@ -34,7 +34,6 @@
   "cancel_download": "Deskarga bertan behera utzi",
   "delete_model": "Ezabatu {model}",
   "local_translation": "jatorrizko itzulpena",
-  "translation_desc": "Iturburu-hizkuntza ML Kit-ari aplikatzen zaio eta Whisper-i ere itzulpena gaituta dagoenean.",
   "source": "Iturria",
   "target": "xede",
   "translation_enabled_desc": "Erakutsi iturria eta itzulitako azpitituluak",
@@ -85,5 +84,13 @@
   "color_theme": "Kolore-gaia",
   "theme_system": "Jarraitu sistema",
   "theme_light": "Argia",
-  "theme_dark": "Iluna"
+  "theme_dark": "Iluna",
+  "nemotron_settings": "Nemotron ezarpenak",
+  "nemotron_model_desc": "Q8 modeloa lehen erabileran deskargatzen da eta lokalean exekutatzen da gailu honetan.",
+  "nemotron_latency": "Streaming latentzia",
+  "status_loading_nemotron": "Nemotron kargatzen",
+  "status_checking_nemotron": "Nemotron eredua egiaztatzea",
+  "nemotron_failed": "Nemotronen transkripzioak huts egin du.",
+  "error_sha256_mismatch": "SHA-256 desegokia: espero zen {expected}, benetako {actual}",
+  "engine_nemotron_desc": "Nemotron 3.5 ASR Streaming-a lokalean erabiltzen du, hizkuntza automatikoki hautemateko eta bost latentzia-modurekin."
 }

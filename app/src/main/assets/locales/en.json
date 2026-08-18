@@ -34,7 +34,6 @@
   "cancel_download": "Cancel Download",
   "delete_model": "Delete {model}",
   "local_translation": "Local Translation",
-  "translation_desc": "Source language applies to ML Kit, and also applies to Whisper when translation is enabled.",
   "source": "Source",
   "target": "Target",
   "translation_enabled_desc": "Show source and translated captions",
@@ -85,5 +84,13 @@
   "color_theme": "Color theme",
   "theme_system": "Follow system",
   "theme_light": "Light",
-  "theme_dark": "Dark"
+  "theme_dark": "Dark",
+  "nemotron_settings": "Nemotron settings",
+  "nemotron_model_desc": "The Q8 model downloads on first use and runs locally on this device.",
+  "nemotron_latency": "Streaming latency",
+  "status_loading_nemotron": "Loading Nemotron",
+  "status_checking_nemotron": "Checking Nemotron model",
+  "nemotron_failed": "Nemotron transcription failed.",
+  "error_sha256_mismatch": "SHA-256 mismatch: expected {expected}, actual {actual}",
+  "engine_nemotron_desc": "Uses Nemotron 3.5 ASR Streaming locally, with automatic language detection and five latency modes."
 }

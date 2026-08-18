@@ -34,7 +34,6 @@
   "cancel_download": "Downloaden annuleren",
   "delete_model": "Verwijder {model}",
   "local_translation": "inheemse vertaling",
-  "translation_desc": "De brontaal wordt toegepast op ML Kit en ook op Whisper wanneer vertaling is ingeschakeld.",
   "source": "Bron",
   "target": "doel",
   "translation_enabled_desc": "Toon bron en vertaalde ondertitels",
@@ -85,5 +84,13 @@
   "color_theme": "Kleurthema",
   "theme_system": "Systeem volgen",
   "theme_light": "Licht",
-  "theme_dark": "Donker"
+  "theme_dark": "Donker",
+  "nemotron_settings": "Nemotron-instellingen",
+  "nemotron_model_desc": "Het Q8-model wordt bij het eerste gebruik gedownload en draait lokaal op dit apparaat.",
+  "nemotron_latency": "Streaminglatentie",
+  "status_loading_nemotron": "Nemotron laden",
+  "status_checking_nemotron": "Nemotron-model controleren",
+  "nemotron_failed": "Nemotron-transcriptie is mislukt.",
+  "error_sha256_mismatch": "SHA-256-mismatch: verwacht {expected}, feitelijk {actual}",
+  "engine_nemotron_desc": "Maakt gebruik van Nemotron 3.5 ASR Streaming lokaal, met automatische taaldetectie en vijf latentiemodi."
 }

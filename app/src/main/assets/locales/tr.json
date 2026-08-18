@@ -34,7 +34,6 @@
   "cancel_download": "İndirmeyi iptal et",
   "delete_model": "{model}'i sil",
   "local_translation": "yerel çeviri",
-  "translation_desc": "Kaynak dil, çeviri etkinleştirildiğinde ML Kit'e ve ayrıca Whisper'a uygulanır.",
   "source": "Kaynak",
   "target": "hedef",
   "translation_enabled_desc": "Kaynağı ve çevrilmiş altyazıları göster",
@@ -85,5 +84,13 @@
   "color_theme": "Renk teması",
   "theme_system": "Sistemi takip et",
   "theme_light": "Açık",
-  "theme_dark": "Koyu"
+  "theme_dark": "Koyu",
+  "nemotron_settings": "Nemotron ayarları",
+  "nemotron_model_desc": "Q8 modeli ilk kullanımda indirilir ve bu cihazda yerel olarak çalışır.",
+  "nemotron_latency": "Akış gecikmesi",
+  "status_loading_nemotron": "Nemotron Yükleniyor",
+  "status_checking_nemotron": "Nemotron modeli kontrol ediliyor",
+  "nemotron_failed": "Nemotron transkripsiyonu başarısız oldu.",
+  "error_sha256_mismatch": "SHA-256 uyumsuzluğu: beklenen {expected}, gerçek {actual}",
+  "engine_nemotron_desc": "Otomatik dil algılama ve beş gecikme moduyla Nemotron 3.5 ASR Akışını yerel olarak kullanır."
 }

@@ -34,7 +34,6 @@
   "cancel_download": "ยกเลิกการดาวน์โหลด",
   "delete_model": "ลบ {รุ่น}",
   "local_translation": "การแปลพื้นเมือง",
-  "translation_desc": "ภาษาต้นฉบับจะถูกนำไปใช้กับ ML Kit และ Whisper เมื่อเปิดใช้งานการแปล",
   "source": "แหล่งที่มา",
   "target": "เป้าหมาย",
   "translation_enabled_desc": "แสดงต้นฉบับและคำบรรยายที่แปล",
@@ -85,5 +84,13 @@
   "color_theme": "ธีมสี",
   "theme_system": "ตามระบบ",
   "theme_light": "สว่าง",
-  "theme_dark": "มืด"
+  "theme_dark": "มืด",
+  "nemotron_settings": "การตั้งค่าเนโมตรอน",
+  "nemotron_model_desc": "รุ่น Q8 จะดาวน์โหลดเมื่อใช้ครั้งแรกและทำงานภายในอุปกรณ์นี้",
+  "nemotron_latency": "เวลาแฝงในการสตรีม",
+  "status_loading_nemotron": "กำลังโหลดนีโมตรอน",
+  "status_checking_nemotron": "การตรวจสอบโมเดลเนโมตรอน",
+  "nemotron_failed": "การถอดรหัส Nemotron ล้มเหลว",
+  "error_sha256_mismatch": "SHA-256 ไม่ตรงกัน: คาดหวัง {expected} จริง {actual}",
+  "engine_nemotron_desc": "ใช้การสตรีม Nemotron 3.5 ASR ภายในเครื่อง พร้อมการตรวจจับภาษาอัตโนมัติและโหมดเวลาแฝงห้าโหมด"
 }

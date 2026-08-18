@@ -34,7 +34,6 @@
   "cancel_download": "Batalkan unduhan",
   "delete_model": "Hapus {model}",
   "local_translation": "terjemahan asli",
-  "translation_desc": "Bahasa sumber diterapkan ke ML Kit dan juga Whisper ketika terjemahan diaktifkan.",
   "source": "Sumber",
   "target": "sasaran",
   "translation_enabled_desc": "Tampilkan sumber dan subtitle terjemahan",
@@ -85,5 +84,13 @@
   "color_theme": "Tema warna",
   "theme_system": "Ikuti sistem",
   "theme_light": "Terang",
-  "theme_dark": "Gelap"
+  "theme_dark": "Gelap",
+  "nemotron_settings": "Pengaturan Nemotron",
+  "nemotron_model_desc": "Model Q8 diunduh saat pertama kali digunakan dan dijalankan secara lokal di perangkat ini.",
+  "nemotron_latency": "Latensi streaming",
+  "status_loading_nemotron": "Memuat Nemotron",
+  "status_checking_nemotron": "Memeriksa model Nemotron",
+  "nemotron_failed": "Transkripsi Nemotron gagal.",
+  "error_sha256_mismatch": "Ketidakcocokan SHA-256: diharapkan {expected}, sebenarnya {actual}",
+  "engine_nemotron_desc": "Menggunakan Streaming Nemotron 3.5 ASR secara lokal, dengan deteksi bahasa otomatis dan lima mode latensi."
 }

@@ -72,17 +72,22 @@ class VoiceActivityDetector(
         if (isSpeechFrame) {
             consecutiveSpeechChunks++
             consecutiveSilenceChunks = 0
-        } else {
-            consecutiveSilenceChunks++
-
-            if (consecutiveSilenceChunks > hangoverChunks) {
-                noiseFloorRms = noiseFloorAlpha * noiseFloorRms + (1f - noiseFloorAlpha) * rms
-                consecutiveSpeechChunks = 0
-            }
+            return true
         }
 
+        consecutiveSilenceChunks++
+        if (consecutiveSpeechChunks == 0) {
+            noiseFloorRms = noiseFloorAlpha * noiseFloorRms + (1f - noiseFloorAlpha) * rms
+            return false
+        }
 
-        return consecutiveSpeechChunks > 0 || consecutiveSilenceChunks <= hangoverChunks
+        if (consecutiveSilenceChunks <= hangoverChunks) {
+            return true
+        }
+
+        noiseFloorRms = noiseFloorAlpha * noiseFloorRms + (1f - noiseFloorAlpha) * rms
+        consecutiveSpeechChunks = 0
+        return false
     }
 
     companion object {

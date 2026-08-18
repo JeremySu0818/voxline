@@ -34,7 +34,6 @@
   "cancel_download": "डाउनलोड् रद्दं कुर्वन्तु",
   "delete_model": "{model} विलोपयतु।",
   "local_translation": "देशी अनुवाद",
-  "translation_desc": "स्रोतभाषा ML Kit इत्यत्र अपि च अनुवाद सक्षमीकरणे Whisper इत्यत्र अपि प्रयुक्ता भवति ।",
   "source": "स्रोतः",
   "target": "लक्ष्यम्",
   "translation_enabled_desc": "स्रोतः अनुवादितं च उपशीर्षकं दर्शयतु",
@@ -85,5 +84,13 @@
   "color_theme": "वर्णविषयः",
   "theme_system": "प्रणालीम् अनुसरतु",
   "theme_light": "प्रकाशः",
-  "theme_dark": "अन्धकारः"
+  "theme_dark": "अन्धकारः",
+  "nemotron_settings": "नेमोट्रॉन सेटिंग्स्",
+  "nemotron_model_desc": "Q8 मॉडल् प्रथमप्रयोगे डाउनलोड् भवति, अस्मिन् उपकरणे स्थानीयरूपेण चाल्यते च ।",
+  "nemotron_latency": "स्ट्रीमिंग विलम्बता",
+  "status_loading_nemotron": "लोडिंग नेमोट्रॉन्",
+  "status_checking_nemotron": "नेमोट्रॉन् मॉडलस्य जाँचः",
+  "nemotron_failed": "नेमोट्रॉन् प्रतिलेखनं असफलम् अभवत् ।",
+  "error_sha256_mismatch": "SHA-256 असङ्गतिः अपेक्षितः {expected}, वास्तविकः {actual}",
+  "engine_nemotron_desc": "स्थानीयरूपेण Nemotron 3.5 ASR Streaming इत्यस्य उपयोगं करोति, यत्र स्वचालितभाषापरिचयः पञ्च विलम्बताविधानानि च सन्ति ।"
 }

@@ -34,7 +34,6 @@
   "cancel_download": "ဒေါင်းလုဒ်လုပ်တော့မည်။",
   "delete_model": "{model} ကို ဖျက်ရန်",
   "local_translation": "မူရင်းဘာသာပြန်",
-  "translation_desc": "ဘာသာပြန်ခြင်းကို ဖွင့်ထားသောအခါ အရင်းအမြစ်ဘာသာစကားကို ML Kit နှင့် Whisper တို့တွင်လည်း အသုံးပြုပါသည်။",
   "source": "အရင်းအမြစ်",
   "target": "ပစ်မှတ်",
   "translation_enabled_desc": "အရင်းအမြစ်နှင့် ဘာသာပြန်စာတန်းများကို ပြပါ။",
@@ -85,5 +84,13 @@
   "color_theme": "အရောင်အပြင်အဆင်",
   "theme_system": "စနစ်အတိုင်း",
   "theme_light": "အလင်း",
-  "theme_dark": "အမှောင်"
+  "theme_dark": "အမှောင်",
+  "nemotron_settings": "Nemotron ဆက်တင်များ",
+  "nemotron_model_desc": "Q8 မော်ဒယ်သည် ပထမဆုံးအသုံးပြုချိန်တွင် ဒေါင်းလုဒ်လုပ်ကာ ဤစက်ပစ္စည်းပေါ်တွင် စက်တွင်း၌ လုပ်ဆောင်သည်။",
+  "nemotron_latency": "လွှင့်နေချိန်",
+  "status_loading_nemotron": "Nemotron ကို တင်နေသည်။",
+  "status_checking_nemotron": "Nemotron မော်ဒယ်ကို စစ်ဆေးခြင်း။",
+  "nemotron_failed": "Nemotron စာသားမှတ်တမ်း မအောင်မြင်ပါ။",
+  "error_sha256_mismatch": "SHA-256 မကိုက်ညီမှု- မျှော်မှန်းထားသည် {expected}၊ အမှန်တကယ် {actual}",
+  "engine_nemotron_desc": "အလိုအလျောက်ဘာသာစကားသိရှိနိုင်မှုနှင့် latency မုဒ်ငါးခုဖြင့် စက်တွင်းရှိ Nemotron 3.5 ASR ထုတ်လွှင့်မှုကို အသုံးပြုသည်။"
 }

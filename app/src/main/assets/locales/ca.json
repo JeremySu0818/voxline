@@ -34,7 +34,6 @@
   "cancel_download": "Cancel·la la descàrrega",
   "delete_model": "Suprimeix {model}",
   "local_translation": "traducció nativa",
-  "translation_desc": "L'idioma font s'aplica a ML Kit i també a Whisper quan la traducció està habilitada.",
   "source": "Font",
   "target": "objectiu",
   "translation_enabled_desc": "Mostra la font i els subtítols traduïts",
@@ -85,5 +84,13 @@
   "color_theme": "Tema de color",
   "theme_system": "Segueix el sistema",
   "theme_light": "Clar",
-  "theme_dark": "Fosc"
+  "theme_dark": "Fosc",
+  "nemotron_settings": "Configuració de Nemotron",
+  "nemotron_model_desc": "El model Q8 es descarrega el primer ús i s'executa localment en aquest dispositiu.",
+  "nemotron_latency": "Latència de transmissió",
+  "status_loading_nemotron": "Carregant Nemotron",
+  "status_checking_nemotron": "Comprovació del model de Nemotron",
+  "nemotron_failed": "La transcripció de Nemotron ha fallat.",
+  "error_sha256_mismatch": "SHA-256 no coincidència: esperat {expected}, real {actual}",
+  "engine_nemotron_desc": "Utilitza Nemotron 3.5 ASR Streaming localment, amb detecció automàtica d'idioma i cinc modes de latència."
 }

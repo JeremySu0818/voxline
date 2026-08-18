@@ -34,7 +34,6 @@
   "cancel_download": "Atcelt lejupielādi",
   "delete_model": "Dzēst {model}",
   "local_translation": "dzimtais tulkojums",
-  "translation_desc": "Avota valoda tiek lietota ML komplektam un arī Whisper, kad ir iespējota tulkošana.",
   "source": "Avots",
   "target": "mērķis",
   "translation_enabled_desc": "Rādīt avotu un tulkotos subtitrus",
@@ -85,5 +84,13 @@
   "color_theme": "Krāsu motīvs",
   "theme_system": "Sekot sistēmai",
   "theme_light": "Gaišs",
-  "theme_dark": "Tumšs"
+  "theme_dark": "Tumšs",
+  "nemotron_settings": "Nemotron iestatījumi",
+  "nemotron_model_desc": "Q8 modelis tiek lejupielādēts pirmajā lietošanas reizē un darbojas lokāli šajā ierīcē.",
+  "nemotron_latency": "Straumēšanas latentums",
+  "status_loading_nemotron": "Notiek Nemotron ielāde",
+  "status_checking_nemotron": "Pārbauda Nemotron modeli",
+  "nemotron_failed": "Nemotron transkripcija neizdevās.",
+  "error_sha256_mismatch": "SHA-256 neatbilstība: paredzamā {expected}, faktiskā {actual}",
+  "engine_nemotron_desc": "Lokāli izmanto Nemotron 3.5 ASR straumēšanu ar automātisku valodas noteikšanu un pieciem latentuma režīmiem."
 }

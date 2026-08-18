@@ -23,6 +23,7 @@ import androidx.core.app.NotificationCompat
 import com.jeremysu0818.voxline.VoxlineGraph
 import com.jeremysu0818.voxline.MainActivity
 import com.jeremysu0818.voxline.R
+import com.jeremysu0818.voxline.audio.CapturedAudioChunk
 import com.jeremysu0818.voxline.audio.InMemoryWavWriter
 import com.jeremysu0818.voxline.audio.SystemAudioCapture
 import com.jeremysu0818.voxline.audio.VoiceActivityDetector
@@ -31,6 +32,8 @@ import com.jeremysu0818.voxline.data.VoxlineSettings
 import com.jeremysu0818.voxline.data.VoxlineRuntimeStore
 import com.jeremysu0818.voxline.data.SpeechEngineOption
 import com.jeremysu0818.voxline.data.I18n
+import com.jeremysu0818.voxline.data.NemotronLatencyMode
+import com.jeremysu0818.voxline.data.VoxlineLanguages
 import com.jeremysu0818.voxline.data.WhisperModelOption
 import com.jeremysu0818.voxline.overlay.FloatingVoxlineWindow
 import com.jeremysu0818.voxline.tile.VoxlineTileService
@@ -57,6 +60,7 @@ class VoxlineCaptureService : Service() {
     private data class RecognitionConfig(
         val speechEngine: SpeechEngineOption,
         val model: WhisperModelOption?,
+        val nemotronLatencyMode: NemotronLatencyMode,
         val languageTag: String,
     )
 
@@ -113,6 +117,7 @@ class VoxlineCaptureService : Service() {
         stopSession(I18n.getString("status_stopped"), stopProjection = true, removeForeground = true)
         CoroutineScope(Dispatchers.Default).launch {
             VoxlineGraph.transcriber.release()
+            VoxlineGraph.nemotronTranscriber.release()
             VoxlineGraph.translator.close()
             VoxlineGraph.mlKitSpeechTranscriber.close()
         }
@@ -249,6 +254,30 @@ class VoxlineCaptureService : Service() {
                     recognitionLanguageTag = config.languageTag,
                     translationChannel = translationChannel,
                 )
+            } else if (config.speechEngine == SpeechEngineOption.NEMOTRON) {
+                val modelStateJob = serviceScope.launch {
+                    VoxlineGraph.nemotronModelRepository.state.collectLatest { state ->
+                        if (state.isDownloading) {
+                            val status = state.buildStatusText()
+                            VoxlineRuntimeStore.updateStatus(status)
+                            updateNotification(status)
+                        }
+                    }
+                }
+                val modelFile = try {
+                    VoxlineRuntimeStore.updateStatus(I18n.getString("status_checking_nemotron"))
+                    VoxlineGraph.nemotronModelRepository.ensureModel()
+                } finally {
+                    modelStateJob.cancel()
+                }
+                showCapturingStatus()
+                runNemotronStreamingCaptureLoop(
+                    projection = projection,
+                    modelFile = modelFile,
+                    latencyMode = config.nemotronLatencyMode,
+                    recognitionLanguageTag = config.languageTag,
+                    translationChannel = translationChannel,
+                )
             } else {
                 if (
                     !hasInternetConnection() &&
@@ -279,6 +308,7 @@ class VoxlineCaptureService : Service() {
             VoxlineRuntimeStore.discardPartialLines()
             when (config.speechEngine) {
                 SpeechEngineOption.WHISPER -> VoxlineGraph.transcriber.release()
+                SpeechEngineOption.NEMOTRON -> VoxlineGraph.nemotronTranscriber.release()
                 SpeechEngineOption.MLKIT_BASIC,
                 SpeechEngineOption.MLKIT_ADVANCED,
                 -> VoxlineGraph.mlKitSpeechTranscriber.close()
@@ -291,10 +321,6 @@ class VoxlineCaptureService : Service() {
         VoxlineRuntimeStore.updateStatus(status)
         updateNotification(status)
     }
-
-
-
-
 
     private suspend fun runWhisperBatchCaptureLoop(
         projection: MediaProjection,
@@ -442,10 +468,6 @@ class VoxlineCaptureService : Service() {
         }
     }
 
-
-
-
-
     private suspend fun runMlKitStreamingCaptureLoop(
         projection: MediaProjection,
         speechEngine: SpeechEngineOption,
@@ -514,9 +536,97 @@ class VoxlineCaptureService : Service() {
         }
     }
 
+    private suspend fun runNemotronStreamingCaptureLoop(
+        projection: MediaProjection,
+        modelFile: File,
+        latencyMode: NemotronLatencyMode,
+        recognitionLanguageTag: String,
+        translationChannel: Channel<TranslationRequest>,
+    ) = coroutineScope {
+        val queueCapacity =
+            ((NEMOTRON_MAX_QUEUED_AUDIO_MS + NEMOTRON_CAPTURE_CHUNK_MS - 1) /
+                NEMOTRON_CAPTURE_CHUNK_MS).coerceAtLeast(1)
+        val audioChunks = Channel<CapturedAudioChunk>(
+            capacity = queueCapacity,
+            onBufferOverflow = BufferOverflow.DROP_OLDEST,
+        )
+        val capture = SystemAudioCapture(projection)
+        val captureJob = launch {
+            capture.captureRealtimeChunks(
+                output = audioChunks,
+                chunkDurationMs = NEMOTRON_CAPTURE_CHUNK_MS,
+            )
+        }
+        val recognitionJob = launch(Dispatchers.Default) {
+            var currentLineId = UUID.randomUUID().toString()
+            val languageLocale = if (recognitionLanguageTag == "auto") {
+                "auto"
+            } else {
+                VoxlineLanguages.requireNemotronLocale(recognitionLanguageTag)
+            }
 
+            VoxlineGraph.nemotronTranscriber.stream(
+                audioChunks = audioChunks,
+                modelFile = modelFile,
+                latencyMode = latencyMode,
+                audioChunkDurationMs = NEMOTRON_CAPTURE_CHUNK_MS,
+                languageLocale = languageLocale,
+                nativeLibraryDir = applicationInfo.nativeLibraryDir,
+                onStatus = { status ->
+                    withContext(Dispatchers.Main.immediate) {
+                        VoxlineRuntimeStore.updateStatus(status)
+                    }
+                },
+                onPartialText = { partial ->
+                    withContext(Dispatchers.Main.immediate) {
+                        VoxlineRuntimeStore.addOrUpdatePartialSourceText(currentLineId, partial)
+                    }
+                },
+                onFinalText = { sourceText ->
+                    if (sourceText.isBlank()) return@stream
+                    val settings = VoxlineGraph.preferences.settings.value
+                    val doTranslate = settings.translationEnabled
+                    val lineIdToCommit = currentLineId
+                    withContext(Dispatchers.Main.immediate) {
+                        VoxlineRuntimeStore.commitSourceText(
+                            lineIdToCommit,
+                            sourceText,
+                            isTranslating = doTranslate,
+                        )
+                    }
+                    if (doTranslate) {
+                        enqueueTranslation(
+                            translationChannel = translationChannel,
+                            request = TranslationRequest(
+                                id = lineIdToCommit,
+                                sourceText = sourceText,
+                                config = settings.translationConfig(),
+                            ),
+                        )
+                    }
+                    currentLineId = UUID.randomUUID().toString()
+                },
+                onStreamReset = {
+                    currentLineId = UUID.randomUUID().toString()
+                    withContext(Dispatchers.Main.immediate) {
+                        VoxlineRuntimeStore.discardPartialLines()
+                    }
+                },
+                onDiagnostics = { diagnostics ->
+                    withContext(Dispatchers.Main.immediate) {
+                        VoxlineRuntimeStore.updateNemotronDiagnostics(diagnostics)
+                    }
+                },
+            )
+        }
 
-
+        try {
+            recognitionJob.join()
+        } finally {
+            audioChunks.close()
+            captureJob.cancel()
+        }
+    }
 
     private fun createMediaProjection(resultCode: Int, resultData: Intent): MediaProjection {
         val manager = getSystemService(MediaProjectionManager::class.java)
@@ -578,10 +688,6 @@ class VoxlineCaptureService : Service() {
         }
     }
 
-
-
-
-
     private fun startForegroundForProjection(status: String) {
         val notification = buildNotification(status)
         startForeground(
@@ -632,10 +738,6 @@ class VoxlineCaptureService : Service() {
         manager.createNotificationChannel(channel)
     }
 
-
-
-
-
     private fun Intent.projectionResultData(): Intent? =
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
             getParcelableExtra(EXTRA_RESULT_DATA, Intent::class.java)
@@ -659,10 +761,10 @@ class VoxlineCaptureService : Service() {
     private fun VoxlineSettings.recognitionConfig(): RecognitionConfig = RecognitionConfig(
         speechEngine = speechEngine,
         model = model.takeIf { speechEngine == SpeechEngineOption.WHISPER },
-        languageTag = when {
-            speechEngine == SpeechEngineOption.WHISPER && !translationEnabled -> "auto"
-            else -> sourceLanguageTag
-        },
+        nemotronLatencyMode = nemotronLatencyMode,
+        // The UI always asks for a source language. Keep that selection intact for every
+        // recognizer instead of silently substituting Whisper's automatic detection.
+        languageTag = sourceLanguageTag,
     )
 
     private fun VoxlineSettings.translationConfig(): TranslationConfig = TranslationConfig(
@@ -700,6 +802,7 @@ class VoxlineCaptureService : Service() {
     private fun SpeechEngineOption.chunkDurationMs(): Int =
         when (this) {
             SpeechEngineOption.WHISPER -> 2_500
+            SpeechEngineOption.NEMOTRON -> NemotronLatencyMode.default.latencyMs
             SpeechEngineOption.MLKIT_BASIC,
             SpeechEngineOption.MLKIT_ADVANCED -> 200
         }
@@ -750,6 +853,8 @@ class VoxlineCaptureService : Service() {
         private const val CHANNEL_ID = "caption_capture"
         private const val NOTIFICATION_ID = 1001
         private const val WHISPER_VAD_FRAME_MS = 80
+        private const val NEMOTRON_CAPTURE_CHUNK_MS = 80
+        private const val NEMOTRON_MAX_QUEUED_AUDIO_MS = 640
 
         @Volatile
         var isRunning: Boolean = false

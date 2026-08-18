@@ -34,7 +34,6 @@
   "cancel_download": "Жүктеп алудан бас тарту",
   "delete_model": "{model} жою",
   "local_translation": "жергілікті аударма",
-  "translation_desc": "Бастапқы тіл ML жинағына, сондай-ақ аударма қосылған кезде Whisper қолданбасына қолданылады.",
   "source": "Дереккөз",
   "target": "мақсат",
   "translation_enabled_desc": "Дереккөзді және аударылған субтитрлерді көрсету",
@@ -85,5 +84,13 @@
   "color_theme": "Түс тақырыбы",
   "theme_system": "Жүйеге сай",
   "theme_light": "Ашық",
-  "theme_dark": "Қараңғы"
+  "theme_dark": "Қараңғы",
+  "nemotron_settings": "Немотрон параметрлері",
+  "nemotron_model_desc": "Q8 моделі бірінші пайдаланған кезде жүктеп алынады және осы құрылғыда жергілікті түрде жұмыс істейді.",
+  "nemotron_latency": "Ағынның кешігуі",
+  "status_loading_nemotron": "Немотрон жүктелуде",
+  "status_checking_nemotron": "Nemotron моделін тексеру",
+  "nemotron_failed": "Немотрон транскрипциясы сәтсіз аяқталды.",
+  "error_sha256_mismatch": "SHA-256 сәйкессіздігі: күтілетін {expected}, нақты {actual}",
+  "engine_nemotron_desc": "Тілді автоматты түрде анықтау және бес кідіріс режимі бар Nemotron 3.5 ASR ағынын жергілікті түрде пайдаланады."
 }

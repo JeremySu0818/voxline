@@ -34,7 +34,6 @@
   "cancel_download": "డౌన్‌లోడ్‌ను రద్దు చేయండి",
   "delete_model": "{model}ని తొలగించు",
   "local_translation": "స్థానిక అనువాదం",
-  "translation_desc": "అనువాదం ప్రారంభించబడినప్పుడు మూల భాష ML కిట్‌కి మరియు విస్పర్‌కి కూడా వర్తించబడుతుంది.",
   "source": "మూలం",
   "target": "లక్ష్యం",
   "translation_enabled_desc": "మూలం మరియు అనువదించబడిన ఉపశీర్షికలను చూపండి",
@@ -85,5 +84,13 @@
   "color_theme": "రంగు థీమ్",
   "theme_system": "సిస్టమ్‌ను అనుసరించు",
   "theme_light": "లైట్",
-  "theme_dark": "డార్క్"
+  "theme_dark": "డార్క్",
+  "nemotron_settings": "నెమోట్రాన్ సెట్టింగులు",
+  "nemotron_model_desc": "Q8 మోడల్ మొదటి ఉపయోగంలో డౌన్‌లోడ్ చేయబడుతుంది మరియు ఈ పరికరంలో స్థానికంగా రన్ అవుతుంది.",
+  "nemotron_latency": "స్ట్రీమింగ్ జాప్యం",
+  "status_loading_nemotron": "Nemotron లోడ్ అవుతోంది",
+  "status_checking_nemotron": "నెమోట్రాన్ మోడల్‌ని తనిఖీ చేస్తోంది",
+  "nemotron_failed": "నెమోట్రాన్ ట్రాన్స్‌క్రిప్షన్ విఫలమైంది.",
+  "error_sha256_mismatch": "SHA-256 అసమతుల్యత: అంచనా {expected}, వాస్తవ {actual}",
+  "engine_nemotron_desc": "స్వయంచాలక భాష గుర్తింపు మరియు ఐదు జాప్యం మోడ్‌లతో స్థానికంగా Nemotron 3.5 ASR స్ట్రీమింగ్‌ను ఉపయోగిస్తుంది."
 }

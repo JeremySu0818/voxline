@@ -34,7 +34,6 @@
   "cancel_download": "Atšaukti atsisiuntimą",
   "delete_model": "Ištrinti {model}",
   "local_translation": "gimtoji vertimas",
-  "translation_desc": "Šaltinio kalba taikoma „ML Kit“ ir „Whisper“, kai įjungtas vertimas.",
   "source": "Šaltinis",
   "target": "taikinys",
   "translation_enabled_desc": "Rodyti šaltinį ir išverstus subtitrus",
@@ -85,5 +84,13 @@
   "color_theme": "Spalvų tema",
   "theme_system": "Pagal sistemą",
   "theme_light": "Šviesi",
-  "theme_dark": "Tamsi"
+  "theme_dark": "Tamsi",
+  "nemotron_settings": "Nemotron nustatymai",
+  "nemotron_model_desc": "Q8 modelis atsisiunčiamas pirmą kartą naudojant ir veikia lokaliai šiame įrenginyje.",
+  "nemotron_latency": "Srautinio perdavimo delsa",
+  "status_loading_nemotron": "Įkeliamas Nemotronas",
+  "status_checking_nemotron": "Tikrinamas Nemotron modelis",
+  "nemotron_failed": "Nemotrono transkripcija nepavyko.",
+  "error_sha256_mismatch": "SHA-256 neatitikimas: numatomas {expected}, faktinis {actual}",
+  "engine_nemotron_desc": "Naudoja Nemotron 3.5 ASR transliaciją vietoje, su automatiniu kalbos aptikimu ir penkiais delsos režimais."
 }

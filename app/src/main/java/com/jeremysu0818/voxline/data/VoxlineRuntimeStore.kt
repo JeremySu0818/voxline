@@ -1,5 +1,6 @@
 package com.jeremysu0818.voxline.data
 
+import com.jeremysu0818.voxline.nemotron.NemotronRuntimeDiagnostics
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -19,6 +20,7 @@ data class VoxlineRuntimeState(
     val status: String = "status_not_started",
     val lines: List<VoxlineLine> = emptyList(),
     val errorMessage: String? = null,
+    val nemotronDiagnostics: NemotronRuntimeDiagnostics? = null,
 )
 
 object VoxlineRuntimeStore {
@@ -49,6 +51,10 @@ object VoxlineRuntimeStore {
 
     fun updateStatus(status: String) {
         _state.update { it.copy(status = status) }
+    }
+
+    fun updateNemotronDiagnostics(diagnostics: NemotronRuntimeDiagnostics?) {
+        _state.update { it.copy(nemotronDiagnostics = diagnostics) }
     }
 
     fun addOrUpdatePartialSourceText(id: String, text: String) {
@@ -131,6 +137,7 @@ object VoxlineRuntimeStore {
                 status = status,
                 lines = emptyList(),
                 errorMessage = null,
+                nemotronDiagnostics = null,
             )
         }
     }

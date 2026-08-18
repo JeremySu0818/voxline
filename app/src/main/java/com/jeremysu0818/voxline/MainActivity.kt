@@ -100,6 +100,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
@@ -109,11 +110,14 @@ import com.jeremysu0818.voxline.data.VoxlineLanguages
 import com.jeremysu0818.voxline.data.VoxlineRuntimeState
 import com.jeremysu0818.voxline.data.VoxlineSettings
 import com.jeremysu0818.voxline.data.I18n
+import com.jeremysu0818.voxline.data.NemotronLatencyMode
 import com.jeremysu0818.voxline.data.SpeechEngineOption
 import com.jeremysu0818.voxline.data.ThemeMode
 import com.jeremysu0818.voxline.data.WhisperModelOption
 import com.jeremysu0818.voxline.data.t
 import com.jeremysu0818.voxline.service.VoxlineCaptureService
+import com.jeremysu0818.voxline.nemotron.NemotronModelRepository
+import com.jeremysu0818.voxline.nemotron.NemotronModelState
 import com.jeremysu0818.voxline.ui.theme.VoxlineTheme
 import com.jeremysu0818.voxline.whisper.ModelDownloadState
 import kotlinx.coroutines.CoroutineStart
@@ -172,6 +176,7 @@ private fun VoxlineApp(
     val settings by VoxlineGraph.preferences.settings.collectAsState()
     val runtimeState by VoxlineGraph.runtimeStore.state.collectAsState()
     val downloadStates by VoxlineGraph.modelRepository.downloadStates.collectAsState()
+    val nemotronModelState by VoxlineGraph.nemotronModelRepository.state.collectAsState()
     val scope = rememberCoroutineScope()
     var selectedDestinationIndex by rememberSaveable { mutableIntStateOf(0) }
 
@@ -183,6 +188,7 @@ private fun VoxlineApp(
     var accessibilityPrompted by remember { mutableStateOf(false) }
     var isMlKitAdvancedAvailable by remember { mutableStateOf<Boolean?>(null) }
     val downloadJobs = remember { mutableMapOf<WhisperModelOption, Job>() }
+    var nemotronDownloadJob by remember { mutableStateOf<Job?>(null) }
 
     val mediaProjectionLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.StartActivityForResult(),
@@ -243,6 +249,10 @@ private fun VoxlineApp(
 
     LaunchedEffect(settings.model) {
         VoxlineGraph.modelRepository.refresh(settings.model)
+    }
+
+    LaunchedEffect(Unit) {
+        VoxlineGraph.nemotronModelRepository.refresh()
     }
 
     LaunchedEffect(settings.sourceLanguageTag, settings.translationEnabled) {
@@ -356,12 +366,15 @@ private fun VoxlineApp(
             targetState = selectedDestination,
             modifier = Modifier
                 .fillMaxSize()
-                .padding(innerPadding),
+                .padding(innerPadding)
+                .clipToBounds(),
             transitionSpec = { pageTransition },
             label = "app_destination",
         ) { destination ->
             LazyColumn(
-                modifier = Modifier.fillMaxSize(),
+                modifier = Modifier
+                    .fillMaxSize()
+                    .clipToBounds(),
                 contentPadding = PaddingValues(
                     start = 20.dp,
                     end = 20.dp,
@@ -495,6 +508,44 @@ private fun VoxlineApp(
                                         }
                                     }
 
+                                    AnimatedVisibility(
+                                        visible = settings.speechEngine == SpeechEngineOption.NEMOTRON,
+                                        enter = expressiveEnter(),
+                                        exit = expressiveExit(),
+                                    ) {
+                                        SettingsCard(
+                                            icon = R.drawable.sym_download,
+                                            title = t("nemotron_settings"),
+                                        ) {
+                                            NemotronSettingsSection(
+                                                settings = settings,
+                                                modelState = nemotronModelState,
+                                                onLatencyModeSelected =
+                                                    VoxlineGraph.preferences::updateNemotronLatencyMode,
+                                                onDownloadModel = {
+                                                    if (nemotronDownloadJob?.isActive != true) {
+                                                        nemotronDownloadJob = scope.launch {
+                                                            try {
+                                                                VoxlineGraph.nemotronModelRepository.ensureModel()
+                                                            } finally {
+                                                                nemotronDownloadJob = null
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                onCancelDownload = {
+                                                    nemotronDownloadJob?.cancel()
+                                                    nemotronDownloadJob = null
+                                                },
+                                                onDeleteModel = {
+                                                    scope.launch {
+                                                        VoxlineGraph.nemotronModelRepository.deleteModel()
+                                                    }
+                                                },
+                                            )
+                                        }
+                                    }
+
                                     SettingsCard(
                                         icon = R.drawable.sym_translate,
                                         title = t("local_translation"),
@@ -613,7 +664,8 @@ private fun QuickSettingsCard(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .animateContentSize(animationSpec = motionScheme.defaultSpatialSpec()),
+                .animateContentSize(animationSpec = motionScheme.defaultSpatialSpec())
+                .clipToBounds(),
         ) {
             Row(
                 modifier = Modifier
@@ -1162,12 +1214,15 @@ private fun SpeechEngineSection(
                         label = {
                             Text(
                                 text = option.label,
-                                maxLines = 2,
+                                maxLines = 1,
                                 overflow = TextOverflow.Ellipsis,
+                                style = MaterialTheme.typography.bodyMedium,
                             )
                         },
                         shapes = FilterChipDefaults.shapes(),
-                        modifier = Modifier.weight(1f),
+                        modifier = Modifier
+                            .weight(1f)
+                            .heightIn(min = 48.dp),
                         enabled = isOptionEnabled,
                         leadingIcon = if (isSelected) {
                             {
@@ -1199,6 +1254,7 @@ private fun SpeechEngineSection(
                 Text(
                     text = when (engine) {
                         SpeechEngineOption.WHISPER -> t("engine_whisper_desc")
+                        SpeechEngineOption.NEMOTRON -> t("engine_nemotron_desc")
                         SpeechEngineOption.MLKIT_BASIC -> t("engine_mlkit_basic_desc")
                         SpeechEngineOption.MLKIT_ADVANCED -> t("engine_mlkit_advanced_desc")
                     },
@@ -1308,12 +1364,15 @@ private fun WhisperModelSection(
                         label = {
                             Text(
                                 text = "${option.displayName} · ${option.sizeLabel}",
-                                maxLines = 2,
+                                maxLines = 1,
                                 overflow = TextOverflow.Ellipsis,
+                                style = MaterialTheme.typography.bodyMedium,
                             )
                         },
                         shapes = FilterChipDefaults.shapes(),
-                        modifier = Modifier.weight(1f),
+                        modifier = Modifier
+                            .weight(1f)
+                            .heightIn(min = 48.dp),
                         leadingIcon = if (isSelected) {
                             {
                                 Icon(
@@ -1448,6 +1507,196 @@ private fun WhisperModelSection(
     }
 }
 
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
+@Composable
+private fun NemotronSettingsSection(
+    settings: VoxlineSettings,
+    modelState: NemotronModelState,
+    onLatencyModeSelected: (NemotronLatencyMode) -> Unit,
+    onDownloadModel: () -> Unit,
+    onCancelDownload: () -> Unit,
+    onDeleteModel: () -> Unit,
+) {
+    var showDeleteConfirmation by remember { mutableStateOf(false) }
+    var showCancelConfirmation by remember { mutableStateOf(false) }
+    val modelName = NemotronModelRepository.MODEL_NAME
+    val animatedProgress by animateFloatAsState(
+        targetValue = modelState.progress.coerceIn(0f, 1f),
+        animationSpec = ProgressIndicatorDefaults.ProgressAnimationSpec,
+        label = "nemotron_download_progress",
+    )
+
+    if (showCancelConfirmation) {
+        AlertDialog(
+            onDismissRequest = { showCancelConfirmation = false },
+            title = { Text(t("cancel_download_title")) },
+            text = { Text(t("cancel_download_message", modelName)) },
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        showCancelConfirmation = false
+                        onCancelDownload()
+                    },
+                    colors = ButtonDefaults.textButtonColors(
+                        contentColor = MaterialTheme.colorScheme.error,
+                    ),
+                ) { Text(t("confirm_cancel")) }
+            },
+            dismissButton = {
+                TextButton(onClick = { showCancelConfirmation = false }) { Text(t("back")) }
+            },
+        )
+    }
+
+    if (showDeleteConfirmation) {
+        AlertDialog(
+            onDismissRequest = { showDeleteConfirmation = false },
+            title = { Text(t("delete_model_title")) },
+            text = { Text(t("delete_model_message", modelName)) },
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        showDeleteConfirmation = false
+                        onDeleteModel()
+                    },
+                    colors = ButtonDefaults.textButtonColors(
+                        contentColor = MaterialTheme.colorScheme.error,
+                    ),
+                ) { Text(t("confirm_delete")) }
+            },
+            dismissButton = {
+                TextButton(onClick = { showDeleteConfirmation = false }) { Text(t("cancel")) }
+            },
+        )
+    }
+
+    val latencyOptions = remember {
+        NemotronLatencyMode.entries.map { mode ->
+            VoxlineLanguage(tag = mode.id, label = mode.displayName)
+        }
+    }
+    Column(verticalArrangement = Arrangement.spacedBy(14.dp)) {
+        Text(
+            text = t("nemotron_model_desc"),
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        LanguageDropdown(
+            label = t("nemotron_latency"),
+            selectedTag = settings.nemotronLatencyMode.id,
+            selectedLabel = settings.nemotronLatencyMode.displayName,
+            languages = latencyOptions,
+            onSelected = { onLatencyModeSelected(NemotronLatencyMode.fromId(it)) },
+        )
+        FilterChip(
+            selected = true,
+            onClick = {},
+            label = {
+                Text(
+                    text = "Nemotron 3.5 · Q8 · ${NemotronModelRepository.SIZE_LABEL}",
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                    style = MaterialTheme.typography.bodyMedium,
+                )
+            },
+            leadingIcon = {
+                Icon(
+                    painter = painterResource(R.drawable.sym_check_circle),
+                    contentDescription = null,
+                    modifier = Modifier.size(FilterChipDefaults.IconSize),
+                )
+            },
+            modifier = Modifier.fillMaxWidth(),
+        )
+
+        val hasError = modelState.errorMessage != null
+        Surface(
+            shape = MaterialTheme.shapes.medium,
+            color = when {
+                hasError -> MaterialTheme.colorScheme.errorContainer
+                modelState.isDownloaded -> MaterialTheme.colorScheme.secondaryContainer
+                else -> MaterialTheme.colorScheme.surfaceContainerHighest
+            },
+        ) {
+            Row(
+                modifier = Modifier.padding(14.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(12.dp),
+            ) {
+                if (modelState.isDownloading) {
+                    LoadingIndicator(modifier = Modifier.size(28.dp))
+                } else {
+                    Icon(
+                        painter = painterResource(
+                            when {
+                                hasError -> R.drawable.sym_error
+                                modelState.isDownloaded -> R.drawable.sym_check_circle
+                                else -> R.drawable.sym_download
+                            },
+                        ),
+                        contentDescription = null,
+                    )
+                }
+                Text(
+                    text = when {
+                        modelState.isDownloaded -> t("model_downloaded")
+                        modelState.isDownloading -> modelState.buildStatusText()
+                        hasError -> t(modelState.errorMessage.orEmpty())
+                        else -> t("model_not_downloaded")
+                    },
+                    modifier = Modifier.weight(1f),
+                    style = MaterialTheme.typography.bodyMedium,
+                )
+            }
+        }
+        AnimatedVisibility(
+            visible = modelState.isDownloading,
+            enter = expressiveEnter(),
+            exit = expressiveExit(),
+        ) {
+            LinearWavyProgressIndicator(
+                progress = { animatedProgress },
+                modifier = Modifier.fillMaxWidth().height(12.dp),
+            )
+        }
+
+        when {
+            modelState.isDownloading -> OutlinedButton(
+                modifier = Modifier.fillMaxWidth(),
+                onClick = { showCancelConfirmation = true },
+                colors = ButtonDefaults.outlinedButtonColors(
+                    contentColor = MaterialTheme.colorScheme.error,
+                ),
+            ) { Text(t("cancel_download")) }
+            modelState.isDownloaded -> OutlinedButton(
+                modifier = Modifier.fillMaxWidth(),
+                onClick = { showDeleteConfirmation = true },
+                colors = ButtonDefaults.outlinedButtonColors(
+                    contentColor = MaterialTheme.colorScheme.error,
+                ),
+            ) {
+                Text(
+                    text = t("delete_model", "Nemotron 3.5"),
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                )
+            }
+            else -> FilledTonalButton(
+                modifier = Modifier.fillMaxWidth(),
+                onClick = onDownloadModel,
+            ) {
+                Icon(painter = painterResource(R.drawable.sym_download), contentDescription = null)
+                Spacer(modifier = Modifier.size(ButtonDefaults.IconSpacing))
+                Text(
+                    text = t("download_model", "Nemotron 3.5"),
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                )
+            }
+        }
+    }
+}
+
 private enum class ModelAction {
     Download,
     Cancel,
@@ -1467,11 +1716,6 @@ private fun TranslationSection(
     val targetLanguages = remember { VoxlineLanguages.targetLanguages() }
 
     Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
-        Text(
-            text = t("translation_desc"),
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-        )
         LanguageDropdown(
             label = t("source"),
             selectedTag = settings.sourceLanguageTag,
@@ -1541,7 +1785,7 @@ private fun LanguageDropdown(
         ExposedDropdownMenu(
             expanded = expanded,
             onDismissRequest = { expanded = false },
-            modifier = Modifier.heightIn(max = 320.dp),
+            modifier = Modifier.heightIn(max = 240.dp),
         ) {
             languages.forEachIndexed { index, language ->
                 val isSelected = language.tag == selectedTag

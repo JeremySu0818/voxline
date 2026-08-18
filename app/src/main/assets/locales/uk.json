@@ -34,7 +34,6 @@
   "cancel_download": "Скасувати завантаження",
   "delete_model": "Видалити {модель}",
   "local_translation": "рідний переклад",
-  "translation_desc": "Вихідна мова застосовується до ML Kit, а також до Whisper, якщо ввімкнено переклад.",
   "source": "Джерело",
   "target": "мета",
   "translation_enabled_desc": "Показати вихідні та перекладені субтитри",
@@ -85,5 +84,13 @@
   "color_theme": "Колірна тема",
   "theme_system": "Як у системі",
   "theme_light": "Світла",
-  "theme_dark": "Темна"
+  "theme_dark": "Темна",
+  "nemotron_settings": "Налаштування Nemotron",
+  "nemotron_model_desc": "Модель Q8 завантажується під час першого використання та працює локально на цьому пристрої.",
+  "nemotron_latency": "Затримка потокового передавання",
+  "status_loading_nemotron": "Завантаження Nemotron",
+  "status_checking_nemotron": "Перевірка моделі Nemotron",
+  "nemotron_failed": "Помилка транскрипції Nemotron.",
+  "error_sha256_mismatch": "Невідповідність SHA-256: очікувана {expected}, фактична {actual}",
+  "engine_nemotron_desc": "Використовує Nemotron 3.5 ASR Streaming локально з автоматичним визначенням мови та п’ятьма режимами затримки."
 }

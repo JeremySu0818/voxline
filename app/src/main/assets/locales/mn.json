@@ -34,7 +34,6 @@
   "cancel_download": "Татаж авахыг цуцлах",
   "delete_model": "{model}-г устгах",
   "local_translation": "эх орчуулга",
-  "translation_desc": "Эх хэлийг ML Kit болон орчуулгыг идэвхжүүлсэн үед Whisper-д хэрэглэнэ.",
   "source": "Эх сурвалж",
   "target": "зорилтот",
   "translation_enabled_desc": "Эх сурвалж болон орчуулсан хадмалуудыг харуулах",
@@ -85,5 +84,13 @@
   "color_theme": "Өнгөний загвар",
   "theme_system": "Системийг дагах",
   "theme_light": "Цайвар",
-  "theme_dark": "Бараан"
+  "theme_dark": "Бараан",
+  "nemotron_settings": "Немотроны тохиргоо",
+  "nemotron_model_desc": "Q8 загвар нь энэ төхөөрөмж дээр анх удаагаа татагдаж, дотооддоо ажилладаг.",
+  "nemotron_latency": "Дамжуулалтын саатал",
+  "status_loading_nemotron": "Немотроныг ачаалж байна",
+  "status_checking_nemotron": "Nemotron загварыг шалгаж байна",
+  "nemotron_failed": "Немотрон транскрипц амжилтгүй болсон.",
+  "error_sha256_mismatch": "SHA-256 таарахгүй: хүлээгдэж буй {expected}, бодит {actual}",
+  "engine_nemotron_desc": "Nemotron 3.5 ASR Streaming-г дотооддоо ашигладаг, хэлийг автоматаар илрүүлэх, таван хоцролт горимтой."
 }

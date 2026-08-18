@@ -34,7 +34,6 @@
   "cancel_download": "Göçürip al",
   "delete_model": "{Model} poz",
   "local_translation": "ene terjimesi",
-  "translation_desc": "Çeşme dili ML Kit we terjime işledilende pyşyrda ulanylýar.",
   "source": "Çeşme",
   "target": "nyşana",
   "translation_enabled_desc": "Çeşmäni we terjime edilen subtitrleri görkeziň",
@@ -85,5 +84,13 @@
   "color_theme": "Reňk temasy",
   "theme_system": "Ulgamy yzarla",
   "theme_light": "Açyk",
-  "theme_dark": "Garaňky"
+  "theme_dark": "Garaňky",
+  "nemotron_settings": "Nemotron sazlamalary",
+  "nemotron_model_desc": "Q8 modeli ilkinji gezek ulanylanda göçürip alýar we bu enjamda ýerli işleýär.",
+  "nemotron_latency": "Akymyň gijä galmagy",
+  "status_loading_nemotron": "Nemotron ýüklenýär",
+  "status_checking_nemotron": "Nemotron modelini barlamak",
+  "nemotron_failed": "Nemotron transkripsiýasy şowsuz.",
+  "error_sha256_mismatch": "SHA-256 gabat gelmezlik: garaşylýan {expected}, hakyky {actual}",
+  "engine_nemotron_desc": "Nemotron 3.5 ASR dilini awtomatiki usulda kesgitlemek we bäş gijä galmak tertibi bilen ýerli akym ulanýar."
 }

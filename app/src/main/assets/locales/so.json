@@ -34,7 +34,6 @@
   "cancel_download": "Jooji soo dejinta",
   "delete_model": "Tirtir {model}",
   "local_translation": "turjumaada hooyo",
-  "translation_desc": "Luuqada isha waxa lagu dabaqaa ML Kit iyo waliba si hoose marka turjumaada la furo.",
   "source": "Xigasho",
   "target": "bartilmaameed",
   "translation_enabled_desc": "Muuji isha iyo qoraal hoosaadyada la turjumay",
@@ -85,5 +84,13 @@
   "color_theme": "Mawduuca midabka",
   "theme_system": "Raac nidaamka",
   "theme_light": "Iftiin",
-  "theme_dark": "Mugdi"
+  "theme_dark": "Mugdi",
+  "nemotron_settings": "Dejinta Nemotron",
+  "nemotron_model_desc": "Qaabka Q8 wuxuu soo dejiyaa isticmaalka ugu horreeya wuxuuna ku shaqeeyaa gudaha qalabkan.",
+  "nemotron_latency": "Daahitaanka socodka",
+  "status_loading_nemotron": "Soodejinaya Nemotron",
+  "status_checking_nemotron": "Hubinta nooca Nemotron",
+  "nemotron_failed": "Qorista Nemotron waa guuldareystay.",
+  "error_sha256_mismatch": "SHA-256 isma dhigma: la filayo {expected}, dhab ah {actual}",
+  "engine_nemotron_desc": "Isticmaala Nemotron 3.5 ASR Streaming gudaha, oo leh luuqad si toos ah loo ogaanayo iyo shan qaab oo daahitaan ah."
 }

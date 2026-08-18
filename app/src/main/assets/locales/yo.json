@@ -34,7 +34,6 @@
   "cancel_download": "Fagilee gbigba lati ayelujara",
   "delete_model": "Pa {awoṣe} rẹ",
   "local_translation": "abinibi itumọ",
-  "translation_desc": "Ede orisun naa jẹ lilo si ML Kit ati paapaa si Whisper nigbati a ba ṣiṣẹ itumọ.",
   "source": "Orisun",
   "target": "afojusun",
   "translation_enabled_desc": "Ṣe afihan orisun ati awọn atunkọ ti a tumọ",
@@ -85,5 +84,13 @@
   "color_theme": "Àkòrí àwọ̀",
   "theme_system": "Tẹ̀lé ètò",
   "theme_light": "Imọlẹ",
-  "theme_dark": "Òkùnkùn"
+  "theme_dark": "Òkùnkùn",
+  "nemotron_settings": "Awọn eto Nemotron",
+  "nemotron_model_desc": "Awoṣe Q8 ṣe igbasilẹ lori lilo akọkọ ati ṣiṣe ni agbegbe lori ẹrọ yii.",
+  "nemotron_latency": "Ṣiṣan ṣiṣanwọle",
+  "status_loading_nemotron": "ikojọpọ Nemotron",
+  "status_checking_nemotron": "Ṣiṣayẹwo awoṣe Nemotron",
+  "nemotron_failed": "Iyipada Nemotron kuna.",
+  "error_sha256_mismatch": "SHA-256 ibaamu: o ti ṣe yẹ {expected}, gangan {actual}",
+  "engine_nemotron_desc": "Nlo Nemotron 3.5 ASR ṣiṣanwọle ni agbegbe, pẹlu wiwa ede aifọwọyi ati awọn ipo airi marun."
 }

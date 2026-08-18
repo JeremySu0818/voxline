@@ -34,7 +34,6 @@
   "cancel_download": "Soke zazzagewa",
   "delete_model": "Share {model}",
   "local_translation": "fassarar asali",
-  "translation_desc": "Ana amfani da harshen tushen zuwa ML Kit da kuma zuwa Wasiwasi lokacin da aka kunna fassarar.",
   "source": "Source",
   "target": "manufa",
   "translation_enabled_desc": "Nuna tushe da fassarar fassarar fassarar",
@@ -85,5 +84,13 @@
   "color_theme": "Jigon launi",
   "theme_system": "Bi tsarin",
   "theme_light": "Haske",
-  "theme_dark": "Duhu"
+  "theme_dark": "Duhu",
+  "nemotron_settings": "Nemotron saituna",
+  "nemotron_model_desc": "Samfurin Q8 yana saukewa akan amfani da farko kuma yana aiki a gida akan wannan na'urar.",
+  "nemotron_latency": "Latency yawo",
+  "status_loading_nemotron": "Loading Nemotron",
+  "status_checking_nemotron": "Duba samfurin Nemotron",
+  "nemotron_failed": "Rubutun Nemotron ya kasa.",
+  "error_sha256_mismatch": "SHA-256 rashin daidaituwa: ana tsammanin {expected}, ainihin {actual}",
+  "engine_nemotron_desc": "Yana amfani da Nemotron 3.5 ASR Yawo a cikin gida, tare da gano harshe ta atomatik da yanayin jinkiri biyar."
 }
