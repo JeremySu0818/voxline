@@ -332,7 +332,7 @@ private fun VoxlineApp(
         accessibilityGranted && overlayGranted && recordGranted && notificationGranted
 
     val selectedDestination = AppDestination.entries[selectedDestinationIndex]
-    val pageTransition = expressiveContentTransform()
+    val pageTransition = expressiveFadeTransform()
 
     Scaffold(
         topBar = {
@@ -686,6 +686,14 @@ private fun expressiveExit(): ExitTransition {
     val motionScheme = MaterialTheme.motionScheme
     return shrinkVertically(animationSpec = motionScheme.fastSpatialSpec()) +
         fadeOut(animationSpec = motionScheme.fastEffectsSpec())
+}
+
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
+@Composable
+private fun expressiveFadeTransform(): ContentTransform {
+    val motionScheme = MaterialTheme.motionScheme
+    return fadeIn(animationSpec = motionScheme.defaultEffectsSpec())
+        .togetherWith(fadeOut(animationSpec = motionScheme.fastEffectsSpec()))
 }
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
