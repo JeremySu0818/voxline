@@ -409,9 +409,7 @@ class BackendSelector {
             run_backend_model_probe(*cpu, right_context_frames, language);
 
         int best_gpu_index = -1;
-        std::string best_gpu_name;
         double best_gpu_ms = std::numeric_limits<double>::infinity();
-        std::unique_ptr<TensorBackend> single_qualified_gpu;
         for (const auto& candidate : gpu_candidates) {
             try {
                 auto gpu = std::make_unique<GgmlTensorBackend>(true, candidate.gpu_index);
@@ -422,23 +420,23 @@ class BackendSelector {
                 if (gpu_probe.workload_ms < best_gpu_ms) {
                     best_gpu_ms = gpu_probe.workload_ms;
                     best_gpu_index = candidate.gpu_index;
-                    best_gpu_name = candidate.name;
-                    if (gpu_candidates.size() == 1) {
-                        single_qualified_gpu = std::move(gpu);
-                    }
                 }
             } catch (const std::exception& error) {
                 errors.push_back(candidate.name + ": " + error.what());
             }
         }
 
-        // A correct accelerator must also beat the real CPU model workload;
-        // otherwise CPU is the faster production backend on this runtime.
-        if (best_gpu_index >= 0 && best_gpu_ms < cpu_probe.workload_ms) {
+        // Once an accelerator passes the CPU-backed correctness probe, keep
+        // production inference on the fastest qualified accelerator. Startup
+        // timing is noisy on mobile and must not make the runtime silently
+        // switch to CPU between launches.
+        if (best_gpu_index >= 0) {
             fallback_reason.clear();
-            if (single_qualified_gpu) {
-                return single_qualified_gpu;
-            }
+            // Qualification intentionally exercises cached encoder and RNNT
+            // graphs. Do not carry that scheduler/OpenCL placement state into
+            // the live stream: build the selected production backend from a
+            // clean model/session after every probe, including the common
+            // single-GPU case.
             cpu.reset();
             auto best = std::make_unique<GgmlTensorBackend>(true, best_gpu_index);
             best->compile(model_path, right_context_frames);
@@ -447,11 +445,6 @@ class BackendSelector {
 
         if (gpu_candidates.empty()) {
             fallback_reason = "No registered GPU/IGPU backend; using discovered CPU backend";
-        } else if (best_gpu_index >= 0) {
-            std::ostringstream reason;
-            reason << best_gpu_name << " qualified but benchmarked at " << best_gpu_ms
-                   << " ms versus CPU " << cpu_probe.workload_ms << " ms";
-            fallback_reason = reason.str();
         } else {
             std::ostringstream reason;
             reason << "Accelerator candidates failed model qualification; using CPU (";

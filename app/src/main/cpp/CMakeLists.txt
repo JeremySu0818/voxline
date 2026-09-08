@@ -316,30 +316,6 @@ if(ANDROID)
             "${_NEMO_RUNTIME_H_TEXT}"
         )
         string(REPLACE
-            [=[        cr.gf = build_graph_into(
-            root_module, cr.input_tensors, cr.output_tensors, sched_meta, cr.sched_meta);
-        collect_state_views(cr.gf, cr.state_views);]=]
-            [=[        cr.gf = build_graph_into(
-            root_module, cr.input_tensors, cr.output_tensors, sched_meta, cr.sched_meta);
-        {
-            std::unordered_set<ggml_tensor*> seen;
-            auto remember = [&](ggml_tensor* t) {
-                if (t != nullptr && t->buffer == nullptr && seen.insert(t).second) {
-                    cr.scheduler_tensors.push_back(t);
-                }
-            };
-            const int n_nodes = ggml_graph_n_nodes(cr.gf);
-            for (int i = 0; i < n_nodes; ++i) {
-                ggml_tensor* node = ggml_graph_node(cr.gf, i);
-                remember(node);
-                for (int j = 0; j < GGML_MAX_SRC; ++j) remember(node->src[j]);
-            }
-        }
-        collect_state_views(cr.gf, cr.state_views);]=]
-            _NEMO_SESSION_TEXT
-            "${_NEMO_SESSION_TEXT}"
-        )
-        string(REPLACE
             "        const bool direct = !fresh && cr.direct_ok && state == nullptr && cr.state_views.empty();"
             "        const bool direct = !fresh && cr.direct_ok && state == nullptr &&\n                            cr.state_views.empty() && cr.scheduler_tensors.empty();"
             _NEMO_SESSION_TEXT
@@ -348,6 +324,44 @@ if(ANDROID)
         string(REPLACE
             "        // Clear state views so allocation binds them to the current SessionState."
             "        // Rebind scheduler-owned intermediates; another cached graph may have reused the pool.\n        for (ggml_tensor* t : cr.scheduler_tensors) {\n            t->buffer = nullptr;\n            t->data = nullptr;\n            t->extra = nullptr;\n        }\n\n        // Clear state views so allocation binds them to the current SessionState."
+            _NEMO_SESSION_TEXT
+            "${_NEMO_SESSION_TEXT}"
+        )
+        string(REPLACE
+            [=[        if (!ggml_backend_sched_alloc_graph(sched.get(), cr.gf)) {
+            GGMLF_LOG_ERROR("Failed to allocate graph\n");
+            throw std::runtime_error("failed to allocate graph");
+        }
+
+        // Record direct-compute eligibility for subsequent hits: one split,]=]
+            [=[        if (!ggml_backend_sched_alloc_graph(sched.get(), cr.gf)) {
+            GGMLF_LOG_ERROR("Failed to allocate graph\n");
+            throw std::runtime_error("failed to allocate graph");
+        }
+
+        // Capture actual scheduler-pool ownership after allocation. Some views
+        // already have a buffer while the graph is built, so buffer == nullptr
+        // before allocation is not a reliable ownership test.
+        if (state_specs_.empty()) {
+            cr.scheduler_tensors.clear();
+            std::unordered_set<ggml_tensor*> seen;
+            auto remember_compute_tensor = [&](auto&& self, ggml_tensor* t) -> void {
+                if (t == nullptr || !seen.insert(t).second) return;
+                if (t->buffer != nullptr &&
+                    ggml_backend_buffer_get_usage(t->buffer) ==
+                        GGML_BACKEND_BUFFER_USAGE_COMPUTE) {
+                    cr.scheduler_tensors.push_back(t);
+                }
+                self(self, t->view_src);
+                for (int j = 0; j < GGML_MAX_SRC; ++j) self(self, t->src[j]);
+            };
+            const int n_nodes = ggml_graph_n_nodes(cr.gf);
+            for (int i = 0; i < n_nodes; ++i) {
+                remember_compute_tensor(remember_compute_tensor, ggml_graph_node(cr.gf, i));
+            }
+        }
+
+        // Record direct-compute eligibility for subsequent hits: one split,]=]
             _NEMO_SESSION_TEXT
             "${_NEMO_SESSION_TEXT}"
         )
@@ -418,19 +432,13 @@ if(ANDROID)
     endif()
 endif()
 
-if(ANDROID AND VOXLINE_NEMOTRON_NUMERICAL_TRACE)
-    # Temporary numerical checkpoints for isolating accelerator correctness in
-    # the first cache-aware FastConformer block. The checkpoint stores are graph
-    # roots, so they observe the exact backend-resident tensors rather than a
-    # rebuilt host approximation. They are read once by Voxline after the first
-    # streaming chunk and will be removed once the OpenCL divergence is fixed.
+if(ANDROID)
+    # Android's CPU and OpenCL PAD implementations support asymmetric left
+    # padding. Keep the cache-aware encoder on its selected backend instead of
+    # composing padding with a rolled view whose OpenCL lifetime is ambiguous.
     set(_NEMO_FASTCONFORMER_CPP
         "${nemo_speech_source_SOURCE_DIR}/src/asr/encoder/fastconformer.cpp")
     file(READ "${_NEMO_FASTCONFORMER_CPP}" _NEMO_FASTCONFORMER_TEXT)
-    # Android's CPU and OpenCL PAD implementations both support asymmetric
-    # left padding. Use it directly so a cache-aware encoder graph remains on
-    # its selected accelerator; the portable PAD+ROLL compatibility path is
-    # still retained for platforms whose PAD backend rejects left padding.
     if(NOT _NEMO_FASTCONFORMER_TEXT MATCHES
        "NEMO_SPEECH_FASTCONFORMER_CUDA_FUSIONS.*defined\\(__ANDROID__\\)")
         string(REPLACE
@@ -441,6 +449,17 @@ if(ANDROID AND VOXLINE_NEMOTRON_NUMERICAL_TRACE)
         )
         file(WRITE "${_NEMO_FASTCONFORMER_CPP}" "${_NEMO_FASTCONFORMER_TEXT}")
     endif()
+endif()
+
+if(ANDROID AND VOXLINE_NEMOTRON_NUMERICAL_TRACE)
+    # Temporary numerical checkpoints for isolating accelerator correctness in
+    # the first cache-aware FastConformer block. The checkpoint stores are graph
+    # roots, so they observe the exact backend-resident tensors rather than a
+    # rebuilt host approximation. They are read once by Voxline after the first
+    # streaming chunk and will be removed once the OpenCL divergence is fixed.
+    set(_NEMO_FASTCONFORMER_CPP
+        "${nemo_speech_source_SOURCE_DIR}/src/asr/encoder/fastconformer.cpp")
+    file(READ "${_NEMO_FASTCONFORMER_CPP}" _NEMO_FASTCONFORMER_TEXT)
     if(NOT _NEMO_FASTCONFORMER_TEXT MATCHES "encoder.diag.sub.pad0.store")
         string(REPLACE
             [=[        for (int l = 0; l < cfg_.n_layers; l++) {
