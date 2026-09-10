@@ -3,7 +3,7 @@
     <string name="notification_channel_name">即時字幕</string>
     <string name="notification_title">即時字幕執行緊</string>
     <string name="action_stop">停低</string>
-    <string name="tile_label">即時字幕</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">跑緊</string>
     <string name="tile_subtitle_off">㩒一下就可以開始</string>
 </resources>

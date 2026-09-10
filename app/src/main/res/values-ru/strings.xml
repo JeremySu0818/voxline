@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Живая подпись</string>
     <string name="notification_title">Живые субтитры работают</string>
     <string name="action_stop">Стоп</string>
-    <string name="tile_label">Живая подпись</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Бег</string>
     <string name="tile_subtitle_off">Нажмите, чтобы начать</string>
 </resources>

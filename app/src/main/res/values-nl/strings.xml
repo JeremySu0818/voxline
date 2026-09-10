@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Live ondertiteling</string>
     <string name="notification_title">Live ondertiteling is actief</string>
     <string name="action_stop">Stop</string>
-    <string name="tile_label">Live ondertiteling</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Rennen</string>
     <string name="tile_subtitle_off">Tik om te beginnen</string>
 </resources>

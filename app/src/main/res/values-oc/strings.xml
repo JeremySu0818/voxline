@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Legenda en dirècte</string>
     <string name="notification_title">La legenda en dirècte es en cors</string>
     <string name="action_stop">Arrèsta</string>
-    <string name="tile_label">Legenda en dirècte</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">En cors</string>
     <string name="tile_subtitle_off">Picatz per començar</string>
 </resources>

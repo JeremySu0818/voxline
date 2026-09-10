@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Тере язу</string>
     <string name="notification_title">Тере язу эшли</string>
     <string name="action_stop">Тукта</string>
-    <string name="tile_label">Тере язу</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Йөгерү</string>
     <string name="tile_subtitle_off">Башлау өчен басыгыз</string>
 </resources>

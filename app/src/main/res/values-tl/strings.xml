@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Voxline</string>
-    <string name="notification_channel_name">Live na Voxline</string>
-    <string name="notification_title">Tumatakbo ang Live Voxline</string>
+    <string name="notification_channel_name">Voxline</string>
+    <string name="notification_title">Tumatakbo ang Voxline</string>
     <string name="action_stop">Tumigil ka</string>
-    <string name="tile_label">Live na Voxline</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Tumatakbo</string>
     <string name="tile_subtitle_off">I-tap para magsimula</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Voxline</string>
     <string name="notification_channel_name">Capsiwn Byw</string>
-    <string name="notification_title">Mae Live Voxline yn rhedeg</string>
+    <string name="notification_title">Mae Voxline yn rhedeg</string>
     <string name="action_stop">Stopio</string>
-    <string name="tile_label">Capsiwn Byw</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Rhedeg</string>
     <string name="tile_subtitle_off">Tapiwch i ddechrau</string>
 </resources>

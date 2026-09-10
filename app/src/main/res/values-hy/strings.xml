@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Կենդանի ենթագրեր</string>
     <string name="notification_title">Կենդանի ենթագրերը գործարկվում են</string>
     <string name="action_stop">Դադարեցրեք</string>
-    <string name="tile_label">Կենդանի ենթագրեր</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Վազում</string>
     <string name="tile_subtitle_off">Հպեք՝ սկսելու համար</string>
 </resources>

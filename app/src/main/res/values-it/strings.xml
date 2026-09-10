@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Sottotitoli in tempo reale</string>
     <string name="notification_title">I sottotitoli in tempo reale sono in esecuzione</string>
     <string name="action_stop">Fermare</string>
-    <string name="tile_label">Sottotitoli in tempo reale</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Correre</string>
     <string name="tile_subtitle_off">Tocca per iniziare</string>
 </resources>

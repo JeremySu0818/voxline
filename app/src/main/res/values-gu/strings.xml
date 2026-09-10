@@ -3,7 +3,7 @@
     <string name="notification_channel_name">લાઇવ કૅપ્શન</string>
     <string name="notification_title">લાઇવ કૅપ્શન ચાલી રહ્યું છે</string>
     <string name="action_stop">રોકો</string>
-    <string name="tile_label">લાઇવ કૅપ્શન</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">ચાલી રહી છે</string>
     <string name="tile_subtitle_off">શરૂ કરવા માટે ટૅપ કરો</string>
 </resources>

@@ -3,7 +3,7 @@
     <string name="notification_channel_name">थेट मथळा</string>
     <string name="notification_title">लाइव्ह कॅप्शन चालू आहे</string>
     <string name="action_stop">थांबा</string>
-    <string name="tile_label">थेट मथळा</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">धावत आहे</string>
     <string name="tile_subtitle_off">सुरू करण्यासाठी टॅप करा</string>
 </resources>

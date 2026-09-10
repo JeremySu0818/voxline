@@ -3,7 +3,7 @@
     <string name="notification_channel_name">തത്സമയ അടിക്കുറിപ്പ്</string>
     <string name="notification_title">തത്സമയ അടിക്കുറിപ്പ് പ്രവർത്തിക്കുന്നു</string>
     <string name="action_stop">നിർത്തുക</string>
-    <string name="tile_label">തത്സമയ അടിക്കുറിപ്പ്</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">ഓടുന്നു</string>
     <string name="tile_subtitle_off">ആരംഭിക്കാൻ ടാപ്പ് ചെയ്യുക</string>
 </resources>

@@ -3,7 +3,7 @@
     <string name="notification_channel_name">כיתוב חי</string>
     <string name="notification_title">כתוביות חיות פועלות</string>
     <string name="action_stop">עצור</string>
-    <string name="tile_label">כיתוב חי</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">ריצה</string>
     <string name="tile_subtitle_off">הקש כדי להתחיל</string>
 </resources>

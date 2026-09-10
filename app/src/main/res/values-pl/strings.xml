@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Napis na żywo</string>
     <string name="notification_title">Napisy na żywo są uruchomione</string>
     <string name="action_stop">Zatrzymaj się</string>
-    <string name="tile_label">Napis na żywo</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Bieganie</string>
     <string name="tile_subtitle_off">Kliknij, aby rozpocząć</string>
 </resources>

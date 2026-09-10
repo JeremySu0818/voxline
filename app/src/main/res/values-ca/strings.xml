@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Subtítol en directe</string>
     <string name="notification_title">Subtítols en directe s\'està executant</string>
     <string name="action_stop">Atureu-vos</string>
-    <string name="tile_label">Subtítol en directe</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Córrer</string>
     <string name="tile_subtitle_off">Toqueu per començar</string>
 </resources>

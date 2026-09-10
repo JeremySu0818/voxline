@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Voxline</string>
     <string name="notification_channel_name">Kapepa ola</string>
-    <string name="notification_title">Ke holo nei ka Voxline Live</string>
+    <string name="notification_title">Ke holo nei ka Voxline</string>
     <string name="action_stop">Kāohi</string>
-    <string name="tile_label">Kapepa ola</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Ke holo nei</string>
     <string name="tile_subtitle_off">Kaomi e hoʻomaka</string>
 </resources>

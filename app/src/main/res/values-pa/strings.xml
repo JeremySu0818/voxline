@@ -3,7 +3,7 @@
     <string name="notification_channel_name">ਲਾਈਵ ਸੁਰਖੀ</string>
     <string name="notification_title">ਲਾਈਵ ਸੁਰਖੀ ਚੱਲ ਰਹੀ ਹੈ</string>
     <string name="action_stop">ਰੁਕੋ</string>
-    <string name="tile_label">ਲਾਈਵ ਸੁਰਖੀ</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">ਚੱਲ ਰਿਹਾ ਹੈ</string>
     <string name="tile_subtitle_off">ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਟੈਪ ਕਰੋ</string>
 </resources>

@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Надписи на живо</string>
     <string name="notification_title">Надписите на живо се изпълняват</string>
     <string name="action_stop">Спрете</string>
-    <string name="tile_label">Надписи на живо</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Бягане</string>
     <string name="tile_subtitle_off">Докоснете, за да започнете</string>
 </resources>

@@ -3,7 +3,7 @@
     <string name="notification_channel_name">நேரடி தலைப்பு</string>
     <string name="notification_title">நேரடி வசனம் இயங்குகிறது</string>
     <string name="action_stop">நிறுத்து</string>
-    <string name="tile_label">நேரடி தலைப்பு</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">ஓடுகிறது</string>
     <string name="tile_subtitle_off">தொடங்க, தட்டவும்</string>
 </resources>

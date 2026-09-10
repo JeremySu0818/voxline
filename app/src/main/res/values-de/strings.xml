@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Voxline</string>
     <string name="notification_channel_name">Live-Untertitel</string>
-    <string name="notification_title">Live Voxline läuft</string>
+    <string name="notification_title">Voxline läuft</string>
     <string name="action_stop">Stopp</string>
-    <string name="tile_label">Live-Untertitel</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Laufen</string>
     <string name="tile_subtitle_off">Zum Starten tippen</string>
 </resources>

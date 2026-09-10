@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Voxline</string>
     <string name="notification_channel_name">Titloù bev</string>
-    <string name="notification_title">Live Voxline a zo o vont en-dro</string>
+    <string name="notification_title">Voxline a zo o vont en-dro</string>
     <string name="action_stop">Paouez</string>
-    <string name="tile_label">Titloù bev</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">O redek</string>
     <string name="tile_subtitle_off">Klikit evit kregiñ</string>
 </resources>

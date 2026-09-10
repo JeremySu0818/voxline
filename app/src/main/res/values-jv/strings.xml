@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Voxline Langsung</string>
     <string name="notification_title">Voxline Langsung mlaku</string>
     <string name="action_stop">mandeg</string>
-    <string name="tile_label">Voxline Langsung</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">mlaku</string>
     <string name="tile_subtitle_off">Tutul kanggo miwiti</string>
 </resources>

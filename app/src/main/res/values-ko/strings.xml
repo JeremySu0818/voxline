@@ -3,7 +3,7 @@
     <string name="notification_channel_name">실시간 자막</string>
     <string name="notification_title">실시간 자막 실행 중</string>
     <string name="action_stop">중지</string>
-    <string name="tile_label">실시간 자막</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">달리기</string>
     <string name="tile_subtitle_off">시작하려면 탭하세요.</string>
 </resources>

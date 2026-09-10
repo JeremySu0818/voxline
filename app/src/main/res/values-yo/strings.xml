@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Ifiweranṣẹ Live</string>
     <string name="notification_title">Ifiweranṣẹ Live nṣiṣẹ</string>
     <string name="action_stop">Duro</string>
-    <string name="tile_label">Ifiweranṣẹ Live</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Nṣiṣẹ</string>
     <string name="tile_subtitle_off">Fọwọ ba lati bẹrẹ</string>
 </resources>

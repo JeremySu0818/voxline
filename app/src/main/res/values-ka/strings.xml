@@ -3,7 +3,7 @@
     <string name="notification_channel_name">პირდაპირი წარწერა</string>
     <string name="notification_title">ცოცხალი სუბტიტრები გაშვებულია</string>
     <string name="action_stop">გაჩერდი</string>
-    <string name="tile_label">პირდაპირი წარწერა</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">სირბილი</string>
     <string name="tile_subtitle_off">შეეხეთ დასაწყებად</string>
 </resources>

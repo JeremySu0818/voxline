@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Ζωντανός υπότιτλος</string>
     <string name="notification_title">Ο Ζωντανός υπότιτλος εκτελείται</string>
     <string name="action_stop">Σταμάτα</string>
-    <string name="tile_label">Ζωντανός υπότιτλος</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Τρέξιμο</string>
     <string name="tile_subtitle_off">Πατήστε για να ξεκινήσετε</string>
 </resources>

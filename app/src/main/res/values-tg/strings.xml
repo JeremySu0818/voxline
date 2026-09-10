@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Сарлавҳаи зинда</string>
     <string name="notification_title">Сарлавҳаи зинда иҷро мешавад</string>
     <string name="action_stop">Истед</string>
-    <string name="tile_label">Сарлавҳаи зинда</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Давидан</string>
     <string name="tile_subtitle_off">Барои оғоз кардан клик кунед</string>
 </resources>

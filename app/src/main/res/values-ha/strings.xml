@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Takaitaccen Magana</string>
     <string name="notification_title">Taken kai tsaye yana gudana</string>
     <string name="action_stop">Tsaya</string>
-    <string name="tile_label">Takaitaccen Magana</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Gudu</string>
     <string name="tile_subtitle_off">Matsa don farawa</string>
 </resources>

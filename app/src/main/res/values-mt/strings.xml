@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Voxline</string>
-    <string name="notification_channel_name">Live Voxline</string>
-    <string name="notification_title">Live Voxline qed jaħdem</string>
+    <string name="notification_channel_name">Voxline</string>
+    <string name="notification_title">Voxline qed jaħdem</string>
     <string name="action_stop">Waqqaf</string>
-    <string name="tile_label">Live Voxline</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Running</string>
     <string name="tile_subtitle_off">Tektek biex tibda</string>
 </resources>

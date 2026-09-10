@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Élő feliratozás</string>
     <string name="notification_title">Az Élő feliratozás fut</string>
     <string name="action_stop">Állj</string>
-    <string name="tile_label">Élő feliratozás</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Futás</string>
     <string name="tile_subtitle_off">Koppintson az indításhoz</string>
 </resources>

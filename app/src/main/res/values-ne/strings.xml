@@ -3,7 +3,7 @@
     <string name="notification_channel_name">लाइभ क्याप्सन</string>
     <string name="notification_title">लाइभ क्याप्सन चलिरहेको छ</string>
     <string name="action_stop">रोक्नुहोस्</string>
-    <string name="tile_label">लाइभ क्याप्सन</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">दौडिरहेको</string>
     <string name="tile_subtitle_off">सुरु गर्न ट्याप गर्नुहोस्</string>
 </resources>

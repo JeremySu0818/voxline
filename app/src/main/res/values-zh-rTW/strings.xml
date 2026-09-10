@@ -3,7 +3,7 @@
     <string name="notification_channel_name">即時字幕</string>
     <string name="notification_title">即時字幕執行中</string>
     <string name="action_stop">停止</string>
-    <string name="tile_label">即時字幕</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">執行中</string>
     <string name="tile_subtitle_off">點按啟動</string>
 </resources>

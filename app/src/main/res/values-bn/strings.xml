@@ -3,7 +3,7 @@
     <string name="notification_channel_name">লাইভ ক্যাপশন</string>
     <string name="notification_title">লাইভ ক্যাপশন চলছে</string>
     <string name="action_stop">থামো</string>
-    <string name="tile_label">লাইভ ক্যাপশন</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">চলমান</string>
     <string name="tile_subtitle_off">শুরু করতে আলতো চাপুন</string>
 </resources>

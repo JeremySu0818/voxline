@@ -3,7 +3,7 @@
     <string name="notification_channel_name">लाइव कैप्शन</string>
     <string name="notification_title">लाइव कैप्शन चल रहा है</string>
     <string name="action_stop">रुकें</string>
-    <string name="tile_label">लाइव कैप्शन</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">चल रहा है</string>
     <string name="tile_subtitle_off">आरंभ करने के लिए टैप करें</string>
 </resources>

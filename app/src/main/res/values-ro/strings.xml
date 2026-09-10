@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Subtitrare live</string>
     <string name="notification_title">Subtitrări live rulează</string>
     <string name="action_stop">Opreste-te</string>
-    <string name="tile_label">Subtitrare live</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Alergarea</string>
     <string name="tile_subtitle_off">Atingeți pentru a începe</string>
 </resources>

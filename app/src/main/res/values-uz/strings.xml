@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Jonli izoh</string>
     <string name="notification_title">Jonli taglavha ishlamoqda</string>
     <string name="action_stop">To\'xtang</string>
-    <string name="tile_label">Jonli izoh</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Yugurish</string>
     <string name="tile_subtitle_off">Boshlash uchun bosing</string>
 </resources>

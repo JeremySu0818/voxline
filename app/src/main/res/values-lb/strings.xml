@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Voxline</string>
     <string name="notification_channel_name">Live Iwwerschrëft</string>
-    <string name="notification_title">Live Voxline leeft</string>
+    <string name="notification_title">Voxline leeft</string>
     <string name="action_stop">Stop</string>
-    <string name="tile_label">Live Iwwerschrëft</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Lafen</string>
     <string name="tile_subtitle_off">Tippen fir unzefänken</string>
 </resources>

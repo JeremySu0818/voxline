@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Livetekstitys</string>
     <string name="notification_title">Livetekstitys on käynnissä</string>
     <string name="action_stop">Pysähdy</string>
-    <string name="tile_label">Livetekstitys</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Juoksemassa</string>
     <string name="tile_subtitle_off">Aloita napauttamalla</string>
 </resources>

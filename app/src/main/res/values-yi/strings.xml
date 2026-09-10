@@ -3,7 +3,7 @@
     <string name="notification_channel_name">לעבן קאַפּטיאָן</string>
     <string name="notification_title">לייוו קאַפּטיאָן איז פליסנדיק</string>
     <string name="action_stop">האַלטן</string>
-    <string name="tile_label">לעבן קאַפּטיאָן</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">פליסנדיק</string>
     <string name="tile_subtitle_off">צאַפּן צו אָנהייבן</string>
 </resources>

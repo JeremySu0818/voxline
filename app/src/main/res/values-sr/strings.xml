@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Ливе Цаптион</string>
     <string name="notification_title">Титл уживо је покренут</string>
     <string name="action_stop">Стани</string>
-    <string name="tile_label">Ливе Цаптион</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Трчање</string>
     <string name="tile_subtitle_off">Додирните за почетак</string>
 </resources>

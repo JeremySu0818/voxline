@@ -3,7 +3,7 @@
     <string name="notification_channel_name">لائيو ڪيپشن</string>
     <string name="notification_title">لائيو ڪيپشن هلي رهيو آهي</string>
     <string name="action_stop">روڪ</string>
-    <string name="tile_label">لائيو ڪيپشن</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">هلندڙ</string>
     <string name="tile_subtitle_off">شروع ڪرڻ لاءِ ٽيپ ڪريو</string>
 </resources>

@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Titl uživo</string>
     <string name="notification_title">Titl uživo je pokrenut</string>
     <string name="action_stop">Stani</string>
-    <string name="tile_label">Titl uživo</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Trčanje</string>
     <string name="tile_subtitle_off">Dodirnite za početak</string>
 </resources>

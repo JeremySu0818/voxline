@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Voxline</string>
-    <string name="notification_channel_name">Live Voxline</string>
-    <string name="notification_title">Live Voxline ap kouri</string>
+    <string name="notification_channel_name">Voxline</string>
+    <string name="notification_title">Voxline ap kouri</string>
     <string name="action_stop">Sispann</string>
-    <string name="tile_label">Live Voxline</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Kouri</string>
     <string name="tile_subtitle_off">Tape pou kòmanse</string>
 </resources>

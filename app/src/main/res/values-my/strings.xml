@@ -3,7 +3,7 @@
     <string name="notification_channel_name">တိုက်ရိုက်စာတန်း</string>
     <string name="notification_title">တိုက်ရိုက်စာတန်းကို လုပ်ဆောင်နေပါသည်။</string>
     <string name="action_stop">ရပ်လိုက်ပါ။</string>
-    <string name="tile_label">တိုက်ရိုက်စာတန်း</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">ပြေးသည်။</string>
     <string name="tile_subtitle_off">စတင်ရန် တို့ပါ။</string>
 </resources>

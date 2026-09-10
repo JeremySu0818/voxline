@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Živý prepis</string>
     <string name="notification_title">Živý prepis je spustený</string>
     <string name="action_stop">Stop</string>
-    <string name="tile_label">Živý prepis</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Beh</string>
     <string name="tile_subtitle_off">Začnite klepnutím</string>
 </resources>

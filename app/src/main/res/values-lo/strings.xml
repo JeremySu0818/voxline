@@ -3,7 +3,7 @@
     <string name="notification_channel_name">ຄຳບັນຍາຍສົດ</string>
     <string name="notification_title">ຄຳບັນຍາຍສົດກຳລັງເຮັດວຽກຢູ່</string>
     <string name="action_stop">ຢຸດ</string>
-    <string name="tile_label">ຄຳບັນຍາຍສົດ</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">ແລ່ນ</string>
     <string name="tile_subtitle_off">ແຕະເພື່ອເລີ່ມຕົ້ນ</string>
 </resources>

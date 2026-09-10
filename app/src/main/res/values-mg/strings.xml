@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Voxline</string>
-    <string name="notification_channel_name">Voxline mivantana</string>
-    <string name="notification_title">Mandeha ny Live Voxline</string>
+    <string name="notification_channel_name">Voxline</string>
+    <string name="notification_title">Mandeha ny Voxline</string>
     <string name="action_stop">Atsaharo</string>
-    <string name="tile_label">Voxline mivantana</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">mihazakazaka</string>
     <string name="tile_subtitle_off">Tsindrio raha hanomboka</string>
 </resources>

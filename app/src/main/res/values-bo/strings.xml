@@ -3,7 +3,7 @@
     <string name="notification_channel_name">ཐད་གཏོང་འཆར།</string>
     <string name="notification_title">ཐད་གཏོང་འགྲེལ་བརྗོད་བྱེད་བཞིན་ཡོད།</string>
     <string name="action_stop">མཚམས་འཇོག་པ།</string>
-    <string name="tile_label">ཐད་གཏོང་འཆར།</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">རྒྱུག་པ།</string>
     <string name="tile_subtitle_off">འགོ་འཛུགས་པར་རྡེབ།</string>
 </resources>

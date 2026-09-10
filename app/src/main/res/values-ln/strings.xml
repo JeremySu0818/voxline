@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Voxline</string>
-    <string name="notification_channel_name">Voxline en direct</string>
-    <string name="notification_title">Live Voxline ezali kosala</string>
+    <string name="notification_channel_name">Voxline</string>
+    <string name="notification_title">Voxline ezali kosala</string>
     <string name="action_stop">Botika</string>
-    <string name="tile_label">Voxline en direct</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Kokima mbangu</string>
     <string name="tile_subtitle_off">Finá mpo na kobanda</string>
 </resources>

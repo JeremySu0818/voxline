@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Tapanga Ora</string>
     <string name="notification_title">Kei te haere te Tapanga Ora</string>
     <string name="action_stop">Kati</string>
-    <string name="tile_label">Tapanga Ora</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Rere ana</string>
     <string name="tile_subtitle_off">Patohia hei timata</string>
 </resources>

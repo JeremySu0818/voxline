@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Voxline</string>
     <string name="notification_channel_name">लाइव कैप्शन</string>
-    <string name="notification_title">Live Voxline प्रचलति</string>
+    <string name="notification_title">Voxline प्रचलति</string>
     <string name="action_stop">स्थगयतु</string>
-    <string name="tile_label">लाइव कैप्शन</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">धावति</string>
     <string name="tile_subtitle_off">आरम्भं कर्तुं ट्याप् कुर्वन्तु</string>
 </resources>

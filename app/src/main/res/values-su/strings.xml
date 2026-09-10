@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Voxline</string>
-    <string name="notification_channel_name">Voxline Live</string>
+    <string name="notification_channel_name">Voxline</string>
     <string name="notification_title">Voxline langsung dijalankeun</string>
     <string name="action_stop">Eureun</string>
-    <string name="tile_label">Voxline Live</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Lumpat</string>
     <string name="tile_subtitle_off">Ketok pikeun ngamimitian</string>
 </resources>

@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Voxline</string>
     <string name="notification_channel_name">Live billedtekst</string>
-    <string name="notification_title">Live Voxline kører</string>
+    <string name="notification_title">Voxline kører</string>
     <string name="action_stop">Stop</string>
-    <string name="tile_label">Live billedtekst</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Løb</string>
     <string name="tile_subtitle_off">Tryk for at starte</string>
 </resources>

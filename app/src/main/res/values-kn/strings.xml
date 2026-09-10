@@ -3,7 +3,7 @@
     <string name="notification_channel_name">ಲೈವ್ ಶೀರ್ಷಿಕೆ</string>
     <string name="notification_title">ಲೈವ್ ಶೀರ್ಷಿಕೆ ಚಾಲನೆಯಲ್ಲಿದೆ</string>
     <string name="action_stop">ನಿಲ್ಲಿಸು</string>
-    <string name="tile_label">ಲೈವ್ ಶೀರ್ಷಿಕೆ</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">ಓಡುತ್ತಿದೆ</string>
     <string name="tile_subtitle_off">ಪ್ರಾರಂಭಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ</string>
 </resources>

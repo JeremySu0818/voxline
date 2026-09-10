@@ -3,7 +3,7 @@
     <string name="notification_channel_name">زیرنویس زنده</string>
     <string name="notification_title">زیرنویس زنده در حال اجرا است</string>
     <string name="action_stop">توقف کنید</string>
-    <string name="tile_label">زیرنویس زنده</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">در حال دویدن</string>
     <string name="tile_subtitle_off">برای شروع ضربه بزنید</string>
 </resources>

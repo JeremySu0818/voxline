@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Regstreekse onderskrif</string>
     <string name="notification_title">Regstreekse onderskrif loop</string>
     <string name="action_stop">Stop</string>
-    <string name="tile_label">Regstreekse onderskrif</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Hardloop</string>
     <string name="tile_subtitle_off">Tik om te begin</string>
 </resources>

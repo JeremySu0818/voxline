@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Живі субтитри</string>
     <string name="notification_title">Живі субтитри запущено</string>
     <string name="action_stop">Стоп</string>
-    <string name="tile_label">Живі субтитри</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Біг</string>
     <string name="tile_subtitle_off">Торкніться, щоб почати</string>
 </resources>

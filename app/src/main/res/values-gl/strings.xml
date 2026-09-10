@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Subtítulos en directo</string>
     <string name="notification_title">Subtítulos en directo estase a executar</string>
     <string name="action_stop">Pare</string>
-    <string name="tile_label">Subtítulos en directo</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Correndo</string>
     <string name="tile_subtitle_off">Toca para comezar</string>
 </resources>

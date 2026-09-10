@@ -3,7 +3,7 @@
     <string name="notification_channel_name">የቀጥታ መግለጫ ጽሑፍ</string>
     <string name="notification_title">የቀጥታ መግለጫ ጽሑፍ እያሄደ ነው።</string>
     <string name="action_stop">አቁም</string>
-    <string name="tile_label">የቀጥታ መግለጫ ጽሑፍ</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">መሮጥ</string>
     <string name="tile_subtitle_off">ለመጀመር መታ ያድርጉ</string>
 </resources>

@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Göni ýazgy</string>
     <string name="notification_title">Göni ýazgy işleýär</string>
     <string name="action_stop">Dur</string>
-    <string name="tile_label">Göni ýazgy</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Ylgaýar</string>
     <string name="tile_subtitle_off">Başlamak üçin basyň</string>
 </resources>

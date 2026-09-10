@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Titrat e drejtpërdrejtë</string>
     <string name="notification_title">Titrat e drejtpërdrejtë po ekzekutohen</string>
     <string name="action_stop">Ndalo</string>
-    <string name="tile_label">Titrat e drejtpërdrejtë</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Vrapimi</string>
     <string name="tile_subtitle_off">Prekni për të filluar</string>
 </resources>

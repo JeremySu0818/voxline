@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Voxline</string>
     <string name="notification_channel_name">Fotheideal Beo</string>
-    <string name="notification_title">Tá Live Voxline ar siúl</string>
+    <string name="notification_title">Tá Voxline ar siúl</string>
     <string name="action_stop">Stop</string>
-    <string name="tile_label">Fotheideal Beo</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Ag rith</string>
     <string name="tile_subtitle_off">Tapáil chun tosú</string>
 </resources>

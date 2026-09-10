@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Subtítulo en vivo</string>
     <string name="notification_title">Los subtítulos en vivo se están ejecutando</string>
     <string name="action_stop">Detener</string>
-    <string name="tile_label">Subtítulo en vivo</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">corriendo</string>
     <string name="tile_subtitle_off">Toca para comenzar</string>
 </resources>

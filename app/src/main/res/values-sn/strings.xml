@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Voxline</string>
-    <string name="notification_channel_name">Live Voxline</string>
-    <string name="notification_title">Live Voxline iri kushanda</string>
+    <string name="notification_channel_name">Voxline</string>
+    <string name="notification_title">Voxline iri kushanda</string>
     <string name="action_stop">Mira</string>
-    <string name="tile_label">Live Voxline</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Kumhanya</string>
     <string name="tile_subtitle_off">Tinya kuti utange</string>
 </resources>

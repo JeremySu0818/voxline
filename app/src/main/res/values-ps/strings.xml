@@ -3,7 +3,7 @@
     <string name="notification_channel_name">ژوندی کیپشن</string>
     <string name="notification_title">ژوندی کیپشن روان دی</string>
     <string name="action_stop">ودریږي</string>
-    <string name="tile_label">ژوندی کیپشن</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">چلول</string>
     <string name="tile_subtitle_off">د پیل کولو لپاره ټایپ کړئ</string>
 </resources>

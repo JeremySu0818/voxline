@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Legenda ao vivo</string>
     <string name="notification_title">A legenda ao vivo está em execução</string>
     <string name="action_stop">Pare</string>
-    <string name="tile_label">Legenda ao vivo</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Correndo</string>
     <string name="tile_subtitle_off">Toque para começar</string>
 </resources>

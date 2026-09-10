@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Жывыя субцітры</string>
     <string name="notification_title">Жывыя субцітры запушчаны</string>
     <string name="action_stop">Стоп</string>
-    <string name="tile_label">Жывыя субцітры</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Бег</string>
     <string name="tile_subtitle_off">Націсніце, каб пачаць</string>
 </resources>

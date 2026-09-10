@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Йәнле яҙма</string>
     <string name="notification_title">Йәнле яҙма эшләй</string>
     <string name="action_stop">Туҡтау</string>
-    <string name="tile_label">Йәнле яҙма</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Йүгереү .</string>
     <string name="tile_subtitle_off">Башлау өсөн баҫығыҙ</string>
 </resources>

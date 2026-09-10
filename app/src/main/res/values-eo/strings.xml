@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Voxline</string>
     <string name="notification_channel_name">Viva Titolo</string>
-    <string name="notification_title">Live Voxline funkcias</string>
+    <string name="notification_title">Voxline funkcias</string>
     <string name="action_stop">Haltu</string>
-    <string name="tile_label">Viva Titolo</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Kurante</string>
     <string name="tile_subtitle_off">Frapu por komenci</string>
 </resources>

@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Subtitrai gyvai</string>
     <string name="notification_title">Subtitrai realiuoju laiku veikia</string>
     <string name="action_stop">Sustok</string>
-    <string name="tile_label">Subtitrai gyvai</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Bėgimas</string>
     <string name="tile_subtitle_off">Palieskite norėdami pradėti</string>
 </resources>

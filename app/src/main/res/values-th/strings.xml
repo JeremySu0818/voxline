@@ -3,7 +3,7 @@
     <string name="notification_channel_name">คำบรรยายสด</string>
     <string name="notification_title">คำบรรยายสดกำลังทำงานอยู่</string>
     <string name="action_stop">หยุด</string>
-    <string name="tile_label">คำบรรยายสด</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">วิ่ง</string>
     <string name="tile_subtitle_off">แตะเพื่อเริ่มต้น</string>
 </resources>

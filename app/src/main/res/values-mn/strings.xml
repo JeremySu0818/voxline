@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Шууд тайлбар</string>
     <string name="notification_title">Шууд тайлбар ажиллаж байна</string>
     <string name="action_stop">Зогс</string>
-    <string name="tile_label">Шууд тайлбар</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Гүйж байна</string>
     <string name="tile_subtitle_off">Эхлүүлэхийн тулд товшино уу</string>
 </resources>

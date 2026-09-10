@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Voxline</string>
-    <string name="notification_channel_name">Live Voxline</string>
-    <string name="notification_title">Live Voxline se izvaja</string>
+    <string name="notification_channel_name">Voxline</string>
+    <string name="notification_title">Voxline se izvaja</string>
     <string name="action_stop">Stop</string>
-    <string name="tile_label">Live Voxline</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">tek</string>
     <string name="tile_subtitle_off">Tapnite za začetek</string>
 </resources>

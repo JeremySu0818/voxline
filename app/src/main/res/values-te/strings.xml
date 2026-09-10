@@ -3,7 +3,7 @@
     <string name="notification_channel_name">ప్రత్యక్ష శీర్షిక</string>
     <string name="notification_title">ప్రత్యక్ష శీర్షిక అమలవుతోంది</string>
     <string name="action_stop">ఆపు</string>
-    <string name="tile_label">ప్రత్యక్ష శీర్షిక</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">నడుస్తోంది</string>
     <string name="tile_subtitle_off">ప్రారంభించడానికి నొక్కండి</string>
 </resources>

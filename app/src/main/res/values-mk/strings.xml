@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Титл во живо</string>
     <string name="notification_title">Активен титл во живо</string>
     <string name="action_stop">Стоп</string>
-    <string name="tile_label">Титл во живо</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Трчање</string>
     <string name="tile_subtitle_off">Допрете за да започнете</string>
 </resources>

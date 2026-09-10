@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Manukuu Papo Hapo</string>
     <string name="notification_title">Manukuu Papo Hapo yanaendeshwa</string>
     <string name="action_stop">Acha</string>
-    <string name="tile_label">Manukuu Papo Hapo</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Kukimbia</string>
     <string name="tile_subtitle_off">Gusa ili kuanza</string>
 </resources>

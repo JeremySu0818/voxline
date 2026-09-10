@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Canlı Altyazı</string>
     <string name="notification_title">Canlı Altyazı işləyir</string>
     <string name="action_stop">Dayan</string>
-    <string name="tile_label">Canlı Altyazı</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Qaçış</string>
     <string name="tile_subtitle_off">Başlamaq üçün toxunun</string>
 </resources>

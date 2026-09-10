@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Voxline</string>
-    <string name="notification_channel_name">Live Voxline</string>
-    <string name="notification_title">Live Voxline is running</string>
+    <string name="notification_channel_name">Voxline</string>
+    <string name="notification_title">Voxline is running</string>
     <string name="action_stop">Stop</string>
-    <string name="tile_label">Live Voxline</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Running</string>
     <string name="tile_subtitle_off">Tap to start</string>
 </resources>

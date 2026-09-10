@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Reaalajas subtiitrid</string>
     <string name="notification_title">Reaalajas subtiitrid töötavad</string>
     <string name="action_stop">Peatus</string>
-    <string name="tile_label">Reaalajas subtiitrid</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Jooksmine</string>
     <string name="tile_subtitle_off">Alustamiseks puudutage</string>
 </resources>

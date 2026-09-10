@@ -3,7 +3,7 @@
     <string name="notification_channel_name">සජීවී සිරස්තල</string>
     <string name="notification_title">සජීවී සිරස්තල ධාවනය වේ</string>
     <string name="action_stop">නවත්වන්න</string>
-    <string name="tile_label">සජීවී සිරස්තල</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">දුවනවා</string>
     <string name="tile_subtitle_off">ආරම්භ කිරීමට තට්ටු කරන්න</string>
 </resources>

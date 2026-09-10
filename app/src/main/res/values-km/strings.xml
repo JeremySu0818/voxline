@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Voxline</string>
     <string name="notification_channel_name">ចំណងជើងបន្តផ្ទាល់</string>
-    <string name="notification_title">Live Voxline កំពុងដំណើរការ</string>
+    <string name="notification_title">Voxline កំពុងដំណើរការ</string>
     <string name="action_stop">ឈប់</string>
-    <string name="tile_label">ចំណងជើងបន្តផ្ទាល់</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">កំពុងរត់</string>
     <string name="tile_subtitle_off">ប៉ះដើម្បីចាប់ផ្តើម</string>
 </resources>

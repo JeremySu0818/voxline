@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Voxline</string>
     <string name="notification_channel_name">Тікелей субтитр</string>
-    <string name="notification_title">Live Voxline жұмыс істейді</string>
+    <string name="notification_title">Voxline жұмыс істейді</string>
     <string name="action_stop">Тоқта</string>
-    <string name="tile_label">Тікелей субтитр</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Жүгіру</string>
     <string name="tile_subtitle_off">Бастау үшін түртіңіз</string>
 </resources>

@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Beinleiðis yvirskrift</string>
     <string name="notification_title">Beinleiðis yvirskrift er í gongd</string>
     <string name="action_stop">Steðga</string>
-    <string name="tile_label">Beinleiðis yvirskrift</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Renning</string>
     <string name="tile_subtitle_off">Trýst fyri at byrja</string>
 </resources>

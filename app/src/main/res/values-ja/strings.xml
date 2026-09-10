@@ -3,7 +3,7 @@
     <string name="notification_channel_name">ライブキャプション</string>
     <string name="notification_title">ライブキャプションが実行中です</string>
     <string name="action_stop">停止</string>
-    <string name="tile_label">ライブキャプション</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">ランニング</string>
     <string name="tile_subtitle_off">タップして開始</string>
 </resources>

@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Teks Langsung</string>
     <string name="notification_title">Teks Otomatis sedang berjalan</string>
     <string name="action_stop">Berhenti</string>
-    <string name="tile_label">Teks Langsung</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Berlari</string>
     <string name="tile_subtitle_off">Ketuk untuk memulai</string>
 </resources>

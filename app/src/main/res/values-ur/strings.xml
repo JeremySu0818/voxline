@@ -3,7 +3,7 @@
     <string name="notification_channel_name">لائیو کیپشن</string>
     <string name="notification_title">لائیو کیپشن چل رہا ہے۔</string>
     <string name="action_stop">رک جاؤ</string>
-    <string name="tile_label">لائیو کیپشن</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">چل رہا ہے۔</string>
     <string name="tile_subtitle_off">شروع کرنے کے لیے تھپتھپائیں۔</string>
 </resources>

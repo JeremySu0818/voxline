@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Zuzeneko azpititulua</string>
     <string name="notification_title">Zuzeneko azpititulua abian da</string>
     <string name="action_stop">Gelditu</string>
-    <string name="tile_label">Zuzeneko azpititulua</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Korrika</string>
     <string name="tile_subtitle_off">Sakatu hasteko</string>
 </resources>

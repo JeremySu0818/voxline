@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Qoraal toos ah</string>
     <string name="notification_title">Qoraal toos ah ayaa socda</string>
     <string name="action_stop">Jooji</string>
-    <string name="tile_label">Qoraal toos ah</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">ordaya</string>
     <string name="tile_subtitle_off">Taabo si aad u bilowdo</string>
 </resources>

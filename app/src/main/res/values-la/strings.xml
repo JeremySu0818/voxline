@@ -3,7 +3,7 @@
     <string name="notification_channel_name">Vivamus Voxline</string>
     <string name="notification_title">Vivamus Voxline currit</string>
     <string name="action_stop">Subsisto</string>
-    <string name="tile_label">Vivamus Voxline</string>
+    <string name="tile_label">Voxline</string>
     <string name="tile_subtitle_on">Running</string>
     <string name="tile_subtitle_off">ICTUS incipere</string>
 </resources>
