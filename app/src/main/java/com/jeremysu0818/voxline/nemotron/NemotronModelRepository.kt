@@ -1,11 +1,17 @@
 package com.jeremysu0818.voxline.nemotron
 
 import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import com.jeremysu0818.voxline.data.I18n
 import java.io.File
 import java.io.FileOutputStream
+import java.io.IOException
 import java.net.HttpURLConnection
+import java.net.SocketException
+import java.net.SocketTimeoutException
 import java.net.URL
+import java.net.UnknownHostException
 import java.nio.file.AtomicMoveNotSupportedException
 import java.nio.file.Files
 import java.nio.file.StandardCopyOption
@@ -19,6 +25,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
@@ -44,7 +51,7 @@ data class NemotronModelState(
     }
 
     companion object {
-        internal const val MODEL_SIZE_BYTES = 741_548_352L
+        internal const val MODEL_SIZE_BYTES = 742_090_464L
 
         fun readableSize(bytes: Long): String {
             if (bytes < 0L) return "--"
@@ -61,7 +68,7 @@ data class NemotronModelState(
     }
 }
 
-class NemotronModelRepository(context: Context) {
+class NemotronModelRepository(private val context: Context) {
     private val modelDir = File(context.filesDir, "nemotron_models")
     private val mutex = Mutex()
     private val _state = MutableStateFlow(
@@ -79,6 +86,13 @@ class NemotronModelRepository(context: Context) {
         }
     }
 
+    private fun hasInternetConnection(): Boolean {
+        val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as? ConnectivityManager ?: return true
+        val network = cm.activeNetwork ?: return false
+        val capabilities = cm.getNetworkCapabilities(network) ?: return false
+        return capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+    }
+
     suspend fun ensureModel(): File = mutex.withLock {
         withContext(Dispatchers.IO) {
             modelDir.mkdirs()
@@ -86,6 +100,11 @@ class NemotronModelRepository(context: Context) {
             if (modelLooksComplete(destination) && verifyInstalledModel(destination)) {
                 _state.value = completedState(destination)
                 return@withContext destination
+            }
+            if (!hasInternetConnection()) {
+                val errorMsg = I18n.getString("error_model_download_requires_network")
+                _state.value = NemotronModelState(errorMessage = errorMsg)
+                throw IllegalStateException(errorMsg)
             }
             verifiedMarker().delete()
             if (destination.exists() && !destination.delete()) {
@@ -115,13 +134,21 @@ class NemotronModelRepository(context: Context) {
                 destination
             } catch (error: Throwable) {
                 partial.delete()
+                val isCancelled = error is CancellationException || !currentCoroutineContext().isActive
                 _state.value = NemotronModelState(
-                    errorMessage = if (error is CancellationException) {
+                    errorMessage = if (isCancelled) {
                         null
-                    } else {
-                        error.message ?: I18n.getString("error_download_failed")
+                    } else when (error) {
+                        is UnknownHostException -> I18n.getString("error_model_download_requires_network")
+                        is SocketTimeoutException, is SocketException, is IOException -> {
+                            I18n.getString("error_download_failed")
+                        }
+                        else -> error.message ?: I18n.getString("error_download_failed")
                     },
                 )
+                if (isCancelled && error !is CancellationException) {
+                    throw CancellationException("Download cancelled", error)
+                }
                 throw error
             }
         }
@@ -245,11 +272,11 @@ class NemotronModelRepository(context: Context) {
 
     companion object {
         const val MODEL_NAME = "Nemotron 3.5 ASR Streaming 0.6B Q8"
-        const val SIZE_LABEL = "707 MB"
+        const val SIZE_LABEL = "708 MB"
         private const val FILE_NAME = "nemotron-3.5-asr-streaming-0.6b.q8_0.gguf"
         private const val DOWNLOAD_URL =
-            "https://huggingface.co/nvidia/nemotron-3.5-asr-streaming-0.6b/resolve/main/$FILE_NAME"
-        private const val SHA256 = "a5c435f294eea8f88ce68dd27b8c3bfea7f777cb2fbba04fcd30eaa555f429ae"
+            "https://huggingface.co/nvidia/nemotron-3.5-asr-streaming-0.6b/resolve/ea30d66debe3740a08b573244286791d423d6b3e/$FILE_NAME"
+        private const val SHA256 = "3fc991d3badad7277c11030a7519832cddaf2057aafed6d4b25147e953a070b1"
         private const val SPEED_SAMPLE_WINDOW_MS = 500L
     }
 }

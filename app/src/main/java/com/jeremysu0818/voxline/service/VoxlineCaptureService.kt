@@ -256,6 +256,10 @@ class VoxlineCaptureService : Service() {
                     translationChannel = translationChannel,
                 )
             } else if (config.speechEngine == SpeechEngineOption.NEMOTRON) {
+                val destination = VoxlineGraph.nemotronModelRepository.modelFile()
+                if (!destination.exists() && !hasInternetConnection()) {
+                    throw IllegalStateException(I18n.getString("error_model_download_requires_network"))
+                }
                 val modelStateJob = serviceScope.launch {
                     VoxlineGraph.nemotronModelRepository.state.collectLatest { state ->
                         if (state.isDownloading) {

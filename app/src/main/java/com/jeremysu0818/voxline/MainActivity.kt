@@ -115,7 +115,9 @@ import com.jeremysu0818.voxline.service.VoxlineCaptureService
 import com.jeremysu0818.voxline.nemotron.NemotronModelRepository
 import com.jeremysu0818.voxline.nemotron.NemotronModelState
 import com.jeremysu0818.voxline.ui.theme.VoxlineTheme
+import android.util.Log
 import com.jeremysu0818.voxline.whisper.ModelDownloadState
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
@@ -449,6 +451,10 @@ private fun VoxlineApp(
                                                     val job = scope.launch(start = CoroutineStart.LAZY) {
                                                         try {
                                                             VoxlineGraph.modelRepository.ensureModel(model)
+                                                        } catch (_: CancellationException) {
+                                                            // Cancelled
+                                                        } catch (e: Throwable) {
+                                                            Log.e("MainActivity", "Failed to download Whisper model", e)
                                                         } finally {
                                                             downloadJobs.remove(model)
                                                         }
@@ -461,7 +467,11 @@ private fun VoxlineApp(
                                                 },
                                                 onDeleteModel = { model ->
                                                     scope.launch {
-                                                        VoxlineGraph.modelRepository.deleteModel(model)
+                                                        try {
+                                                            VoxlineGraph.modelRepository.deleteModel(model)
+                                                        } catch (e: Throwable) {
+                                                            Log.e("MainActivity", "Failed to delete Whisper model", e)
+                                                        }
                                                     }
                                                 },
                                             )
@@ -487,6 +497,10 @@ private fun VoxlineApp(
                                                         nemotronDownloadJob = scope.launch {
                                                             try {
                                                                 VoxlineGraph.nemotronModelRepository.ensureModel()
+                                                            } catch (_: CancellationException) {
+                                                                // Cancelled
+                                                            } catch (e: Throwable) {
+                                                                Log.e("MainActivity", "Failed to download Nemotron model", e)
                                                             } finally {
                                                                 nemotronDownloadJob = null
                                                             }
@@ -499,7 +513,11 @@ private fun VoxlineApp(
                                                 },
                                                 onDeleteModel = {
                                                     scope.launch {
-                                                        VoxlineGraph.nemotronModelRepository.deleteModel()
+                                                        try {
+                                                            VoxlineGraph.nemotronModelRepository.deleteModel()
+                                                        } catch (e: Throwable) {
+                                                            Log.e("MainActivity", "Failed to delete Nemotron model", e)
+                                                        }
                                                     }
                                                 },
                                             )

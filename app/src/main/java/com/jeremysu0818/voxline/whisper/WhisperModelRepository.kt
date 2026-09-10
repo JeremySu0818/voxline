@@ -1,11 +1,17 @@
 package com.jeremysu0818.voxline.whisper
 
 import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import com.jeremysu0818.voxline.data.WhisperModelOption
 import java.io.File
 import java.io.FileOutputStream
+import java.io.IOException
 import java.net.HttpURLConnection
+import java.net.SocketException
+import java.net.SocketTimeoutException
 import java.net.URL
+import java.net.UnknownHostException
 import java.security.MessageDigest
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
@@ -16,6 +22,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
@@ -58,7 +65,7 @@ data class ModelDownloadState(
 }
 
 
-class WhisperModelRepository(context: Context) {
+class WhisperModelRepository(private val context: Context) {
     private val modelDir = File(context.filesDir, "whisper_models")
     private val modelMutexes = WhisperModelOption.entries.associateWith { Mutex() }
     private val _downloadStates = MutableStateFlow(
@@ -87,6 +94,13 @@ class WhisperModelRepository(context: Context) {
                 ))
             }
         }
+    }
+
+    private fun hasInternetConnection(): Boolean {
+        val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as? ConnectivityManager ?: return true
+        val network = cm.activeNetwork ?: return false
+        val capabilities = cm.getNetworkCapabilities(network) ?: return false
+        return capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
     }
 
     suspend fun deleteModel(option: WhisperModelOption) = modelMutexes.getValue(option).withLock {
@@ -124,6 +138,17 @@ class WhisperModelRepository(context: Context) {
                 return@withContext destination
             }
 
+            if (!hasInternetConnection()) {
+                val errorMsg = com.jeremysu0818.voxline.data.I18n.getString("error_model_download_requires_network")
+                updateState(ModelDownloadState(
+                    model = option,
+                    isDownloaded = false,
+                    isDownloading = false,
+                    errorMessage = errorMsg,
+                ))
+                throw IllegalStateException(errorMsg)
+            }
+
             val tempFile = File(modelDir, "${option.fileName}.download")
             if (tempFile.exists()) tempFile.delete()
 
@@ -159,12 +184,24 @@ class WhisperModelRepository(context: Context) {
                 destination
             } catch (error: Throwable) {
                 tempFile.delete()
+                val isCancelled = error is CancellationException || !currentCoroutineContext().isActive
                 updateState(ModelDownloadState(
                     model = option,
                     isDownloaded = false,
                     isDownloading = false,
-                    errorMessage = if (error is CancellationException) null else (error.message ?: com.jeremysu0818.voxline.data.I18n.getString("error_download_failed")),
+                    errorMessage = if (isCancelled) {
+                        null
+                    } else when (error) {
+                        is UnknownHostException -> com.jeremysu0818.voxline.data.I18n.getString("error_model_download_requires_network")
+                        is SocketTimeoutException, is SocketException, is IOException -> {
+                            com.jeremysu0818.voxline.data.I18n.getString("error_download_failed")
+                        }
+                        else -> error.message ?: com.jeremysu0818.voxline.data.I18n.getString("error_download_failed")
+                    },
                 ))
+                if (isCancelled && error !is CancellationException) {
+                    throw CancellationException("Download cancelled", error)
+                }
                 throw error
             }
         }
