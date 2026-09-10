@@ -34,11 +34,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.drawWithContent
-import androidx.compose.ui.graphics.BlendMode
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.font.FontWeight
@@ -79,15 +75,13 @@ private class OverlayLifecycleOwner : LifecycleOwner, ViewModelStoreOwner, Saved
     }
 }
 
-
-
 private const val OverlayWindowAlpha = 1f
 
 class FloatingVoxlineState(
     initialX: Int,
     initialY: Int,
     val minHeightPx: Int,
-    val maxHeightPx: Int
+    val maxHeightPx: Int,
 ) {
     var x by mutableIntStateOf(initialX)
     var y by mutableIntStateOf(initialY)
@@ -117,28 +111,23 @@ class FloatingVoxlineWindow(
 ) {
     private val mainHandler = Handler(Looper.getMainLooper())
     private val windowManager = context.getSystemService(WindowManager::class.java)
-    
-    private var controlView: ComposeView? = null
-    private var contentView: ComposeView? = null
-    private var contentInputView: View? = null
+
+    private var mainView: ComposeView? = null
     private var closeTargetView: ComposeView? = null
-    
-    private var controlLifecycle: OverlayLifecycleOwner? = null
-    private var contentLifecycle: OverlayLifecycleOwner? = null
+
+    private var mainLifecycle: OverlayLifecycleOwner? = null
     private var closeTargetLifecycle: OverlayLifecycleOwner? = null
 
     @SuppressLint("ClickableViewAccessibility")
     fun show() {
         mainHandler.post {
-            if (controlView != null) return@post
+            if (mainView != null) return@post
 
             val density = context.resources.displayMetrics.density
             val screenWidthPixels = context.resources.displayMetrics.widthPixels
             val screenHeightPixels = context.resources.displayMetrics.heightPixels
-
             val baseWidth = (screenWidthPixels - 32 * density).coerceAtMost(720 * density)
             val windowWidthPx = (baseWidth * 0.9f).roundToInt()
-
             val barHeightPx = (16 * density).roundToInt()
             val closeTargetHeightPx = (112 * density).roundToInt()
             val closeCapsuleWidthPx = (128 * density).roundToInt()
@@ -146,26 +135,24 @@ class FloatingVoxlineWindow(
             val closeCapsuleBottomMarginPx = (20 * density).roundToInt()
             val minHeightPx = (screenHeightPixels / 6f).roundToInt()
             val maxHeightPx = (screenHeightPixels * 0.6f).roundToInt()
-            val maxContentHeightPx = maxHeightPx - barHeightPx + 1
-
             val initialTopY = (screenHeightPixels * 0.72f).roundToInt()
 
             val state = FloatingVoxlineState(
                 initialX = (screenWidthPixels - windowWidthPx) / 2,
                 initialY = initialTopY,
                 minHeightPx = minHeightPx,
-                maxHeightPx = maxHeightPx
+                maxHeightPx = maxHeightPx,
             )
 
-            val controlParams = WindowManager.LayoutParams(
+            val mainParams = WindowManager.LayoutParams(
                 windowWidthPx,
-                barHeightPx,
+                state.heightPx,
                 windowType,
                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
-                        WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL or
-                        WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN or
-                        WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-                PixelFormat.TRANSLUCENT
+                    WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL or
+                    WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN or
+                    WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                PixelFormat.TRANSLUCENT,
             ).apply {
                 gravity = Gravity.TOP or Gravity.START
                 x = state.x
@@ -173,104 +160,43 @@ class FloatingVoxlineWindow(
                 alpha = OverlayWindowAlpha
             }
 
-
-
-
-            val contentParams = WindowManager.LayoutParams(
-                windowWidthPx,
-                maxContentHeightPx,
-                windowType,
-                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
-                        WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL or
-                        WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN or
-                        WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS or
-                        WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-                PixelFormat.TRANSLUCENT
-            ).apply {
-                gravity = Gravity.TOP or Gravity.START
-                x = state.x
-                y = state.y + state.heightPx - maxContentHeightPx
-                alpha = OverlayWindowAlpha
-            }
-
-
-
-
-
-            val contentInputParams = WindowManager.LayoutParams(
-                windowWidthPx,
-                state.heightPx - barHeightPx + 1,
-                windowType,
-                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
-                        WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL or
-                        WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN or
-                        WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-                PixelFormat.TRANSLUCENT
-            ).apply {
-                gravity = Gravity.TOP or Gravity.START
-                x = state.x
-                y = state.y + barHeightPx - 1
-                alpha = OverlayWindowAlpha
-            }
-
-            fun updateContentInputLayout() {
-                contentInputParams.x = state.x
-                contentInputParams.y = state.y + barHeightPx - 1
-                contentInputParams.height = state.heightPx - barHeightPx + 1
-                contentInputView?.let { windowManager.updateViewLayout(it, contentInputParams) }
-            }
-
-            val controlOwner = OverlayLifecycleOwner().apply { init() }
-            val contentOwner = OverlayLifecycleOwner().apply { init() }
+            val mainOwner = OverlayLifecycleOwner().apply { init() }
             val closeTargetOwner = OverlayLifecycleOwner().apply { init() }
             val closeTargetState = CloseTargetState()
-
-
 
             val closeTargetParams = WindowManager.LayoutParams(
                 WindowManager.LayoutParams.MATCH_PARENT,
                 closeTargetHeightPx,
                 windowType,
                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
-                        WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE or
-                        WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
-                PixelFormat.TRANSLUCENT
+                    WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE or
+                    WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
+                PixelFormat.TRANSLUCENT,
             ).apply {
                 gravity = Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL
                 alpha = OverlayWindowAlpha
             }
 
-            val cView = ComposeView(context).apply {
-                setViewTreeLifecycleOwner(controlOwner)
-                setViewTreeViewModelStoreOwner(controlOwner)
-                setViewTreeSavedStateRegistryOwner(controlOwner)
+            val captionView = ComposeView(context).apply {
+                setViewTreeLifecycleOwner(mainOwner)
+                setViewTreeViewModelStoreOwner(mainOwner)
+                setViewTreeSavedStateRegistryOwner(mainOwner)
                 setContent {
                     VoxlineTheme {
-                        ControlBarApp(
-                            onDragStarted = {
-                                closeTargetState.show()
-                            },
+                        FloatingCaptionApp(
+                            barHeightPx = barHeightPx,
+                            onDragStarted = closeTargetState::show,
                             onMove = { dx, dy, touchX, touchY ->
                                 state.x += dx.roundToInt()
                                 state.y += dy.roundToInt()
-                                
-                                controlParams.x = state.x
-                                controlParams.y = state.y
-                                windowManager.updateViewLayout(controlView, controlParams)
-
-                                contentParams.x = state.x
-                                contentParams.y = state.y + state.heightPx - maxContentHeightPx
-                                windowManager.updateViewLayout(contentView, contentParams)
-                                updateContentInputLayout()
-
-
-
-
+                                mainParams.x = state.x
+                                mainParams.y = state.y
+                                windowManager.updateViewLayout(mainView, mainParams)
 
                                 val capsuleLeft = (screenWidthPixels - closeCapsuleWidthPx) / 2f
                                 val capsuleTop = (
                                     screenHeightPixels - closeCapsuleBottomMarginPx - closeCapsuleHeightPx
-                                    ).toFloat()
+                                ).toFloat()
                                 val isOverCloseTarget = isPointInsideCapsule(
                                     x = touchX,
                                     y = touchY,
@@ -289,23 +215,22 @@ class FloatingVoxlineWindow(
                                 closeTargetState.hide()
                                 if (shouldClose) onCloseRequested()
                             },
-                            onDragCancelled = {
-                                closeTargetState.hide()
-                            },
+                            onDragCancelled = closeTargetState::hide,
                             onResize = { dy ->
                                 val oldHeight = state.heightPx
-                                val newHeight = (oldHeight - dy.roundToInt()).coerceIn(state.minHeightPx, state.maxHeightPx)
+                                val newHeight = (oldHeight - dy.roundToInt())
+                                    .coerceIn(state.minHeightPx, state.maxHeightPx)
                                 val heightDiff = newHeight - oldHeight
-                                
                                 state.heightPx = newHeight
                                 state.y -= heightDiff
-                                
-                                controlParams.y = state.y
-                                windowManager.updateViewLayout(controlView, controlParams)
-                                updateContentInputLayout()
+                                mainParams.y = state.y
+                                mainParams.height = state.heightPx
+                                windowManager.updateViewLayout(mainView, mainParams)
                             },
                             onToggleSize = {
-                                val nextHeight = if (state.heightPx < (state.minHeightPx + state.maxHeightPx) / 2) {
+                                val nextHeight = if (
+                                    state.heightPx < (state.minHeightPx + state.maxHeightPx) / 2
+                                ) {
                                     state.maxHeightPx
                                 } else {
                                     state.minHeightPx
@@ -313,47 +238,12 @@ class FloatingVoxlineWindow(
                                 val heightDiff = nextHeight - state.heightPx
                                 state.heightPx = nextHeight
                                 state.y -= heightDiff
-                                
-                                controlParams.y = state.y
-                                windowManager.updateViewLayout(controlView, controlParams)
-                                updateContentInputLayout()
-                            }
+                                mainParams.y = state.y
+                                mainParams.height = state.heightPx
+                                windowManager.updateViewLayout(mainView, mainParams)
+                            },
                         )
                     }
-                }
-            }
-
-            val tView = ComposeView(context).apply {
-                setViewTreeLifecycleOwner(contentOwner)
-                setViewTreeViewModelStoreOwner(contentOwner)
-                setViewTreeSavedStateRegistryOwner(contentOwner)
-                setContent {
-                    VoxlineTheme {
-                        ContentListApp(
-                            state = state,
-                            barHeightPx = barHeightPx,
-                        )
-                    }
-                }
-            }
-
-            val inputView = View(context).apply {
-
-
-
-
-                setOnTouchListener { _, event ->
-                    contentView?.let { target ->
-                        MotionEvent.obtain(event).also { forwarded ->
-                            forwarded.offsetLocation(
-                                0f,
-                                (contentInputParams.y - contentParams.y).toFloat()
-                            )
-                            target.dispatchTouchEvent(forwarded)
-                            forwarded.recycle()
-                        }
-                    }
-                    true
                 }
             }
 
@@ -368,53 +258,75 @@ class FloatingVoxlineWindow(
                 }
             }
 
-            windowManager.addView(tView, contentParams)
-            windowManager.addView(inputView, contentInputParams)
-            windowManager.addView(cView, controlParams)
-
-
-
+            windowManager.addView(captionView, mainParams)
             windowManager.addView(closeView, closeTargetParams)
-            
-            controlView = cView
-            contentView = tView
-            contentInputView = inputView
+
+            mainView = captionView
             closeTargetView = closeView
-            controlLifecycle = controlOwner
-            contentLifecycle = contentOwner
+            mainLifecycle = mainOwner
             closeTargetLifecycle = closeTargetOwner
         }
     }
 
     fun dismiss() {
         mainHandler.post {
-            controlView?.let { windowManager.removeView(it) }
+            mainView?.let { windowManager.removeView(it) }
             closeTargetView?.let { windowManager.removeView(it) }
-            contentInputView?.let { windowManager.removeView(it) }
-            contentView?.let { windowManager.removeView(it) }
-            controlView = null
-            contentView = null
-            contentInputView = null
+            mainView = null
             closeTargetView = null
-            controlLifecycle?.destroy()
-            contentLifecycle?.destroy()
+            mainLifecycle?.destroy()
             closeTargetLifecycle?.destroy()
-            controlLifecycle = null
-            contentLifecycle = null
+            mainLifecycle = null
             closeTargetLifecycle = null
         }
     }
+}
 
-    @Deprecated("不再使用")
-    fun updateStatus(status: String) {}
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
+@Composable
+private fun FloatingCaptionApp(
+    barHeightPx: Int,
+    onDragStarted: () -> Unit,
+    onMove: (Float, Float, Float, Float) -> Unit,
+    onDragEnded: () -> Unit,
+    onDragCancelled: () -> Unit,
+    onResize: (Float) -> Unit,
+    onToggleSize: () -> Unit,
+) {
+    val captionsState by VoxlineRuntimeStore.state.collectAsState()
+    val barHeight = with(LocalDensity.current) { barHeightPx.toDp() }
 
-    @Deprecated("不再使用")
-    fun updateVoxline(sourceText: String, translatedText: String?) {}
+    Surface(
+        modifier = Modifier.fillMaxSize(),
+        shape = RoundedCornerShape(20.dp),
+        color = MaterialTheme.colorScheme.surfaceContainerHigh.copy(alpha = 0.94f),
+        contentColor = MaterialTheme.colorScheme.onSurface,
+    ) {
+        Column(modifier = Modifier.fillMaxSize()) {
+            ControlBarApp(
+                modifier = Modifier.fillMaxWidth().height(barHeight),
+                onDragStarted = onDragStarted,
+                onMove = onMove,
+                onDragEnded = onDragEnded,
+                onDragCancelled = onDragCancelled,
+                onResize = onResize,
+                onToggleSize = onToggleSize,
+            )
+            VoxlineContentList(
+                lines = captionsState.lines,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .weight(1f)
+                    .padding(horizontal = 16.dp, vertical = 8.dp),
+            )
+        }
+    }
 }
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun ControlBarApp(
+    modifier: Modifier = Modifier,
     onDragStarted: () -> Unit,
     onMove: (Float, Float, Float, Float) -> Unit,
     onDragEnded: () -> Unit,
@@ -431,18 +343,7 @@ fun ControlBarApp(
     val touchSlop = androidx.compose.ui.platform.LocalViewConfiguration.current.touchSlop
     val resizeHandleTouchWidthPx = with(LocalDensity.current) { 80.dp.toPx() }
 
-    Surface(
-        modifier = Modifier.fillMaxSize(),
-        shape = RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp),
-        color = MaterialTheme.colorScheme.surfaceContainerHigh.copy(alpha = 0.94f),
-    ) {
-        Box(
-            modifier = Modifier.fillMaxSize(),
-            contentAlignment = Alignment.Center,
-        ) {
-
-
-
+    Box(modifier = modifier, contentAlignment = Alignment.Center) {
             val gestureState = remember {
                 object {
                     var lastX = 0f
@@ -454,11 +355,11 @@ fun ControlBarApp(
             }
 
             AndroidView(
-                factory = { ctx -> android.view.View(ctx) },
+                factory = { ctx -> View(ctx) },
                 update = { view ->
                     view.setOnTouchListener { _, event ->
                         when (event.actionMasked) {
-                            android.view.MotionEvent.ACTION_DOWN -> {
+                            MotionEvent.ACTION_DOWN -> {
                                 gestureState.lastX = event.rawX
                                 gestureState.lastY = event.rawY
                                 gestureState.initialY = event.rawY
@@ -469,10 +370,12 @@ fun ControlBarApp(
                                 if (!gestureState.isResizeGesture) onDragStarted()
                                 true
                             }
-                            android.view.MotionEvent.ACTION_MOVE -> {
+
+                            MotionEvent.ACTION_MOVE -> {
                                 if (gestureState.isResizeGesture) {
                                     val currentY = event.rawY
-                                    if (!gestureState.isDragging &&
+                                    if (
+                                        !gestureState.isDragging &&
                                         abs(currentY - gestureState.initialY) > touchSlop
                                     ) {
                                         gestureState.isDragging = true
@@ -493,7 +396,8 @@ fun ControlBarApp(
                                 }
                                 true
                             }
-                            android.view.MotionEvent.ACTION_UP -> {
+
+                            MotionEvent.ACTION_UP -> {
                                 if (gestureState.isResizeGesture) {
                                     isHoveringHandle = false
                                     if (!gestureState.isDragging) onToggleSize()
@@ -502,7 +406,8 @@ fun ControlBarApp(
                                 }
                                 true
                             }
-                            android.view.MotionEvent.ACTION_CANCEL -> {
+
+                            MotionEvent.ACTION_CANCEL -> {
                                 if (gestureState.isResizeGesture) {
                                     isHoveringHandle = false
                                 } else {
@@ -510,25 +415,22 @@ fun ControlBarApp(
                                 }
                                 true
                             }
+
                             else -> true
                         }
                     }
                 },
-                modifier = Modifier.fillMaxSize()
+                modifier = Modifier.fillMaxSize(),
             )
-
 
             Box(
                 modifier = Modifier
                     .size(36.dp, 5.dp)
-
-
                     .offset(y = 5.dp)
                     .zIndex(1f)
                     .clip(RoundedCornerShape(2.5.dp))
-                    .background(Color.White.copy(alpha = barAlpha))
+                    .background(Color.White.copy(alpha = barAlpha)),
             )
-        }
     }
 }
 
@@ -536,10 +438,7 @@ fun ControlBarApp(
 @Composable
 private fun CloseTargetApp(state: CloseTargetState) {
     val motionScheme = MaterialTheme.motionScheme
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.BottomCenter
-    ) {
+    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomCenter) {
         AnimatedVisibility(
             visible = state.isVisible,
             enter = slideInVertically(
@@ -555,9 +454,7 @@ private fun CloseTargetApp(state: CloseTargetState) {
                 Button(
                     shapes = ButtonDefaults.shapes(),
                     onClick = {},
-                    modifier = Modifier
-                        .width(128.dp)
-                        .height(48.dp),
+                    modifier = Modifier.width(128.dp).height(48.dp),
                     colors = ButtonDefaults.buttonColors(
                         containerColor = if (state.isActive) {
                             MaterialTheme.colorScheme.error
@@ -602,41 +499,7 @@ private fun isPointInsideCapsule(
 }
 
 @Composable
-fun ContentListApp(
-    state: FloatingVoxlineState,
-    barHeightPx: Int,
-) {
-    val captionsState by VoxlineRuntimeStore.state.collectAsState()
-    val density = LocalDensity.current
-    val contentHeightDp = with(density) { (state.heightPx - barHeightPx + 1).toDp() }
-
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.BottomCenter,
-    ) {
-        Surface(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(contentHeightDp),
-            shape = RoundedCornerShape(bottomStart = 20.dp, bottomEnd = 20.dp),
-            color = MaterialTheme.colorScheme.surfaceContainerHigh.copy(alpha = 0.94f),
-            contentColor = MaterialTheme.colorScheme.onSurface,
-        ) {
-            VoxlineContentList(
-                lines = captionsState.lines,
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(horizontal = 16.dp, vertical = 8.dp),
-            )
-        }
-    }
-}
-
-@Composable
-fun VoxlineContentList(
-    lines: List<VoxlineLine>,
-    modifier: Modifier = Modifier
-) {
+fun VoxlineContentList(lines: List<VoxlineLine>, modifier: Modifier = Modifier) {
     val listState = rememberLazyListState()
     val isAtBottom by remember { derivedStateOf { listState.firstVisibleItemIndex <= 1 } }
 
@@ -650,35 +513,10 @@ fun VoxlineContentList(
         state = listState,
         reverseLayout = true,
         verticalArrangement = Arrangement.spacedBy(12.dp),
-        modifier = modifier
-            .graphicsLayer { alpha = 0.99f }
-            .drawWithContent {
-                drawContent()
-
-
-                val fadeHeight = 6.dp.toPx()
-                val topStop = (fadeHeight / size.height).coerceIn(0f, 0.5f)
-                val bottomStop = ((size.height - fadeHeight) / size.height).coerceIn(0.5f, 1f)
-                drawRect(
-                    brush = Brush.verticalGradient(
-                        0f to Color.Transparent,
-
-
-                        (topStop * 0.55f) to Color.Transparent,
-                        topStop to Color.Black,
-                        bottomStop to Color.Black,
-                        (bottomStop + (1f - bottomStop) * 0.45f) to Color.Transparent,
-                        1f to Color.Transparent,
-                    ),
-                    blendMode = BlendMode.DstIn
-                )
-            }
+        modifier = modifier,
     ) {
         items(lines.reversed(), key = { it.id }) { line ->
-            VoxlineLineItem(
-                line = line,
-                isNewest = line.id == lines.lastOrNull()?.id
-            )
+            VoxlineLineItem(line = line, isNewest = line.id == lines.lastOrNull()?.id)
         }
     }
 }
@@ -743,7 +581,6 @@ fun TypewriterText(
             val frameDelay = 16L
             val durationMs = (charsToType * 20L).coerceIn(150L, 800L)
             val charsPerFrame = (charsToType.toFloat() / (durationMs / frameDelay)).coerceAtLeast(1f)
-
             var currentLength = displayedText.length.toFloat()
             while (currentLength < text.length) {
                 delay(frameDelay)

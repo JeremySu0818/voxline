@@ -6,6 +6,4 @@
     <string name="tile_label">લાઇવ કૅપ્શન</string>
     <string name="tile_subtitle_on">ચાલી રહી છે</string>
     <string name="tile_subtitle_off">શરૂ કરવા માટે ટૅપ કરો</string>
-    <string name="accessibility_service_label">કૅપ્શન ઍક્સેસિબિલિટી સેવા</string>
-    <string name="accessibility_service_description">કૅપ્શનને સિસ્ટમ ઓવરલેનો ઉપયોગ કરીને અન્ય ઍપ પર ફ્લોટિંગ કૅપ્શન પ્રદર્શિત કરવાની મંજૂરી આપે છે.</string>
 </resources>

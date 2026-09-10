@@ -6,6 +6,4 @@
     <string name="tile_label">লাইভ ক্যাপশন</string>
     <string name="tile_subtitle_on">চলমান</string>
     <string name="tile_subtitle_off">শুরু করতে আলতো চাপুন</string>
-    <string name="accessibility_service_label">ক্যাপশন অ্যাক্সেসিবিলিটি পরিষেবা</string>
-    <string name="accessibility_service_description">ক্যাপশনকে একটি সিস্টেম ওভারলে ব্যবহার করে অন্যান্য অ্যাপের উপর ভাসমান ক্যাপশন প্রদর্শনের অনুমতি দেয়।</string>
 </resources>

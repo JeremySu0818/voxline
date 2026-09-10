@@ -6,6 +6,4 @@
     <string name="tile_label">Voxline mivantana</string>
     <string name="tile_subtitle_on">mihazakazaka</string>
     <string name="tile_subtitle_off">Tsindrio raha hanomboka</string>
-    <string name="accessibility_service_label">Service Accessibility Voxline</string>
-    <string name="accessibility_service_description">Avelao ny Voxline hanehoana lohateny mitsingevana eo amin\'ny fampiharana hafa amin\'ny fampiasana overlay rafitra.</string>
 </resources>

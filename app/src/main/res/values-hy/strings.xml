@@ -6,6 +6,4 @@
     <string name="tile_label">Կենդանի ենթագրեր</string>
     <string name="tile_subtitle_on">Վազում</string>
     <string name="tile_subtitle_off">Հպեք՝ սկսելու համար</string>
-    <string name="accessibility_service_label">Ենթագրեր Մատչելիության ծառայություն</string>
-    <string name="accessibility_service_description">Թույլ է տալիս Voxline-ին ցուցադրել լողացող ենթագրեր այլ հավելվածների վրա՝ օգտագործելով համակարգի ծածկույթը:</string>
 </resources>

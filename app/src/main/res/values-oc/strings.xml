@@ -6,6 +6,4 @@
     <string name="tile_label">Legenda en dirècte</string>
     <string name="tile_subtitle_on">En cors</string>
     <string name="tile_subtitle_off">Picatz per començar</string>
-    <string name="accessibility_service_label">Servici d\'accessibilitat de legenda</string>
-    <string name="accessibility_service_description">Permet a Voxline d\'afichar de legendas flotantas sus d\'autras aplicacions en utilizant un superpaus de sistèma.</string>
 </resources>

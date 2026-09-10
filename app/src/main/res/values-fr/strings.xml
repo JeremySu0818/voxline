@@ -6,6 +6,4 @@
     <string name="tile_label">Sous-titre en direct</string>
     <string name="tile_subtitle_on">Courir</string>
     <string name="tile_subtitle_off">Appuyez pour commencer</string>
-    <string name="accessibility_service_label">Service d\'accessibilité des sous-titres</string>
-    <string name="accessibility_service_description">Permet à Voxline d\'afficher des sous-titres flottants sur d\'autres applications à l\'aide d\'une superposition système.</string>
 </resources>

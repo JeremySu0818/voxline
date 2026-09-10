@@ -6,6 +6,4 @@
     <string name="tile_label">Live Iwwerschrëft</string>
     <string name="tile_subtitle_on">Lafen</string>
     <string name="tile_subtitle_off">Tippen fir unzefänken</string>
-    <string name="accessibility_service_label">Iwwerschrëft Accessibilitéit Service</string>
-    <string name="accessibility_service_description">Erlaabt Voxline fir schwiewend Iwwerschrëften iwwer aner Apps ze weisen mat engem Systemoverlay.</string>
 </resources>

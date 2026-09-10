@@ -6,6 +6,4 @@
     <string name="tile_label">لائيو ڪيپشن</string>
     <string name="tile_subtitle_on">هلندڙ</string>
     <string name="tile_subtitle_off">شروع ڪرڻ لاءِ ٽيپ ڪريو</string>
-    <string name="accessibility_service_label">ڪيپشن رسائي جي خدمت</string>
-    <string name="accessibility_service_description">ڪيپشن کي اجازت ڏئي ٿي ته فلوٽنگ ڪيپشن ڏيکاريندي ٻين ائپس تي سسٽم اوورلي استعمال ڪندي.</string>
 </resources>

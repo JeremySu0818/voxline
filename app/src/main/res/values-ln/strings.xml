@@ -6,6 +6,4 @@
     <string name="tile_label">Voxline en direct</string>
     <string name="tile_subtitle_on">Kokima mbangu</string>
     <string name="tile_subtitle_off">Finá mpo na kobanda</string>
-    <string name="accessibility_service_label">Service ya accèsibilité ya ba caption</string>
-    <string name="accessibility_service_description">Epesi nzela na Voxline kolakisa ba captions flottantes likolo ya ba apps mosusu na kosalelaka superposition ya système.</string>
 </resources>

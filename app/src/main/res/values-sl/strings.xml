@@ -6,6 +6,4 @@
     <string name="tile_label">Live Voxline</string>
     <string name="tile_subtitle_on">tek</string>
     <string name="tile_subtitle_off">Tapnite za začetek</string>
-    <string name="accessibility_service_label">Storitev za dostopnost napisov</string>
-    <string name="accessibility_service_description">Omogoča Voxline, da prikaže plavajoče napise nad drugimi aplikacijami s sistemskim prekrivanjem.</string>
 </resources>

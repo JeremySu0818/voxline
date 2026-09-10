@@ -6,6 +6,4 @@
     <string name="tile_label">Subtitrare live</string>
     <string name="tile_subtitle_on">Alergarea</string>
     <string name="tile_subtitle_off">Atingeți pentru a începe</string>
-    <string name="accessibility_service_label">Serviciul de accesibilitate subtitrări</string>
-    <string name="accessibility_service_description">Permite subtitrărilor să afișeze subtitrări flotante peste alte aplicații folosind o suprapunere de sistem.</string>
 </resources>

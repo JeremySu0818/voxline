@@ -6,6 +6,4 @@
     <string name="tile_label">Canlı Altyazı</string>
     <string name="tile_subtitle_on">Koşu</string>
     <string name="tile_subtitle_off">Başlamak için dokunun</string>
-    <string name="accessibility_service_label">Altyazı Erişilebilirlik Hizmeti</string>
-    <string name="accessibility_service_description">Altyazının, bir sistem katmanı kullanarak diğer uygulamaların üzerinde kayan altyazıları görüntülemesine izin verir.</string>
 </resources>

@@ -6,6 +6,4 @@
     <string name="tile_label">Zuzeneko azpititulua</string>
     <string name="tile_subtitle_on">Korrika</string>
     <string name="tile_subtitle_off">Sakatu hasteko</string>
-    <string name="accessibility_service_label">Epigrafeen Irisgarritasun Zerbitzua</string>
-    <string name="accessibility_service_description">Voxline-i aukera ematen dio azpititulu mugikorrak beste aplikazioen gainean bistaratzeko sistema gainjartzea erabiliz.</string>
 </resources>

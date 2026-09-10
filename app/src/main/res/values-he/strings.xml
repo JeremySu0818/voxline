@@ -6,6 +6,4 @@
     <string name="tile_label">כיתוב חי</string>
     <string name="tile_subtitle_on">ריצה</string>
     <string name="tile_subtitle_off">הקש כדי להתחיל</string>
-    <string name="accessibility_service_label">שירות נגישות הכיתוב</string>
-    <string name="accessibility_service_description">מאפשר לכיתוב להציג כתוביות צפות מעל אפליקציות אחרות באמצעות שכבת-על של המערכת.</string>
 </resources>

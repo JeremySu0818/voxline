@@ -6,6 +6,4 @@
     <string name="tile_label">Titrat e drejtpërdrejtë</string>
     <string name="tile_subtitle_on">Vrapimi</string>
     <string name="tile_subtitle_off">Prekni për të filluar</string>
-    <string name="accessibility_service_label">Shërbimi i aksesueshmërisë së titrave</string>
-    <string name="accessibility_service_description">Lejon Voxline të shfaqë titrat lundrues mbi aplikacionet e tjera duke përdorur një mbivendosje të sistemit.</string>
 </resources>

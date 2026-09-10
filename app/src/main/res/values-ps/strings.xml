@@ -6,6 +6,4 @@
     <string name="tile_label">ژوندی کیپشن</string>
     <string name="tile_subtitle_on">چلول</string>
     <string name="tile_subtitle_off">د پیل کولو لپاره ټایپ کړئ</string>
-    <string name="accessibility_service_label">کیپشن د لاسرسي خدمت</string>
-    <string name="accessibility_service_description">کیپشن ته اجازه ورکوي چې د سیسټم پوښښ په کارولو سره په نورو ایپسونو کې تیر شوي سرلیکونه ښکاره کړي.</string>
 </resources>

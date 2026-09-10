@@ -6,6 +6,4 @@
     <string name="tile_label">Titl uživo</string>
     <string name="tile_subtitle_on">Trčanje</string>
     <string name="tile_subtitle_off">Dodirnite za početak</string>
-    <string name="accessibility_service_label">Usluga pristupačnosti opisa</string>
-    <string name="accessibility_service_description">Omogućuje Voxlineu da prikazuje plutajuće titlove preko drugih aplikacija pomoću sloja sustava.</string>
 </resources>

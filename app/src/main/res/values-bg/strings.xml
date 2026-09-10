@@ -6,6 +6,4 @@
     <string name="tile_label">Надписи на живо</string>
     <string name="tile_subtitle_on">Бягане</string>
     <string name="tile_subtitle_off">Докоснете, за да започнете</string>
-    <string name="accessibility_service_label">Услуга за достъпност на надписи</string>
-    <string name="accessibility_service_description">Позволява на Voxline да показва плаващи надписи върху други приложения с помощта на системно наслагване.</string>
 </resources>

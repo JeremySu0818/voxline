@@ -6,6 +6,4 @@
     <string name="tile_label">即時字幕</string>
     <string name="tile_subtitle_on">跑緊</string>
     <string name="tile_subtitle_off">㩒一下就可以開始</string>
-    <string name="accessibility_service_label">字幕冇障礙服務</string>
-    <string name="accessibility_service_description">畀 Voxline 用系統重疊喺其他應用程式上面顯示浮動字幕。</string>
 </resources>

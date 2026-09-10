@@ -6,6 +6,4 @@
     <string name="tile_label">ಲೈವ್ ಶೀರ್ಷಿಕೆ</string>
     <string name="tile_subtitle_on">ಓಡುತ್ತಿದೆ</string>
     <string name="tile_subtitle_off">ಪ್ರಾರಂಭಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ</string>
-    <string name="accessibility_service_label">ಶೀರ್ಷಿಕೆ ಪ್ರವೇಶಿಸುವಿಕೆ ಸೇವೆ</string>
-    <string name="accessibility_service_description">ಸಿಸ್ಟಂ ಓವರ್‌ಲೇ ಬಳಸಿಕೊಂಡು ಇತರ ಅಪ್ಲಿಕೇಶನ್‌ಗಳ ಮೇಲೆ ತೇಲುವ ಶೀರ್ಷಿಕೆಗಳನ್ನು ಪ್ರದರ್ಶಿಸಲು ಶೀರ್ಷಿಕೆಯನ್ನು ಅನುಮತಿಸುತ್ತದೆ.</string>
 </resources>

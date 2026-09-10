@@ -6,6 +6,4 @@
     <string name="tile_label">Voxline Live</string>
     <string name="tile_subtitle_on">Lumpat</string>
     <string name="tile_subtitle_off">Ketok pikeun ngamimitian</string>
-    <string name="accessibility_service_label">Jasa Aksesibilitas Voxline</string>
-    <string name="accessibility_service_description">Ngidinan Voxline nampilkeun caption ngambang dina aplikasi anu sanés nganggo overlay sistem.</string>
 </resources>

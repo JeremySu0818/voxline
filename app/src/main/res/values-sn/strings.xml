@@ -6,6 +6,4 @@
     <string name="tile_label">Live Voxline</string>
     <string name="tile_subtitle_on">Kumhanya</string>
     <string name="tile_subtitle_off">Tinya kuti utange</string>
-    <string name="accessibility_service_label">Voxline Accessibility Service</string>
-    <string name="accessibility_service_description">Inobvumira Voxline kuratidza mazwi anoyangarara pamusoro pemamwe maapuro uchishandisa system overlay.</string>
 </resources>

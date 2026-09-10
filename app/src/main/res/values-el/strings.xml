@@ -6,6 +6,4 @@
     <string name="tile_label">Ζωντανός υπότιτλος</string>
     <string name="tile_subtitle_on">Τρέξιμο</string>
     <string name="tile_subtitle_off">Πατήστε για να ξεκινήσετε</string>
-    <string name="accessibility_service_label">Υπηρεσίες προσβασιμότητας υπότιτλων</string>
-    <string name="accessibility_service_description">Επιτρέπει στο Voxline να εμφανίζει κυμαινόμενους υπότιτλους πάνω από άλλες εφαρμογές χρησιμοποιώντας επικάλυψη συστήματος.</string>
 </resources>

@@ -6,6 +6,4 @@
     <string name="tile_label">Subtitrai gyvai</string>
     <string name="tile_subtitle_on">Bėgimas</string>
     <string name="tile_subtitle_off">Palieskite norėdami pradėti</string>
-    <string name="accessibility_service_label">Antraštės pritaikymo neįgaliesiems paslauga</string>
-    <string name="accessibility_service_description">Leidžia antraštei rodyti slankius antraštes virš kitų programų naudojant sistemos perdangą.</string>
 </resources>

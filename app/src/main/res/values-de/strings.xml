@@ -6,6 +6,4 @@
     <string name="tile_label">Live-Untertitel</string>
     <string name="tile_subtitle_on">Laufen</string>
     <string name="tile_subtitle_off">Zum Starten tippen</string>
-    <string name="accessibility_service_label">Bildunterschrift: Barrierefreiheitsdienst</string>
-    <string name="accessibility_service_description">Ermöglicht Voxline die Anzeige schwebender Untertitel über anderen Apps mithilfe eines System-Overlays.</string>
 </resources>

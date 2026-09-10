@@ -6,6 +6,4 @@
     <string name="tile_label">Live na Voxline</string>
     <string name="tile_subtitle_on">Tumatakbo</string>
     <string name="tile_subtitle_off">I-tap para magsimula</string>
-    <string name="accessibility_service_label">Serbisyo ng Accessibility ng Voxline</string>
-    <string name="accessibility_service_description">Nagbibigay-daan sa Voxline na magpakita ng mga lumulutang na caption sa iba pang mga app gamit ang isang overlay ng system.</string>
 </resources>

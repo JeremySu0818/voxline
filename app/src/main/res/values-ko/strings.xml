@@ -6,6 +6,4 @@
     <string name="tile_label">실시간 자막</string>
     <string name="tile_subtitle_on">달리기</string>
     <string name="tile_subtitle_off">시작하려면 탭하세요.</string>
-    <string name="accessibility_service_label">자막 접근성 서비스</string>
-    <string name="accessibility_service_description">Voxline이 시스템 오버레이를 사용하여 다른 앱 위에 부동 캡션을 표시할 수 있도록 허용합니다.</string>
 </resources>

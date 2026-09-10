@@ -6,6 +6,4 @@
     <string name="tile_label">Kapsyen Langsung</string>
     <string name="tile_subtitle_on">Berlari</string>
     <string name="tile_subtitle_off">Ketik untuk bermula</string>
-    <string name="accessibility_service_label">Perkhidmatan Kebolehcapaian Kapsyen</string>
-    <string name="accessibility_service_description">Membenarkan Kapsyen memaparkan kapsyen terapung ke atas apl lain menggunakan tindanan sistem.</string>
 </resources>

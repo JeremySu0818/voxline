@@ -6,6 +6,4 @@
     <string name="tile_label">Göni ýazgy</string>
     <string name="tile_subtitle_on">Ylgaýar</string>
     <string name="tile_subtitle_off">Başlamak üçin basyň</string>
-    <string name="accessibility_service_label">Tionazgylara elýeterlilik hyzmaty</string>
-    <string name="accessibility_service_description">Tionazgylara ulgam örtügini ulanyp, beýleki programmalaryň üstünde ýüzýän ýazgylary görkezmäge mümkinçilik berýär.</string>
 </resources>

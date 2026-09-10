@@ -6,6 +6,4 @@
     <string name="tile_label">Napis na żywo</string>
     <string name="tile_subtitle_on">Bieganie</string>
     <string name="tile_subtitle_off">Kliknij, aby rozpocząć</string>
-    <string name="accessibility_service_label">Usługa dostępności napisów</string>
-    <string name="accessibility_service_description">Umożliwia wyświetlanie napisów pływających nad innymi aplikacjami przy użyciu nakładki systemowej.</string>
 </resources>

@@ -27,7 +27,6 @@ import com.jeremysu0818.voxline.audio.CapturedAudioChunk
 import com.jeremysu0818.voxline.audio.InMemoryWavWriter
 import com.jeremysu0818.voxline.audio.SystemAudioCapture
 import com.jeremysu0818.voxline.audio.VoiceActivityDetector
-import com.jeremysu0818.voxline.accessibility.VoxlineAccessibilityService
 import com.jeremysu0818.voxline.data.VoxlineSettings
 import com.jeremysu0818.voxline.data.VoxlineRuntimeStore
 import com.jeremysu0818.voxline.data.SpeechEngineOption
@@ -132,11 +131,13 @@ class VoxlineCaptureService : Service() {
         isRunning = true
         VoxlineTileService.requestTileRefresh(this)
 
-        val overlay = VoxlineAccessibilityService.activeOrNull()
-            ?.createVoxlineWindow { stopSelf() }
-            ?: throw SecurityException(I18n.getString("error_accessibility_service_unavailable"))
+        val overlay = FloatingVoxlineWindow(
+            context = this,
+            onCloseRequested = { stopSelf() },
+        )
         overlay.show()
         overlayWindow = overlay
+
         VoxlineRuntimeStore.setRunning(I18n.getString("status_preparing"))
 
         sessionJob = serviceScope.launch {

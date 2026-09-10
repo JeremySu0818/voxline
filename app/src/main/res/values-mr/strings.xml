@@ -6,6 +6,4 @@
     <string name="tile_label">थेट मथळा</string>
     <string name="tile_subtitle_on">धावत आहे</string>
     <string name="tile_subtitle_off">सुरू करण्यासाठी टॅप करा</string>
-    <string name="accessibility_service_label">मथळा प्रवेशयोग्यता सेवा</string>
-    <string name="accessibility_service_description">सिस्टीम आच्छादन वापरून इतर ॲप्सवर फ्लोटिंग मथळे प्रदर्शित करण्यासाठी कॅप्शनला अनुमती देते.</string>
 </resources>

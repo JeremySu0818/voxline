@@ -6,6 +6,4 @@
     <string name="tile_label">Reaalajas subtiitrid</string>
     <string name="tile_subtitle_on">Jooksmine</string>
     <string name="tile_subtitle_off">Alustamiseks puudutage</string>
-    <string name="accessibility_service_label">Subtiitrite juurdepääsetavuse teenus</string>
-    <string name="accessibility_service_description">Võimaldab pealdistel kuvada ujuvad pealdised teiste rakenduste kohal, kasutades süsteemi ülekatet.</string>
 </resources>

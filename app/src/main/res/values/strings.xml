@@ -6,6 +6,4 @@
     <string name="tile_label">Live Voxline</string>
     <string name="tile_subtitle_on">Running</string>
     <string name="tile_subtitle_off">Tap to start</string>
-    <string name="accessibility_service_label">Voxline Accessibility Service</string>
-    <string name="accessibility_service_description">Allows Voxline to display floating captions over other apps using a system overlay.</string>
 </resources>

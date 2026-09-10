@@ -6,6 +6,4 @@
     <string name="tile_label">Subtitri reāllaikā</string>
     <string name="tile_subtitle_on">Skriešana</string>
     <string name="tile_subtitle_off">Pieskarieties, lai sāktu</string>
-    <string name="accessibility_service_label">Parakstu pieejamības pakalpojums</string>
-    <string name="accessibility_service_description">Ļauj Subtitri rādīt peldošos parakstus pār citām lietotnēm, izmantojot sistēmas pārklājumu.</string>
 </resources>

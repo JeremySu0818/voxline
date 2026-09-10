@@ -6,6 +6,4 @@
     <string name="tile_label">Титл во живо</string>
     <string name="tile_subtitle_on">Трчање</string>
     <string name="tile_subtitle_off">Допрете за да започнете</string>
-    <string name="accessibility_service_label">Услуга за пристапност на титлови</string>
-    <string name="accessibility_service_description">Дозволува Voxline да прикажува лебдечки титлови преку други апликации користејќи системско преклопување.</string>
 </resources>

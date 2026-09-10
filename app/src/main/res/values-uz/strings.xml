@@ -6,6 +6,4 @@
     <string name="tile_label">Jonli izoh</string>
     <string name="tile_subtitle_on">Yugurish</string>
     <string name="tile_subtitle_off">Boshlash uchun bosing</string>
-    <string name="accessibility_service_label">Sarlavhalar uchun maxsus imkoniyatlar xizmati</string>
-    <string name="accessibility_service_description">Sarlavhaga tizim qoplamasi yordamida boshqa ilovalar ustida suzuvchi taglavhalarni ko‘rsatish imkonini beradi.</string>
 </resources>

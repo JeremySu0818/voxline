@@ -6,6 +6,4 @@
     <string name="tile_label">लाइभ क्याप्सन</string>
     <string name="tile_subtitle_on">दौडिरहेको</string>
     <string name="tile_subtitle_off">सुरु गर्न ट्याप गर्नुहोस्</string>
-    <string name="accessibility_service_label">क्याप्शन पहुँच सेवा</string>
-    <string name="accessibility_service_description">प्रणाली ओभरले प्रयोग गरेर अन्य एपहरूमा फ्लोटिंग क्याप्सनहरू प्रदर्शन गर्न क्याप्शनलाई अनुमति दिन्छ।</string>
 </resources>

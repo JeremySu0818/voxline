@@ -6,6 +6,4 @@
     <string name="tile_label">Regstreekse onderskrif</string>
     <string name="tile_subtitle_on">Hardloop</string>
     <string name="tile_subtitle_off">Tik om te begin</string>
-    <string name="accessibility_service_label">Byskrif Toeganklikheiddiens</string>
-    <string name="accessibility_service_description">Laat onderskrif toe om drywende onderskrifte oor ander programme te vertoon deur \'n stelseloorleg te gebruik.</string>
 </resources>

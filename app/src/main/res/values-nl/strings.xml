@@ -6,6 +6,4 @@
     <string name="tile_label">Live ondertiteling</string>
     <string name="tile_subtitle_on">Rennen</string>
     <string name="tile_subtitle_off">Tik om te beginnen</string>
-    <string name="accessibility_service_label">Onderschrift Toegankelijkheidsservice</string>
-    <string name="accessibility_service_description">Hiermee kan Voxline zwevende ondertitels over andere apps weergeven met behulp van een systeemoverlay.</string>
 </resources>

@@ -6,6 +6,4 @@
     <string name="tile_label">ప్రత్యక్ష శీర్షిక</string>
     <string name="tile_subtitle_on">నడుస్తోంది</string>
     <string name="tile_subtitle_off">ప్రారంభించడానికి నొక్కండి</string>
-    <string name="accessibility_service_label">శీర్షిక యాక్సెసిబిలిటీ సర్వీస్</string>
-    <string name="accessibility_service_description">సిస్టమ్ ఓవర్‌లేని ఉపయోగించి ఇతర యాప్‌లపై తేలియాడే శీర్షికలను ప్రదర్శించడానికి శీర్షికను అనుమతిస్తుంది.</string>
 </resources>

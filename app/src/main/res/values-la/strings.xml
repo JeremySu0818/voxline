@@ -6,6 +6,4 @@
     <string name="tile_label">Vivamus Voxline</string>
     <string name="tile_subtitle_on">Running</string>
     <string name="tile_subtitle_off">ICTUS incipere</string>
-    <string name="accessibility_service_label">Voxline Accessibility Service</string>
-    <string name="accessibility_service_description">Voxlineem permittit ut captiones fluitantiae super alias apps utentes systema operimento ostendant.</string>
 </resources>

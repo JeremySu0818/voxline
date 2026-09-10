@@ -6,6 +6,4 @@
     <string name="tile_label">Тікелей субтитр</string>
     <string name="tile_subtitle_on">Жүгіру</string>
     <string name="tile_subtitle_off">Бастау үшін түртіңіз</string>
-    <string name="accessibility_service_label">Тақырыпқа қол жетімділік қызметі</string>
-    <string name="accessibility_service_description">Тақырыпқа жүйе қабатын пайдаланып басқа қолданбалардың үстінен қалқымалы субтитрлерді көрсетуге мүмкіндік береді.</string>
 </resources>

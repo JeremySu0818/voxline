@@ -6,6 +6,4 @@
     <string name="tile_label">Qoraal toos ah</string>
     <string name="tile_subtitle_on">ordaya</string>
     <string name="tile_subtitle_off">Taabo si aad u bilowdo</string>
-    <string name="accessibility_service_label">Qoraalka Adeegga Helitaanka</string>
-    <string name="accessibility_service_description">Waxay u ogolaataa qoraalka qoraalka inuu ku muujiyo qoraalada sabaynaya abka kale iyadoo la isticmaalayo nidaamka dulsaar.</string>
 </resources>

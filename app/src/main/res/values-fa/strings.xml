@@ -6,6 +6,4 @@
     <string name="tile_label">زیرنویس زنده</string>
     <string name="tile_subtitle_on">در حال دویدن</string>
     <string name="tile_subtitle_off">برای شروع ضربه بزنید</string>
-    <string name="accessibility_service_label">شرح خدمات دسترس‌پذیری</string>
-    <string name="accessibility_service_description">به Voxline اجازه می‌دهد تا با استفاده از پوشش سیستم، زیرنویس‌های شناور را روی سایر برنامه‌ها نمایش دهد.</string>
 </resources>

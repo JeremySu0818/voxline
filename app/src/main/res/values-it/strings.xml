@@ -6,6 +6,4 @@
     <string name="tile_label">Sottotitoli in tempo reale</string>
     <string name="tile_subtitle_on">Correre</string>
     <string name="tile_subtitle_off">Tocca per iniziare</string>
-    <string name="accessibility_service_label">Servizio di accessibilità ai sottotitoli</string>
-    <string name="accessibility_service_description">Consente a Voxline di visualizzare didascalie mobili su altre app utilizzando un overlay di sistema.</string>
 </resources>

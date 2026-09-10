@@ -6,6 +6,4 @@
     <string name="tile_label">Ливе Цаптион</string>
     <string name="tile_subtitle_on">Трчање</string>
     <string name="tile_subtitle_off">Додирните за почетак</string>
-    <string name="accessibility_service_label">Услуга приступачности натписа</string>
-    <string name="accessibility_service_description">Дозвољава Цаптион-у да приказује плутајуће титлове преко других апликација помоћу системског преклапања.</string>
 </resources>

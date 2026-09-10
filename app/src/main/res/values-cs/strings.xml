@@ -6,6 +6,4 @@
     <string name="tile_label">Živý přepis</string>
     <string name="tile_subtitle_on">Běh</string>
     <string name="tile_subtitle_off">Klepnutím začněte</string>
-    <string name="accessibility_service_label">Služba zpřístupnění titulků</string>
-    <string name="accessibility_service_description">Umožňuje titulkům zobrazovat plovoucí titulky přes jiné aplikace pomocí překryvného systému.</string>
 </resources>

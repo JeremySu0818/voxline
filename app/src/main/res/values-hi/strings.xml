@@ -6,6 +6,4 @@
     <string name="tile_label">लाइव कैप्शन</string>
     <string name="tile_subtitle_on">चल रहा है</string>
     <string name="tile_subtitle_off">आरंभ करने के लिए टैप करें</string>
-    <string name="accessibility_service_label">कैप्शन अभिगम्यता सेवा</string>
-    <string name="accessibility_service_description">सिस्टम ओवरले का उपयोग करके कैप्शन को अन्य ऐप्स पर फ़्लोटिंग कैप्शन प्रदर्शित करने की अनुमति देता है।</string>
 </resources>

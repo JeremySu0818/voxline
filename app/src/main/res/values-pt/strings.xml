@@ -6,6 +6,4 @@
     <string name="tile_label">Legenda ao vivo</string>
     <string name="tile_subtitle_on">Correndo</string>
     <string name="tile_subtitle_off">Toque para começar</string>
-    <string name="accessibility_service_label">Serviço de acessibilidade de legendas</string>
-    <string name="accessibility_service_description">Permite que o Voxline exiba legendas flutuantes sobre outros aplicativos usando uma sobreposição do sistema.</string>
 </resources>

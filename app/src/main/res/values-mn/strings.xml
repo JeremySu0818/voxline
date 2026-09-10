@@ -6,6 +6,4 @@
     <string name="tile_label">Шууд тайлбар</string>
     <string name="tile_subtitle_on">Гүйж байна</string>
     <string name="tile_subtitle_off">Эхлүүлэхийн тулд товшино уу</string>
-    <string name="accessibility_service_label">Тайлбарын хүртээмжийн үйлчилгээ</string>
-    <string name="accessibility_service_description">Гарчиг нь системийн давхаргыг ашиглан бусад аппликешн дээр хөвөгч тайлбарыг харуулахыг зөвшөөрнө.</string>
 </resources>

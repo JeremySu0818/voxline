@@ -6,6 +6,4 @@
     <string name="tile_label">Live Voxline</string>
     <string name="tile_subtitle_on">Kouri</string>
     <string name="tile_subtitle_off">Tape pou kòmanse</string>
-    <string name="accessibility_service_label">Sèvis Aksesibilite Voxline</string>
-    <string name="accessibility_service_description">Pèmèt Voxline yo montre tit k ap flote sou lòt aplikasyon lè l sèvi avèk yon kouvri sistèm.</string>
 </resources>

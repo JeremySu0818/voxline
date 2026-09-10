@@ -6,6 +6,4 @@
     <string name="tile_label">ចំណងជើងបន្តផ្ទាល់</string>
     <string name="tile_subtitle_on">កំពុងរត់</string>
     <string name="tile_subtitle_off">ប៉ះដើម្បីចាប់ផ្តើម</string>
-    <string name="accessibility_service_label">សេវាកម្មភាពងាយស្រួលនៃចំណងជើង</string>
-    <string name="accessibility_service_description">អនុញ្ញាតឱ្យ Voxline បង្ហាញចំណងជើងអណ្តែតលើកម្មវិធីផ្សេងទៀតដោយប្រើប្រព័ន្ធត្រួតលើគ្នា។</string>
 </resources>

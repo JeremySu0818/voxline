@@ -6,6 +6,4 @@
     <string name="tile_label">Živý prepis</string>
     <string name="tile_subtitle_on">Beh</string>
     <string name="tile_subtitle_off">Začnite klepnutím</string>
-    <string name="accessibility_service_label">Služba dostupnosti titulkov</string>
-    <string name="accessibility_service_description">Umožňuje titulkom zobrazovať plávajúce titulky v iných aplikáciách pomocou systémového prekrytia.</string>
 </resources>

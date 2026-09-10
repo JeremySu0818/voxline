@@ -6,6 +6,4 @@
     <string name="tile_label">Тере язу</string>
     <string name="tile_subtitle_on">Йөгерү</string>
     <string name="tile_subtitle_off">Башлау өчен басыгыз</string>
-    <string name="accessibility_service_label">Язу мөмкинлеге хезмәте</string>
-    <string name="accessibility_service_description">Тапшыруга система каплавы ярдәмендә бүтән кушымталар өстендә йөзүче язулар күрсәтергә рөхсәт итә.</string>
 </resources>

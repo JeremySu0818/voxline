@@ -6,6 +6,4 @@
     <string name="tile_label">Canlı Altyazı</string>
     <string name="tile_subtitle_on">Qaçış</string>
     <string name="tile_subtitle_off">Başlamaq üçün toxunun</string>
-    <string name="accessibility_service_label">Başlıq Əlçatanlıq Xidməti</string>
-    <string name="accessibility_service_description">Altyazıya sistem örtüyündən istifadə edərək digər proqramlar üzərində üzən başlıqları göstərməyə imkan verir.</string>
 </resources>

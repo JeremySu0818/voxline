@@ -6,6 +6,4 @@
     <string name="tile_label">Live billedtekst</string>
     <string name="tile_subtitle_on">Løb</string>
     <string name="tile_subtitle_off">Tryk for at starte</string>
-    <string name="accessibility_service_label">Billedtekst Tilgængelighedstjeneste</string>
-    <string name="accessibility_service_description">Tillader billedtekst at vise flydende billedtekster over andre apps ved hjælp af en systemoverlejring.</string>
 </resources>

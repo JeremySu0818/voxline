@@ -6,6 +6,4 @@
     <string name="tile_label">တိုက်ရိုက်စာတန်း</string>
     <string name="tile_subtitle_on">ပြေးသည်။</string>
     <string name="tile_subtitle_off">စတင်ရန် တို့ပါ။</string>
-    <string name="accessibility_service_label">စာတန်း သုံးစွဲနိုင်မှု ဝန်ဆောင်မှု</string>
-    <string name="accessibility_service_description">စာတန်းကို စနစ်ထပ်ဆင့်သုံး၍ အခြားအက်ပ်များပေါ်တွင် ရေပေါ်စာတန်းများကို ပြသခွင့်ပြုပါ။</string>
 </resources>

@@ -6,6 +6,4 @@
     <string name="tile_label">Manukuu Papo Hapo</string>
     <string name="tile_subtitle_on">Kukimbia</string>
     <string name="tile_subtitle_off">Gusa ili kuanza</string>
-    <string name="accessibility_service_label">Huduma ya Ufikivu wa manukuu</string>
-    <string name="accessibility_service_description">Huruhusu Manukuu kuonyesha manukuu yanayoelea juu ya programu zingine kwa kutumia mfumo unaowekelea.</string>
 </resources>

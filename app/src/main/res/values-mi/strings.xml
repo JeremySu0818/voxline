@@ -6,6 +6,4 @@
     <string name="tile_label">Tapanga Ora</string>
     <string name="tile_subtitle_on">Rere ana</string>
     <string name="tile_subtitle_off">Patohia hei timata</string>
-    <string name="accessibility_service_label">Ratonga Whakaaetanga Tapanga</string>
-    <string name="accessibility_service_description">Whakaaetia te Tapanga ki te whakaatu tapanga rewa ki runga i etahi atu taupānga ma te whakakikorua i te punaha.</string>
 </resources>

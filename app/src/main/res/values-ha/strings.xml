@@ -6,6 +6,4 @@
     <string name="tile_label">Takaitaccen Magana</string>
     <string name="tile_subtitle_on">Gudu</string>
     <string name="tile_subtitle_off">Matsa don farawa</string>
-    <string name="accessibility_service_label">Bayanin Sabis na Samun dama</string>
-    <string name="accessibility_service_description">Yana ba da damar yin magana don nuna taken iyo akan wasu ƙa\'idodi ta amfani da abin rufe fuska.</string>
 </resources>

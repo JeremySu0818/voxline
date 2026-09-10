@@ -6,6 +6,4 @@
     <string name="tile_label">நேரடி தலைப்பு</string>
     <string name="tile_subtitle_on">ஓடுகிறது</string>
     <string name="tile_subtitle_off">தொடங்க, தட்டவும்</string>
-    <string name="accessibility_service_label">தலைப்பு அணுகல் சேவை</string>
-    <string name="accessibility_service_description">சிஸ்டம் மேலடுக்கைப் பயன்படுத்தி மற்ற பயன்பாடுகளில் மிதக்கும் தலைப்புகளைக் காட்ட தலைப்பை அனுமதிக்கிறது.</string>
 </resources>

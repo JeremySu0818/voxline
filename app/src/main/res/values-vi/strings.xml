@@ -6,6 +6,4 @@
     <string name="tile_label">Chú thích trực tiếp</string>
     <string name="tile_subtitle_on">Đang chạy</string>
     <string name="tile_subtitle_off">Nhấn để bắt đầu</string>
-    <string name="accessibility_service_label">Dịch vụ trợ năng phụ đề</string>
-    <string name="accessibility_service_description">Cho phép Voxline hiển thị chú thích nổi trên các ứng dụng khác bằng lớp phủ hệ thống.</string>
 </resources>

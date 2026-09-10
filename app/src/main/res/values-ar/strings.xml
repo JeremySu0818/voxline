@@ -6,6 +6,4 @@
     <string name="tile_label">التسميات التوضيحية المباشرة</string>
     <string name="tile_subtitle_on">الجري</string>
     <string name="tile_subtitle_off">انقر للبدء</string>
-    <string name="accessibility_service_label">خدمة إمكانية الوصول إلى التسميات التوضيحية</string>
-    <string name="accessibility_service_description">يسمح للتسميات التوضيحية بعرض التسميات التوضيحية العائمة فوق التطبيقات الأخرى باستخدام تراكب النظام.</string>
 </resources>

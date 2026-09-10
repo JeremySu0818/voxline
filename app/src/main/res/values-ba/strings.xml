@@ -6,6 +6,4 @@
     <string name="tile_label">Йәнле яҙма</string>
     <string name="tile_subtitle_on">Йүгереү .</string>
     <string name="tile_subtitle_off">Башлау өсөн баҫығыҙ</string>
-    <string name="accessibility_service_label">Яҙма Ҡулланыу мөмкинлеге хеҙмәте</string>
-    <string name="accessibility_service_description">Voxline-ға система өҫтәүе ярҙамында башҡа ҡушымталар өҫтөндә йөҙөүсе титрҙарҙы күрһәтергә мөмкинлек бирә.</string>
 </resources>

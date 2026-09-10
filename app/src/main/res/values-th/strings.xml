@@ -6,6 +6,4 @@
     <string name="tile_label">คำบรรยายสด</string>
     <string name="tile_subtitle_on">วิ่ง</string>
     <string name="tile_subtitle_off">แตะเพื่อเริ่มต้น</string>
-    <string name="accessibility_service_label">บริการการเข้าถึงคำอธิบายภาพ</string>
-    <string name="accessibility_service_description">อนุญาตให้คำบรรยายแสดงคำบรรยายแบบลอยเหนือแอปอื่นๆ โดยใช้การซ้อนทับของระบบ</string>
 </resources>

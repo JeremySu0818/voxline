@@ -6,6 +6,4 @@
     <string name="tile_label">პირდაპირი წარწერა</string>
     <string name="tile_subtitle_on">სირბილი</string>
     <string name="tile_subtitle_off">შეეხეთ დასაწყებად</string>
-    <string name="accessibility_service_label">სუბტიტრების ხელმისაწვდომობის სერვისი</string>
-    <string name="accessibility_service_description">საშუალებას აძლევს Voxline-ს აჩვენოს მცურავი სუბტიტრები სხვა აპებზე სისტემის გადაფარვის გამოყენებით.</string>
 </resources>

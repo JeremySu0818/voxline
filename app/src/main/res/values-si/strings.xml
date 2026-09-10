@@ -6,6 +6,4 @@
     <string name="tile_label">සජීවී සිරස්තල</string>
     <string name="tile_subtitle_on">දුවනවා</string>
     <string name="tile_subtitle_off">ආරම්භ කිරීමට තට්ටු කරන්න</string>
-    <string name="accessibility_service_label">සිරස්තල ප්‍රවේශ්‍යතා සේවාව</string>
-    <string name="accessibility_service_description">පද්ධති ආවරණයක් භාවිතයෙන් වෙනත් යෙදුම් මත පාවෙන සිරස්තල සංදර්ශන කිරීමට සිරස්තලයට ඉඩ දෙන්න.</string>
 </resources>

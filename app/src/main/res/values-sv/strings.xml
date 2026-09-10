@@ -6,6 +6,4 @@
     <string name="tile_label">Live Voxline</string>
     <string name="tile_subtitle_on">Löpning</string>
     <string name="tile_subtitle_off">Tryck för att starta</string>
-    <string name="accessibility_service_label">Bildtext Tillgänglighetstjänst</string>
-    <string name="accessibility_service_description">Tillåter bildtext att visa flytande bildtexter över andra appar med hjälp av en systemöverlagring.</string>
 </resources>

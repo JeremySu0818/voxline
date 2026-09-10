@@ -6,6 +6,4 @@
     <string name="tile_label">लाइव कैप्शन</string>
     <string name="tile_subtitle_on">धावति</string>
     <string name="tile_subtitle_off">आरम्भं कर्तुं ट्याप् कुर्वन्तु</string>
-    <string name="accessibility_service_label">कैप्शन सुलभता सेवा</string>
-    <string name="accessibility_service_description">Voxline इत्यनेन सिस्टम् ओवरले इत्यस्य उपयोगेन अन्येषु एप्स् उपरि प्लवमानं कैप्शन्स् प्रदर्शयितुं शक्यते ।</string>
 </resources>

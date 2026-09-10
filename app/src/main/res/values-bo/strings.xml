@@ -6,6 +6,4 @@
     <string name="tile_label">ཐད་གཏོང་འཆར།</string>
     <string name="tile_subtitle_on">རྒྱུག་པ།</string>
     <string name="tile_subtitle_off">འགོ་འཛུགས་པར་རྡེབ།</string>
-    <string name="accessibility_service_label">མཆན་འགྲེལ་ཞབས་ཞུ།</string>
-    <string name="accessibility_service_description">མགོ་བརྗོད་ལ་མ་ལག་གི་ཁེབས་བེད་སྤྱད་དེ་མཉེན་ཆས་གཞན་པའི་སྟེང་དུ་འཕྱོ་བའི་མགོ་བརྗོད་བཀྲམ་སྟོན་བྱེད་དུ་འཇུག་པ།</string>
 </resources>

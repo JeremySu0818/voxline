@@ -6,6 +6,4 @@
     <string name="tile_label">Живі субтитри</string>
     <string name="tile_subtitle_on">Біг</string>
     <string name="tile_subtitle_off">Торкніться, щоб почати</string>
-    <string name="accessibility_service_label">Служба доступності субтитрів</string>
-    <string name="accessibility_service_description">Дозволяє Voxline відображати плаваючі субтитри поверх інших програм за допомогою системного накладання.</string>
 </resources>

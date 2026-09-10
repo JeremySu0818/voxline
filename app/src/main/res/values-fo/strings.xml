@@ -6,6 +6,4 @@
     <string name="tile_label">Beinleiðis yvirskrift</string>
     <string name="tile_subtitle_on">Renning</string>
     <string name="tile_subtitle_off">Trýst fyri at byrja</string>
-    <string name="accessibility_service_label">Yvirskrift Atkomutænasta</string>
-    <string name="accessibility_service_description">Loyvir Voxline at vísa flótandi yvirskriftir yvir aðrar appir við at brúka skipanaryvirlag.</string>
 </resources>

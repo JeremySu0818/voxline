@@ -6,6 +6,4 @@
     <string name="tile_label">Subtítulo en vivo</string>
     <string name="tile_subtitle_on">corriendo</string>
     <string name="tile_subtitle_off">Toca para comenzar</string>
-    <string name="accessibility_service_label">Servicio de accesibilidad de subtítulos</string>
-    <string name="accessibility_service_description">Permite que Subtítulos muestre subtítulos flotantes sobre otras aplicaciones usando una superposición del sistema.</string>
 </resources>

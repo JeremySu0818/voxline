@@ -6,6 +6,4 @@
     <string name="tile_label">തത്സമയ അടിക്കുറിപ്പ്</string>
     <string name="tile_subtitle_on">ഓടുന്നു</string>
     <string name="tile_subtitle_off">ആരംഭിക്കാൻ ടാപ്പ് ചെയ്യുക</string>
-    <string name="accessibility_service_label">അടിക്കുറിപ്പ് പ്രവേശനക്ഷമത സേവനം</string>
-    <string name="accessibility_service_description">സിസ്റ്റം ഓവർലേ ഉപയോഗിച്ച് മറ്റ് ആപ്പുകളിൽ ഫ്ലോട്ടിംഗ് അടിക്കുറിപ്പുകൾ പ്രദർശിപ്പിക്കാൻ അടിക്കുറിപ്പിനെ അനുവദിക്കുന്നു.</string>
 </resources>

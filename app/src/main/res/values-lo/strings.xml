@@ -6,6 +6,4 @@
     <string name="tile_label">ຄຳບັນຍາຍສົດ</string>
     <string name="tile_subtitle_on">ແລ່ນ</string>
     <string name="tile_subtitle_off">ແຕະເພື່ອເລີ່ມຕົ້ນ</string>
-    <string name="accessibility_service_label">ບໍລິການຊ່ວຍເຂົ້າເຖິງຄຳບັນຍາຍ</string>
-    <string name="accessibility_service_description">ອະນຸຍາດໃຫ້ Voxline ສະແດງຄໍາບັນຍາຍແບບລອຍຢູ່ເທິງແອັບຯອື່ນໂດຍໃຊ້ການວາງຊ້ອນລະບົບ.</string>
 </resources>

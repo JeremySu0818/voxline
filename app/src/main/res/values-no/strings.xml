@@ -6,6 +6,4 @@
     <string name="tile_label">Direktetekst</string>
     <string name="tile_subtitle_on">Løper</string>
     <string name="tile_subtitle_off">Trykk for å starte</string>
-    <string name="accessibility_service_label">Bildetekst Tilgjengelighetstjeneste</string>
-    <string name="accessibility_service_description">Lar bildetekst vise flytende bildetekster over andre apper ved hjelp av et systemoverlegg.</string>
 </resources>

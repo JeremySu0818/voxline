@@ -6,6 +6,4 @@
     <string name="tile_label">Capsiwn Byw</string>
     <string name="tile_subtitle_on">Rhedeg</string>
     <string name="tile_subtitle_off">Tapiwch i ddechrau</string>
-    <string name="accessibility_service_label">Capsiwn Gwasanaeth Hygyrchedd</string>
-    <string name="accessibility_service_description">Yn caniatáu i Voxline arddangos capsiynau symudol dros apiau eraill gan ddefnyddio troshaen system.</string>
 </resources>

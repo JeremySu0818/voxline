@@ -1,9 +1,7 @@
 package com.jeremysu0818.voxline
 
 import android.Manifest
-import android.accessibilityservice.AccessibilityServiceInfo
 import android.app.Activity
-import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -11,7 +9,6 @@ import android.media.projection.MediaProjectionManager
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
-import android.view.accessibility.AccessibilityManager
 import android.widget.Toast
 import androidx.annotation.DrawableRes
 import androidx.activity.ComponentActivity
@@ -104,7 +101,6 @@ import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
-import com.jeremysu0818.voxline.accessibility.VoxlineAccessibilityService
 import com.jeremysu0818.voxline.data.VoxlineLanguage
 import com.jeremysu0818.voxline.data.VoxlineLanguages
 import com.jeremysu0818.voxline.data.VoxlineRuntimeState
@@ -185,7 +181,6 @@ private fun VoxlineApp(
     var overlayPrompted by remember { mutableStateOf(false) }
     var recordPrompted by remember { mutableStateOf(false) }
     var notificationPrompted by remember { mutableStateOf(false) }
-    var accessibilityPrompted by remember { mutableStateOf(false) }
     var isMlKitAdvancedAvailable by remember { mutableStateOf<Boolean?>(null) }
     val downloadJobs = remember { mutableMapOf<WhisperModelOption, Job>() }
     var nemotronDownloadJob by remember { mutableStateOf<Job?>(null) }
@@ -201,12 +196,6 @@ private fun VoxlineApp(
     }
 
     val overlaySettingsLauncher = rememberLauncherForActivityResult(
-        ActivityResultContracts.StartActivityForResult(),
-    ) {
-        permissionRefresh++
-    }
-
-    val accessibilitySettingsLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.StartActivityForResult(),
     ) {
         permissionRefresh++
@@ -242,11 +231,6 @@ private fun VoxlineApp(
         Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU ||
             context.hasPermission(Manifest.permission.POST_NOTIFICATIONS)
     }
-    val accessibilityGranted = remember(resumeCount, permissionRefresh) {
-        context.isVoxlineAccessibilityServiceEnabled()
-    }
-    val accessibilityConnected by VoxlineAccessibilityService.isConnected.collectAsState()
-
     LaunchedEffect(settings.model) {
         VoxlineGraph.modelRepository.refresh(settings.model)
     }
@@ -281,7 +265,6 @@ private fun VoxlineApp(
             overlayPrompted = false
             recordPrompted = false
             notificationPrompted = false
-            accessibilityPrompted = false
         }
     }
 
@@ -290,25 +273,11 @@ private fun VoxlineApp(
         overlayGranted,
         recordGranted,
         notificationGranted,
-        accessibilityGranted,
-        accessibilityConnected,
         permissionRefresh,
         resumeCount,
     ) {
         if (!pendingStart) return@LaunchedEffect
         when {
-            !accessibilityGranted -> {
-                if (!accessibilityPrompted) {
-                    accessibilityPrompted = true
-                    accessibilitySettingsLauncher.launch(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
-                }
-            }
-
-            !accessibilityConnected -> {
-                pendingStart = false
-                VoxlineGraph.runtimeStore.setError(I18n.getString("error_accessibility_service_unavailable"))
-            }
-
             !overlayGranted -> {
                 if (!overlayPrompted) {
                     overlayPrompted = true
@@ -338,8 +307,7 @@ private fun VoxlineApp(
         }
     }
 
-    val allPermissionsGranted =
-        accessibilityGranted && overlayGranted && recordGranted && notificationGranted
+    val allPermissionsGranted = overlayGranted && recordGranted && notificationGranted
 
     val selectedDestination = AppDestination.entries[selectedDestinationIndex]
     val pageTransition = expressiveFadeTransform()
@@ -400,8 +368,7 @@ private fun VoxlineApp(
                                     ControlCenterCard(
                                         runtimeState = runtimeState,
                                         isRunning = runtimeState.isRunning,
-                                        canStart = accessibilityGranted && accessibilityConnected &&
-                                            overlayGranted && recordGranted,
+                                        canStart = overlayGranted && recordGranted,
                                         onStart = onStartRequested,
                                         onStop = { VoxlineCaptureService.stop(context) },
                                     )
@@ -415,13 +382,6 @@ private fun VoxlineApp(
                                             overlayGranted = overlayGranted,
                                             recordGranted = recordGranted,
                                             notificationGranted = notificationGranted,
-                                            accessibilityGranted = accessibilityGranted,
-                                            onOpenAccessibilitySettings = {
-                                                accessibilityPrompted = true
-                                                accessibilitySettingsLauncher.launch(
-                                                    Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS),
-                                                )
-                                            },
                                             onOpenOverlaySettings = {
                                                 overlayPrompted = true
                                                 overlaySettingsLauncher.launch(context.overlaySettingsIntent())
@@ -967,9 +927,7 @@ private fun PermissionAlertCard(
     overlayGranted: Boolean,
     recordGranted: Boolean,
     notificationGranted: Boolean,
-    accessibilityGranted: Boolean,
     onOpenOverlaySettings: () -> Unit,
-    onOpenAccessibilitySettings: () -> Unit,
     onRequestRecord: () -> Unit,
     onRequestNotifications: () -> Unit,
 ) {
@@ -1016,15 +974,6 @@ private fun PermissionAlertCard(
                 text = t("permission_reason"),
                 style = MaterialTheme.typography.bodyMedium,
             )
-
-            if (!accessibilityGranted) {
-                PermissionRow(
-                    icon = R.drawable.sym_accessibility_new,
-                    label = t("permission_accessibility"),
-                    actionText = t("open_settings"),
-                    onAction = onOpenAccessibilitySettings,
-                )
-            }
             if (!overlayGranted) {
                 PermissionRow(
                     icon = R.drawable.sym_settings,
@@ -1866,13 +1815,3 @@ private fun Context.overlaySettingsIntent(): Intent =
         Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
         "package:$packageName".toUri(),
     )
-
-private fun Context.isVoxlineAccessibilityServiceEnabled(): Boolean {
-    val captionService = ComponentName(this, VoxlineAccessibilityService::class.java)
-    return getSystemService(AccessibilityManager::class.java)
-        .getEnabledAccessibilityServiceList(AccessibilityServiceInfo.FEEDBACK_ALL_MASK)
-        .any { service ->
-            val serviceInfo = service.resolveInfo.serviceInfo
-            ComponentName(serviceInfo.packageName, serviceInfo.name) == captionService
-        }
-}

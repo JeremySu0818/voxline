@@ -6,6 +6,4 @@
     <string name="tile_label">ਲਾਈਵ ਸੁਰਖੀ</string>
     <string name="tile_subtitle_on">ਚੱਲ ਰਿਹਾ ਹੈ</string>
     <string name="tile_subtitle_off">ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਟੈਪ ਕਰੋ</string>
-    <string name="accessibility_service_label">ਕੈਪਸ਼ਨ ਪਹੁੰਚਯੋਗਤਾ ਸੇਵਾ</string>
-    <string name="accessibility_service_description">ਕੈਪਸ਼ਨ ਨੂੰ ਸਿਸਟਮ ਓਵਰਲੇਅ ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਹੋਏ ਹੋਰ ਐਪਾਂ \'ਤੇ ਫਲੋਟਿੰਗ ਕੈਪਸ਼ਨ ਦਿਖਾਉਣ ਦੀ ਇਜਾਜ਼ਤ ਦਿੰਦਾ ਹੈ।</string>
 </resources>
