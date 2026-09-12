@@ -16,7 +16,7 @@
   "speech_engine": "inneall aitheantais",
   "engine_whisper_desc": "Bain úsáid as whisper.cpp; tar éis deireadh pianbhreithe a bhrath, déanfar an abairt iomlán a thrascríobh, le moill de thart ar 3-5 soicind.",
   "engine_mlkit_basic_desc": "Ag baint úsáide as ML Kit Basic, ar fáil ar fhormhór na bhfeistí Android 12+.",
-  "engine_mlkit_advanced_desc": "Chun ML Kit Advanced a úsáid, tá gá le gléas a thacaíonn le AICore/Gemini Nano.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Deimhnigh íoslódáil a chur ar ceal",
   "cancel_download_message": "An bhfuil tú cinnte gur mhaith leat íoslódáil {model} a chur ar ceal? Caillfear an dul chun cinn íoslódála reatha.",
   "confirm_cancel": "Deimhnigh cealú",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Seiceáil múnla Nemotron",
   "nemotron_failed": "Theip ar thrascríobh Nemotron.",
   "error_sha256_mismatch": "Neamhréir SHA-256: ag súil le {expected}, {actual} iarbhír",
-  "engine_nemotron_desc": "Úsáideann Nemotron 3.5 ASR Streaming go háitiúil, le braite teanga uathoibríoch agus cúig mhodh latency."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Ní thacaíonn an gléas reatha le ML Kit Basic"
 }

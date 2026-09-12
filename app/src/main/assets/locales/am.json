@@ -16,7 +16,7 @@
   "speech_engine": "የማወቂያ ሞተር",
   "engine_whisper_desc": "whisper.cpp ይጠቀሙ; የዓረፍተ ነገሩን መጨረሻ ካወቀ በኋላ፣ አረፍተ ነገሩ በሙሉ ይገለበጣል፣ ከ3-5 ሰከንድ ያህል መዘግየት።",
   "engine_mlkit_basic_desc": "ML Kit Basicን በመጠቀም፣ በአብዛኛዎቹ አንድሮይድ 12+ መሳሪያዎች ላይ ይገኛል።",
-  "engine_mlkit_advanced_desc": "ML Kit Advancedን ለመጠቀም AICore/Gemini Nano ን የሚደግፍ መሳሪያ ያስፈልጋል።",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "ማውረድን ለመሰረዝ ያረጋግጡ",
   "cancel_download_message": "እርግጠኛ ነዎት {model}ን ማውረድ መሰረዝ ይፈልጋሉ? የአሁኑ የማውረድ ሂደት ይጠፋል።",
   "confirm_cancel": "መሰረዙን ያረጋግጡ",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "የ Nemotron ሞዴልን በመፈተሽ ላይ",
   "nemotron_failed": "የኒሞትሮን ቅጂ አልተሳካም።",
   "error_sha256_mismatch": "የSHA-256 አለመዛመድ፡ የሚጠበቀው {expected}፣ ትክክለኛ {actual}",
-  "engine_nemotron_desc": "Nemotron 3.5 ASR ዥረትን በአገር ውስጥ ይጠቀማል፣ በራስ-ሰር ቋንቋ ማወቂያ እና በአምስት የመዘግየት ሁነታዎች።"
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "የአሁኑ መሣሪያ ML Kit Basicን አይደግፍም።"
 }

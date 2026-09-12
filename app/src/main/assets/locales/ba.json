@@ -16,7 +16,7 @@
   "speech_engine": "таныу двигателе",
   "engine_whisper_desc": "Ҡулланыу шыбырлау.cpp; һөйләмдең аҙағын асыҡлағандан һуң, бөтә һөйләм транскрипцияланасаҡ, яҡынса 3-5 секунд тотҡарлыҡ менән.",
   "engine_mlkit_basic_desc": "ML Kit Basic ҡулланыу, күпселек Android 12+ ҡоролмаларында бар.",
-  "engine_mlkit_advanced_desc": "ML Kit Advanced ҡулланыу өсөн AICore/Gemini Nano ҡоролмаһы кәрәк.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Йөкләүҙе юҡҡа сығарыуҙы раҫлау",
   "cancel_download_message": "Һеҙ ышанаһығыҙмы, һеҙ {модель} скачиваниены туҡтатырға теләйһегеҙме? Ағымдағы скачивание прогресс юғаласаҡ.",
   "confirm_cancel": "Отмена раҫлау",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Немотрон моделен тикшереү",
   "nemotron_failed": "Немотрон транскрипцияһы уңышһыҙлыҡҡа осрай.",
   "error_sha256_mismatch": "SHA-256 тап килмәүе: көтөлгән {expected}, ысынбарлыҡтағы {actual}",
-  "engine_nemotron_desc": "Ҡулланыу Nemotron 3.5 ASR Потоковый локаль, автоматик тел асыҡлау һәм биш латентлыҡ режимы менән."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Хәҙерге ҡоролма ML Kit Basic ярҙам итмәй."
 }

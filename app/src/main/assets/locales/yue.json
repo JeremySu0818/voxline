@@ -16,7 +16,7 @@
   "speech_engine": "辨識引擎",
   "engine_whisper_desc": "使用 whisper . cpp ；偵測到一句話結束後整句轉錄，約延遲3-5秒。",
   "engine_mlkit_basic_desc": "使用 ML Kit Basic ，大部分 Android 12+裝置都可以用。",
-  "engine_mlkit_advanced_desc": "使用 ML Kit Advanced ，需要支援 AICore/Gemini Nano 嘅裝置。",
+  "engine_mlkit_advanced_desc": "使用 ML Kit Advanced，需要特定 Google Pixel 裝置。",
   "cancel_download_title": "確認取消下載",
   "cancel_download_message": "確定要取消下載 {model} 嗎？目前嘅下載進度將會遺失。",
   "confirm_cancel": "確認取消",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "檢查緊 Nemotron 模型",
   "nemotron_failed": "尼莫子轉錄失敗。",
   "error_sha256_mismatch": "SHA-256唔啱：預期 {expected}，實際 {actual}",
-  "engine_nemotron_desc": "本地使用 Nemotron 3.5 ASR Streaming ，具有自動語言檢測和五種延遲模式。"
+  "engine_nemotron_desc": "喺本地使用 Nemotron 3.5 ASR 串流辨識。注意：較消耗計算資源，若手機效能不足可能冇字幕或者造成系統卡死，請衡量設備性能。",
+  "mlkit_basic_unsupported": "當前設備唔支援 ML Kit Basic"
 }

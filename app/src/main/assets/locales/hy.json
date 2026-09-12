@@ -16,7 +16,7 @@
   "speech_engine": "ճանաչման շարժիչ",
   "engine_whisper_desc": "Օգտագործեք whisper.cpp; Նախադասության ավարտը հայտնաբերելուց հետո ամբողջ նախադասությունը կարտագրվի՝ մոտ 3-5 վայրկյան ուշացումով:",
   "engine_mlkit_basic_desc": "Օգտագործելով ML Kit Basic-ը, որը հասանելի է Android 12+ սարքերի մեծ մասում:",
-  "engine_mlkit_advanced_desc": "ML Kit Advanced-ն օգտագործելու համար անհրաժեշտ է սարք, որն աջակցում է AICore/Gemini Nano-ին:",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Հաստատեք ներբեռնումը չեղարկելու համար",
   "cancel_download_message": "Իսկապե՞ս ուզում եք չեղարկել {model}-ի ներբեռնումը: Ներբեռնման ընթացիկ առաջընթացը կկորչի:",
   "confirm_cancel": "Հաստատեք չեղարկումը",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Nemotron մոդելի ստուգում",
   "nemotron_failed": "Նեմոտրոնի տառադարձումը ձախողվեց:",
   "error_sha256_mismatch": "SHA-256 անհամապատասխանություն՝ սպասվող {expected}, փաստացի {actual}",
-  "engine_nemotron_desc": "Օգտագործում է Nemotron 3.5 ASR Streaming-ը տեղական լեզվով, ավտոմատ լեզվի հայտնաբերմամբ և հինգ հետաձգման ռեժիմով:"
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Ներկայիս սարքը չի աջակցում ML Kit Basic-ին"
 }

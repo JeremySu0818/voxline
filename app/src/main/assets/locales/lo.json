@@ -16,7 +16,7 @@
   "speech_engine": "ເຄື່ອງຈັກການຮັບຮູ້",
   "engine_whisper_desc": "ໃຊ້ whisper.cpp; ຫຼັງ​ຈາກ​ການ​ກວດ​ພົບ​ການ​ສິ້ນ​ສຸດ​ຂອງ​ປະ​ໂຫຍກ​, ປະ​ໂຫຍກ​ທັງ​ຫມົດ​ຈະ​ໄດ້​ຮັບ​ການ​ຖອດ​ຄວາມ​, ມີ​ຄວາມ​ຊັກ​ຊ້າ​ປະ​ມານ 3-5 ວິ​ນາ​ທີ​.",
   "engine_mlkit_basic_desc": "ໃຊ້ ML Kit Basic, ມີຢູ່ໃນອຸປະກອນ Android 12+ ສ່ວນໃຫຍ່.",
-  "engine_mlkit_advanced_desc": "ເພື່ອໃຊ້ ML Kit Advanced, ຕ້ອງໃຊ້ອຸປະກອນທີ່ຮອງຮັບ AICore/Gemini Nano.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "ຢືນຢັນເພື່ອຍົກເລີກການດາວໂຫຼດ",
   "cancel_download_message": "ທ່ານແນ່ໃຈບໍ່ວ່າຕ້ອງການຍົກເລີກການດາວໂຫຼດ {model}? ຄວາມຄືບໜ້າການດາວໂຫຼດໃນປັດຈຸບັນຈະສູນເສຍໄປ.",
   "confirm_cancel": "ຢືນຢັນການຍົກເລີກ",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "ການກວດສອບຕົວແບບ Nemotron",
   "nemotron_failed": "ການຖອດຂໍ້ຄວາມ Nemotron ລົ້ມເຫລວ.",
   "error_sha256_mismatch": "SHA-256 ບໍ່ກົງກັນ: ຄາດຫວັງ {expected}, ຕົວຈິງ {actual}",
-  "engine_nemotron_desc": "ໃຊ້ Nemotron 3.5 ASR Streaming ພາຍໃນເຄື່ອງ, ດ້ວຍການກວດຫາພາສາອັດຕະໂນມັດ ແລະ ຫ້າໂໝດການຕອບສະໜອງ."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "ອຸປະກອນປະຈຸບັນບໍ່ຮອງຮັບ ML Kit Basic"
 }

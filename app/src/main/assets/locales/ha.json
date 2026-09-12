@@ -16,7 +16,7 @@
   "speech_engine": "injin ganewa",
   "engine_whisper_desc": "Yi amfani da whisper.cpp; bayan gano ƙarshen jimla, za a rubuta dukkan jimlar, tare da jinkirin kusan 3-5 seconds.",
   "engine_mlkit_basic_desc": "Amfani da ML Kit Basic, akwai akan yawancin na'urorin Android 12+.",
-  "engine_mlkit_advanced_desc": "Don amfani da ML Kit Advanced, ana buƙatar na'urar da ke goyan bayan AICore/Gemini Nano.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Tabbatar da soke zazzagewa",
   "cancel_download_message": "Shin kun tabbata kuna son soke zazzagewar {model}? Ci gaban zazzagewar na yanzu zai ɓace.",
   "confirm_cancel": "Tabbatar da sokewa",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Duba samfurin Nemotron",
   "nemotron_failed": "Rubutun Nemotron ya kasa.",
   "error_sha256_mismatch": "SHA-256 rashin daidaituwa: ana tsammanin {expected}, ainihin {actual}",
-  "engine_nemotron_desc": "Yana amfani da Nemotron 3.5 ASR Yawo a cikin gida, tare da gano harshe ta atomatik da yanayin jinkiri biyar."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Na'urar na yanzu baya goyan bayan ML Kit Basic"
 }

@@ -16,7 +16,7 @@
   "speech_engine": "magna ta 'rikonoxximent",
   "engine_whisper_desc": "Uża whisper.cpp; wara li jinstab it-tmiem ta' sentenza, is-sentenza kollha tiġi traskritta, b'dewmien ta' madwar 3-5 sekondi.",
   "engine_mlkit_basic_desc": "Bl-użu tal-ML Kit Basic, disponibbli fuq il-biċċa l-kbira tat-tagħmir Android 12+.",
-  "engine_mlkit_advanced_desc": "Biex tuża ML Kit Advanced, huwa meħtieġ apparat li jappoġġja AICore/Gemini Nano.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Ikkonferma biex tikkanċella t-tniżżil",
   "cancel_download_message": "Int żgur li trid tikkanċella t-tniżżil ta' {model}? Il-progress attwali tat-tniżżil se jintilef.",
   "confirm_cancel": "Ikkonferma l-kanċellazzjoni",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Iċċekkjar tal-mudell Nemotron",
   "nemotron_failed": "Traskrizzjoni Nemotron falliet.",
   "error_sha256_mismatch": "SHA-256 nuqqas ta' qbil: mistenni {expected}, attwali {actual}",
-  "engine_nemotron_desc": "Juża Nemotron 3.5 ASR Streaming lokalment, b'sejbien awtomatiku tal-lingwa u ħames modi ta 'latency."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "L-apparat attwali ma jappoġġjax ML Kit Basic"
 }

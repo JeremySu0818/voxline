@@ -16,7 +16,7 @@
   "speech_engine": "rekonmotoro",
   "engine_whisper_desc": "Uzu whisper.cpp; post detektado de la fino de frazo, la tuta frazo estos transskribita, kun prokrasto de ĉirkaŭ 3-5 sekundoj.",
   "engine_mlkit_basic_desc": "Uzante ML Kit Basic, havebla sur plej multaj Android 12+ aparatoj.",
-  "engine_mlkit_advanced_desc": "Por uzi ML Kit Advanced, necesas aparato kiu subtenas AICore/Gemini Nano.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Konfirmu nuligi elŝuton",
   "cancel_download_message": "Ĉu vi certas, ke vi volas nuligi elŝuton de {modelo}? La nuna elŝuta progreso estos perdita.",
   "confirm_cancel": "Konfirmu nuligon",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Kontrolante modelon de Nemotron",
   "nemotron_failed": "Nemotron-transskribo malsukcesis.",
   "error_sha256_mismatch": "SHA-256 miskongruo: atendata {expected}, reala {actual}",
-  "engine_nemotron_desc": "Uzas Nemotron 3.5 ASR-Streaming loke, kun aŭtomata lingvo-detekto kaj kvin latentecaj reĝimoj."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "La nuna aparato ne subtenas ML Kit Basic"
 }

@@ -16,7 +16,7 @@
   "speech_engine": "mecanismo de reconhecimento",
   "engine_whisper_desc": "Use sussurro.cpp; após detectar o final de uma frase, a frase inteira será transcrita, com um atraso de cerca de 3 a 5 segundos.",
   "engine_mlkit_basic_desc": "Usando o ML Kit Basic, disponível na maioria dos dispositivos Android 12+.",
-  "engine_mlkit_advanced_desc": "Para usar o ML Kit Advanced, é necessário um dispositivo compatível com AICore/Gemini Nano.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Confirme para cancelar o download",
   "cancel_download_message": "Tem certeza de que deseja cancelar o download de {model}? O progresso atual do download será perdido.",
   "confirm_cancel": "Confirmar cancelamento",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Verificando o modelo Nemotron",
   "nemotron_failed": "A transcrição do Nemotron falhou.",
   "error_sha256_mismatch": "Incompatibilidade SHA-256: esperado {expected}, real {actual}",
-  "engine_nemotron_desc": "Usa Nemotron 3.5 ASR Streaming localmente, com detecção automática de idioma e cinco modos de latência."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "O dispositivo atual não oferece suporte ao ML Kit Basic"
 }

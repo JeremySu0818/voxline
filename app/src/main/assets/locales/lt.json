@@ -16,7 +16,7 @@
   "speech_engine": "atpažinimo variklis",
   "engine_whisper_desc": "Naudokite whisper.cpp; aptikus sakinio pabaigą, visas sakinys bus perrašomas, uždelsdamas apie 3-5 sekundes.",
   "engine_mlkit_basic_desc": "Naudojant „ML Kit Basic“, pasiekiamą daugumoje „Android 12“ ir naujesnių versijų įrenginių.",
-  "engine_mlkit_advanced_desc": "Norint naudoti ML Kit Advanced, reikalingas įrenginys, palaikantis AICore/Gemini Nano.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Patvirtinkite, kad atšauktumėte atsisiuntimą",
   "cancel_download_message": "Ar tikrai norite atšaukti {model} atsisiuntimą? Dabartinė atsisiuntimo eiga bus prarasta.",
   "confirm_cancel": "Patvirtinkite atšaukimą",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Tikrinamas Nemotron modelis",
   "nemotron_failed": "Nemotrono transkripcija nepavyko.",
   "error_sha256_mismatch": "SHA-256 neatitikimas: numatomas {expected}, faktinis {actual}",
-  "engine_nemotron_desc": "Naudoja Nemotron 3.5 ASR transliaciją vietoje, su automatiniu kalbos aptikimu ir penkiais delsos režimais."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Dabartinis įrenginys nepalaiko ML Kit Basic"
 }

@@ -35,13 +35,19 @@ class MlKitSpeechTranscriber {
         isEngineAvailable(languageTag, SpeechEngineOption.MLKIT_ADVANCED)
     }
 
+    suspend fun isBasicAvailable(languageTag: String): Boolean = mutex.withLock {
+        isEngineAvailable(languageTag, SpeechEngineOption.MLKIT_BASIC)
+    }
+
     suspend fun isModelReady(languageTag: String, engine: SpeechEngineOption): Boolean = mutex.withLock {
         val localeTag = VoxlineLanguages.mlKitSpeechLocale(languageTag, engine) ?: return@withLock false
         val mode = when (engine) {
             SpeechEngineOption.MLKIT_ADVANCED -> SpeechRecognizerOptions.Mode.MODE_ADVANCED
             else -> SpeechRecognizerOptions.Mode.MODE_BASIC
         }
-        recognizerFor(Locale.forLanguageTag(localeTag), mode).checkStatus() == FeatureStatus.AVAILABLE
+        runCatching {
+            recognizerFor(Locale.forLanguageTag(localeTag), mode).checkStatus() == FeatureStatus.AVAILABLE
+        }.getOrDefault(false)
     }
 
     suspend fun transcribe(
@@ -116,13 +122,15 @@ class MlKitSpeechTranscriber {
             SpeechEngineOption.MLKIT_ADVANCED -> SpeechRecognizerOptions.Mode.MODE_ADVANCED
             else -> SpeechRecognizerOptions.Mode.MODE_BASIC
         }
-        return when (recognizerFor(locale, mode).checkStatus()) {
-            FeatureStatus.AVAILABLE,
-            FeatureStatus.DOWNLOADABLE,
-            FeatureStatus.DOWNLOADING,
-            -> true
-            else -> false
-        }
+        return runCatching {
+            when (recognizerFor(locale, mode).checkStatus()) {
+                FeatureStatus.AVAILABLE,
+                FeatureStatus.DOWNLOADABLE,
+                FeatureStatus.DOWNLOADING,
+                -> true
+                else -> false
+            }
+        }.getOrDefault(false)
     }
 
     private suspend fun prepare(

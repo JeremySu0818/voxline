@@ -16,7 +16,7 @@
   "speech_engine": "μηχανή αναγνώρισης",
   "engine_whisper_desc": "Χρησιμοποιήστε το whisper.cpp; αφού εντοπιστεί το τέλος μιας πρότασης, ολόκληρη η πρόταση θα μεταγραφεί, με καθυστέρηση περίπου 3-5 δευτερολέπτων.",
   "engine_mlkit_basic_desc": "Χρησιμοποιώντας το ML Kit Basic, διαθέσιμο στις περισσότερες συσκευές Android 12+.",
-  "engine_mlkit_advanced_desc": "Για να χρησιμοποιήσετε το ML Kit Advanced, απαιτείται μια συσκευή που υποστηρίζει AICore/Gemini Nano.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Επιβεβαιώστε την ακύρωση της λήψης",
   "cancel_download_message": "Είστε βέβαιοι ότι θέλετε να ακυρώσετε τη λήψη του {model}; Η τρέχουσα πρόοδος λήψης θα χαθεί.",
   "confirm_cancel": "Επιβεβαιώστε την ακύρωση",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Έλεγχος του μοντέλου Nemotron",
   "nemotron_failed": "Η μεταγραφή Nemotron απέτυχε.",
   "error_sha256_mismatch": "Αναντιστοιχία SHA-256: αναμενόμενη {expected}, πραγματική {actual}",
-  "engine_nemotron_desc": "Χρησιμοποιεί τοπικά το Nemotron 3.5 ASR Streaming, με αυτόματη ανίχνευση γλώσσας και πέντε λειτουργίες καθυστέρησης."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Η τρέχουσα συσκευή δεν υποστηρίζει το ML Kit Basic"
 }

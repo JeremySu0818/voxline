@@ -16,7 +16,7 @@
   "speech_engine": "محرك الاعتراف",
   "engine_whisper_desc": "استخدم Whisper.cpp؛ بعد الكشف عن نهاية الجملة، سيتم نسخ الجملة بأكملها، مع تأخير حوالي 3-5 ثواني.",
   "engine_mlkit_basic_desc": "استخدام ML Kit Basic، المتوفر على معظم الأجهزة التي تعمل بنظام التشغيل Android 12+.",
-  "engine_mlkit_advanced_desc": "لاستخدام ML Kit Advanced، يلزم توفر جهاز يدعم AICore/Gemini Nano.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "تأكيد إلغاء التنزيل",
   "cancel_download_message": "هل أنت متأكد أنك تريد إلغاء تنزيل {model}؟ سيتم فقدان تقدم التنزيل الحالي.",
   "confirm_cancel": "تأكيد الإلغاء",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "التحقق من نموذج النيموترون",
   "nemotron_failed": "فشل نسخ النيموترون.",
   "error_sha256_mismatch": "عدم تطابق SHA-256: المتوقع {expected}، الفعلي {actual}",
-  "engine_nemotron_desc": "يستخدم Nemotron 3.5 ASR Streaming محليًا، مع الكشف التلقائي عن اللغة وخمسة أوضاع لزمن الاستجابة."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "الجهاز الحالي لا يدعم ML Kit Basic"
 }

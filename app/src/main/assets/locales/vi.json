@@ -16,7 +16,7 @@
   "speech_engine": "công cụ nhận dạng",
   "engine_whisper_desc": "Sử dụng thì thầm.cpp; sau khi phát hiện hết câu, toàn bộ câu sẽ được phiên âm với độ trễ khoảng 3-5 giây.",
   "engine_mlkit_basic_desc": "Sử dụng ML Kit Basic, có sẵn trên hầu hết các thiết bị Android 12+.",
-  "engine_mlkit_advanced_desc": "Để sử dụng ML Kit Advanced, cần có thiết bị hỗ trợ AICore/Gemini Nano.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Xác nhận hủy tải xuống",
   "cancel_download_message": "Bạn có chắc chắn muốn hủy tải xuống {model} không? Tiến trình tải xuống hiện tại sẽ bị mất.",
   "confirm_cancel": "Xác nhận hủy",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Kiểm tra mô hình Nemotron",
   "nemotron_failed": "Phiên mã Nemotron không thành công.",
   "error_sha256_mismatch": "SHA-256 không khớp: dự kiến {expected}, thực tế {actual}",
-  "engine_nemotron_desc": "Sử dụng Nemotron 3.5 ASR Truyền phát cục bộ, với tính năng phát hiện ngôn ngữ tự động và năm chế độ độ trễ."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Thiết bị hiện tại không hỗ trợ ML Kit Basic"
 }

@@ -16,7 +16,7 @@
   "speech_engine": "gjenkjenningsmotor",
   "engine_whisper_desc": "Bruk whisper.cpp; etter å ha oppdaget slutten av en setning, vil hele setningen bli transkribert, med en forsinkelse på ca. 3-5 sekunder.",
   "engine_mlkit_basic_desc": "Bruker ML Kit Basic, tilgjengelig på de fleste Android 12+-enheter.",
-  "engine_mlkit_advanced_desc": "For å bruke ML Kit Advanced, kreves en enhet som støtter AICore/Gemini Nano.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Bekreft for å avbryte nedlastingen",
   "cancel_download_message": "Er du sikker på at du vil avbryte nedlastingen av {model}? Den nåværende nedlastingsfremdriften vil gå tapt.",
   "confirm_cancel": "Bekreft kansellering",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Sjekker Nemotron-modellen",
   "nemotron_failed": "Nemotron-transkripsjon mislyktes.",
   "error_sha256_mismatch": "SHA-256 mismatch: forventet {expected}, faktisk {actual}",
-  "engine_nemotron_desc": "Bruker Nemotron 3.5 ASR Streaming lokalt, med automatisk språkdeteksjon og fem ventemoduser."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Gjeldende enhet støtter ikke ML Kit Basic"
 }

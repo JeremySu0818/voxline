@@ -16,7 +16,7 @@
   "speech_engine": "maotera famantarana",
   "engine_whisper_desc": "Ampiasao whisper.cpp; aorian'ny fahafantarana ny fiafaran'ny fehezanteny iray dia hadika ny fehezanteny iray manontolo, miaraka amin'ny fahatarana eo amin'ny 3-5 segondra eo ho eo.",
   "engine_mlkit_basic_desc": "Mampiasa ML Kit Basic, azo alaina amin'ny ankamaroan'ny fitaovana Android 12+.",
-  "engine_mlkit_advanced_desc": "Mba hampiasana ny ML Kit Advanced dia ilaina ny fitaovana manohana AICore/Gemini Nano.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Hamafiso ny hanafoana ny fampidinana",
   "cancel_download_message": "Tena te hanafoana ny fampidinana {model} ve ianao? Ho very ny fivoaran'ny fampidinana ankehitriny.",
   "confirm_cancel": "Hamafiso ny fanafoanana",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Fanamarinana ny modely Nemotron",
   "nemotron_failed": "Tsy nahomby ny fandikana ny Nemotron.",
   "error_sha256_mismatch": "SHA-256 tsy mifanentana: andrasana {expected}, tena {actual}",
-  "engine_nemotron_desc": "Mampiasa Nemotron 3.5 ASR Streaming eo an-toerana, miaraka amin'ny fitadiavana fiteny mandeha ho azy ary maodely dimy."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Tsy mahazaka ML Kit Basic ny fitaovana ankehitriny"
 }

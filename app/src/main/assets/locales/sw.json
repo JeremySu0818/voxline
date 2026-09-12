@@ -16,7 +16,7 @@
   "speech_engine": "injini ya utambuzi",
   "engine_whisper_desc": "Tumia whisper.cpp; baada ya kugundua mwisho wa sentensi, sentensi nzima itanakiliwa, na kucheleweshwa kwa sekunde 3-5.",
   "engine_mlkit_basic_desc": "Kwa kutumia ML Kit Basic, inapatikana kwenye vifaa vingi vya Android 12+.",
-  "engine_mlkit_advanced_desc": "Ili kutumia ML Kit Advanced, kifaa kinachotumia AICore/Gemini Nano kinahitajika.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Thibitisha ili kughairi upakuaji",
   "cancel_download_message": "Je, una uhakika unataka kughairi upakuaji wa {model}? Maendeleo ya sasa ya upakuaji yatapotea.",
   "confirm_cancel": "Thibitisha kughairi",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Kuangalia mfano wa Nemotron",
   "nemotron_failed": "Unukuzi wa Nemotron haukufaulu.",
   "error_sha256_mismatch": "SHA-256 kutolingana: inatarajiwa {expected}, halisi {actual}",
-  "engine_nemotron_desc": "Hutumia Utiririshaji wa Nemotron 3.5 ASR ndani ya nchi, ikiwa na utambuzi wa lugha kiotomatiki na hali tano za kusubiri."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Kifaa cha sasa hakitumii ML Kit Basic"
 }

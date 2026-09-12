@@ -16,7 +16,7 @@
   "speech_engine": "viðurkenningarvél",
   "engine_whisper_desc": "Notaðu whisper.cpp; eftir að lok setningar hefur fundist verður öll setningin afrituð, með um 3-5 sekúndum töf.",
   "engine_mlkit_basic_desc": "Notar ML Kit Basic, fáanlegt á flestum Android 12+ tækjum.",
-  "engine_mlkit_advanced_desc": "Til að nota ML Kit Advanced þarf tæki sem styður AICore/Gemini Nano.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Staðfestu til að hætta við niðurhal",
   "cancel_download_message": "Ertu viss um að þú viljir hætta við að hlaða niður {model}? Núverandi niðurhalsframvinda mun glatast.",
   "confirm_cancel": "Staðfestu afpöntun",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Er að skoða Nemotron líkan",
   "nemotron_failed": "Umritun nemótróna mistókst.",
   "error_sha256_mismatch": "SHA-256 misræmi: búist við {expected}, raunverulegt {actual}",
-  "engine_nemotron_desc": "Notar Nemotron 3.5 ASR streymi á staðnum, með sjálfvirkri tungumálagreiningu og fimm leyndarstillingum."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Núverandi tæki styður ekki ML Kit Basic"
 }

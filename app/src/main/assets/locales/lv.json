@@ -16,7 +16,7 @@
   "speech_engine": "atpazīšanas dzinējs",
   "engine_whisper_desc": "Izmantojiet whisper.cpp; pēc teikuma beigu noteikšanas viss teikums tiks pārrakstīts ar aptuveni 3-5 sekunžu aizkavi.",
   "engine_mlkit_basic_desc": "Izmantojot ML Kit Basic, kas pieejams lielākajā daļā Android 12+ ierīču.",
-  "engine_mlkit_advanced_desc": "Lai izmantotu ML Kit Advanced, ir nepieciešama ierīce, kas atbalsta AICore/Gemini Nano.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Apstipriniet, lai atceltu lejupielādi",
   "cancel_download_message": "Vai tiešām vēlaties atcelt {model} lejupielādi? Pašreizējais lejupielādes process tiks zaudēts.",
   "confirm_cancel": "Apstipriniet atcelšanu",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Pārbauda Nemotron modeli",
   "nemotron_failed": "Nemotron transkripcija neizdevās.",
   "error_sha256_mismatch": "SHA-256 neatbilstība: paredzamā {expected}, faktiskā {actual}",
-  "engine_nemotron_desc": "Lokāli izmanto Nemotron 3.5 ASR straumēšanu ar automātisku valodas noteikšanu un pieciem latentuma režīmiem."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Pašreizējā ierīce neatbalsta ML Kit Basic"
 }

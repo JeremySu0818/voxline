@@ -16,7 +16,7 @@
   "speech_engine": "äratundmismootor",
   "engine_whisper_desc": "Kasuta whisper.cpp; pärast lause lõpu tuvastamist transkribeeritakse kogu lause umbes 3-5 sekundilise viivitusega.",
   "engine_mlkit_basic_desc": "ML Kit Basicu kasutamine, mis on saadaval enamikes Android 12+ seadmetes.",
-  "engine_mlkit_advanced_desc": "ML Kit Advanced kasutamiseks on vaja seadet, mis toetab AICore/Gemini Nanot.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Kinnitage allalaadimise tühistamiseks",
   "cancel_download_message": "Kas soovite kindlasti {model} allalaadimise tühistada? Praegune allalaadimise edenemine läheb kaotsi.",
   "confirm_cancel": "Kinnitage tühistamine",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Nemotroni mudeli kontrollimine",
   "nemotron_failed": "Nemotroni transkriptsioon ebaõnnestus.",
   "error_sha256_mismatch": "SHA-256 mittevastavus: eeldatav {expected}, tegelik {actual}",
-  "engine_nemotron_desc": "Kasutab Nemotron 3.5 ASR Streaming kohapeal, automaatse keeletuvastuse ja viie latentsusrežiimiga."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Praegune seade ei toeta ML Kit Basic"
 }

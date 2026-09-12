@@ -16,7 +16,7 @@
   "speech_engine": "tanamak üçin hereketlendiriji",
   "engine_whisper_desc": "Whisper.cpp ulanyň; sözlemiň soňuny kesgitlänsoň, takmynan 3-5 sekunt gijikdirilip, sözlemiň hemmesi ýazylar.",
   "engine_mlkit_basic_desc": "Android 12+ enjamlarynyň köpüsinde elýeterli ML Kit Basic-i ulanmak.",
-  "engine_mlkit_advanced_desc": "ML Kit Advanced-y ulanmak üçin AICore / Gemini Nano-ny goldaýan enjam gerek.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Göçürip almagy ýatyryň",
   "cancel_download_message": "{Model} göçürip almagy ýatyrmak isleýändigiňize ynanýarsyňyzmy? Häzirki göçürip almak ösüşi ýitiriler.",
   "confirm_cancel": "Ationatyrylmagyny tassyklaň",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Nemotron modelini barlamak",
   "nemotron_failed": "Nemotron transkripsiýasy şowsuz.",
   "error_sha256_mismatch": "SHA-256 gabat gelmezlik: garaşylýan {expected}, hakyky {actual}",
-  "engine_nemotron_desc": "Nemotron 3.5 ASR dilini awtomatiki usulda kesgitlemek we bäş gijä galmak tertibi bilen ýerli akym ulanýar."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Häzirki enjam ML Kit Basic-y goldamaýar"
 }

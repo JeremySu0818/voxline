@@ -16,7 +16,7 @@
   "speech_engine": "pūkaha āhukahuka",
   "engine_whisper_desc": "Whakamahia whisper.cpp; i muri i te kitenga i te mutunga o te rerenga korero, ka tuhia te rerenga korero katoa, me te whakaroa mo te 3-5 hēkona.",
   "engine_mlkit_basic_desc": "Ma te whakamahi i te ML Kit Basic, e waatea ana ki te nuinga o nga taputapu Android 12+.",
-  "engine_mlkit_advanced_desc": "Hei whakamahi i te ML Kit Advanced, ka hiahiatia he taputapu e tautoko ana i te AICore/Gemini Nano.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Whakaū ki te whakakore i te tikiake",
   "cancel_download_message": "Me whakakore te tango i te {tauira}? Ka ngaro te ahunga whakamua o te tikiake.",
   "confirm_cancel": "Whakaū whakakorenga",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Te tirotiro i te tauira Nemotron",
   "nemotron_failed": "I rahua te tuhi Nemotron.",
   "error_sha256_mismatch": "SHA-256 he riterite: e tumanakohia ana {expected}, tūturu {actual}",
-  "engine_nemotron_desc": "Ka whakamahi i te Nemotron 3.5 ASR Streaming i te rohe, me te rapu reo aunoa me nga aratau e rima."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Kaore te taputapu o naianei e tautoko i te ML Kit Basic"
 }

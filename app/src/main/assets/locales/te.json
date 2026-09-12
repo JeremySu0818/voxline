@@ -16,7 +16,7 @@
   "speech_engine": "గుర్తింపు ఇంజిన్",
   "engine_whisper_desc": "whisper.cppని ఉపయోగించండి; వాక్యం ముగింపును గుర్తించిన తర్వాత, మొత్తం వాక్యం 3-5 సెకన్ల ఆలస్యంతో లిప్యంతరీకరించబడుతుంది.",
   "engine_mlkit_basic_desc": "ML Kit Basicని ఉపయోగించడం, చాలా Android 12+ పరికరాలలో అందుబాటులో ఉంది.",
-  "engine_mlkit_advanced_desc": "ML కిట్ అడ్వాన్స్‌డ్‌ని ఉపయోగించడానికి, AICore/Gemini Nanoకి మద్దతిచ్చే పరికరం అవసరం.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "డౌన్‌లోడ్ రద్దు చేయడానికి నిర్ధారించండి",
   "cancel_download_message": "మీరు {model}ని డౌన్‌లోడ్ చేయడాన్ని ఖచ్చితంగా రద్దు చేయాలనుకుంటున్నారా? ప్రస్తుత డౌన్‌లోడ్ పురోగతి పోతుంది.",
   "confirm_cancel": "రద్దును నిర్ధారించండి",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "నెమోట్రాన్ మోడల్‌ని తనిఖీ చేస్తోంది",
   "nemotron_failed": "నెమోట్రాన్ ట్రాన్స్‌క్రిప్షన్ విఫలమైంది.",
   "error_sha256_mismatch": "SHA-256 అసమతుల్యత: అంచనా {expected}, వాస్తవ {actual}",
-  "engine_nemotron_desc": "స్వయంచాలక భాష గుర్తింపు మరియు ఐదు జాప్యం మోడ్‌లతో స్థానికంగా Nemotron 3.5 ASR స్ట్రీమింగ్‌ను ఉపయోగిస్తుంది."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "ప్రస్తుత పరికరం ML కిట్ అడ్వాన్స్‌డ్‌కు మద్దతు ఇవ్వదు"
 }

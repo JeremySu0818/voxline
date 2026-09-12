@@ -16,7 +16,7 @@
   "speech_engine": "таних хөдөлгүүр",
   "engine_whisper_desc": "whisper.cpp ашиглах; өгүүлбэрийн төгсгөлийг илрүүлсний дараа өгүүлбэрийг бүхэлд нь орчуулж, 3-5 секундын сааталтайгаар бичнэ.",
   "engine_mlkit_basic_desc": "Ихэнх Android 12+ төхөөрөмж дээр ашиглах боломжтой ML Kit Basic програмыг ашиглах.",
-  "engine_mlkit_advanced_desc": "ML Kit Advanced-г ашиглахын тулд AICore/Gemini Nano-г дэмждэг төхөөрөмж шаардлагатай.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Татаж авахыг цуцлахын тулд баталгаажуулна уу",
   "cancel_download_message": "Та {model}-г татахаа цуцлахдаа итгэлтэй байна уу? Одоогийн татаж авах явц алдагдах болно.",
   "confirm_cancel": "Цуцлахыг баталгаажуулна уу",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Nemotron загварыг шалгаж байна",
   "nemotron_failed": "Немотрон транскрипц амжилтгүй болсон.",
   "error_sha256_mismatch": "SHA-256 таарахгүй: хүлээгдэж буй {expected}, бодит {actual}",
-  "engine_nemotron_desc": "Nemotron 3.5 ASR Streaming-г дотооддоо ашигладаг, хэлийг автоматаар илрүүлэх, таван хоцролт горимтой."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Одоогийн төхөөрөмж ML Kit Basic-г дэмждэггүй"
 }

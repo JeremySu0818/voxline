@@ -16,7 +16,7 @@
   "speech_engine": "চিনাক্তকৰণ ইঞ্জিন",
   "engine_whisper_desc": "whisper.cpp ব্যৱহাৰ কৰক; বাক্য এটাৰ শেষ ধৰা পেলোৱাৰ পিছত গোটেই বাক্যটো লিপিবদ্ধ কৰা হ’ব, প্ৰায় ৩-৫ ছেকেণ্ডৰ বিলম্ব হ’ব।",
   "engine_mlkit_basic_desc": "এম এল কিট বেচিক ব্যৱহাৰ কৰি, বেছিভাগ এণ্ড্ৰইড ১২+ ডিভাইচত উপলব্ধ।",
-  "engine_mlkit_advanced_desc": "ML Kit Advanced ব্যৱহাৰ কৰিবলৈ, AICore/Gemini Nano সমৰ্থন কৰা এটা ডিভাইচৰ প্ৰয়োজন।",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "ডাউনলোড বাতিল কৰিবলৈ নিশ্চিত কৰক",
   "cancel_download_message": "আপুনি নিশ্চিত নেকি যে আপুনি {model} ডাউনলোড বাতিল কৰিব বিচাৰে? বৰ্তমানৰ ডাউনলোড অগ্ৰগতি হেৰাই যাব।",
   "confirm_cancel": "বাতিল কৰাটো নিশ্চিত কৰক",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "নেমট্ৰন মডেল পৰীক্ষা কৰা",
   "nemotron_failed": "নেম’ট্ৰন ট্ৰান্সক্ৰিপচন বিফল হ’ল।",
   "error_sha256_mismatch": "SHA-256 মিছমেচ: প্ৰত্যাশিত {expected}, প্ৰকৃত {actual}",
-  "engine_nemotron_desc": "স্থানীয়ভাৱে Nemotron 3.5 ASR ষ্ট্ৰীমিং ব্যৱহাৰ কৰে, স্বয়ংক্ৰিয় ভাষা চিনাক্তকৰণ আৰু পাঁচটা বিলম্ব ধৰণৰ সৈতে।"
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "বৰ্তমান ডিভাইচে ML কিট উন্নত সমৰ্থন নকৰে"
 }

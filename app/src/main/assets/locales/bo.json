@@ -16,7 +16,7 @@
   "speech_engine": "ངོས་འཛིན་འཕྲུལ་འཁོར།",
   "engine_whisper_desc": "བེད་སྤྱོད་བྱེད་པ། བརྗོད་ཚིག་གི་མཇུག་ཤེས་རྟོགས་བྱུང་རྗེས་བརྗོད་ཚིག་ཧྲིལ་པོ་ཡིག་བསྒྱུར་བྱས་ནས་སྐར་ཆ་ ༣ ནས་ ༥ བར་འགོར་འགྱངས་བྱེད་ཀྱི་ཡོད།",
   "engine_mlkit_basic_desc": "ཨེན་ཀྲོཌ་༡༢+ གྱི་འཕྲུལ་ཆས་མང་ཆེ་བར་ཡོད་པའི་ML Kit Basic བེད་སྤྱོད་བྱེད་བཞིན་ཡོད།",
-  "engine_mlkit_advanced_desc": "མཐོ་རིམ་སློབ་གྲྭའི་སྒྲིག་ཆས་བེད་སྤྱོད་བྱེད་པར་AICore/Gemini Nano ལ་རྒྱབ་སྐྱོར་བྱེད་པའི་འཕྲུལ་ཆས་དགོས།",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "ཕབ་ལེན་མེད་པར་བཟོ་རྒྱུའི་གཏན་འཁེལ་བྱོས།",
   "cancel_download_message": "ཁྱོད་ཀྱིས་{དཔེ་གཟུགས་}ཕབ་ལེན་བྱེད་པ་དེ་ཆ་མེད་གཏོང་འདོད་ཡོད་དམ། ད་ལྟའི་ཕབ་ལེན་གྱི་འཕེལ་རིམ་བརླག་འགྲོ་གི་རེད།",
   "confirm_cancel": "ཕྱིར་འཐེན་གཏན་འཁེལ་བྱེད་པ།",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "ནེ་མོ་ཊྲོན་དཔེ་གཟུགས་ལ་ཞིབ་བཤེར་བྱེད་བཞིན་པ།",
   "nemotron_failed": "ནེ་མོ་ཊྲོན་ཡིག་བསྒྱུར་ལམ་ལྷོངས་བྱུང་མེད།",
   "error_sha256_mismatch": "SHA-256མི་མཐུན་པ། རེ་བ་{expected}, དངོས་ཡོད་{actual}",
-  "engine_nemotron_desc": "རང་འགུལ་སྐད་ཡིག་ཤེས་རྟོགས་དང་འགོར་འགྱངས་ཀྱི་ཐབས་ལམ་ལྔ་ཡོད་པའི་ས་གནས་སུ་ནེ་མོ་ཊོན་ ༣.༥ ཨེ་ཨེས་ཨར་རྒྱུན་གཏོང་བེད་སྤྱོད་བྱེད་ཀྱི་ཡོད།"
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "ད་ལྟའི་ཡོ་ཆས་དེས་ML Kit Basic ལ་རྒྱབ་སྐྱོར་བྱེད་ཀྱི་མེད།"
 }

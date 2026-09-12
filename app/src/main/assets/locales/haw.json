@@ -16,7 +16,7 @@
   "speech_engine": "ʻenekini hoʻomaopopo",
   "engine_whisper_desc": "E hoʻohana i whisper.cpp; ma hope o ka ʻike ʻana i ka pau ʻana o kahi huaʻōlelo, e unuhi ʻia ka ʻōlelo holoʻokoʻa, me ka lohi o 3-5 kekona.",
   "engine_mlkit_basic_desc": "Ke hoʻohana nei i ka ML Kit Basic, loaʻa ma ka hapa nui o nā polokalamu Android 12+.",
-  "engine_mlkit_advanced_desc": "No ka hoʻohana ʻana iā ML Kit Advanced, pono kahi mea e kākoʻo iā AICore/Gemini Nano.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "E hōʻoia e kāpae i ka hoʻoiho ʻana",
   "cancel_download_message": "Makemake ʻoe e kāpae i ka hoʻoiho ʻana iā {model}? E nalowale ana ka holomua hoʻoili ʻana i kēia manawa.",
   "confirm_cancel": "E hōʻoia i ke kāpae ʻana",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Ke nānā nei i ka hoʻohālike Nemotron",
   "nemotron_failed": "ʻAʻole hiki ke unuhi ʻia ʻo Nemotron.",
   "error_sha256_mismatch": "Kūlike ʻole SHA-256: manaʻo ʻia {expected}, {actual} maoli",
-  "engine_nemotron_desc": "Hoʻohana i ka Nemotron 3.5 ASR Streaming ma ka ʻāina, me ka ʻike ʻana i ka ʻōlelo a me ʻelima mau ʻano latency."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "ʻAʻole kākoʻo ka hāmeʻa o kēia manawa i ka ML Kit Basic"
 }

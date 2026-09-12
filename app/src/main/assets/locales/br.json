@@ -16,7 +16,7 @@
   "speech_engine": "lusker anavezout",
   "engine_whisper_desc": "Implijout whisper.cpp; goude bezañ detektet dibenn ur frazenn e vo treuzskrivet ar frazenn a-bezh, gant un dale a 3-5 eilenn bennak.",
   "engine_mlkit_basic_desc": "Implijout ML Kit Basic, a c'haller kaout war an darn vrasañ eus an urzhiataerioù Android 12+.",
-  "engine_mlkit_advanced_desc": "Evit implijout ML Kit Advanced eo ret kaout un dafariad a skor AICore/Gemini Nano.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Kadarnaat evit nullañ ar pellgargañ",
   "cancel_download_message": "Ha sur oc'h e fell deoc'h nullañ pellgargañ {model} ? Kollet e vo an araokadennoù pellgargañ bremanel.",
   "confirm_cancel": "Kadarnaat an nullañ",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Gwiriañ ar patrom Nemotron",
   "nemotron_failed": "C'hwitet en deus an treuzskrivadur nemotron.",
   "error_sha256_mismatch": "SHA-256 direizhder : {expected} gortozet, {actual} gwirion",
-  "engine_nemotron_desc": "Implijout a ra Nemotron 3.5 ASR Streaming lec'hel, gant detektadur yezh emgefre ha pemp mod dale."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "N'eo ket skoret gant an urzhiataer bremanel ML Kit Basic"
 }

@@ -16,7 +16,7 @@
   "speech_engine": "engine aqoonsiga",
   "engine_whisper_desc": "Isticmaal whisper.cpp; ka dib marka la ogaado dhamaadka jumlada, jumlada oo dhan waa la qori doonaa, iyada oo dib u dhac ku saabsan 3-5 ilbiriqsi.",
   "engine_mlkit_basic_desc": "Isticmaalka ML Kit Basic, oo laga heli karo inta badan aaladaha Android 12+.",
-  "engine_mlkit_advanced_desc": "Si loo isticmaalo ML Kit Advanced, qalab taageera AICore/Gemini Nano ayaa loo baahan yahay.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Xaqiiji inaad joojiso soo dejinta",
   "cancel_download_message": "Ma hubtaa inaad rabto inaad tirtirto soo dejinta {model}? Horumarka soo dejinta hadda waa la lumin doonaa.",
   "confirm_cancel": "Xaqiiji burinta",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Hubinta nooca Nemotron",
   "nemotron_failed": "Qorista Nemotron waa guuldareystay.",
   "error_sha256_mismatch": "SHA-256 isma dhigma: la filayo {expected}, dhab ah {actual}",
-  "engine_nemotron_desc": "Isticmaala Nemotron 3.5 ASR Streaming gudaha, oo leh luuqad si toos ah loo ogaanayo iyo shan qaab oo daahitaan ah."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Qalabka hadda ma taageerayo ML Kit Basic"
 }

@@ -16,7 +16,7 @@
   "speech_engine": "tunnistusmoottori",
   "engine_whisper_desc": "Käytä whisper.cpp; lauseen lopun havaitsemisen jälkeen koko lause litteroidaan noin 3-5 sekunnin viiveellä.",
   "engine_mlkit_basic_desc": "Käyttää ML Kit Basicia, saatavilla useimmissa Android 12+ -laitteissa.",
-  "engine_mlkit_advanced_desc": "ML Kit Advancedin käyttämiseen tarvitaan laite, joka tukee AICore/Gemini Nanoa.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Vahvista peruuttaaksesi latauksen",
   "cancel_download_message": "Haluatko varmasti peruuttaa latauksen {model}? Nykyinen latauksen edistyminen menetetään.",
   "confirm_cancel": "Vahvista peruutus",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Tarkistetaan Nemotron mallia",
   "nemotron_failed": "Nemotronin transkriptio epäonnistui.",
   "error_sha256_mismatch": "SHA-256-virhe: odotettu {expected}, todellinen {actual}",
-  "engine_nemotron_desc": "Käyttää Nemotron 3.5 ASR -suoratoistoa paikallisesti, automaattisella kielentunnistuksella ja viidellä viivetilalla."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Nykyinen laite ei tue ML Kit Basicia"
 }

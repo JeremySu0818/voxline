@@ -16,7 +16,7 @@
   "speech_engine": "அங்கீகார இயந்திரம்",
   "engine_whisper_desc": "whisper.cpp ஐப் பயன்படுத்தவும்; ஒரு வாக்கியத்தின் முடிவைக் கண்டறிந்த பிறகு, முழு வாக்கியமும் 3-5 வினாடிகள் தாமதத்துடன் படியெடுக்கப்படும்.",
   "engine_mlkit_basic_desc": "ML Kit Basicஐப் பயன்படுத்தி, பெரும்பாலான Android 12+ சாதனங்களில் கிடைக்கும்.",
-  "engine_mlkit_advanced_desc": "ML Kit Advanced ஐப் பயன்படுத்த, AICore/Gemini Nano ஐ ஆதரிக்கும் சாதனம் தேவை.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "பதிவிறக்கத்தை ரத்து செய்வதை உறுதிப்படுத்தவும்",
   "cancel_download_message": "{model} பதிவிறக்குவதை நிச்சயமாக ரத்துசெய்ய விரும்புகிறீர்களா? தற்போதைய பதிவிறக்க முன்னேற்றம் இழக்கப்படும்.",
   "confirm_cancel": "ரத்து செய்வதை உறுதிப்படுத்தவும்",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "நெமோட்ரான் மாதிரியைச் சரிபார்க்கிறது",
   "nemotron_failed": "நெமோட்ரான் டிரான்ஸ்கிரிப்ஷன் தோல்வியடைந்தது.",
   "error_sha256_mismatch": "SHA-256 பொருத்தமின்மை: எதிர்பார்க்கப்படுகிறது {expected}, உண்மையான {actual}",
-  "engine_nemotron_desc": "Nemotron 3.5 ASR ஸ்ட்ரீமிங்கை உள்நாட்டில் பயன்படுத்துகிறது, தானியங்கி மொழி கண்டறிதல் மற்றும் ஐந்து தாமத முறைகள்."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "தற்போதைய சாதனம் ML Kit Basic ஐ ஆதரிக்கவில்லை"
 }

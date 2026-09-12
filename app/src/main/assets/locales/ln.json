@@ -16,7 +16,7 @@
   "speech_engine": "moteur ya reconnaissance",
   "engine_whisper_desc": "Salelá whisper.cpp; nsima ya koyeba nsuka ya fraze, ekokoma fraze mobimba, na retard ya soki 3-5 secondes.",
   "engine_mlkit_basic_desc": "Kosalela ML Kit Basic, oyo ezali na ba appareils mingi ya Android 12+.",
-  "engine_mlkit_advanced_desc": "Pona kosalela ML Kit Advanced, esengeli dispositif oyo esimbaka AICore/Gemini Nano.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Confirmer mpo na ko annuler téléchargement",
   "cancel_download_message": "Ozali na ntembe te ete olingi koboya kozwa {modèle}? Progrès ya téléchargement ya lelo ekobunga.",
   "confirm_cancel": "Confirmer annulation",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Ko vérifier modèle ya Nemotron",
   "nemotron_failed": "Transcription ya némotron elongaki te.",
   "error_sha256_mismatch": "SHA-256 kozanga boyokani: ezelamaki {expected}, ya solo {actual}",
-  "engine_nemotron_desc": "Esalelaka Nemotron 3.5 ASR Streaming na esika, na détection automatique ya langue mpe ba modes ya latence mitano."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Dispositif ya lelo esimbaka ML Kit Basic te"
 }

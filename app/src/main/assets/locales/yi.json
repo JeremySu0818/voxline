@@ -16,7 +16,7 @@
   "speech_engine": "דערקענונג מאָטאָר",
   "engine_whisper_desc": "ניצן whisper.cpp; נאָך דיטעקטינג די סוף פון אַ זאַץ, די גאנצע זאַץ וועט זיין טראַנסקריבעד, מיט אַ פאַרהאַלטן פון וועגן 3-5 סעקונדעס.",
   "engine_mlkit_basic_desc": "ניצן ML Kit Basic, בנימצא אויף רובֿ אַנדרויד 12+ דעוויסעס.",
-  "engine_mlkit_advanced_desc": "צו נוצן ML Kit Advanced, אַ מיטל וואָס שטיצט AICore / Gemini Nano איז פארלאנגט.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "באַשטעטיקן צו באָטל מאַכן אראפקאפיע",
   "cancel_download_message": "זענט איר זיכער איר ווילן צו באָטל מאַכן דאַונלאָודינג {מאָדעל}? דער איצטיקער אראפקאפיע פּראָגרעס וועט זיין פאַרפאַלן.",
   "confirm_cancel": "באַשטעטיקן קאַנסאַליישאַן",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "קאָנטראָלירן די נעמאָטראָן מאָדעל",
   "nemotron_failed": "נעמאָטראָן טראַנסקריפּציע ניט אַנדערש.",
   "error_sha256_mismatch": "SHA-256 מיסמאַטש: דערוואַרט {expected}, פאַקטיש {actual}",
-  "engine_nemotron_desc": "ניצט Nemotron 3.5 ASR סטרימינג לאָוקאַלי, מיט אָטאַמאַטיק שפּראַך דיטעקשאַן און פינף לייטאַנסי מאָדעס."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "דער איצטיקער מיטל שטיצט נישט ML Kit Basic"
 }

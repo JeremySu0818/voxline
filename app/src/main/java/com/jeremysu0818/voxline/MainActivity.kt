@@ -31,6 +31,8 @@ import androidx.compose.animation.scaleIn
 import androidx.compose.animation.shrinkVertically
 import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -183,6 +185,7 @@ private fun VoxlineApp(
     var overlayPrompted by remember { mutableStateOf(false) }
     var recordPrompted by remember { mutableStateOf(false) }
     var notificationPrompted by remember { mutableStateOf(false) }
+    var isMlKitBasicAvailable by remember { mutableStateOf<Boolean?>(null) }
     var isMlKitAdvancedAvailable by remember { mutableStateOf<Boolean?>(null) }
     val downloadJobs = remember { mutableMapOf<WhisperModelOption, Job>() }
     var nemotronDownloadJob by remember { mutableStateOf<Job?>(null) }
@@ -242,6 +245,15 @@ private fun VoxlineApp(
     }
 
     LaunchedEffect(settings.sourceLanguageTag, settings.translationEnabled) {
+        val basicSourceTag = VoxlineLanguages.compatibleSourceTag(
+            tag = settings.sourceLanguageTag,
+            engine = SpeechEngineOption.MLKIT_BASIC,
+            translationEnabled = settings.translationEnabled,
+        )
+        isMlKitBasicAvailable = basicSourceTag != null && runCatching {
+            VoxlineGraph.mlKitSpeechTranscriber.isBasicAvailable(basicSourceTag)
+        }.getOrDefault(false)
+
         val advancedSourceTag = VoxlineLanguages.compatibleSourceTag(
             tag = settings.sourceLanguageTag,
             engine = SpeechEngineOption.MLKIT_ADVANCED,
@@ -252,12 +264,40 @@ private fun VoxlineApp(
         }.getOrDefault(false)
     }
 
-    LaunchedEffect(isMlKitAdvancedAvailable, settings.speechEngine) {
+    LaunchedEffect(
+        isMlKitBasicAvailable,
+        isMlKitAdvancedAvailable,
+        settings.speechEngine,
+        settings.sourceLanguageTag,
+        settings.translationEnabled,
+    ) {
+        val nonMlKitFallback = if (
+            VoxlineLanguages.compatibleSourceTag(
+                tag = settings.sourceLanguageTag,
+                engine = SpeechEngineOption.NEMOTRON,
+                translationEnabled = settings.translationEnabled,
+            ) != null
+        ) {
+            SpeechEngineOption.NEMOTRON
+        } else {
+            SpeechEngineOption.WHISPER
+        }
+
         if (
             isMlKitAdvancedAvailable == false &&
             settings.speechEngine == SpeechEngineOption.MLKIT_ADVANCED
         ) {
-            VoxlineGraph.preferences.updateSpeechEngine(SpeechEngineOption.MLKIT_BASIC)
+            val fallback = if (isMlKitBasicAvailable != false) {
+                SpeechEngineOption.MLKIT_BASIC
+            } else {
+                nonMlKitFallback
+            }
+            VoxlineGraph.preferences.updateSpeechEngine(fallback)
+        } else if (
+            isMlKitBasicAvailable == false &&
+            settings.speechEngine == SpeechEngineOption.MLKIT_BASIC
+        ) {
+            VoxlineGraph.preferences.updateSpeechEngine(nonMlKitFallback)
         }
     }
 
@@ -405,6 +445,7 @@ private fun VoxlineApp(
 
                                     QuickSettingsCard(
                                         settings = settings,
+                                        isMlKitBasicAvailable = isMlKitBasicAvailable != false,
                                         isMlKitAdvancedAvailable = isMlKitAdvancedAvailable != false,
                                         onTranslationEnabledChanged =
                                             VoxlineGraph.preferences::updateTranslationEnabled,
@@ -419,12 +460,18 @@ private fun VoxlineApp(
                                     ) {
                                         SpeechEngineSection(
                                             settings = settings,
+                                            isMlKitBasicAvailable = isMlKitBasicAvailable != false,
                                             isMlKitAdvancedAvailable = isMlKitAdvancedAvailable != false,
                                             onEngineSelected = VoxlineGraph.preferences::updateSpeechEngine,
-                                            onUnsupportedAdvancedSelected = {
+                                            onUnsupportedEngineSelected = { engine ->
+                                                val stringKey = when (engine) {
+                                                    SpeechEngineOption.MLKIT_BASIC -> "mlkit_basic_unsupported"
+                                                    SpeechEngineOption.MLKIT_ADVANCED -> "mlkit_advanced_unsupported"
+                                                    else -> return@SpeechEngineSection
+                                                }
                                                 Toast.makeText(
                                                     context,
-                                                    I18n.getString("mlkit_advanced_unsupported"),
+                                                    I18n.getString(stringKey),
                                                     Toast.LENGTH_SHORT,
                                                 ).show()
                                             },
@@ -620,16 +667,21 @@ private fun ExpressiveNavigationBar(
 @Composable
 private fun QuickSettingsCard(
     settings: VoxlineSettings,
+    isMlKitBasicAvailable: Boolean,
     isMlKitAdvancedAvailable: Boolean,
     onTranslationEnabledChanged: (Boolean) -> Unit,
     onEngineSelected: (SpeechEngineOption) -> Unit,
 ) {
     val colorScheme = MaterialTheme.colorScheme
     val motionScheme = MaterialTheme.motionScheme
-    val engines = remember(isMlKitAdvancedAvailable) {
+    val engines = remember(isMlKitBasicAvailable, isMlKitAdvancedAvailable) {
         SpeechEngineOption.entries
             .filter { option ->
-                option != SpeechEngineOption.MLKIT_ADVANCED || isMlKitAdvancedAvailable
+                when (option) {
+                    SpeechEngineOption.MLKIT_BASIC -> isMlKitBasicAvailable
+                    SpeechEngineOption.MLKIT_ADVANCED -> isMlKitAdvancedAvailable
+                    else -> true
+                }
             }
             .map { option -> VoxlineLanguage(tag = option.id, label = option.label) }
     }
@@ -1154,9 +1206,10 @@ private fun SettingsCard(
 @Composable
 private fun SpeechEngineSection(
     settings: VoxlineSettings,
+    isMlKitBasicAvailable: Boolean,
     isMlKitAdvancedAvailable: Boolean,
     onEngineSelected: (SpeechEngineOption) -> Unit,
-    onUnsupportedAdvancedSelected: () -> Unit,
+    onUnsupportedEngineSelected: (SpeechEngineOption) -> Unit,
 ) {
     val contentTransform = expressiveContentTransform()
     Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -1166,43 +1219,56 @@ private fun SpeechEngineSection(
                 horizontalArrangement = Arrangement.spacedBy(8.dp),
             ) {
                 rowOptions.forEach { option ->
-                    val isAdvancedOption = option == SpeechEngineOption.MLKIT_ADVANCED
-                    val isOptionEnabled = !isAdvancedOption || isMlKitAdvancedAvailable
+                    val isOptionEnabled = when (option) {
+                        SpeechEngineOption.MLKIT_BASIC -> isMlKitBasicAvailable
+                        SpeechEngineOption.MLKIT_ADVANCED -> isMlKitAdvancedAvailable
+                        else -> true
+                    }
                     val isSelected = settings.speechEngine == option
-                    FilterChip(
-                        selected = isSelected,
-                        onClick = {
-                            if (isOptionEnabled) {
-                                onEngineSelected(option)
-                            } else {
-                                onUnsupportedAdvancedSelected()
-                            }
-                        },
-                        label = {
-                            Text(
-                                text = option.label,
-                                maxLines = 1,
-                                overflow = TextOverflow.Ellipsis,
-                                style = MaterialTheme.typography.bodyMedium,
-                            )
-                        },
-                        shapes = FilterChipDefaults.shapes(),
+                    Box(
                         modifier = Modifier
                             .weight(1f)
-                            .heightIn(min = 48.dp),
-                        enabled = isOptionEnabled,
-                        leadingIcon = if (isSelected) {
-                            {
-                                Icon(
-                                    painter = painterResource(R.drawable.sym_check_circle),
-                                    contentDescription = null,
-                                    modifier = Modifier.size(FilterChipDefaults.IconSize),
+                            .clickable(
+                                interactionSource = remember { MutableInteractionSource() },
+                                indication = null,
+                                enabled = !isOptionEnabled,
+                            ) {
+                                onUnsupportedEngineSelected(option)
+                            },
+                    ) {
+                        FilterChip(
+                            selected = isSelected,
+                            onClick = {
+                                if (isOptionEnabled) {
+                                    onEngineSelected(option)
+                                }
+                            },
+                            label = {
+                                Text(
+                                    text = option.label,
+                                    maxLines = 1,
+                                    overflow = TextOverflow.Ellipsis,
+                                    style = MaterialTheme.typography.bodyMedium,
                                 )
-                            }
-                        } else {
-                            null
-                        },
-                    )
+                            },
+                            shapes = FilterChipDefaults.shapes(),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .heightIn(min = 48.dp),
+                            enabled = isOptionEnabled,
+                            leadingIcon = if (isSelected) {
+                                {
+                                    Icon(
+                                        painter = painterResource(R.drawable.sym_check_circle),
+                                        contentDescription = null,
+                                        modifier = Modifier.size(FilterChipDefaults.IconSize),
+                                    )
+                                }
+                            } else {
+                                null
+                            },
+                        )
+                    }
                 }
                 if (rowOptions.size == 1) {
                     Spacer(modifier = Modifier.weight(1f))

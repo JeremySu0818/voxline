@@ -16,7 +16,7 @@
   "speech_engine": "motor de reconeissença",
   "engine_whisper_desc": "Utilizar whisper.cpp; après aver detectat la fin d'una frasa, la frasa entièra serà transcricha, amb un retard d'aperaquí 3-5 segondas.",
   "engine_mlkit_basic_desc": "Utilizar ML Kit Basic, disponible sus la màger part dels periferics Android 12+.",
-  "engine_mlkit_advanced_desc": "Per utilizar ML Kit Advanced, un periferic que pren en carga AICore/Gemini Nano es necessari.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Confirmatz per anullar lo telecargament",
   "cancel_download_message": "Sètz segur que volètz anullar lo telecargament de {modèl} ? Lo progrès actual del telecargament serà perdut.",
   "confirm_cancel": "Confirmatz l'anullacion",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Verificacion del modèl Nemotron",
   "nemotron_failed": "La transcripcion de nemotron fracassèt.",
   "error_sha256_mismatch": "SHA-256 desacòrdi: {expected} esperat, {actual} real",
-  "engine_nemotron_desc": "Utiliza Nemotron 3.5 ASR Streaming localament, amb deteccion automatica del lengatge e cinc mòdes de laténcia."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Lo periferic actual pren pas en carga ML Kit Basic"
 }

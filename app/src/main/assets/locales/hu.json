@@ -16,7 +16,7 @@
   "speech_engine": "felismerő motor",
   "engine_whisper_desc": "Használja a whisper.cpp-t; a mondat végének észlelése után a teljes mondat átírásra kerül, körülbelül 3-5 másodperces késéssel.",
   "engine_mlkit_basic_desc": "Az ML Kit Basic használata, amely a legtöbb Android 12+ eszközön elérhető.",
-  "engine_mlkit_advanced_desc": "Az ML Kit Advanced használatához olyan eszközre van szükség, amely támogatja az AICore/Gemini Nano-t.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Erősítse meg a letöltés megszakításához",
   "cancel_download_message": "Biztosan megszakítja a(z) {model} letöltését? Az aktuális letöltési folyamat elveszik.",
   "confirm_cancel": "Erősítse meg a törlést",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Nemotron modell ellenőrzése",
   "nemotron_failed": "A Nemotron átírása nem sikerült.",
   "error_sha256_mismatch": "SHA-256 eltérés: várt {expected}, tényleges {actual}",
-  "engine_nemotron_desc": "Nemotron 3.5 ASR Streaming helyileg, automatikus nyelvérzékeléssel és öt késleltetési móddal."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "A jelenlegi eszköz nem támogatja az ML Kit Basic szolgáltatást"
 }

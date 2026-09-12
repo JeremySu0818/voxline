@@ -16,7 +16,7 @@
   "speech_engine": "पहिचान इन्जिन",
   "engine_whisper_desc": "whisper.cpp प्रयोग गर्नुहोस्; वाक्यको अन्त्य पत्ता लगाएपछि, लगभग ३-५ सेकेन्डको ढिलाइको साथ, सम्पूर्ण वाक्य ट्रान्सक्राइब हुनेछ।",
   "engine_mlkit_basic_desc": "धेरै जसो Android 12+ यन्त्रहरूमा उपलब्ध ML Kit Basic प्रयोग गर्दै।",
-  "engine_mlkit_advanced_desc": "ML Kit Advanced प्रयोग गर्नको लागि, AICore/Gemini Nano लाई समर्थन गर्ने यन्त्र आवश्यक छ।",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "डाउनलोड रद्द गर्न पुष्टि गर्नुहोस्",
   "cancel_download_message": "के तपाईं {model} को डाउनलोड रद्द गर्न निश्चित हुनुहुन्छ? हालको डाउनलोड प्रगति हराउनेछ।",
   "confirm_cancel": "रद्द पुष्टि गर्नुहोस्",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Nemotron मोडेल जाँच गर्दै",
   "nemotron_failed": "Nemotron ट्रान्सक्रिप्शन असफल भयो।",
   "error_sha256_mismatch": "SHA-256 बेमेल: अपेक्षित {expected}, वास्तविक {actual}",
-  "engine_nemotron_desc": "स्वचालित भाषा पत्ता लगाउने र पाँच विलम्बता मोडहरू सहित स्थानीय रूपमा Nemotron 3.5 ASR स्ट्रिमिङ प्रयोग गर्दछ।"
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "हालको यन्त्रले ML Kit Basic लाई समर्थन गर्दैन"
 }

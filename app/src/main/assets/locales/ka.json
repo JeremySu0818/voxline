@@ -16,7 +16,7 @@
   "speech_engine": "ამოცნობის ძრავა",
   "engine_whisper_desc": "გამოიყენეთ whisper.cpp; წინადადების დასრულების შემდეგ, მთელი წინადადება გადაიწერება, დაახლოებით 3-5 წამის დაგვიანებით.",
   "engine_mlkit_basic_desc": "ML Kit Basic-ის გამოყენებით, ხელმისაწვდომია Android 12+ მოწყობილობების უმეტესობაზე.",
-  "engine_mlkit_advanced_desc": "ML Kit Advanced-ის გამოსაყენებლად საჭიროა მოწყობილობა, რომელიც მხარს უჭერს AICore/Gemini Nano-ს.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "დაადასტურეთ ჩამოტვირთვის გაუქმება",
   "cancel_download_message": "დარწმუნებული ხართ, რომ გსურთ გააუქმოთ ჩამოტვირთვის {model}? ჩამოტვირთვის მიმდინარე პროგრესი დაიკარგება.",
   "confirm_cancel": "დაადასტურეთ გაუქმება",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "ნემოტრონის მოდელის შემოწმება",
   "nemotron_failed": "ნემოტრონის ტრანსკრიფცია ვერ მოხერხდა.",
   "error_sha256_mismatch": "SHA-256 შეუსაბამობა: მოსალოდნელია {expected}, რეალური {actual}",
-  "engine_nemotron_desc": "იყენებს Nemotron 3.5 ASR სტრიმინგს ადგილობრივად, ენის ავტომატური ამოცნობით და ხუთი შეყოვნების რეჟიმით."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "მიმდინარე მოწყობილობას არ აქვს ML Kit Basic-ის მხარდაჭერა"
 }

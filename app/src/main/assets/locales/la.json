@@ -16,7 +16,7 @@
   "speech_engine": "recognition engine",
   "engine_whisper_desc": "Utere susurro.cpp; fine sententiae detecta, tota sententia transcribenda est, mora circiter 3-5 secundis.",
   "engine_mlkit_basic_desc": "Usura ML Ornamentum Basic, promptum in plurimis Android 12+ machinis.",
-  "engine_mlkit_advanced_desc": "Uti ML Ornamentum Provectae, artificium quod AICore/Gemini Nano sustinet requiritur.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Adfirmare ad evacuandam download",
   "cancel_download_message": "Certusne esne {exemplum} remittere? Current download progressus intercidit.",
   "confirm_cancel": "Adfirmare novae",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Reprehendo Nemotron exemplar",
   "nemotron_failed": "Nemotron transcriptio defecit.",
   "error_sha256_mismatch": "SHA-256 mismatch: expectata {expected}, re {actual}",
-  "engine_nemotron_desc": "Nemotron 3.5 ASR localiter Streaming utitur, latis lingua detectionis et quinque modis latenciis."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "In current fabrica non support ML Ornamentum Basic"
 }

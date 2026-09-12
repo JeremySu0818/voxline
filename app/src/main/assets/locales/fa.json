@@ -16,7 +16,7 @@
   "speech_engine": "موتور تشخیص",
   "engine_whisper_desc": "از whisper.cpp استفاده کنید. پس از تشخیص پایان یک جمله، کل جمله با تاخیری در حدود 3-5 ثانیه رونویسی می شود.",
   "engine_mlkit_basic_desc": "با استفاده از ML Kit Basic، موجود در اکثر دستگاه‌های Android 12 و بالاتر.",
-  "engine_mlkit_advanced_desc": "برای استفاده از ML Kit Advanced، دستگاهی مورد نیاز است که AICore/Gemini Nano را پشتیبانی کند.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "برای لغو دانلود تأیید کنید",
   "cancel_download_message": "آیا مطمئنید که می خواهید دانلود {model} را لغو کنید؟ پیشرفت دانلود فعلی از بین خواهد رفت.",
   "confirm_cancel": "لغو را تایید کنید",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "بررسی مدل Nemotron",
   "nemotron_failed": "رونویسی نموترون ناموفق بود.",
   "error_sha256_mismatch": "عدم تطابق SHA-256: {expected} مورد انتظار، {actual} واقعی",
-  "engine_nemotron_desc": "از Nemotron 3.5 ASR Streaming به صورت محلی، با تشخیص خودکار زبان و پنج حالت تأخیر استفاده می کند."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "دستگاه فعلی ML Kit Basic را پشتیبانی نمی کند"
 }

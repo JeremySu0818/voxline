@@ -16,7 +16,7 @@
   "speech_engine": "د پیژندنې انجن",
   "engine_whisper_desc": "whisper.cpp وکاروئ؛ د یوې جملې د پای موندلو وروسته، ټوله جمله به د 3-5 ثانیو په ځنډ سره نقل شي.",
   "engine_mlkit_basic_desc": "د ML Kit Basic کارول، په ډیری Android 12+ وسیلو کې شتون لري.",
-  "engine_mlkit_advanced_desc": "د ML Kit Advanced کارولو لپاره، یوه وسیله چې د AICore/Gemini Nano ملاتړ کوي اړین دی.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "د ډاونلوډ لغوه کول تایید کړئ",
   "cancel_download_message": "ایا تاسو ډاډه یاست چې د {موډل} ډاونلوډ کول لغوه کول غواړئ؟ اوسنی ډاونلوډ پرمختګ به ورک شي.",
   "confirm_cancel": "لغوه کول تایید کړئ",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "د نیموټرون ماډل چک کول",
   "nemotron_failed": "د نیموټرون لیږد ناکام شو.",
   "error_sha256_mismatch": "SHA-256 بې مطابقت: تمه کیده {expected}، حقیقي {actual}",
-  "engine_nemotron_desc": "د نیموټرون 3.5 ASR سټریمینګ په ځایی توګه کاروي، د ژبې اتوماتیک کشف او پنځه ځنډ حالتونو سره."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "اوسنی وسیله د ML کټ پرمختللي ملاتړ نه کوي"
 }

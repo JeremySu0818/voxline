@@ -16,7 +16,7 @@
   "speech_engine": "injan adnabod",
   "engine_whisper_desc": "Defnyddiwch whisper.cpp; ar ôl canfod diwedd brawddeg, bydd y frawddeg gyfan yn cael ei thrawsgrifio, gydag oedi o tua 3-5 eiliad.",
   "engine_mlkit_basic_desc": "Gan ddefnyddio ML Kit Basic, ar gael ar y mwyafrif o ddyfeisiau Android 12+.",
-  "engine_mlkit_advanced_desc": "I ddefnyddio ML Kit Advanced, mae angen dyfais sy'n cefnogi AICore / Gemini Nano.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Cadarnhewch i ganslo lawrlwythiad",
   "cancel_download_message": "Ydych chi'n siŵr eich bod am ganslo lawrlwytho {model}? Bydd y cynnydd lawrlwytho cyfredol yn cael ei golli.",
   "confirm_cancel": "Cadarnhau canslo",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Gwirio model Nemotron",
   "nemotron_failed": "Methodd trawsgrifiad Nemotron.",
   "error_sha256_mismatch": "Diffyg cyfatebiaeth SHA-256: disgwylir {expected}, {actual} gwirioneddol",
-  "engine_nemotron_desc": "Yn defnyddio Nemotron 3.5 ASR Streaming yn lleol, gyda chanfod iaith awtomatig a phum dull cuddni."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Nid yw'r ddyfais gyfredol yn cefnogi ML Kit Basic"
 }

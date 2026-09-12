@@ -16,7 +16,7 @@
   "speech_engine": "tanib olish dvigateli",
   "engine_whisper_desc": "whisper.cpp dan foydalaning; jumlaning oxiri aniqlangandan so'ng, butun jumla taxminan 3-5 soniya kechikish bilan transkripsiya qilinadi.",
   "engine_mlkit_basic_desc": "Ko'pgina Android 12+ qurilmalarida mavjud ML Kit Basic-dan foydalanish.",
-  "engine_mlkit_advanced_desc": "ML Kit Advanced-dan foydalanish uchun AICore/Gemini Nano-ni qo'llab-quvvatlaydigan qurilma kerak bo'ladi.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Yuklashni bekor qilish uchun tasdiqlang",
   "cancel_download_message": "Haqiqatan ham {model} yuklab olishni bekor qilmoqchimisiz? Joriy yuklab olish jarayoni yo'qoladi.",
   "confirm_cancel": "Bekor qilishni tasdiqlang",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Nemotron modelini tekshirish",
   "nemotron_failed": "Nemotron transkripsiyasi amalga oshmadi.",
   "error_sha256_mismatch": "SHA-256 nomuvofiqligi: kutilgan {expected}, haqiqiy {actual}",
-  "engine_nemotron_desc": "Nemotron 3.5 ASR Streaming-dan mahalliy sifatida foydalanadi, tilni avtomatik aniqlash va beshta kechikish rejimi."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Joriy qurilma ML Kit Basic-ni qo'llab-quvvatlamaydi"
 }

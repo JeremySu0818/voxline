@@ -16,7 +16,7 @@
   "speech_engine": "motè rekonesans",
   "engine_whisper_desc": "Sèvi ak whisper.cpp; apre yo fin detekte fen yon fraz, tout fraz la pral transkri, ak yon reta nan apeprè 3-5 segonn.",
   "engine_mlkit_basic_desc": "Sèvi ak ML Kit Basic, ki disponib sou pifò aparèy Android 12+.",
-  "engine_mlkit_advanced_desc": "Pou itilize ML Kit Advanced, yon aparèy ki sipòte AICore/Gemini Nano nesesè.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Konfime pou anile download",
   "cancel_download_message": "Èske w sèten ou vle anile telechaje {model}? Pwogrè download aktyèl la pral pèdi.",
   "confirm_cancel": "Konfime anilasyon",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Tcheke modèl Nemotron",
   "nemotron_failed": "Transkripsyon Nemotron echwe.",
   "error_sha256_mismatch": "SHA-256 dezakò: espere {expected}, aktyèl {actual}",
-  "engine_nemotron_desc": "Itilize Nemotron 3.5 ASR Streaming lokalman, ak deteksyon otomatik lang ak senk mòd latansi."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Aparèy aktyèl la pa sipòte ML Kit Basic"
 }

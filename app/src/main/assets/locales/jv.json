@@ -16,7 +16,7 @@
   "speech_engine": "engine pangenalan",
   "engine_whisper_desc": "Gunakake whisper.cpp; sawise ndeteksi pungkasan ukara, kabeh ukara bakal ditranskripsi, kanthi wektu tundha udakara 3-5 detik.",
   "engine_mlkit_basic_desc": "Nggunakake ML Kit Basic, kasedhiya ing umume piranti Android 12+.",
-  "engine_mlkit_advanced_desc": "Kanggo nggunakake ML Kit Advanced, piranti sing ndhukung AICore/Gemini Nano dibutuhake.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Konfirmasi kanggo mbatalake download",
   "cancel_download_message": "Apa sampeyan yakin arep mbatalake ngundhuh {model}? Kemajuan download saiki bakal ilang.",
   "confirm_cancel": "Konfirmasi pembatalan",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Priksa model Nemotron",
   "nemotron_failed": "Transkripsi Nemotron gagal.",
   "error_sha256_mismatch": "SHA-256 ora cocog: samesthine {expected}, nyata {actual}",
-  "engine_nemotron_desc": "Nggunakake Nemotron 3.5 ASR Streaming sacara lokal, kanthi deteksi basa otomatis lan limang mode latensi."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Piranti saiki ora ndhukung ML Kit Basic"
 }

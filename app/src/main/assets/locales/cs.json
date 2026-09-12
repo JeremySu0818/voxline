@@ -16,7 +16,7 @@
   "speech_engine": "rozpoznávací stroj",
   "engine_whisper_desc": "Použijte whisper.cpp; po zjištění konce věty se přepíše celá věta se zpožděním cca 3-5 sekund.",
   "engine_mlkit_basic_desc": "Pomocí sady ML Kit Basic, která je k dispozici na většině zařízení se systémem Android 12+.",
-  "engine_mlkit_advanced_desc": "Pro použití ML Kit Advanced je vyžadováno zařízení, které podporuje AICore/Gemini Nano.",
+  "engine_mlkit_advanced_desc": "Uses ML Kit Advanced, requires Google Pixel devices.",
   "cancel_download_title": "Potvrďte pro zrušení stahování",
   "cancel_download_message": "Opravdu chcete zrušit stahování {model}? Aktuální průběh stahování bude ztracen.",
   "confirm_cancel": "Potvrďte zrušení",
@@ -88,5 +88,6 @@
   "status_checking_nemotron": "Kontrola modelu Nemotron",
   "nemotron_failed": "Transkripce Nemotronu se nezdařila.",
   "error_sha256_mismatch": "Neshoda SHA-256: očekávaná {expected}, skutečná {actual}",
-  "engine_nemotron_desc": "Lokálně využívá Nemotron 3.5 ASR Streaming s automatickou detekcí jazyka a pěti režimy latence."
+  "engine_nemotron_desc": "Uses local Nemotron 3.5 ASR streaming. Note: Consumes significant compute resources; low-end devices may produce no subtitles or cause system lag/freeze.",
+  "mlkit_basic_unsupported": "Aktuální zařízení nepodporuje ML Kit Basic"
 }
