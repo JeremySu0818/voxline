@@ -1,10 +1,20 @@
 package com.jeremysu0818.voxline.data
 
 import com.jeremysu0818.voxline.nemotron.NemotronRuntimeDiagnostics
+import java.util.UUID
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
+
+data class CaptionSourceSpan(val start: Int, val end: Int, val text: String)
+
+data class CaptionDisplayRow(
+    val id: String,
+    val source: CaptionSourceSpan,
+    val translationKey: String?,
+    val alignedText: String? = null,
+)
 
 data class VoxlineLine(
     val id: String,
@@ -12,7 +22,9 @@ data class VoxlineLine(
     val translatedText: String? = null,
     val isTranslating: Boolean = false,
     val isFinal: Boolean = true,
-    val showTypewriter: Boolean = true
+    val showTypewriter: Boolean = true,
+    val displayRows: List<CaptionDisplayRow> = emptyList(),
+    val translatedLanguagePair: String? = null,
 )
 
 data class VoxlineRuntimeState(
@@ -59,7 +71,11 @@ object VoxlineRuntimeStore {
 
     fun addOrUpdatePartialSourceText(id: String, text: String) {
         _state.update { state ->
-            val newLine = VoxlineLine(id = id, sourceText = text, isFinal = false, showTypewriter = true)
+            val existing = state.lines.firstOrNull { it.id == id }
+            val newLine = VoxlineLine(
+                id = id, sourceText = text, isFinal = false, showTypewriter = false,
+                displayRows = existing?.displayRows.orEmpty().map { it.copy(alignedText = null) },
+            )
             state.copy(
                 isRunning = true,
                 status = "status_running",
@@ -72,7 +88,7 @@ object VoxlineRuntimeStore {
     fun commitSourceText(id: String, text: String, isTranslating: Boolean) {
         _state.update { state ->
             val existingLine = state.lines.firstOrNull { it.id == id }
-            val translatedText = existingLine?.translatedText
+            val translatedText = existingLine?.translatedText.takeIf { existingLine?.sourceText == text }
             val showTypewriter = existingLine?.showTypewriter ?: true
             val newLine = VoxlineLine(
                 id = id,
@@ -80,7 +96,9 @@ object VoxlineRuntimeStore {
                 translatedText = translatedText,
                 isFinal = true,
                 isTranslating = isTranslating,
-                showTypewriter = showTypewriter
+                showTypewriter = showTypewriter,
+                displayRows = existingLine?.displayRows.orEmpty().map { it.copy(alignedText = null) },
+                translatedLanguagePair = existingLine?.translatedLanguagePair.takeIf { existingLine?.sourceText == text },
             )
             state.copy(
                 isRunning = true,
@@ -91,12 +109,80 @@ object VoxlineRuntimeStore {
         }
     }
 
-    fun updateTranslation(id: String, translatedText: String?) {
+    fun isPendingTranslation(id: String, sourceText: String): Boolean =
+        _state.value.lines.any { it.id == id && it.sourceText == sourceText && it.isTranslating }
+
+    fun updateTranslation(id: String, sourceText: String, translatedText: String?, languagePair: String? = null) {
         _state.update { state ->
-            val newLines = state.lines.map {
-                if (it.id == id) it.copy(translatedText = translatedText, isTranslating = false) else it
-            }
-            state.copy(lines = newLines, errorMessage = null)
+            state.copy(lines = state.lines.map { line ->
+                if (line.id == id && line.sourceText == sourceText && line.isTranslating) {
+                    line.copy(
+                        translatedText = translatedText, isTranslating = false, translatedLanguagePair = languagePair,
+                        displayRows = line.displayRows.map { it.copy(alignedText = null) },
+                    )
+                } else {
+                    line
+                }
+            })
+        }
+    }
+
+    fun updateContextTranslation(id: String, sourceText: String, languagePair: String, text: String) {
+        _state.update { state ->
+            state.copy(lines = state.lines.map { line ->
+                if (line.id == id && line.sourceText == sourceText && line.isFinal &&
+                    line.displayRows.all { it.translationKey == languagePair }
+                ) line.copy(
+                    translatedText = text, translatedLanguagePair = languagePair,
+                    displayRows = line.displayRows.map { it.copy(alignedText = null) },
+                ) else line
+            })
+        }
+    }
+
+    fun setDisplayRows(
+        id: String,
+        sourceText: String,
+        spans: List<CaptionSourceSpan>,
+        translationKey: String?,
+    ) {
+        _state.update { state ->
+            state.copy(lines = state.lines.map { line ->
+                if (line.id != id || line.sourceText != sourceText) return@map line
+                val rows = spans.map { span ->
+                    line.displayRows.firstOrNull {
+                        it.source == span && it.translationKey == translationKey
+                    } ?: CaptionDisplayRow(UUID.randomUUID().toString(), span, translationKey)
+                }
+                line.copy(displayRows = rows)
+            })
+        }
+    }
+
+    fun alignRowTranslations(id: String, sourceText: String, rowIds: List<String>, translations: List<String>) {
+        if (rowIds.size != translations.size) return
+        _state.update { state ->
+            state.copy(lines = state.lines.map { line ->
+                if (line.id != id || line.sourceText != sourceText ||
+                    !line.isFinal || line.displayRows.map { it.id } != rowIds ||
+                    translations.joinToString("") != line.translatedText ||
+                    line.translatedLanguagePair == null ||
+                    line.displayRows.any { it.translationKey != line.translatedLanguagePair }
+                ) return@map line
+                line.copy(displayRows = line.displayRows.mapIndexed { index, row ->
+                    row.copy(alignedText = translations[index])
+                })
+            })
+        }
+    }
+
+    fun removeLine(id: String) {
+        _state.update { state -> state.copy(lines = state.lines.filterNot { it.id == id }) }
+    }
+
+    fun removePartialLine(id: String) {
+        _state.update { state ->
+            state.copy(lines = state.lines.filterNot { it.id == id && !it.isFinal })
         }
     }
 

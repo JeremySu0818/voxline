@@ -14,15 +14,20 @@ import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 
 class VoxlineTranslator {
+    private data class CacheKey(val text: String, val source: String, val target: String)
+
     private val mutex = Mutex()
     private var translator: Translator? = null
     private var languagePair: Pair<String, String>? = null
     private val outputConverter = TranslationOutputConverter()
+    private val recentTranslations = LinkedHashMap<CacheKey, String>(128, 0.75f, true)
 
     suspend fun translate(text: String, sourceLanguageTag: String, targetLanguageTag: String): String =
         mutex.withLock {
             val safeSource = VoxlineLanguages.requireMlKitTranslateTag(sourceLanguageTag)
             val safeTarget = VoxlineLanguages.requireMlKitTranslateTag(targetLanguageTag)
+            val cacheKey = CacheKey(text, sourceLanguageTag, targetLanguageTag)
+            recentTranslations[cacheKey]?.let { return@withLock it }
             val translated = if (safeSource == safeTarget) {
                 text
             } else {
@@ -38,13 +43,19 @@ class VoxlineTranslator {
                 client.downloadModelIfNeeded(DownloadConditions.Builder().build()).awaitTask()
                 client.translate(text).awaitTask().trim()
             }
-            outputConverter.convert(translated, targetLanguageTag)
+            outputConverter.convert(translated, targetLanguageTag).also { result ->
+                recentTranslations[cacheKey] = result
+                if (recentTranslations.size > 128) {
+                    recentTranslations.remove(recentTranslations.keys.first())
+                }
+            }
         }
 
     suspend fun close() = mutex.withLock {
         translator?.close()
         translator = null
         languagePair = null
+        recentTranslations.clear()
     }
 
     private fun translatorFor(sourceLanguage: String, targetLanguage: String): Translator {

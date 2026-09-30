@@ -147,7 +147,9 @@ class VoxlineCaptureService : Service() {
                 val translationChannel = Channel<TranslationRequest>(Channel.UNLIMITED)
                 val translationJob = launch(Dispatchers.Default) {
                     for (line in translationChannel) {
-                        if (!line.config.isCurrentTranslationConfig()) {
+                        if (!line.config.isCurrentTranslationConfig() ||
+                            !VoxlineRuntimeStore.isPendingTranslation(line.id, line.sourceText)
+                        ) {
                             withContext(Dispatchers.Main.immediate) {
                                 VoxlineRuntimeStore.cancelTranslation(line.id)
                             }
@@ -161,7 +163,10 @@ class VoxlineCaptureService : Service() {
                             )
                             withContext(Dispatchers.Main.immediate) {
                                 if (line.config.isCurrentTranslationConfig()) {
-                                    VoxlineRuntimeStore.updateTranslation(line.id, translated)
+                                    VoxlineRuntimeStore.updateTranslation(
+                                        line.id, line.sourceText, translated,
+                                        "${line.config.sourceLanguageTag}:${line.config.targetLanguageTag}",
+                                    )
                                 } else {
                                     VoxlineRuntimeStore.cancelTranslation(line.id)
                                 }
@@ -172,8 +177,7 @@ class VoxlineCaptureService : Service() {
                             withContext(Dispatchers.Main.immediate) {
                                 if (line.config.isCurrentTranslationConfig()) {
                                     VoxlineRuntimeStore.updateTranslation(
-                                        line.id,
-                                        I18n.getString("translation_failed"),
+                                        line.id, line.sourceText, I18n.getString("translation_failed"),
                                     )
                                 } else {
                                     VoxlineRuntimeStore.cancelTranslation(line.id)
@@ -491,7 +495,7 @@ class VoxlineCaptureService : Service() {
             )
         }
         val recognitionJob = launch(Dispatchers.Default) {
-            var currentLineId = UUID.randomUUID().toString()
+            val sentences = StableSentenceTracker()
 
             VoxlineGraph.mlKitSpeechTranscriber.stream(
                 audioChunks = audioChunks,
@@ -503,32 +507,11 @@ class VoxlineCaptureService : Service() {
                     }
                 },
                 onPartialText = { partial ->
-                    withContext(Dispatchers.Main.immediate) {
-                        VoxlineRuntimeStore.addOrUpdatePartialSourceText(currentLineId, partial)
-                    }
+                    publishSentenceUpdate(sentences.onPartial(partial), translationChannel)
                 },
                 onFinalText = { sourceText ->
                     if (sourceText.isBlank()) return@stream
-                    val settings = VoxlineGraph.preferences.settings.value
-                    val doTranslate = settings.translationEnabled
-                    val lineIdToCommit = currentLineId
-
-                    withContext(Dispatchers.Main.immediate) {
-                        VoxlineRuntimeStore.commitSourceText(lineIdToCommit, sourceText, isTranslating = doTranslate)
-                    }
-                    if (doTranslate) {
-                        val translationConfig = settings.translationConfig()
-                        enqueueTranslation(
-                            translationChannel = translationChannel,
-                            request = TranslationRequest(
-                                id = lineIdToCommit,
-                                sourceText = sourceText,
-                                config = translationConfig,
-                            ),
-                        )
-                    }
-
-                    currentLineId = UUID.randomUUID().toString()
+                    publishSentenceUpdate(sentences.onFinal(sourceText), translationChannel)
                 },
             )
         }
@@ -563,7 +546,7 @@ class VoxlineCaptureService : Service() {
             )
         }
         val recognitionJob = launch(Dispatchers.Default) {
-            var currentLineId = UUID.randomUUID().toString()
+            val sentences = StableSentenceTracker()
             val languageLocale = if (recognitionLanguageTag == "auto") {
                 "auto"
             } else {
@@ -583,38 +566,16 @@ class VoxlineCaptureService : Service() {
                     }
                 },
                 onPartialText = { partial ->
-                    withContext(Dispatchers.Main.immediate) {
-                        VoxlineRuntimeStore.addOrUpdatePartialSourceText(currentLineId, partial)
-                    }
+                    publishSentenceUpdate(sentences.onPartial(partial), translationChannel)
                 },
                 onFinalText = { sourceText ->
                     if (sourceText.isBlank()) return@stream
-                    val settings = VoxlineGraph.preferences.settings.value
-                    val doTranslate = settings.translationEnabled
-                    val lineIdToCommit = currentLineId
-                    withContext(Dispatchers.Main.immediate) {
-                        VoxlineRuntimeStore.commitSourceText(
-                            lineIdToCommit,
-                            sourceText,
-                            isTranslating = doTranslate,
-                        )
-                    }
-                    if (doTranslate) {
-                        enqueueTranslation(
-                            translationChannel = translationChannel,
-                            request = TranslationRequest(
-                                id = lineIdToCommit,
-                                sourceText = sourceText,
-                                config = settings.translationConfig(),
-                            ),
-                        )
-                    }
-                    currentLineId = UUID.randomUUID().toString()
+                    publishSentenceUpdate(sentences.onFinal(sourceText), translationChannel)
                 },
                 onStreamReset = {
-                    currentLineId = UUID.randomUUID().toString()
+                    val partialId = sentences.reset()
                     withContext(Dispatchers.Main.immediate) {
-                        VoxlineRuntimeStore.discardPartialLines()
+                        VoxlineRuntimeStore.removePartialLine(partialId)
                     }
                 },
                 onDiagnostics = { diagnostics ->
@@ -759,7 +720,40 @@ class VoxlineCaptureService : Service() {
     ) {
         if (translationChannel.trySend(request).isSuccess) return
         withContext(Dispatchers.Main.immediate) {
-            VoxlineRuntimeStore.updateTranslation(request.id, I18n.getString("translation_failed"))
+            VoxlineRuntimeStore.updateTranslation(
+                request.id, request.sourceText, I18n.getString("translation_failed"),
+            )
+        }
+    }
+
+    private suspend fun publishSentenceUpdate(
+        update: StableSentenceTracker.Update,
+        translationChannel: Channel<TranslationRequest>,
+    ) {
+        withContext(Dispatchers.Main.immediate) {
+            update.retractedIds.forEach(VoxlineRuntimeStore::removeLine)
+        }
+        for (sentence in update.completed) {
+            val settings = VoxlineGraph.preferences.settings.value
+            val doTranslate = settings.translationEnabled
+            withContext(Dispatchers.Main.immediate) {
+                VoxlineRuntimeStore.commitSourceText(
+                    sentence.id, sentence.text, isTranslating = doTranslate,
+                )
+            }
+            if (doTranslate) {
+                enqueueTranslation(
+                    translationChannel,
+                    TranslationRequest(sentence.id, sentence.text, settings.translationConfig()),
+                )
+            }
+        }
+        withContext(Dispatchers.Main.immediate) {
+            if (update.partialText.isEmpty()) {
+                VoxlineRuntimeStore.removePartialLine(update.partialId)
+            } else {
+                VoxlineRuntimeStore.addOrUpdatePartialSourceText(update.partialId, update.partialText)
+            }
         }
     }
 

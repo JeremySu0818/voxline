@@ -11,7 +11,6 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.WindowManager
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
@@ -38,16 +37,26 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.rememberTextMeasurer
+import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.compose.ui.zIndex
 import androidx.lifecycle.*
 import androidx.savedstate.*
 import com.jeremysu0818.voxline.data.VoxlineLine
+import com.jeremysu0818.voxline.data.CaptionSourceSpan
+import com.jeremysu0818.voxline.data.CaptionDisplayRow
 import com.jeremysu0818.voxline.data.VoxlineRuntimeStore
+import com.jeremysu0818.voxline.VoxlineGraph
+import com.jeremysu0818.voxline.translation.TranslationRowAligner
 import com.jeremysu0818.voxline.data.t
 import com.jeremysu0818.voxline.ui.theme.VoxlineTheme
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import kotlin.math.abs
 import kotlin.math.roundToInt
 
@@ -516,46 +525,125 @@ fun VoxlineContentList(lines: List<VoxlineLine>, modifier: Modifier = Modifier) 
         modifier = modifier,
     ) {
         items(lines.reversed(), key = { it.id }) { line ->
-            VoxlineLineItem(line = line, isNewest = line.id == lines.lastOrNull()?.id)
+            VoxlineLineItem(line = line)
         }
     }
 }
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
-fun VoxlineLineItem(line: VoxlineLine, isNewest: Boolean) {
-    Column(
-        modifier = Modifier.animateContentSize(
-            animationSpec = MaterialTheme.motionScheme.defaultSpatialSpec(),
-        ),
-    ) {
-        val style = MaterialTheme.typography.titleLargeEmphasized
-        if (isNewest && line.showTypewriter) {
-            TypewriterText(text = line.sourceText, style = style)
-        } else {
-            Text(text = line.sourceText, style = style)
+fun VoxlineLineItem(line: VoxlineLine) {
+    val settings by VoxlineGraph.preferences.settings.collectAsState()
+    val translationKey = if (settings.translationEnabled) {
+        "${settings.sourceLanguageTag}:${settings.targetLanguageTag}"
+    } else null
+    val measurer = rememberTextMeasurer()
+    val sourceStyle = MaterialTheme.typography.titleLargeEmphasized
+
+    BoxWithConstraints(Modifier.fillMaxWidth()) {
+        val spans = remember(line.sourceText, constraints.maxWidth, sourceStyle, measurer) {
+            val layout = measurer.measure(
+                text = AnnotatedString(line.sourceText),
+                style = sourceStyle,
+                constraints = Constraints(maxWidth = constraints.maxWidth.coerceAtLeast(1)),
+            )
+            (0 until layout.lineCount).mapNotNull { index ->
+                val start = layout.getLineStart(index)
+                val end = layout.getLineEnd(index)
+                val text = line.sourceText.substring(start, end).trim()
+                text.takeIf { it.isNotEmpty() }?.let { CaptionSourceSpan(start, end, it) }
+            }
+        }
+        LaunchedEffect(line.id, line.sourceText, spans, translationKey) {
+            VoxlineRuntimeStore.setDisplayRows(line.id, line.sourceText, spans, translationKey)
+        }
+        val rows = spans.map { span ->
+            line.displayRows.firstOrNull { it.source == span && it.translationKey == translationKey }
         }
 
-        if (line.isTranslating && line.translatedText == null) {
-            Text(
-                text = "...",
-                color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f),
-                style = MaterialTheme.typography.bodyLarge,
-            )
-        } else if (!line.translatedText.isNullOrBlank()) {
-            if (isNewest) {
-                TypewriterText(
-                    text = line.translatedText,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    style = MaterialTheme.typography.bodyLarge,
+        // The sentence is the translation unit. Row text is used only for hidden alignment
+        // cues; every visible word must be a substring of the contextual sentence translation.
+        LaunchedEffect(
+            line.id, line.isFinal, line.isTranslating, line.sourceText, line.translatedText,
+            line.translatedLanguagePair, translationKey, rows.map { it?.id },
+        ) {
+            if (!line.isFinal || translationKey == null || rows.isEmpty() ||
+                rows.any { it == null }
+            ) return@LaunchedEffect
+            val readyRows = rows.filterNotNull()
+            try {
+                val contextual = if (line.translatedLanguagePair == translationKey) {
+                    line.translatedText ?: return@LaunchedEffect
+                } else {
+                    if (line.isTranslating) return@LaunchedEffect
+                    withContext(Dispatchers.Default) {
+                        VoxlineGraph.translator.translate(
+                            line.sourceText, settings.sourceLanguageTag, settings.targetLanguageTag,
+                        )
+                    }.also {
+                        VoxlineRuntimeStore.updateContextTranslation(line.id, line.sourceText, translationKey, it)
+                    }
+                }
+                // These are alignment probes, never displayed translations or replacements
+                // for the full sentence. Skip the probes for a sentence that fits in one row.
+                val hints = if (readyRows.size == 1) listOf(contextual) else readyRows.map { row ->
+                    try {
+                        withContext(Dispatchers.Default) {
+                            VoxlineGraph.translator.translate(
+                                row.source.text, settings.sourceLanguageTag, settings.targetLanguageTag,
+                            )
+                        }
+                    } catch (error: Exception) {
+                        if (error is CancellationException) throw error
+                        ""
+                    }
+                }
+                val aligned = withContext(Dispatchers.Default) {
+                    TranslationRowAligner.align(contextual, hints)
+                }
+                VoxlineRuntimeStore.alignRowTranslations(
+                    line.id, line.sourceText, readyRows.map { it.id }, aligned,
                 )
-            } else {
-                Text(
-                    text = line.translatedText,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    style = MaterialTheme.typography.bodyLarge,
-                )
+            } catch (error: Exception) {
+                if (error is CancellationException) throw error
             }
+        }
+
+        Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            spans.forEachIndexed { index, span ->
+                val row = rows[index]
+                key(row?.id ?: span.start) {
+                    CaptionDisplayRowItem(
+                        source = span.text,
+                        row = row,
+                        translationKey = translationKey,
+                        sourceStyle = sourceStyle,
+                        translationFailed = line.isFinal && !line.isTranslating &&
+                            line.translatedText == t("translation_failed"),
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun CaptionDisplayRowItem(
+    source: String,
+    row: CaptionDisplayRow?,
+    translationKey: String?,
+    sourceStyle: androidx.compose.ui.text.TextStyle,
+    translationFailed: Boolean,
+) {
+    Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
+        Text(text = source, style = sourceStyle, softWrap = false, maxLines = 1)
+        if (translationKey != null) {
+            Text(
+                text = if (translationFailed) t("translation_failed")
+                    else row?.alignedText?.trim()?.ifEmpty { "↳" } ?: "…",
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                style = MaterialTheme.typography.bodySmall,
+            )
         }
     }
 }
